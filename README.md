@@ -1,1 +1,1 @@
-# New-World-Market-Manager
+# New World Market Manager

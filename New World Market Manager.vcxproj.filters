@@ -9,20 +9,20 @@
     <ClInclude Include="include\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="New World Market Manager.rc" />
+    <ResourceCompile Include="ui\New World Market Manager.rc" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="include\marketmanager.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="marketmanager.qrc" />
+    <QtRcc Include="ui\marketmanager.qrc" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="ui\marketmanager.ui" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
-    <None Include="data\icon\New World Market Manager.ico" />
+    <None Include="ui\icon\New World Market Manager.ico" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

@@ -105,12 +105,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="README.md" />
-    <QtRcc Include="marketmanager.qrc" />
+    <QtRcc Include="ui\marketmanager.qrc" />
     <QtUic Include="ui\marketmanager.ui" />
     <QtMoc Include="include\marketmanager.h" />
     <ClCompile Include="src\marketmanager.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <None Include="data\icon\New World Market Manager.ico" />
+    <None Include="ui\icon\New World Market Manager.ico" />
     <ClInclude Include="include\stdafx.h" />
     <ClCompile Include="src\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">Create</PrecompiledHeader>
@@ -118,7 +118,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="New World Market Manager.rc" />
+    <ResourceCompile Include="ui\New World Market Manager.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

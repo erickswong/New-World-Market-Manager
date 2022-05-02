@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/MarketManager">
+        <file>images/raw_resources/ores/orichalcum_ore.png</file>
+        <file>images/raw_resources/ores/iron_ore.png</file>
+        <file>images/raw_resources/ores/starmetal_ore.png</file>
+    </qresource>
+</RCC>
