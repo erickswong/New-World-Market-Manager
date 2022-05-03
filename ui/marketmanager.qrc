@@ -3,5 +3,7 @@
         <file>images/raw_resources/ores/orichalcum_ore.png</file>
         <file>images/raw_resources/ores/iron_ore.png</file>
         <file>images/raw_resources/ores/starmetal_ore.png</file>
+        <file>images/title_bar/close.png</file>
+        <file>images/title_bar/minimize.png</file>
     </qresource>
 </RCC>
