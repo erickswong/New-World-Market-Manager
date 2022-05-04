@@ -5,5 +5,7 @@
         <file>images/raw_resources/ores/starmetal_ore.png</file>
         <file>images/title_bar/close.png</file>
         <file>images/title_bar/minimize.png</file>
+        <file>images/title_bar/maximize.png</file>
+        <file>images/title_bar/restore_down.png</file>
     </qresource>
 </RCC>
