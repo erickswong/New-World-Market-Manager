@@ -71,7 +71,7 @@ border-radius: 10px;</string>
         <widget class="QFrame" name="title_bar">
          <property name="minimumSize">
           <size>
-           <width>200</width>
+           <width>232</width>
            <height>50</height>
           </size>
          </property>
@@ -110,7 +110,7 @@ border-radius: 10px;</string>
            <widget class="QFrame" name="frame_title">
             <property name="minimumSize">
              <size>
-              <width>50</width>
+              <width>82</width>
               <height>0</height>
              </size>
             </property>
@@ -122,7 +122,7 @@ border-radius: 10px;</string>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
              <property name="spacing">
-              <number>10</number>
+              <number>0</number>
              </property>
              <property name="leftMargin">
               <number>0</number>
@@ -140,19 +140,18 @@ border-radius: 10px;</string>
               <widget class="QFrame" name="frame_icon">
                <property name="minimumSize">
                 <size>
-                 <width>50</width>
-                 <height>0</height>
+                 <width>82</width>
+                 <height>50</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>50</width>
+                 <width>82</width>
                  <height>50</height>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color: none;
-border-image: url(:/MarketManager/images/raw_resources/ores/orichalcum_ore.png);</string>
+                <string notr="true"/>
                </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -160,6 +159,49 @@ border-image: url(:/MarketManager/images/raw_resources/ores/orichalcum_ore.png);
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>5</number>
+                </property>
+                <property name="topMargin">
+                 <number>5</number>
+                </property>
+                <property name="rightMargin">
+                 <number>5</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QFrame" name="frame_icon_2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>72</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>72</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: none;
+border-image: url(:/MarketManager/images/title_bar/icon.png);</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
              <item>
@@ -339,69 +381,121 @@ QPushButton:hover {
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
-           <widget class="QStackedWidget" name="stackedWidget">
-            <property name="currentIndex">
-             <number>1</number>
+           <widget class="QFrame" name="side_bar">
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>16777215</height>
+             </size>
             </property>
-            <widget class="QWidget" name="page_home">
-             <layout class="QVBoxLayout" name="verticalLayout_4">
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="QFrame" name="frame_home_content">
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-            <widget class="QWidget" name="page_credits">
-             <layout class="QVBoxLayout" name="verticalLayout_5">
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="QFrame" name="frame_credits_content">
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="home">
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="marketmanager.qrc">
+                 <normaloff>:/MarketManager/images/side_bar/home.png</normaloff>:/MarketManager/images/side_bar/home.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="side_bar_spacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>517</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="settings">
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="marketmanager.qrc">
+                 <normaloff>:/MarketManager/images/side_bar/settings.png</normaloff>:/MarketManager/images/side_bar/settings.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_2">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
            </widget>
           </item>
          </layout>

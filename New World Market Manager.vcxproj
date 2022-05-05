@@ -66,6 +66,17 @@
     <Link>
       <AdditionalLibraryDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include</AdditionalLibraryDirectories>
     </Link>
+    <ResourceCompile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -110,12 +121,14 @@
     <QtMoc Include="include\marketmanager.h" />
     <ClCompile Include="src\marketmanager.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <None Include="ui\icon\New World Market Manager.ico" />
     <ClInclude Include="include\stdafx.h" />
     <ClCompile Include="src\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ui\icon\New World Market Manager.ico" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ui\New World Market Manager.rc" />

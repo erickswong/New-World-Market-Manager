@@ -7,7 +7,7 @@ MarketManager::MarketManager(QWidget *parent)
     ui.setupUi(this);
 
     // Remove title bar
-    this->setWindowFlag(Qt::FramelessWindowHint);
+    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint); // Qt::WindowStaysOnTopHint
     this->setAttribute(Qt::WA_TranslucentBackground);
 
     // Apply drop shadow effect
@@ -71,6 +71,14 @@ void MarketManager::mousePressEvent(QMouseEvent* event) {
 
         // Move window
         this->windowHandle()->startSystemMove();
+    }
+}
+
+void MarketManager::mouseDoubleClickEvent(QMouseEvent* event) {
+    QPoint mouse_pos = event->pos();
+
+    if (ui.frame_title->geometry().contains(mouse_pos)) {
+        on_maximize_restore_clicked();
     }
 }
 

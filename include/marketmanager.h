@@ -14,6 +14,7 @@ public:
 
 protected:
     void mousePressEvent(QMouseEvent* event);
+    void mouseDoubleClickEvent(QMouseEvent* event);
 
 private slots:
     void on_minimize_clicked();
