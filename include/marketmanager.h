@@ -8,6 +8,8 @@ class MarketManager : public QMainWindow
 {
     Q_OBJECT
 
+    static constexpr qreal BORDER_SIZE = 10;
+
 public:
     MarketManager(QWidget *parent = Q_NULLPTR);
     ~MarketManager();
@@ -24,4 +26,9 @@ private slots:
 private:
     Ui::MarketManagerClass ui;
     QGraphicsDropShadowEffect* shadow;
+
+    void setDropShadow();
+    void setBorderCursors();
+    void setNormal();
+    void setMaximized();
 };

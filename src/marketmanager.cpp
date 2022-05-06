@@ -7,16 +7,14 @@ MarketManager::MarketManager(QWidget *parent)
     ui.setupUi(this);
 
     // Remove title bar
-    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint); // Qt::WindowStaysOnTopHint
+    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint); // TODO: Qt::WindowStaysOnTopHint
     this->setAttribute(Qt::WA_TranslucentBackground);
 
     // Apply drop shadow effect
-    shadow = new QGraphicsDropShadowEffect();
-    shadow->setBlurRadius(20);
-    shadow->setXOffset(0);
-    shadow->setYOffset(0);
-    shadow->setColor(QColor(0, 0, 0, 200));
-    ui.drop_shadow_frame->setGraphicsEffect(shadow);
+    setDropShadow();
+
+    // Set cursor shapes at border for resizing
+    setBorderCursors();
 }
 
 MarketManager::~MarketManager() {
@@ -24,60 +22,49 @@ MarketManager::~MarketManager() {
 }
 
 void MarketManager::mousePressEvent(QMouseEvent* event) {
-    Qt::Edges edges;
-    constexpr qreal border = 20;
+    QPoint mouse_global_pos = event->globalPos();
     QPoint mouse_pos = event->pos();
 
-    // Determine the edges that the mouse is near
-    if (mouse_pos.x() > width() - border) {
-        edges |= Qt::RightEdge;
-    }
-    if (mouse_pos.x() < border) {
-        edges |= Qt::LeftEdge;
-    }
-    if (mouse_pos.y() < border) {
-        edges |= Qt::TopEdge;
-    }
-    if (mouse_pos.y() > height() - border) {
-        edges |= Qt::BottomEdge;
-    }
-
-    // Resize or move window
-    if (edges != 0) {
-        // Resize window
-        this->windowHandle()->startSystemResize(edges);
-    } else if (ui.frame_title->geometry().contains(mouse_pos)) {
+    // Move or resize window
+    if (ui.frame_title->rect().contains(ui.frame_title->mapFromGlobal(mouse_global_pos))) {
         if (this->isMaximized()) {
-            // Change to maximize button
-            ui.maximize_restore->setIcon(QIcon(":/MarketManager/images/title_bar/maximize.png"));
-            ui.maximize_restore->setToolTip("Maximize");
-
-            // Restore margins and border-radius
-            ui.mainLayout->setContentsMargins(10, 10, 10, 10);
-            ui.drop_shadow_frame->setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(37, 37, 38, 255), stop:0.5 rgba(31, 31, 31, 255));"
-                                                "border-radius: 10px;");
-
-            // Restore border-top-right-radius to close button
-            ui.close->setStyleSheet("QPushButton {"
-                                    "   border: none;"
-                                    "   background: transparent;"
-                                    "}"
-                                    "QPushButton:hover {"
-                                    "background-color: red;"
-                                    "border-radius: 0px;"
-                                    "border-top-right-radius: 10px;"
-                                    "}");
+            setNormal();
         }
 
         // Move window
         this->windowHandle()->startSystemMove();
+    } else if (!ui.drop_shadow_frame->rect().contains(ui.drop_shadow_frame->mapFromGlobal(mouse_global_pos))) {
+        // No resizing if maximized
+        if (this->isMaximized()) {
+            return;
+        }
+
+        Qt::Edges edges;
+
+        // Determine the edges that the mouse is near
+        if (mouse_pos.x() > width() - 2 * BORDER_SIZE) {
+            edges |= Qt::RightEdge;
+        }
+        if (mouse_pos.x() < 2 * BORDER_SIZE) {
+            edges |= Qt::LeftEdge;
+        }
+        if (mouse_pos.y() < 2 * BORDER_SIZE) {
+            edges |= Qt::TopEdge;
+        }
+        if (mouse_pos.y() > height() - 2 * BORDER_SIZE) {
+            edges |= Qt::BottomEdge;
+        }
+
+        // Resize window
+        this->windowHandle()->startSystemResize(edges);
     }
 }
 
 void MarketManager::mouseDoubleClickEvent(QMouseEvent* event) {
+    QPoint mouse_global_pos = event->globalPos();
     QPoint mouse_pos = event->pos();
 
-    if (ui.frame_title->geometry().contains(mouse_pos)) {
+    if (ui.frame_title->rect().contains(ui.frame_title->mapFromGlobal(mouse_global_pos))) {
         on_maximize_restore_clicked();
     }
 }
@@ -89,53 +76,97 @@ void MarketManager::on_minimize_clicked() {
 void MarketManager::on_maximize_restore_clicked() {
     if (this->isMaximized()) {
         // Restore Down
+        setNormal();
         this->showNormal();
-
-        // Change to maximize button
-        ui.maximize_restore->setIcon(QIcon(":/MarketManager/images/title_bar/maximize.png"));
-        ui.maximize_restore->setToolTip("Maximize");
-
-        // Restore margins and border-radius
-        ui.mainLayout->setContentsMargins(10, 10, 10, 10);
-        ui.drop_shadow_frame->setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(37, 37, 38, 255), stop:0.5 rgba(31, 31, 31, 255));"
-                                     "border-radius: 10px;");
-
-        // Restore border-top-right-radius to close button
-        ui.close->setStyleSheet("QPushButton {"
-                                "   border: none;"
-                                "   background: transparent;"
-                                "}"
-                                "QPushButton:hover {"
-                                "background-color: red;"
-                                "border-radius: 0px;"
-                                "border-top-right-radius: 10px;"
-                                "}");
     } else {
         // Maximize
+        setMaximized();
         this->showMaximized();
-
-        // Change to restore button
-        ui.maximize_restore->setIcon(QIcon(":/MarketManager/images/title_bar/restore_down.png"));
-        ui.maximize_restore->setToolTip("Restore Down");
-
-        // Remove margins and border-radius
-        ui.mainLayout->setContentsMargins(0, 0, 0, 0);
-        ui.drop_shadow_frame->setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(37, 37, 38, 255), stop:0.5 rgba(31, 31, 31, 255));"
-                                     "border-radius: 0px;");
-
-        // Remove border-top-right-radius from close button
-        ui.close->setStyleSheet("QPushButton {"
-                                "   border: none;"
-                                "   background: transparent;"
-                                "}"
-                                "QPushButton:hover {"
-                                "background-color: red;"
-                                "border-radius: 0px;"
-                                "border-top-right-radius: 0px;"
-                                "}");
     }
 }
 
 void MarketManager::on_close_clicked() {
     this->close();
+}
+
+void MarketManager::setDropShadow() {
+    shadow = new QGraphicsDropShadowEffect();
+    shadow->setBlurRadius(2 * BORDER_SIZE);
+    shadow->setXOffset(0);
+    shadow->setYOffset(0);
+    shadow->setColor(QColor(0, 0, 0, 200));
+    ui.drop_shadow_frame->setGraphicsEffect(shadow);
+}
+
+void MarketManager::setBorderCursors() {
+    ui.border_top_left->setCursor(Qt::SizeFDiagCursor);
+    ui.border_top_left_r->setCursor(Qt::SizeFDiagCursor);
+    ui.border_top_left_b->setCursor(Qt::SizeFDiagCursor);
+    ui.border_top->setCursor(Qt::SizeVerCursor);
+    ui.border_top_right->setCursor(Qt::SizeBDiagCursor);
+    ui.border_top_right_l->setCursor(Qt::SizeBDiagCursor);
+    ui.border_top_right_b->setCursor(Qt::SizeBDiagCursor);
+    ui.border_left->setCursor(Qt::SizeHorCursor);
+    ui.border_right->setCursor(Qt::SizeHorCursor);
+    ui.border_bottom_left->setCursor(Qt::SizeBDiagCursor);
+    ui.border_bottom_left_t->setCursor(Qt::SizeBDiagCursor);
+    ui.border_bottom_left_r->setCursor(Qt::SizeBDiagCursor);
+    ui.border_bottom->setCursor(Qt::SizeVerCursor);
+    ui.border_bottom_right->setCursor(Qt::SizeFDiagCursor);
+    ui.border_bottom_right_t->setCursor(Qt::SizeFDiagCursor);
+    ui.border_bottom_right_l->setCursor(Qt::SizeFDiagCursor);
+}
+
+void MarketManager::setNormal() {
+    // Change to maximize button
+    ui.maximize_restore->setIcon(QIcon(":/MarketManager/images/title_bar/maximize.png"));
+    ui.maximize_restore->setToolTip("Maximize");
+
+    // Restore borders
+    ui.border_top_left->setMinimumSize(BORDER_SIZE, BORDER_SIZE);
+    ui.border_top_left->setMaximumSize(BORDER_SIZE, BORDER_SIZE);
+    ui.border_bottom_right->setMinimumSize(BORDER_SIZE, BORDER_SIZE);
+    ui.border_bottom_right->setMaximumSize(BORDER_SIZE, BORDER_SIZE);
+
+    // Restore border-radius
+    ui.drop_shadow_frame->setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(37, 37, 38, 255), stop:0.5 rgba(31, 31, 31, 255));"
+                                        "border-radius: 10px;");
+
+    // Restore border-top-right-radius to close button
+    ui.close->setStyleSheet("QPushButton {"
+                            "   border: none;"
+                            "   background: transparent;"
+                            "}"
+                            "QPushButton:hover {"
+                            "background-color: red;"
+                            "border-radius: 0px;"
+                            "border-top-right-radius: 10px;"
+                            "}");
+}
+
+void MarketManager::setMaximized() {
+    // Change to restore button
+    ui.maximize_restore->setIcon(QIcon(":/MarketManager/images/title_bar/restore_down.png"));
+    ui.maximize_restore->setToolTip("Restore Down");
+
+    // Remove borders
+    ui.border_top_left->setMinimumSize(0, 0);
+    ui.border_top_left->setMaximumSize(0, 0);
+    ui.border_bottom_right->setMinimumSize(0, 0);
+    ui.border_bottom_right->setMaximumSize(0, 0);
+
+    // Remove border-radius
+    ui.drop_shadow_frame->setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(37, 37, 38, 255), stop:0.5 rgba(31, 31, 31, 255));"
+                                        "border-radius: 0px;");
+
+    // Remove border-top-right-radius from close button
+    ui.close->setStyleSheet("QPushButton {"
+                            "   border: none;"
+                            "   background: transparent;"
+                            "}"
+                            "QPushButton:hover {"
+                            "background-color: red;"
+                            "border-radius: 0px;"
+                            "border-top-right-radius: 0px;"
+                            "}");
 }
