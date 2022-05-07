@@ -2,8 +2,7 @@
 #include "stdafx.h"
 
 MarketManager::MarketManager(QWidget *parent)
-    : QMainWindow(parent)
-{
+    : QMainWindow(parent) {
     ui.setupUi(this);
 
     // Remove title bar

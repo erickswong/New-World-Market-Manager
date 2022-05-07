@@ -115,12 +115,29 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\items\resource.h" />
+    <ClInclude Include="include\items\raw_resource.h" />
+    <ClInclude Include="include\items\refined_resource.h" />
+    <ClInclude Include="include\items\recipe.h" />
+    <ClInclude Include="include\items\refining_component.h" />
+    <ClInclude Include="include\items\recipes.h" />
+    <ClInclude Include="include\items\items.h" />
     <None Include="README.md" />
     <QtRcc Include="ui\marketmanager.qrc" />
     <QtUic Include="ui\marketmanager.ui" />
     <QtMoc Include="include\marketmanager.h" />
+    <ClCompile Include="include\exceptions.h" />
+    <ClCompile Include="src\items\items.cpp" />
+    <ClCompile Include="src\items\recipes.cpp" />
+    <ClCompile Include="src\items\refining_component.cpp" />
+    <ClCompile Include="src\items\recipe.cpp" />
+    <ClCompile Include="src\items\refined_resource.cpp" />
+    <ClCompile Include="src\items\raw_resource.cpp" />
+    <ClCompile Include="src\items\resource.cpp" />
+    <ClCompile Include="src\items\item.cpp" />
     <ClCompile Include="src\marketmanager.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClInclude Include="include\items\item.h" />
     <ClInclude Include="include\stdafx.h" />
     <ClCompile Include="src\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">Create</PrecompiledHeader>
