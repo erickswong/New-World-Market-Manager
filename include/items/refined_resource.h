@@ -1,7 +1,9 @@
 #pragma once
 
+#include "items.h"
 #include "recipe.h"
 #include "resource.h"
+#include "settings/settings.h"
 
 class RefinedResource : public Resource {
 	public:
@@ -10,7 +12,7 @@ class RefinedResource : public Resource {
 						double buy_price,
 						double base_proc,
 						double base_craft_tax,
-						Recipes recipes,
+						Recipes* recipes,
 						std::string image_path);
 
 		void setSellPrice(double sell_price) override;
@@ -21,7 +23,7 @@ class RefinedResource : public Resource {
 
 		double getBaseCraftTax() override;
 
-		Recipes getRecipes() override;
+		Recipes* getRecipes() override;
 
 		double getSellCraftCost() override;
 		double updateSellCraftCost() override;

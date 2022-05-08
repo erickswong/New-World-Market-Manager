@@ -21,18 +21,18 @@ MarketManager::~MarketManager() {
 }
 
 void MarketManager::mousePressEvent(QMouseEvent* event) {
-    QPoint mouse_global_pos = event->globalPos();
-    QPoint mouse_pos = event->pos();
+	const QPointF mouse_global_pos = event->globalPosition();
+	const QPointF mouse_pos = event->position();
 
     // Move or resize window
-    if (ui.frame_title->rect().contains(ui.frame_title->mapFromGlobal(mouse_global_pos))) {
+    if (QRectF(ui.frame_title->rect()).contains(ui.frame_title->mapFromGlobal(mouse_global_pos))) {
         if (this->isMaximized()) {
             setNormal();
         }
 
         // Move window
         this->windowHandle()->startSystemMove();
-    } else if (!ui.drop_shadow_frame->rect().contains(ui.drop_shadow_frame->mapFromGlobal(mouse_global_pos))) {
+    } else if (!QRectF(ui.drop_shadow_frame->rect()).contains(ui.drop_shadow_frame->mapFromGlobal(mouse_global_pos))) {
         // No resizing if maximized
         if (this->isMaximized()) {
             return;
@@ -41,16 +41,16 @@ void MarketManager::mousePressEvent(QMouseEvent* event) {
         Qt::Edges edges;
 
         // Determine the edges that the mouse is near
-        if (mouse_pos.x() > width() - 2 * BORDER_SIZE) {
+        if (mouse_pos.x() >= width() - 2 * BORDER_SIZE) {
             edges |= Qt::RightEdge;
         }
-        if (mouse_pos.x() < 2 * BORDER_SIZE) {
+        if (mouse_pos.x() <= 2 * BORDER_SIZE) {
             edges |= Qt::LeftEdge;
         }
-        if (mouse_pos.y() < 2 * BORDER_SIZE) {
+        if (mouse_pos.y() <= 2 * BORDER_SIZE) {
             edges |= Qt::TopEdge;
         }
-        if (mouse_pos.y() > height() - 2 * BORDER_SIZE) {
+        if (mouse_pos.y() >= height() - 2 * BORDER_SIZE) {
             edges |= Qt::BottomEdge;
         }
 
@@ -60,10 +60,9 @@ void MarketManager::mousePressEvent(QMouseEvent* event) {
 }
 
 void MarketManager::mouseDoubleClickEvent(QMouseEvent* event) {
-    QPoint mouse_global_pos = event->globalPos();
-    QPoint mouse_pos = event->pos();
+	const QPointF mouse_global_pos = event->globalPosition();
 
-    if (ui.frame_title->rect().contains(ui.frame_title->mapFromGlobal(mouse_global_pos))) {
+	if (QRectF(ui.frame_title->rect()).contains(ui.frame_title->mapFromGlobal(mouse_global_pos))) {
         on_maximize_restore_clicked();
     }
 }
@@ -97,7 +96,7 @@ void MarketManager::setDropShadow() {
     ui.drop_shadow_frame->setGraphicsEffect(shadow);
 }
 
-void MarketManager::setBorderCursors() {
+void MarketManager::setBorderCursors() const {
     ui.border_top_left->setCursor(Qt::SizeFDiagCursor);
     ui.border_top_left_r->setCursor(Qt::SizeFDiagCursor);
     ui.border_top_left_b->setCursor(Qt::SizeFDiagCursor);
@@ -116,7 +115,7 @@ void MarketManager::setBorderCursors() {
     ui.border_bottom_right_l->setCursor(Qt::SizeFDiagCursor);
 }
 
-void MarketManager::setNormal() {
+void MarketManager::setNormal() const {
     // Change to maximize button
     ui.maximize_restore->setIcon(QIcon(":/MarketManager/images/title_bar/maximize.png"));
     ui.maximize_restore->setToolTip("Maximize");
@@ -143,7 +142,7 @@ void MarketManager::setNormal() {
                             "}");
 }
 
-void MarketManager::setMaximized() {
+void MarketManager::setMaximized() const {
     // Change to restore button
     ui.maximize_restore->setIcon(QIcon(":/MarketManager/images/title_bar/restore_down.png"));
     ui.maximize_restore->setToolTip("Restore Down");

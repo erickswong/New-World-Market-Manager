@@ -4,13 +4,13 @@
 
 // throw NotImplementedException();
 // catch (NotImplementedException& e)
-struct NotImplementedException : std::exception {
+struct NotImplementedException final : std::exception {
     [[nodiscard]] const char* what() const noexcept override {
         return "Not Implemented";
     }
 };
 
-struct NotUsedException : std::exception {
+struct NotUsedException final : std::exception {
     [[nodiscard]] const char* what() const noexcept override {
         return "Not Used";
     }

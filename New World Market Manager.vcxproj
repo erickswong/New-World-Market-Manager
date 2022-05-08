@@ -115,6 +115,12 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\settings\fort_bonuses.cpp" />
+    <ClCompile Include="src\settings\taxes.cpp" />
+    <ClCompile Include="src\settings\standing_bonuses.cpp" />
+    <ClInclude Include="include\settings\fort_bonuses.h" />
+    <ClInclude Include="include\settings\armour_sets.h" />
+    <ClInclude Include="include\settings\armour_set.h" />
     <ClInclude Include="include\items\resource.h" />
     <ClInclude Include="include\items\raw_resource.h" />
     <ClInclude Include="include\items\refined_resource.h" />
@@ -122,11 +128,17 @@
     <ClInclude Include="include\items\refining_component.h" />
     <ClInclude Include="include\items\recipes.h" />
     <ClInclude Include="include\items\items.h" />
+    <ClInclude Include="include\settings\settings.h" />
+    <ClInclude Include="include\settings\taxes.h" />
+    <ClInclude Include="include\settings\standing_bonuses.h" />
     <None Include="README.md" />
     <QtRcc Include="ui\marketmanager.qrc" />
     <QtUic Include="ui\marketmanager.ui" />
     <QtMoc Include="include\marketmanager.h" />
+    <ClCompile Include="src\settings\armour_sets.cpp" />
+    <ClCompile Include="src\settings\armour_set.cpp" />
     <ClCompile Include="include\exceptions.h" />
+    <ClCompile Include="src\settings\settings.cpp" />
     <ClCompile Include="src\items\items.cpp" />
     <ClCompile Include="src\items\recipes.cpp" />
     <ClCompile Include="src\items\refining_component.cpp" />

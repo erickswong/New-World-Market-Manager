@@ -37,6 +37,24 @@
     <ClCompile Include="include\exceptions.h">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\settings\settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\settings\armour_set.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\settings\armour_sets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\settings\taxes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\settings\standing_bonuses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\settings\fort_bonuses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -92,6 +110,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\items\items.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\settings\settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\settings\armour_set.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\settings\armour_sets.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\settings\taxes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\settings\standing_bonuses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\settings\fort_bonuses.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

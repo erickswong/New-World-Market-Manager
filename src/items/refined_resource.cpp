@@ -7,8 +7,8 @@ RefinedResource::RefinedResource(const bool buy_equals_sell,
                                  const double buy_price,
                                  const double base_proc,
                                  const double base_craft_tax,
-                                 const Recipes recipes,
-                                 const std::string image_path) {
+                                 Recipes* recipes,
+								 const std::string image_path) {
 	this->buy_equals_sell = buy_equals_sell;
 	this->sell_price = sell_price;
 	this->buy_price = buy_price;
@@ -16,8 +16,8 @@ RefinedResource::RefinedResource(const bool buy_equals_sell,
 	this->base_craft_tax = base_craft_tax;
 	this->recipes = recipes;
 	this->image_path = image_path;
-	updateSellCraftCost();
-	updateBuyCraftCost();
+	RefinedResource::updateSellCraftCost();
+	RefinedResource::updateBuyCraftCost();
 }
 
 void RefinedResource::setSellPrice(const double sell_price) {
@@ -42,7 +42,7 @@ double RefinedResource::getBaseCraftTax() {
 	return base_craft_tax;
 }
 
-Recipes RefinedResource::getRecipes() {
+Recipes* RefinedResource::getRecipes() {
 	return recipes;
 }
 
@@ -51,7 +51,7 @@ double RefinedResource::getSellCraftCost() {
 }
 
 double RefinedResource::updateSellCraftCost() {
-	// TODO: Calculate from recipes, may need to add Items parameter, and in future add Settings parameter
+	// TODO: (Items& items, Settings& settings) consider another derived class to determine which armor set?
 	throw NotImplementedException();
 
 	updateSellProfitMargin();
@@ -64,7 +64,7 @@ double RefinedResource::getBuyCraftCost() {
 }
 
 double RefinedResource::updateBuyCraftCost() {
-	// TODO: like updateSellCraftCost()
+	// TODO: like updateSellCraftCost(); create private calculateSellCraftCost()
 	throw NotImplementedException();
 
 	updateBuyProfitMargin();

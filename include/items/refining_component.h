@@ -2,7 +2,7 @@
 
 #include "resource.h"
 
-class RefiningComponent : public Resource {
+class RefiningComponent final : public Resource {
 	public:
 		RefiningComponent(bool buy_equals_sell,
 						  double sell_price,

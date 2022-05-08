@@ -9,8 +9,10 @@ class Items {
 		Items();
 		~Items();
 
-		std::map<std::string, Item>* getItems();
-		void addItem(std::string item_name, Item item);
+		[[nodiscard]] Item& getItem(const std::string& item_name) const;
+		void addItem(const std::string& item_name, const Item& item) const;
+
+		[[nodiscard]] std::map<std::string, Item>* getItems() const;
 
 	private:
 		std::map<std::string, Item>* items;

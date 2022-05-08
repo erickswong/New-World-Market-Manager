@@ -2,7 +2,7 @@
 
 #include "resource.h"
 
-class RawResource : public Resource {
+class RawResource final : public Resource {
 	public:
 		RawResource(bool buy_equals_sell,
 					double sell_price,

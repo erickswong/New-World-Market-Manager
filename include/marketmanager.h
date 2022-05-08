@@ -4,18 +4,18 @@
 #include <QGraphicsDropShadowEffect>
 #include "ui_marketmanager.h"
 
-class MarketManager : public QMainWindow {
+class MarketManager final : public QMainWindow {
     Q_OBJECT
 
     public:
         static constexpr qreal BORDER_SIZE = 10;
 
-        MarketManager(QWidget *parent = Q_NULLPTR);
-        ~MarketManager();
+		explicit MarketManager(QWidget *parent = Q_NULLPTR);
+        ~MarketManager() override;
 
     protected:
-        void mousePressEvent(QMouseEvent* event);
-        void mouseDoubleClickEvent(QMouseEvent* event);
+        void mousePressEvent(QMouseEvent* event) override;
+        void mouseDoubleClickEvent(QMouseEvent* event) override;
 
     private slots:
         void on_minimize_clicked();
@@ -27,7 +27,7 @@ class MarketManager : public QMainWindow {
         QGraphicsDropShadowEffect* shadow;
 
         void setDropShadow();
-        void setBorderCursors();
-        void setNormal();
-        void setMaximized();
+        void setBorderCursors() const;
+        void setNormal() const;
+        void setMaximized() const;
 };

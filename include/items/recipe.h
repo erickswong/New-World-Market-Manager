@@ -8,8 +8,9 @@ class Recipe {
 		Recipe();
 		~Recipe();
 
-		std::map<std::string, int>* getRecipe();
-		void addIngredient(std::string ingredient_name, int amount);
+		void addIngredient(const std::string& ingredient_name, int amount) const;
+
+		[[nodiscard]] std::map<std::string, int>* getRecipe() const;
 
 	private:
 		std::map<std::string, int>* recipe;

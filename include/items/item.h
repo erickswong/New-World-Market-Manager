@@ -20,7 +20,7 @@ class Item {
 
 		virtual double getBaseCraftTax();
 
-		virtual Recipes getRecipes();
+		virtual Recipes* getRecipes();
 
 		virtual std::string getImagePath();
 
@@ -42,7 +42,7 @@ class Item {
 		double buy_price = 0;
 		double base_proc = 0;
 		double base_craft_tax = 0;
-		Recipes recipes;
+		Recipes* recipes = nullptr;
 		std::string image_path;
 		double sell_craft_cost = 0;
 		double buy_craft_cost = 0;

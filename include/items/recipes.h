@@ -8,8 +8,10 @@ class Recipes {
 		Recipes();
 		~Recipes();
 
-		std::vector<Recipe>* getRecipes();
-		void addRecipe(Recipe recipe);
+		void addRecipe(const Recipe& recipe) const;
+
+		[[nodiscard]] std::vector<Recipe>* getRecipes() const;
+
 	private:
 		std::vector<Recipe>* recipes;
 };

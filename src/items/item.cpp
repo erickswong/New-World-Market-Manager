@@ -4,7 +4,9 @@
 
 Item::Item() = default;
 
-Item::~Item() = default;
+Item::~Item() {
+	delete recipes;
+}
 
 bool Item::getBuyEqualsSell() {
 	throw NotUsedException();
@@ -38,7 +40,7 @@ double Item::getBaseCraftTax() {
 	throw NotUsedException();
 }
 
-Recipes Item::getRecipes() {
+Recipes* Item::getRecipes() {
 	throw NotUsedException();
 }
 
