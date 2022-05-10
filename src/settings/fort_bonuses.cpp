@@ -1,5 +1,7 @@
 #include "settings/fort_bonuses.h"
 
+#include "constants.h"
+
 FortBonuses::FortBonuses() = default;
 
 FortBonuses::FortBonuses(const bool has_first_light,
@@ -9,11 +11,11 @@ FortBonuses::FortBonuses(const bool has_first_light,
 }
 
 double FortBonuses::yieldBonus() const {
-	return has_first_light * FIRST_LIGHT_BONUS;
+	return FIRST_LIGHT_YIELD_BONUS * has_first_light;
 }
 
 double FortBonuses::taxBonus() const {
-	return has_weavers_fen * WEAVERS_FEN_BONUS;
+	return WEAVERS_FEN_TAX_BONUS * has_weavers_fen;
 }
 
 bool FortBonuses::getHasFirstLight() const {

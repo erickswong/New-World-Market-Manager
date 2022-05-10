@@ -2,9 +2,6 @@
 
 class FortBonuses {
 	public:
-		static constexpr double FIRST_LIGHT_BONUS = 0.1;
-		static constexpr double WEAVERS_FEN_BONUS = 0.1;
-
 		FortBonuses();
 		FortBonuses(bool has_first_light,
 					bool has_weavers_fen);

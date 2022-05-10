@@ -15,4 +15,3 @@ class Recipes {
 	private:
 		std::vector<Recipe>* recipes;
 };
-

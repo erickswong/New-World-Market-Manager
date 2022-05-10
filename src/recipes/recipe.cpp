@@ -1,4 +1,4 @@
-#include "items/recipe.h"
+#include "recipes/recipe.h"
 
 Recipe::Recipe() : recipe(new std::map<std::string, int>) {
 }

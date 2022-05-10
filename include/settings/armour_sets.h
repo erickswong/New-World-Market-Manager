@@ -5,23 +5,22 @@
 class ArmourSets {
 	public:
 		ArmourSets();
-		ArmourSets(ArmourSet* smelter_set,
-		           ArmourSet* woodworker_set,
-		           ArmourSet* weaver_set,
-		           ArmourSet* tanner_set,
-		           ArmourSet* stonecutter_set);
-		~ArmourSets();
+		ArmourSets(ArmourSet smelter_set,
+		           ArmourSet woodworker_set,
+		           ArmourSet weaver_set,
+		           ArmourSet tanner_set,
+		           ArmourSet stonecutter_set);
 
-		[[nodiscard]] ArmourSet* getSmelterSet() const;
-		[[nodiscard]] ArmourSet* getWoodworkerSet() const;
-		[[nodiscard]] ArmourSet* getWeaverSet() const;
-		[[nodiscard]] ArmourSet* getTannerSet() const;
-		[[nodiscard]] ArmourSet* getStonecutterSet() const;
+		ArmourSet& getSmelterSet();
+		ArmourSet& getWoodworkerSet();
+		ArmourSet& getWeaverSet();
+		ArmourSet& getTannerSet();
+		ArmourSet& getStonecutterSet();
 
 	private:
-		ArmourSet* smelter_set;
-		ArmourSet* woodworker_set;
-		ArmourSet* weaver_set;
-		ArmourSet* tanner_set;
-		ArmourSet* stonecutter_set;
+		ArmourSet smelter_set;
+		ArmourSet woodworker_set;
+		ArmourSet weaver_set;
+		ArmourSet tanner_set;
+		ArmourSet stonecutter_set;
 };

@@ -1,17 +1,12 @@
 #include "settings/armour_sets.h"
 
-ArmourSets::ArmourSets() : smelter_set(new ArmourSet),
-                           woodworker_set(new ArmourSet),
-                           weaver_set(new ArmourSet),
-                           tanner_set(new ArmourSet),
-                           stonecutter_set(new ArmourSet) {
-}
+ArmourSets::ArmourSets() = default;
 
-ArmourSets::ArmourSets(ArmourSet* smelter_set,
-                       ArmourSet* woodworker_set,
-                       ArmourSet* weaver_set,
-                       ArmourSet* tanner_set,
-                       ArmourSet* stonecutter_set)
+ArmourSets::ArmourSets(const ArmourSet smelter_set,
+                       const ArmourSet woodworker_set,
+                       const ArmourSet weaver_set,
+                       const ArmourSet tanner_set,
+                       const ArmourSet stonecutter_set)
 	                       : smelter_set(smelter_set),
                              woodworker_set(woodworker_set),
                              weaver_set(weaver_set),
@@ -19,30 +14,22 @@ ArmourSets::ArmourSets(ArmourSet* smelter_set,
                              stonecutter_set(stonecutter_set) {
 }
 
-ArmourSets::~ArmourSets() {
-    delete smelter_set;
-    delete woodworker_set;
-    delete weaver_set;
-    delete tanner_set;
-    delete stonecutter_set;
-}
-
-ArmourSet* ArmourSets::getSmelterSet() const {
+ArmourSet& ArmourSets::getSmelterSet() {
     return smelter_set;
 }
 
-ArmourSet* ArmourSets::getWoodworkerSet() const {
+ArmourSet& ArmourSets::getWoodworkerSet() {
     return woodworker_set;
 }
 
-ArmourSet* ArmourSets::getWeaverSet() const {
+ArmourSet& ArmourSets::getWeaverSet() {
     return weaver_set;
 }
 
-ArmourSet* ArmourSets::getTannerSet() const {
+ArmourSet& ArmourSets::getTannerSet() {
     return tanner_set;
 }
 
-ArmourSet* ArmourSets::getStonecutterSet() const {
+ArmourSet& ArmourSets::getStonecutterSet() {
     return stonecutter_set;
 }

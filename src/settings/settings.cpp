@@ -1,40 +1,35 @@
 #include "settings/settings.h"
 
-Settings::Settings() : armour_sets(new ArmourSets),
-                       taxes(new Taxes),
-                       standing_bonuses(new StandingBonuses),
-                       fort_bonuses(new FortBonuses) {
-};
+Settings::Settings() = default;
 
-Settings::Settings(ArmourSets* armour_sets,
-                   Taxes* taxes,
-                   StandingBonuses* standing_bonuses,
-                   FortBonuses* fort_bonuses)
-	                   : armour_sets(armour_sets),
+Settings::Settings(TradeSkills trade_skills,
+                   ArmourSets armour_sets,
+                   Taxes taxes,
+                   StandingBonuses standing_bonuses,
+                   FortBonuses fort_bonuses)
+	                   : trade_skills(trade_skills),
+                         armour_sets(armour_sets),
                          taxes(taxes),
                          standing_bonuses(standing_bonuses),
                          fort_bonuses(fort_bonuses) {
 }
 
-Settings::~Settings() {
-    delete armour_sets;
-    delete taxes;
-    delete standing_bonuses;
-    delete fort_bonuses;
+TradeSkills& Settings::getTradeSkills() {
+    return trade_skills;
 }
 
-ArmourSets* Settings::getArmourSets() const {
+ArmourSets& Settings::getArmourSets() {
     return armour_sets;
 }
 
-Taxes* Settings::getTaxes() const {
+Taxes& Settings::getTaxes() {
     return taxes;
 }
 
-StandingBonuses* Settings::getStandingBonuses() const {
+StandingBonuses& Settings::getStandingBonuses() {
     return standing_bonuses;
 }
 
-FortBonuses* Settings::getFortBonuses() const {
+FortBonuses& Settings::getFortBonuses() {
     return fort_bonuses;
 }

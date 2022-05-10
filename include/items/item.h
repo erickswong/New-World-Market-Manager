@@ -1,20 +1,37 @@
 #pragma once
 
-#include "recipes.h"
+#include <include/recipes/recipes.h>
+#include "settings/settings.h"
+
+struct ItemAnalysis {
+	double instant_craft_cost = HUGE_VAL;
+	double best_craft_cost = HUGE_VAL;
+	double instant_profit_margin = -HUGE_VAL;
+	double best_profit_margin = -HUGE_VAL;
+};
 
 class Item {
 	public:
 		Item();
 		virtual ~Item();
+		
+		virtual double bestInstantAcquireCost();
+		virtual double bestAcquireCost();
+		virtual double craftTax(Settings& settings);
+		virtual double proc(Recipe& recipe, Settings& settings);
+
+		virtual std::string getItemName();
+
+		virtual int getTier();
 
 		virtual bool getBuyEqualsSell();
-		virtual void setBuyEqualsSell(bool buy_equals_sell);
+		virtual bool setBuyEqualsSell(bool buy_equals_sell);
 
 		virtual double getSellPrice();
-		virtual void setSellPrice(double sell_price);
+		virtual bool setSellPrice(double sell_price);
 
 		virtual double getBuyPrice();
-		virtual void setBuyPrice(double buy_price);
+		virtual bool setBuyPrice(double buy_price);
 
 		virtual double getBaseProc();
 
@@ -23,20 +40,12 @@ class Item {
 		virtual Recipes* getRecipes();
 
 		virtual std::string getImagePath();
-
-		virtual double getSellCraftCost();
-		virtual double updateSellCraftCost();
-
-		virtual double getBuyCraftCost();
-		virtual double updateBuyCraftCost();
-
-		virtual double getSellProfitMargin();
-		virtual double updateSellProfitMargin();
-
-		virtual double getBuyProfitMargin();
-		virtual double updateBuyProfitMargin();
+		
+		virtual ItemAnalysis& getAnalysis();
 
 	protected:
+		std::string item_name;
+		int tier = 0;
 		bool buy_equals_sell = true;
 		double sell_price = 0;
 		double buy_price = 0;
@@ -44,9 +53,6 @@ class Item {
 		double base_craft_tax = 0;
 		Recipes* recipes = nullptr;
 		std::string image_path;
-		double sell_craft_cost = 0;
-		double buy_craft_cost = 0;
-		double sell_profit_margin = 0;
-		double buy_profit_margin = 0;
-};
 
+		ItemAnalysis analysis;
+};

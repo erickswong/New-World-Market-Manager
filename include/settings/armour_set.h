@@ -9,7 +9,7 @@ class ArmourSet {
 				  bool has_pants,
 				  bool has_shoes);
 
-		[[nodiscard]] double totalBonus() const;
+		[[nodiscard]] double yieldBonus() const;
 
 		[[nodiscard]] bool getHasHelmet() const;
 		void setHasHelmet(bool has_helmet);
@@ -32,6 +32,4 @@ class ArmourSet {
 		bool has_gloves = false;
 		bool has_pants = false;
 		bool has_shoes = false;
-
-		const double bonus_per_piece = 0.02;
 };

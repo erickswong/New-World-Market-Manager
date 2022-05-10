@@ -1,4 +1,4 @@
-#include "items/recipes.h"
+#include "recipes/recipes.h"
 
 Recipes::Recipes() : recipes(new std::vector<Recipe>) {
 }

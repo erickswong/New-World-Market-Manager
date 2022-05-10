@@ -7,8 +7,8 @@
         <file>images/side_bar/home.png</file>
         <file>images/side_bar/settings.png</file>
         <file>images/title_bar/icon.png</file>
-        <file>images/items/resources/raw_resources/ores/Iron Ore.png</file>
-        <file>images/items/resources/raw_resources/ores/Orichalcum Ore.png</file>
-        <file>images/items/resources/raw_resources/ores/Starmetal Ore.png</file>
+        <file>images/items/resources/raw_resources/ores/iron_ore.png</file>
+        <file>images/items/resources/raw_resources/ores/orichalcum_ore.png</file>
+        <file>images/items/resources/raw_resources/ores/starmetal_ore.png</file>
     </qresource>
 </RCC>
