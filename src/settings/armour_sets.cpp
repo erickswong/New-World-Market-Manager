@@ -1,5 +1,7 @@
 #include "settings/armour_sets.h"
 
+#include "constants.h"
+
 ArmourSets::ArmourSets() = default;
 
 ArmourSets::ArmourSets(const ArmourSet smelter_set,
@@ -12,6 +14,26 @@ ArmourSets::ArmourSets(const ArmourSet smelter_set,
                              weaver_set(weaver_set),
                              tanner_set(tanner_set),
                              stonecutter_set(stonecutter_set) {
+}
+
+double ArmourSets::smeltingYieldBonus() const {
+    return ARMOUR_YIELD_BONUS * smelter_set.numberAcquired();
+}
+
+double ArmourSets::woodworkingYieldBonus() const {
+    return ARMOUR_YIELD_BONUS * woodworker_set.numberAcquired();
+}
+
+double ArmourSets::leatherworkingYieldBonus() const {
+    return ARMOUR_YIELD_BONUS * weaver_set.numberAcquired();
+}
+
+double ArmourSets::weavingYieldBonus() const {
+    return ARMOUR_YIELD_BONUS * tanner_set.numberAcquired();
+}
+
+double ArmourSets::stonecuttingYieldBonus() const {
+    return ARMOUR_YIELD_BONUS * stonecutter_set.numberAcquired();
 }
 
 ArmourSet& ArmourSets::getSmelterSet() {

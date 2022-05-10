@@ -15,10 +15,10 @@ class Item {
 		Item();
 		virtual ~Item();
 		
-		virtual double bestInstantAcquireCost();
-		virtual double bestAcquireCost();
-		virtual double craftTax(Settings& settings);
-		virtual double proc(Recipe& recipe, Settings& settings);
+		virtual double getBestInstantAcquireCost();
+		virtual double getBestAcquireCost();
+		virtual double getCraftTax(Settings& settings);
+		virtual double getYield(Recipe& recipe, Settings& settings);
 
 		virtual std::string getItemName();
 
@@ -33,7 +33,7 @@ class Item {
 		virtual double getBuyPrice();
 		virtual bool setBuyPrice(double buy_price);
 
-		virtual double getBaseProc();
+		virtual double getBaseYield();
 
 		virtual double getBaseCraftTax();
 
@@ -47,9 +47,9 @@ class Item {
 		std::string item_name;
 		int tier = 0;
 		bool buy_equals_sell = true;
-		double sell_price = 0;
-		double buy_price = 0;
-		double base_proc = 0;
+		double sell_price = HUGE_VAL;
+		double buy_price = HUGE_VAL;
+		double base_yield = 0;
 		double base_craft_tax = 0;
 		Recipes* recipes = nullptr;
 		std::string image_path;

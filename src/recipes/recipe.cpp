@@ -1,6 +1,6 @@
 #include "recipes/recipe.h"
 
-Recipe::Recipe() : recipe(new std::map<std::string, int>) {
+Recipe::Recipe() : recipe(new std::unordered_map<std::string, int>) {
 }
 
 Recipe::~Recipe() {
@@ -11,6 +11,6 @@ void Recipe::addIngredient(const std::string& ingredient_name, int amount) const
 	recipe->insert({ ingredient_name, amount });
 }
 
-std::map<std::string, int>* Recipe::getRecipe() const {
+std::unordered_map<std::string, int>* Recipe::getRecipe() const {
 	return recipe;
 }

@@ -1,7 +1,7 @@
 #pragma once
 
-#include <map>
 #include <string>
+#include <unordered_map>
 
 #include "item.h"
 #include "settings/settings.h"
@@ -13,10 +13,10 @@ class Items {
 
 		void addItem(const std::string& item_name, Item* item) const;
 
-		[[nodiscard]] double itemBestInstantAcquireCost(const std::string& item_name) const;
-		[[nodiscard]] double itemBestAcquireCost(const std::string& item_name) const;
-		[[nodiscard]] double itemCraftTax(const std::string& item_name, Settings& settings) const;
-		[[nodiscard]] double itemProc(const std::string& item_name, Recipe& recipe, Settings& settings) const;
+		[[nodiscard]] double getItemBestInstantAcquireCost(const std::string& item_name) const;
+		[[nodiscard]] double getItemBestAcquireCost(const std::string& item_name) const;
+		[[nodiscard]] double getItemCraftTax(const std::string& item_name, Settings& settings) const;
+		[[nodiscard]] double getItemYield(const std::string& item_name, Recipe& recipe, Settings& settings) const;
 
 		[[nodiscard]] int getItemTier(const std::string& item_name) const;
 
@@ -39,10 +39,10 @@ class Items {
 
 		[[nodiscard]] ItemAnalysis& getItemAnalysis(const std::string& item_name) const;
 
-		[[nodiscard]] std::map<std::string, Item*>* getItems() const;
+		[[nodiscard]] std::unordered_map<std::string, Item*>* getItems() const;
 
 	private:
-		std::map<std::string, Item*>* items; // TODO: change to hashmap?
+		std::unordered_map<std::string, Item*>* items;
 
 		[[nodiscard]] Item* getItem(const std::string& item_name) const;
 

@@ -1,6 +1,6 @@
 #include "items/items.h"
 
-Items::Items() : items(new std::map<std::string, Item*>()) {
+Items::Items() : items(new std::unordered_map<std::string, Item*>()) {
 }
 
 Items::~Items() {
@@ -16,20 +16,20 @@ void Items::addItem(const std::string& item_name, Item* item) const {
 	items->insert({ item_name, item });
 }
 
-double Items::itemBestInstantAcquireCost(const std::string& item_name) const {
-	return getItem(item_name)->bestInstantAcquireCost();
+double Items::getItemBestInstantAcquireCost(const std::string& item_name) const {
+	return getItem(item_name)->getBestInstantAcquireCost();
 }
 
-double Items::itemBestAcquireCost(const std::string& item_name) const {
-	return getItem(item_name)->bestAcquireCost();
+double Items::getItemBestAcquireCost(const std::string& item_name) const {
+	return getItem(item_name)->getBestAcquireCost();
 }
 
-double Items::itemCraftTax(const std::string& item_name, Settings& settings) const {
-	return getItem(item_name)->craftTax(settings);
+double Items::getItemCraftTax(const std::string& item_name, Settings& settings) const {
+	return getItem(item_name)->getCraftTax(settings);
 }
 
-double Items::itemProc(const std::string& item_name, Recipe& recipe, Settings& settings) const {
-	return getItem(item_name)->proc(recipe, settings);
+double Items::getItemYield(const std::string& item_name, Recipe& recipe, Settings& settings) const {
+	return getItem(item_name)->getYield(recipe, settings);
 }
 
 int Items::getItemTier(const std::string& item_name) const {
@@ -67,7 +67,7 @@ void Items::setItemBuyPrice(const std::string& item_name, const double buy_price
 }
 
 double Items::getItemBaseProc(const std::string& item_name) const {
-	return getItem(item_name)->getBaseProc();
+	return getItem(item_name)->getBaseYield();
 }
 
 double Items::getItemBaseCraftTax(const std::string& item_name) const {
@@ -86,7 +86,7 @@ ItemAnalysis& Items::getItemAnalysis(const std::string& item_name) const {
 	return getItem(item_name)->getAnalysis();
 }
 
-std::map<std::string, Item*>* Items::getItems() const {
+std::unordered_map<std::string, Item*>* Items::getItems() const {
 	return items;
 }
 
@@ -111,10 +111,10 @@ double Items::itemBestInstantCraftCost(const std::string& item_name, Settings& s
 		double recipe_cost = 0;
 
 		for (const auto& [ingredient_name, amount] : *recipe.getRecipe()) {
-			recipe_cost += amount * itemBestInstantAcquireCost(ingredient_name);
+			recipe_cost += amount * getItemBestInstantAcquireCost(ingredient_name);
 		}
 
-		double instant_craft_cost = (recipe_cost + itemCraftTax(item_name, settings)) / itemProc(item_name, recipe, settings);
+		double instant_craft_cost = (recipe_cost + getItemCraftTax(item_name, settings)) / getItemYield(item_name, recipe, settings);
 
 		best_instant_craft_cost = std::min(best_instant_craft_cost, instant_craft_cost);
 	}
@@ -129,10 +129,10 @@ double Items::itemBestCraftCost(const std::string& item_name, Settings& settings
 		double recipe_cost = 0;
 
 		for (const auto& [ingredient_name, amount] : *recipe.getRecipe()) {
-			recipe_cost += amount * itemBestAcquireCost(ingredient_name);
+			recipe_cost += amount * getItemBestAcquireCost(ingredient_name);
 		}
 
-		double craft_cost = (recipe_cost + itemCraftTax(item_name, settings)) / itemProc(item_name, recipe, settings);
+		double craft_cost = (recipe_cost + getItemCraftTax(item_name, settings)) / getItemYield(item_name, recipe, settings);
 
 		best_craft_cost = std::min(best_craft_cost, craft_cost);
 	}

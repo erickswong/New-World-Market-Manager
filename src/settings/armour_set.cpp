@@ -1,7 +1,5 @@
 #include "settings/armour_set.h"
 
-#include "constants.h"
-
 ArmourSet::ArmourSet() = default;
 
 ArmourSet::ArmourSet(const bool has_helmet,
@@ -16,8 +14,8 @@ ArmourSet::ArmourSet(const bool has_helmet,
                            has_shoes(has_shoes) {
 }
 
-double ArmourSet::yieldBonus() const {
-	return ARMOUR_YIELD_BONUS * (has_helmet + has_chest + has_gloves + has_pants + has_shoes);
+int ArmourSet::numberAcquired() const {
+	return has_helmet + has_chest + has_gloves + has_pants + has_shoes;
 }
 
 bool ArmourSet::getHasHelmet() const {

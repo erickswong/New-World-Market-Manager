@@ -15,6 +15,14 @@ class Settings {
 		         StandingBonuses standing_bonuses,
 		         FortBonuses fort_bonuses);
 
+		[[nodiscard]] double smeltingYieldBonus() const;
+		[[nodiscard]] double woodworkingYieldBonus() const;
+		[[nodiscard]] double leatherworkingYieldBonus() const;
+		[[nodiscard]] double weavingYieldBonus() const;
+		[[nodiscard]] double stonecuttingYieldBonus() const;
+
+		// TODO: add tax calculator, may need parameter with base tax value
+
 		TradeSkills& getTradeSkills();
 		ArmourSets& getArmourSets();
 		Taxes& getTaxes();

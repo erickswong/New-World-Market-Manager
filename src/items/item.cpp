@@ -10,19 +10,19 @@ Item::~Item() {
 	delete recipes;
 }
 
-double Item::bestInstantAcquireCost() {
+double Item::getBestInstantAcquireCost() {
 	return std::min(sell_price, analysis.instant_craft_cost);
 }
 
-double Item::bestAcquireCost() {
+double Item::getBestAcquireCost() {
 	return std::min({ sell_price, analysis.instant_craft_cost, analysis.best_craft_cost, buy_price });
 }
 
-double Item::craftTax(Settings& settings) {
+double Item::getCraftTax(Settings& settings) {
 	throw NotUsedException();
 }
 
-double Item::proc(Recipe& recipe, Settings& settings) {
+double Item::getYield(Recipe& recipe, Settings& settings) {
 	throw NotUsedException();
 }
 
@@ -60,7 +60,7 @@ bool Item::setBuyPrice(double buy_price) {
 	return false;
 }
 
-double Item::getBaseProc() {
+double Item::getBaseYield() {
 	throw NotUsedException();
 }
 

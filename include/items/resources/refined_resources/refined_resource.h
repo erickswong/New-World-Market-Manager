@@ -12,7 +12,7 @@ class RefinedResource : public Resource {
 
 		bool setBuyPrice(double buy_price) override;
 
-		double getBaseProc() override;
+		double getBaseYield() override;
 
 		double getBaseCraftTax() override;
 

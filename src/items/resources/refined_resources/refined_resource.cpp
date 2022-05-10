@@ -38,8 +38,8 @@ bool RefinedResource::setBuyPrice(double buy_price) {
 	return false;
 }
 
-double RefinedResource::getBaseProc() {
-	return base_proc;
+double RefinedResource::getBaseYield() {
+	return base_yield;
 }
 
 double RefinedResource::getBaseCraftTax() {

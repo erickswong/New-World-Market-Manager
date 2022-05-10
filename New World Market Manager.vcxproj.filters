@@ -61,6 +61,18 @@
     <ClCompile Include="src\settings\trade_skills.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\items\resources\refined_resources\planks\planks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\items\resources\refined_resources\cloths\cloths.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\items\resources\refined_resources\leathers\leathers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\items\resources\refined_resources\blocks\blocks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -143,6 +155,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\items\resources\refined_resources\planks\planks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\items\resources\refined_resources\cloths\cloths.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\items\resources\refined_resources\leathers\leathers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\items\resources\refined_resources\blocks\blocks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

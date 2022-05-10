@@ -1,6 +1,6 @@
 #pragma once
 
-#include <map>
+#include <unordered_map>
 #include <string>
 
 class Recipe {
@@ -10,8 +10,8 @@ class Recipe {
 
 		void addIngredient(const std::string& ingredient_name, int amount) const;
 
-		[[nodiscard]] std::map<std::string, int>* getRecipe() const;
+		[[nodiscard]] std::unordered_map<std::string, int>* getRecipe() const;
 
 	private:
-		std::map<std::string, int>* recipe;
+		std::unordered_map<std::string, int>* recipe;
 };

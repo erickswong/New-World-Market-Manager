@@ -115,11 +115,17 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\items\resources\refined_resources\blocks\blocks.cpp" />
+    <ClCompile Include="src\items\resources\refined_resources\leathers\leathers.cpp" />
+    <ClCompile Include="src\items\resources\refined_resources\cloths\cloths.cpp" />
+    <ClCompile Include="src\items\resources\refined_resources\planks\planks.cpp" />
     <ClCompile Include="src\settings\trade_skills.cpp" />
     <ClCompile Include="src\items\resources\refined_resources\ingots\ingots.cpp" />
     <ClCompile Include="src\settings\fort_bonuses.cpp" />
     <ClCompile Include="src\settings\taxes.cpp" />
     <ClCompile Include="src\settings\standing_bonuses.cpp" />
+    <ClInclude Include="include\items\resources\refined_resources\blocks\blocks.h" />
+    <ClInclude Include="include\items\resources\refined_resources\cloths\cloths.h" />
     <ClInclude Include="include\constants.h" />
     <ClInclude Include="include\settings\fort_bonuses.h" />
     <ClInclude Include="include\settings\armour_sets.h" />
@@ -136,6 +142,8 @@
     <ClInclude Include="include\settings\standing_bonuses.h" />
     <ClInclude Include="include\items\resources\refined_resources\ingots\ingots.h" />
     <ClInclude Include="include\settings\trade_skills.h" />
+    <ClInclude Include="include\items\resources\refined_resources\planks\planks.h" />
+    <ClInclude Include="include\items\resources\refined_resources\leathers\leathers.h" />
     <None Include="README.md" />
     <QtRcc Include="ui\marketmanager.qrc" />
     <QtUic Include="ui\marketmanager.ui" />

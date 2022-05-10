@@ -9,7 +9,7 @@ class ArmourSet {
 				  bool has_pants,
 				  bool has_shoes);
 
-		[[nodiscard]] double yieldBonus() const;
+		[[nodiscard]] int numberAcquired() const;
 
 		[[nodiscard]] bool getHasHelmet() const;
 		void setHasHelmet(bool has_helmet);
