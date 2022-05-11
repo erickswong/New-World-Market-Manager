@@ -1,8 +1,8 @@
 #pragma once
 
-static constexpr double LEVEL_YIELD_BONUS = 0.001;
+static constexpr float LEVEL_YIELD_BONUS = 0.001f;
 
-static constexpr double ARMOUR_YIELD_BONUS = 0.02;
+static constexpr float ARMOUR_YIELD_BONUS = 0.02f;
 
-static constexpr double FIRST_LIGHT_YIELD_BONUS = 0.1;
-static constexpr double WEAVERS_FEN_TAX_BONUS = 0.1;
+static constexpr float FIRST_LIGHT_YIELD_BONUS = 0.1f;
+static constexpr float WEAVERS_FEN_TAX_BONUS = 0.1f;

@@ -1,7 +1,5 @@
 #include "items/resources/resource.h"
 
-Resource::Resource() = default;
-
 bool Resource::getBuyEqualsSell() {
 	return buy_equals_sell;
 }
@@ -16,7 +14,7 @@ bool Resource::setBuyEqualsSell(const bool buy_equals_sell) {
 	return false;
 }
 
-bool Resource::setSellPrice(const double sell_price) {
+bool Resource::setSellPrice(const float sell_price) {
 	if (this->sell_price != sell_price) {
 		this->sell_price = sell_price;
 
@@ -28,11 +26,11 @@ bool Resource::setSellPrice(const double sell_price) {
 	return false;
 }
 
-double Resource::getBuyPrice() {
+float Resource::getBuyPrice() {
 	return buy_price;
 }
 
-bool Resource::setBuyPrice(const double buy_price) {
+bool Resource::setBuyPrice(const float buy_price) {
 	if (this->buy_price != buy_price) {
 		this->buy_price = buy_price;
 	}

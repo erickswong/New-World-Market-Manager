@@ -3,16 +3,16 @@
 class StandingBonuses {
 	public:
 		StandingBonuses();
-		StandingBonuses(double station_fee,
-						double trading_tax);
+		StandingBonuses(float station_fee,
+						float trading_tax);
 
-		[[nodiscard]] double getStationFee() const;
-		void setStationFee(double station_fee);
+		[[nodiscard]] float getStationFee() const;
+		void setStationFee(float station_fee);
 
-		[[nodiscard]] double getTradingTax() const;
-		void setTradingTax(double trading_tax);
+		[[nodiscard]] float getTradingTax() const;
+		void setTradingTax(float trading_tax);
 
 	private:
-		double station_fee = 0;
-		double trading_tax = 0;
+		float station_fee = 0.f;
+		float trading_tax = 0.f;
 };

@@ -9,11 +9,11 @@ class TradeSkills {
 			   int weaving_level,
 			   int stonecutting_level);
 
-		[[nodiscard]] double smeltingYieldBonus() const;
-		[[nodiscard]] double woodworkingYieldBonus() const;
-		[[nodiscard]] double leatherworkingYieldBonus() const;
-		[[nodiscard]] double weavingYieldBonus() const;
-		[[nodiscard]] double stonecuttingYieldBonus() const;
+		[[nodiscard]] float smeltingYieldBonus() const;
+		[[nodiscard]] float woodworkingYieldBonus() const;
+		[[nodiscard]] float leatherworkingYieldBonus() const;
+		[[nodiscard]] float weavingYieldBonus() const;
+		[[nodiscard]] float stonecuttingYieldBonus() const;
 
 		[[nodiscard]] int getSmeltingLevel() const;
 		void setSmeltingLevel(int smelting_level);

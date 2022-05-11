@@ -2,24 +2,24 @@
 
 StandingBonuses::StandingBonuses() = default;
 
-StandingBonuses::StandingBonuses(const double station_fee,
-								 const double trading_tax)
+StandingBonuses::StandingBonuses(const float station_fee,
+								 const float trading_tax)
 									 : station_fee(station_fee),
                                        trading_tax(trading_tax) {
 };
 
-double StandingBonuses::getStationFee() const {
+float StandingBonuses::getStationFee() const {
 	return station_fee;
 }
 
-void StandingBonuses::setStationFee(const double station_fee) {
+void StandingBonuses::setStationFee(const float station_fee) {
 	this->station_fee = station_fee;
 }
 
-double StandingBonuses::getTradingTax() const {
+float StandingBonuses::getTradingTax() const {
 	return trading_tax;
 }
 
-void StandingBonuses::setTradingTax(const double trading_tax) {
+void StandingBonuses::setTradingTax(const float trading_tax) {
 	this->trading_tax = trading_tax;
 }

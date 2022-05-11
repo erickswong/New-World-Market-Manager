@@ -6,8 +6,8 @@ class FortBonuses {
 		FortBonuses(bool has_first_light,
 					bool has_weavers_fen);
 
-		[[nodiscard]] double yieldBonus() const;
-		[[nodiscard]] double taxBonus() const;
+		[[nodiscard]] float yieldBonus() const;
+		[[nodiscard]] float taxBonus() const;
 
 		[[nodiscard]] bool getHasFirstLight() const;
 		void setHasFirstLight(bool has_first_light);

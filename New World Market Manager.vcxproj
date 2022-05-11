@@ -144,6 +144,7 @@
     <ClInclude Include="include\settings\trade_skills.h" />
     <ClInclude Include="include\items\resources\refined_resources\planks\planks.h" />
     <ClInclude Include="include\items\resources\refined_resources\leathers\leathers.h" />
+    <None Include="cpp.hint" />
     <None Include="README.md" />
     <QtRcc Include="ui\marketmanager.qrc" />
     <QtUic Include="ui\marketmanager.ui" />

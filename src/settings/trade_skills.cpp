@@ -16,23 +16,23 @@ TradeSkills::TradeSkills(const int smelting_level,
                      stonecutting_level(stonecutting_level) {
 }
 
-double TradeSkills::smeltingYieldBonus() const {
+float TradeSkills::smeltingYieldBonus() const {
     return LEVEL_YIELD_BONUS * smelting_level;
 }
 
-double TradeSkills::woodworkingYieldBonus() const {
+float TradeSkills::woodworkingYieldBonus() const {
     return LEVEL_YIELD_BONUS * woodworking_level;
 }
 
-double TradeSkills::leatherworkingYieldBonus() const {
+float TradeSkills::leatherworkingYieldBonus() const {
     return LEVEL_YIELD_BONUS * leatherworking_level;
 }
 
-double TradeSkills::weavingYieldBonus() const {
+float TradeSkills::weavingYieldBonus() const {
     return LEVEL_YIELD_BONUS * weaving_level;
 }
 
-double TradeSkills::stonecuttingYieldBonus() const {
+float TradeSkills::stonecuttingYieldBonus() const {
     return LEVEL_YIELD_BONUS * stonecutting_level;
 }
 

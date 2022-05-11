@@ -4,25 +4,21 @@
 
 #include "exceptions.h"
 
-Item::Item() = default;
+Item::~Item() = default;
 
-Item::~Item() {
-	delete recipes;
+float Item::getBestInstantAcquireCost() {
+	return std::min(sell_price, analysis.best_instant_craft_cost);
 }
 
-double Item::getBestInstantAcquireCost() {
-	return std::min(sell_price, analysis.instant_craft_cost);
+float Item::getBestAcquireCost() {
+	return std::min({ sell_price, analysis.best_instant_craft_cost, analysis.best_craft_cost, buy_price });
 }
 
-double Item::getBestAcquireCost() {
-	return std::min({ sell_price, analysis.instant_craft_cost, analysis.best_craft_cost, buy_price });
-}
-
-double Item::getCraftTax(Settings& settings) {
+float Item::getCraftTax(Settings& settings) {
 	throw NotUsedException();
 }
 
-double Item::getYield(Recipe& recipe, Settings& settings) {
+float Item::getYield(Recipe& recipe, Settings& settings) {
 	throw NotUsedException();
 }
 
@@ -38,37 +34,37 @@ bool Item::getBuyEqualsSell() {
 	throw NotUsedException();
 }
 
-bool Item::setBuyEqualsSell(bool buy_equals_sell) {
+bool Item::setBuyEqualsSell(const bool buy_equals_sell) {
 	return false;
 }
 
-double Item::getSellPrice() {
+float Item::getSellPrice() {
 	return sell_price;
 }
 
-bool Item::setSellPrice(double sell_price) {
+bool Item::setSellPrice(const float sell_price) {
 	this->sell_price = sell_price;
 
 	return false;
 }
 
-double Item::getBuyPrice() {
+float Item::getBuyPrice() {
 	throw NotUsedException();
 }
 
-bool Item::setBuyPrice(double buy_price) {
+bool Item::setBuyPrice(const float buy_price) {
 	return false;
 }
 
-double Item::getBaseYield() {
+float Item::getBaseYield() {
 	throw NotUsedException();
 }
 
-double Item::getBaseCraftTax() {
+float Item::getBaseCraftTax() {
 	throw NotUsedException();
 }
 
-Recipes* Item::getRecipes() {
+Recipes& Item::getRecipes() {
 	throw NotUsedException();
 }
 

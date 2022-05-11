@@ -3,8 +3,8 @@
 RawResource::RawResource(const std::string& item_name,
 						 const int tier,
                          const bool buy_equals_sell,
-                         const double sell_price,
-                         const double buy_price,
+                         const float sell_price,
+                         const float buy_price,
                          const std::string& image_path) {
 	this->item_name = item_name;
 	this->tier = tier;

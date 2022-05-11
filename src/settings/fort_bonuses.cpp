@@ -10,11 +10,11 @@ FortBonuses::FortBonuses(const bool has_first_light,
                                has_weavers_fen(has_weavers_fen) {
 }
 
-double FortBonuses::yieldBonus() const {
+float FortBonuses::yieldBonus() const {
 	return FIRST_LIGHT_YIELD_BONUS * has_first_light;
 }
 
-double FortBonuses::taxBonus() const {
+float FortBonuses::taxBonus() const {
 	return WEAVERS_FEN_TAX_BONUS * has_weavers_fen;
 }
 

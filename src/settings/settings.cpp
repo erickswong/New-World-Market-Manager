@@ -14,23 +14,23 @@ Settings::Settings(TradeSkills trade_skills,
                          fort_bonuses(fort_bonuses) {
 }
 
-double Settings::smeltingYieldBonus() const {
+float Settings::smeltingYieldBonus() const {
     return trade_skills.smeltingYieldBonus() + armour_sets.smeltingYieldBonus() + fort_bonuses.yieldBonus();
 }
 
-double Settings::woodworkingYieldBonus() const {
+float Settings::woodworkingYieldBonus() const {
     return trade_skills.woodworkingYieldBonus() + armour_sets.woodworkingYieldBonus() + fort_bonuses.yieldBonus();
 }
 
-double Settings::leatherworkingYieldBonus() const {
+float Settings::leatherworkingYieldBonus() const {
     return trade_skills.leatherworkingYieldBonus() + armour_sets.leatherworkingYieldBonus() + fort_bonuses.yieldBonus();
 }
 
-double Settings::weavingYieldBonus() const {
+float Settings::weavingYieldBonus() const {
     return trade_skills.weavingYieldBonus() + armour_sets.weavingYieldBonus() + fort_bonuses.yieldBonus();
 }
 
-double Settings::stonecuttingYieldBonus() const {
+float Settings::stonecuttingYieldBonus() const {
     return trade_skills.stonecuttingYieldBonus() + armour_sets.stonecuttingYieldBonus() + fort_bonuses.yieldBonus();
 }
 

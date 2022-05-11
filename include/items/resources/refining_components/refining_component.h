@@ -7,7 +7,7 @@ class RefiningComponent final : public Resource {
 		RefiningComponent(const std::string& item_name,
 						  int tier,
 						  bool buy_equals_sell,
-						  double sell_price,
-						  double buy_price,
+						  float sell_price,
+						  float buy_price,
 						  const std::string& image_path);
 };

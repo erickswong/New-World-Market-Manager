@@ -1,13 +1,15 @@
+#include <algorithm>
+
 #include "items/resources/refined_resources/planks/planks.h"
 
 Planks::Planks(const std::string& item_name,
-			   int tier,
-			   bool buy_equals_sell,
-			   double sell_price,
-			   double buy_price,
-			   double base_yield,
-			   double base_craft_tax,
-			   Recipes* recipes,
+               const int tier,
+			   const bool buy_equals_sell,
+			   const float sell_price,
+			   const float buy_price,
+			   const float base_yield,
+			   const float base_craft_tax,
+			   const Recipes recipes,
 			   const std::string& image_path) {
 	this->item_name = item_name;
 	this->tier = tier;
@@ -20,15 +22,15 @@ Planks::Planks(const std::string& item_name,
 	this->image_path = image_path;
 }
 
-double Planks::getCraftTax(Settings& settings) {
+float Planks::getCraftTax(Settings& settings) {
 	// TODO: implement craft_tax modifiers from settings
 	return base_craft_tax;
 }
 
-double Planks::getYield(Recipe& recipe, Settings& settings) {
+float Planks::getYield(Recipe& recipe, Settings& settings) {
 	// Determine the tier of the refining component in the given recipe
 	int refining_component_tier = 0;
-	for (const auto& [ingredient_name, amount] : *recipe.getRecipe()) {
+	for (const auto& [ingredient_name, amount] : recipe.getRecipe()) {
 		if (ingredient_name == "Obsidian Sandpaper") {
 			refining_component_tier = 5;
 			break;
@@ -44,8 +46,8 @@ double Planks::getYield(Recipe& recipe, Settings& settings) {
 	}
 
 	// Calculate the yield
-	const double yield = base_yield + settings.woodworkingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
+	const float yield = base_yield + settings.woodworkingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
 
 	// Return the yield
-	return std::max(1.0, yield);
+	return std::max(1.0f, yield);
 }

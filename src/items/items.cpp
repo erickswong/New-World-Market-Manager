@@ -1,34 +1,31 @@
-#include "items/items.h"
+#include <cmath>
 
-Items::Items() : items(new std::unordered_map<std::string, Item*>()) {
-}
+#include "items/items.h"
 
 Items::~Items() {
 	// Delete each item in items
-	for (const auto& [item_name, item] : *items) {
+	for (const auto& [item_name, item] : items) {
 		delete item;
 	}
-
-	delete items;
 }
 
-void Items::addItem(const std::string& item_name, Item* item) const {
-	items->insert({ item_name, item });
+void Items::addItem(const std::string& item_name, Item* item) {
+	items.insert({ item_name, item });
 }
 
-double Items::getItemBestInstantAcquireCost(const std::string& item_name) const {
+float Items::getItemBestInstantAcquireCost(const std::string& item_name) const {
 	return getItem(item_name)->getBestInstantAcquireCost();
 }
 
-double Items::getItemBestAcquireCost(const std::string& item_name) const {
+float Items::getItemBestAcquireCost(const std::string& item_name) const {
 	return getItem(item_name)->getBestAcquireCost();
 }
 
-double Items::getItemCraftTax(const std::string& item_name, Settings& settings) const {
+float Items::getItemCraftTax(const std::string& item_name, Settings& settings) const {
 	return getItem(item_name)->getCraftTax(settings);
 }
 
-double Items::getItemYield(const std::string& item_name, Recipe& recipe, Settings& settings) const {
+float Items::getItemYield(const std::string& item_name, Recipe& recipe, Settings& settings) const {
 	return getItem(item_name)->getYield(recipe, settings);
 }
 
@@ -46,35 +43,35 @@ void Items::setItemBuyEqualsSell(const std::string& item_name, const bool buy_eq
 	}
 }
 
-double Items::getItemSellPrice(const std::string& item_name) const {
+float Items::getItemSellPrice(const std::string& item_name) const {
 	return getItem(item_name)->getSellPrice();
 }
 
-void Items::setItemSellPrice(const std::string& item_name, const double sell_price, Settings& settings) const {
+void Items::setItemSellPrice(const std::string& item_name, const float sell_price, Settings& settings) const {
 	if (getItem(item_name)->setSellPrice(sell_price)) {
 		analyzeItem(item_name, settings);
 	}
 }
 
-double Items::getItemBuyPrice(const std::string& item_name) const {
+float Items::getItemBuyPrice(const std::string& item_name) const {
 	return getItem(item_name)->getBuyPrice();
 }
 
-void Items::setItemBuyPrice(const std::string& item_name, const double buy_price, Settings& settings) const {
+void Items::setItemBuyPrice(const std::string& item_name, const float buy_price, Settings& settings) const {
 	if (getItem(item_name)->setBuyPrice(buy_price)) {
 		analyzeItem(item_name, settings);
 	}
 }
 
-double Items::getItemBaseProc(const std::string& item_name) const {
+float Items::getItemBaseProc(const std::string& item_name) const {
 	return getItem(item_name)->getBaseYield();
 }
 
-double Items::getItemBaseCraftTax(const std::string& item_name) const {
+float Items::getItemBaseCraftTax(const std::string& item_name) const {
 	return getItem(item_name)->getBaseCraftTax();
 }
 
-Recipes* Items::getItemRecipes(const std::string& item_name) const {
+Recipes& Items::getItemRecipes(const std::string& item_name) const {
 	return getItem(item_name)->getRecipes();
 }
 
@@ -86,60 +83,78 @@ ItemAnalysis& Items::getItemAnalysis(const std::string& item_name) const {
 	return getItem(item_name)->getAnalysis();
 }
 
-std::unordered_map<std::string, Item*>* Items::getItems() const {
+std::unordered_map<std::string, Item*> Items::getItems() const {
 	return items;
 }
 
 Item* Items::getItem(const std::string& item_name) const {
-	return items->at(item_name);
+	return items.at(item_name);
 }
 
 void Items::analyzeItem(const std::string& item_name, Settings& settings) const {
-	auto& [instant_craft_cost, best_craft_cost, instant_profit_margin, best_profit_margin] = getItemAnalysis(item_name);
-	const double sell_price = getItemSellPrice(item_name);
+	auto& [best_instant_craft_cost, best_craft_cost, best_instant_profit_margin, best_profit_margin, best_instant_recipe, best_recipe] = getItemAnalysis(item_name);
+	const float sell_price = getItemSellPrice(item_name);
+	const std::tuple<Recipe*, float> best_instant_craft = itemBestInstantCraftCost(item_name, settings);
+	const std::tuple<Recipe*, float> best_craft = itemBestCraftCost(item_name, settings);
 
-	instant_craft_cost = itemBestInstantCraftCost(item_name, settings);
-	best_craft_cost = itemBestCraftCost(item_name, settings);
-	instant_profit_margin = profitMargin(sell_price, instant_craft_cost);
+	best_instant_craft_cost = std::get<1>(best_instant_craft);
+	best_craft_cost = std::get<1>(best_craft);
+	best_instant_profit_margin = profitMargin(sell_price, best_instant_craft_cost);
 	best_profit_margin = profitMargin(sell_price, best_craft_cost);
+	best_instant_recipe = *std::get<0>(best_instant_craft);
+	best_recipe = *std::get<0>(best_craft);
 }
 
-double Items::itemBestInstantCraftCost(const std::string& item_name, Settings& settings) const {
-	double best_instant_craft_cost = HUGE_VAL;
-
-	for (Recipe& recipe : *getItemRecipes(item_name)->getRecipes()) {
-		double recipe_cost = 0;
-
-		for (const auto& [ingredient_name, amount] : *recipe.getRecipe()) {
+std::tuple<Recipe*, float> Items::itemBestInstantCraftCost(const std::string& item_name, Settings& settings) const {
+	Recipe* best_instant_craft_recipe = nullptr;
+	float best_instant_craft_cost = INFINITY;
+	
+	for (Recipe& recipe : getItemRecipes(item_name).getRecipes()) {
+		// Calculate the total cost of the ingredients in the recipe
+		float recipe_cost = 0.f;
+		for (const auto& [ingredient_name, amount] : recipe.getRecipe()) {
 			recipe_cost += amount * getItemBestInstantAcquireCost(ingredient_name);
 		}
 
-		double instant_craft_cost = (recipe_cost + getItemCraftTax(item_name, settings)) / getItemYield(item_name, recipe, settings);
+		// Calculate the instant craft cost of the recipe
+		const float instant_craft_cost = (recipe_cost + getItemCraftTax(item_name, settings)) / getItemYield(item_name, recipe, settings);
 
-		best_instant_craft_cost = std::min(best_instant_craft_cost, instant_craft_cost);
+		// Update best instant craft if current instant craft is better
+		if (instant_craft_cost < best_instant_craft_cost) {
+			best_instant_craft_recipe = &recipe;
+			best_instant_craft_cost = instant_craft_cost;
+		}
 	}
 
-	return best_instant_craft_cost;
+	// Return the best instant craft
+	return { best_instant_craft_recipe, best_instant_craft_cost };
 }
 
-double Items::itemBestCraftCost(const std::string& item_name, Settings& settings) const {
-	double best_craft_cost = HUGE_VAL;
+std::tuple<Recipe*, float> Items::itemBestCraftCost(const std::string& item_name, Settings& settings) const {
+	Recipe* best_craft_recipe = nullptr;
+	float best_craft_cost = INFINITY;
 
-	for (Recipe& recipe : *getItemRecipes(item_name)->getRecipes()) {
-		double recipe_cost = 0;
-
-		for (const auto& [ingredient_name, amount] : *recipe.getRecipe()) {
+	for (Recipe& recipe : getItemRecipes(item_name).getRecipes()) {
+		// Calculate the total cost of the ingredients in the recipe
+		float recipe_cost = 0.f;
+		for (const auto& [ingredient_name, amount] : recipe.getRecipe()) {
 			recipe_cost += amount * getItemBestAcquireCost(ingredient_name);
 		}
 
-		double craft_cost = (recipe_cost + getItemCraftTax(item_name, settings)) / getItemYield(item_name, recipe, settings);
+		// Calculate the craft cost of the recipe
+		const float craft_cost = (recipe_cost + getItemCraftTax(item_name, settings)) / getItemYield(item_name, recipe, settings);
 
-		best_craft_cost = std::min(best_craft_cost, craft_cost);
+		// Update the best craft is current craft is better
+		if (craft_cost < best_craft_cost) {
+			best_craft_recipe = &recipe;
+			best_craft_cost = craft_cost;
+		}
 	}
 
-	return best_craft_cost;
+	// Return the best craft
+	return { best_craft_recipe, best_craft_cost };
 }
 
-double Items::profitMargin(const double sell_price, const double acquire_cost) {
+float Items::profitMargin(const float sell_price, const float acquire_cost) {
 	return (sell_price - acquire_cost) / sell_price;
 }

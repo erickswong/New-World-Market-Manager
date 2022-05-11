@@ -1,16 +1,9 @@
 #include "recipes/recipes.h"
 
-Recipes::Recipes() : recipes(new std::vector<Recipe>) {
+void Recipes::addRecipe(const Recipe& recipe) {
+	recipes.push_back(recipe);
 }
 
-Recipes::~Recipes() {
-	delete recipes;
-}
-
-void Recipes::addRecipe(const Recipe& recipe) const {
-	recipes->push_back(recipe);
-}
-
-std::vector<Recipe>* Recipes::getRecipes() const {
+std::vector<Recipe> Recipes::getRecipes() const {
 	return recipes;
 }

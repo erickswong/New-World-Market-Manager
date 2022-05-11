@@ -16,23 +16,23 @@ ArmourSets::ArmourSets(const ArmourSet smelter_set,
                              stonecutter_set(stonecutter_set) {
 }
 
-double ArmourSets::smeltingYieldBonus() const {
+float ArmourSets::smeltingYieldBonus() const {
     return ARMOUR_YIELD_BONUS * smelter_set.numberAcquired();
 }
 
-double ArmourSets::woodworkingYieldBonus() const {
+float ArmourSets::woodworkingYieldBonus() const {
     return ARMOUR_YIELD_BONUS * woodworker_set.numberAcquired();
 }
 
-double ArmourSets::leatherworkingYieldBonus() const {
+float ArmourSets::leatherworkingYieldBonus() const {
     return ARMOUR_YIELD_BONUS * weaver_set.numberAcquired();
 }
 
-double ArmourSets::weavingYieldBonus() const {
+float ArmourSets::weavingYieldBonus() const {
     return ARMOUR_YIELD_BONUS * tanner_set.numberAcquired();
 }
 
-double ArmourSets::stonecuttingYieldBonus() const {
+float ArmourSets::stonecuttingYieldBonus() const {
     return ARMOUR_YIELD_BONUS * stonecutter_set.numberAcquired();
 }
 

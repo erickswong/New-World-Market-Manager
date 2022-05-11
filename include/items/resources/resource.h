@@ -4,13 +4,11 @@
 
 class Resource : public Item {
 	public:
-		Resource();
-
 		bool getBuyEqualsSell() override;
 		bool setBuyEqualsSell(bool buy_equals_sell) override;
 		
-		bool setSellPrice(double sell_price) override;
+		bool setSellPrice(float sell_price) override;
 
-		double getBuyPrice() override;
-		bool setBuyPrice(double buy_price) override;
+		float getBuyPrice() override;
+		bool setBuyPrice(float buy_price) override;
 };
