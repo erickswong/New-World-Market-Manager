@@ -11,9 +11,6 @@ MarketManager::MarketManager(QWidget *parent)
 
     // Apply drop shadow effect
     setDropShadow();
-
-    // Set cursor shapes at border for resizing
-    setBorderCursors();
 }
 
 MarketManager::~MarketManager() {
@@ -25,7 +22,7 @@ void MarketManager::mousePressEvent(QMouseEvent* event) {
 	const QPointF mouse_pos = event->position();
 
     // Move or resize window
-    if (QRectF(ui.frame_title->rect()).contains(ui.frame_title->mapFromGlobal(mouse_global_pos))) {
+    if (QRectF(ui.widget_title->rect()).contains(ui.widget_title->mapFromGlobal(mouse_global_pos))) {
         if (this->isMaximized()) {
             setNormal();
         }
@@ -62,7 +59,7 @@ void MarketManager::mousePressEvent(QMouseEvent* event) {
 void MarketManager::mouseDoubleClickEvent(QMouseEvent* event) {
 	const QPointF mouse_global_pos = event->globalPosition();
 
-	if (QRectF(ui.frame_title->rect()).contains(ui.frame_title->mapFromGlobal(mouse_global_pos))) {
+	if (QRectF(ui.widget_title->rect()).contains(ui.widget_title->mapFromGlobal(mouse_global_pos))) {
         on_maximize_restore_clicked();
     }
 }
@@ -94,25 +91,6 @@ void MarketManager::setDropShadow() {
     shadow->setYOffset(0);
     shadow->setColor(QColor(0, 0, 0, 200));
     ui.drop_shadow_frame->setGraphicsEffect(shadow);
-}
-
-void MarketManager::setBorderCursors() const {
-    ui.border_top_left->setCursor(Qt::SizeFDiagCursor);
-    ui.border_top_left_r->setCursor(Qt::SizeFDiagCursor);
-    ui.border_top_left_b->setCursor(Qt::SizeFDiagCursor);
-    ui.border_top->setCursor(Qt::SizeVerCursor);
-    ui.border_top_right->setCursor(Qt::SizeBDiagCursor);
-    ui.border_top_right_l->setCursor(Qt::SizeBDiagCursor);
-    ui.border_top_right_b->setCursor(Qt::SizeBDiagCursor);
-    ui.border_left->setCursor(Qt::SizeHorCursor);
-    ui.border_right->setCursor(Qt::SizeHorCursor);
-    ui.border_bottom_left->setCursor(Qt::SizeBDiagCursor);
-    ui.border_bottom_left_t->setCursor(Qt::SizeBDiagCursor);
-    ui.border_bottom_left_r->setCursor(Qt::SizeBDiagCursor);
-    ui.border_bottom->setCursor(Qt::SizeVerCursor);
-    ui.border_bottom_right->setCursor(Qt::SizeFDiagCursor);
-    ui.border_bottom_right_t->setCursor(Qt::SizeFDiagCursor);
-    ui.border_bottom_right_l->setCursor(Qt::SizeFDiagCursor);
 }
 
 void MarketManager::setNormal() const {

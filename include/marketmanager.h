@@ -27,7 +27,6 @@ class MarketManager final : public QMainWindow {
         QGraphicsDropShadowEffect* shadow;
 
         void setDropShadow();
-        void setBorderCursors() const;
-        void setNormal() const;
-        void setMaximized() const;
+        void setNormal() const;    // TODO: update stylesheet to new ui
+        void setMaximized() const; // TODO: update stylesheet to new ui
 };

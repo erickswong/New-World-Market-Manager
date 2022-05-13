@@ -77,5 +77,15 @@
         <file>images/items/resources/refining_components/tannin.png</file>
         <file>images/items/resources/refining_components/weak_solvent.png</file>
         <file>images/items/resources/refining_components/wireweave.png</file>
+        <file>images/tradeskill_bar/leatherworking_off.png</file>
+        <file>images/tradeskill_bar/leatherworking_on.png</file>
+        <file>images/tradeskill_bar/smelting_off.png</file>
+        <file>images/tradeskill_bar/smelting_on.png</file>
+        <file>images/tradeskill_bar/stonecutting_off.png</file>
+        <file>images/tradeskill_bar/stonecutting_on.png</file>
+        <file>images/tradeskill_bar/weaving_off.png</file>
+        <file>images/tradeskill_bar/weaving_on.png</file>
+        <file>images/tradeskill_bar/woodworking_off.png</file>
+        <file>images/tradeskill_bar/woodworking_on.png</file>
     </qresource>
 </RCC>
