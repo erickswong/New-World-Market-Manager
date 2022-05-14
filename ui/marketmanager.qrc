@@ -1,12 +1,5 @@
 <RCC>
     <qresource prefix="/MarketManager">
-        <file>images/title_bar/close.png</file>
-        <file>images/title_bar/minimize.png</file>
-        <file>images/title_bar/maximize.png</file>
-        <file>images/title_bar/restore_down.png</file>
-        <file>images/side_bar/home.png</file>
-        <file>images/side_bar/settings.png</file>
-        <file>images/title_bar/icon.png</file>
         <file>images/items/resources/raw_resources/ores/iron_ore.png</file>
         <file>images/items/resources/raw_resources/ores/orichalcum_ore.png</file>
         <file>images/items/resources/raw_resources/ores/starmetal_ore.png</file>
@@ -77,15 +70,23 @@
         <file>images/items/resources/refining_components/tannin.png</file>
         <file>images/items/resources/refining_components/weak_solvent.png</file>
         <file>images/items/resources/refining_components/wireweave.png</file>
-        <file>images/tradeskill_bar/leatherworking_off.png</file>
-        <file>images/tradeskill_bar/leatherworking_on.png</file>
-        <file>images/tradeskill_bar/smelting_off.png</file>
-        <file>images/tradeskill_bar/smelting_on.png</file>
-        <file>images/tradeskill_bar/stonecutting_off.png</file>
-        <file>images/tradeskill_bar/stonecutting_on.png</file>
-        <file>images/tradeskill_bar/weaving_off.png</file>
-        <file>images/tradeskill_bar/weaving_on.png</file>
-        <file>images/tradeskill_bar/woodworking_off.png</file>
-        <file>images/tradeskill_bar/woodworking_on.png</file>
+        <file>images/ui/header_bar/close.png</file>
+        <file>images/ui/header_bar/maximize.png</file>
+        <file>images/ui/header_bar/minimize.png</file>
+        <file>images/ui/header_bar/restore_down.png</file>
+        <file>images/ui/menu_bar/icon.png</file>
+        <file>images/ui/menu_bar/leatherworking_off.png</file>
+        <file>images/ui/menu_bar/leatherworking_on.png</file>
+        <file>images/ui/menu_bar/settings.png</file>
+        <file>images/ui/menu_bar/smelting_off.png</file>
+        <file>images/ui/menu_bar/smelting_on.png</file>
+        <file>images/ui/menu_bar/stonecutting_off.png</file>
+        <file>images/ui/menu_bar/stonecutting_on.png</file>
+        <file>images/ui/menu_bar/weaving_off.png</file>
+        <file>images/ui/menu_bar/weaving_on.png</file>
+        <file>images/ui/menu_bar/woodworking_off.png</file>
+        <file>images/ui/menu_bar/woodworking_on.png</file>
+        <file>images/ui/header_bar/collapse_menu.png</file>
+        <file>images/ui/header_bar/expand_menu.png</file>
     </qresource>
 </RCC>

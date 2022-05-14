@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1080</width>
-    <height>720</height>
+    <height>725</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -23,6 +23,9 @@
    <double>1.000000000000000</double>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
     <property name="leftMargin">
      <number>0</number>
@@ -39,321 +42,6 @@
     <property name="spacing">
      <number>0</number>
     </property>
-    <item row="3" column="7">
-     <widget class="QFrame" name="border_top_right_b">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeBDiagCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="7">
-     <widget class="QFrame" name="border_bottom_right_t">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeFDiagCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <property name="lineWidth">
-       <number>1</number>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="3">
-     <widget class="QFrame" name="border_bottom_left_r">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeBDiagCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QFrame" name="border_bottom_left">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeBDiagCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="6">
-     <widget class="QFrame" name="border_bottom_right_l">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeFDiagCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="7">
-     <widget class="QFrame" name="border_bottom_right">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeFDiagCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QFrame" name="border_bottom_left_t">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeBDiagCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QFrame" name="border_top_left_b">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeFDiagCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QFrame" name="border_top_left">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeFDiagCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3">
-     <widget class="QFrame" name="border_top_left_r">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeFDiagCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="6">
-     <widget class="QFrame" name="border_top_right_l">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeBDiagCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="7">
-     <widget class="QFrame" name="border_top_right">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>10</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeBDiagCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="3" rowspan="4" colspan="4">
      <widget class="QFrame" name="drop_shadow_frame">
       <property name="sizePolicy">
@@ -363,9 +51,10 @@
        </sizepolicy>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(37, 37, 38, 255), stop:0.5 rgba(31, 31, 31, 255));
+       <string notr="true">#drop_shadow_frame {
+background-color: rgb(33, 43, 51);
 border-radius: 10px;
-</string>
+}</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -390,14 +79,13 @@ border-radius: 10px;
         <number>0</number>
        </property>
        <item>
-        <widget class="QWidget" name="widget_7" native="true">
+        <widget class="QWidget" name="super_widget" native="true">
          <property name="styleSheet">
-          <string notr="true">background-color: none;
-border-radius: 0px;</string>
+          <string notr="true"/>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_8">
           <property name="spacing">
-           <number>0</number>
+           <number>5</number>
           </property>
           <property name="leftMargin">
            <number>0</number>
@@ -412,13 +100,22 @@ border-radius: 0px;</string>
            <number>0</number>
           </property>
           <item>
-           <widget class="QWidget" name="widget_6" native="true">
+           <widget class="QWidget" name="menu_bar" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="palette">
              <palette>
               <active/>
               <inactive/>
               <disabled/>
              </palette>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_4">
              <property name="spacing">
@@ -436,8 +133,8 @@ border-radius: 0px;</string>
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item>
-              <widget class="QWidget" name="widget_9" native="true">
+             <item alignment="Qt::AlignTop">
+              <widget class="QWidget" name="menu_header" native="true">
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
@@ -445,36 +142,39 @@ border-radius: 0px;</string>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color: none;</string>
+                <string notr="true">#menu_header {
+background-color: rgb(61, 80, 95);
+border-top-left-radius: 10px;
+}</string>
                </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_9">
+               <layout class="QHBoxLayout" name="horizontalLayout">
                 <property name="spacing">
                  <number>0</number>
                 </property>
                 <property name="leftMargin">
-                 <number>0</number>
+                 <number>5</number>
                 </property>
                 <property name="topMargin">
-                 <number>0</number>
+                 <number>5</number>
                 </property>
                 <property name="rightMargin">
-                 <number>0</number>
+                 <number>5</number>
                 </property>
                 <property name="bottomMargin">
-                 <number>0</number>
+                 <number>5</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label">
+                 <widget class="QLabel" name="menu_header_label">
                   <property name="minimumSize">
                    <size>
-                    <width>75</width>
-                    <height>50</height>
+                    <width>65</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>75</width>
-                    <height>50</height>
+                    <width>65</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="autoFillBackground">
@@ -487,42 +187,13 @@ border-radius: 0px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="marketmanager.qrc">:/MarketManager/images/title_bar/icon.png</pixmap>
+                   <pixmap resource="marketmanager.qrc">:/MarketManager/images/ui/menu_bar/icon.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
                   </property>
                   <property name="margin">
-                   <number>5</number>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="label_2">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>50</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>50</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Calibri</family>
-                    <pointsize>16</pointsize>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color: rgb(60, 231, 195);</string>
-                  </property>
-                  <property name="text">
-                   <string>New World Market Manager</string>
+                   <number>0</number>
                   </property>
                  </widget>
                 </item>
@@ -530,25 +201,54 @@ border-radius: 0px;</string>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" name="widget_10" native="true">
+              <widget class="QWidget" name="menu_buttons" native="true">
+               <property name="styleSheet">
+                <string notr="true">#menu_buttons {
+background-color: rgba(61, 80, 95, 100);
+}
+#menu_buttons QToolButton {
+border: none;
+}
+#menu_buttons QToolButton:hover {
+background-color: rgba(33, 43, 51, 100);
+}
+#menu_buttons QToolButton:checked {
+background-color: rgb(33, 43, 51);
+}</string>
+               </property>
                <layout class="QVBoxLayout" name="verticalLayout_5">
+                <property name="spacing">
+                 <number>5</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>5</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>5</number>
+                </property>
                 <item>
-                 <widget class="QPushButton" name="smelting_button">
+                 <widget class="QToolButton" name="smelting_button">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>150</width>
-                    <height>75</height>
+                    <width>80</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777213</width>
+                    <width>16777215</width>
                     <height>16777215</height>
                    </size>
                   </property>
@@ -561,58 +261,66 @@ border-radius: 0px;</string>
                   <property name="font">
                    <font>
                     <pointsize>16</pointsize>
+                    <bold>false</bold>
                    </font>
                   </property>
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
                   <property name="styleSheet">
-                   <string notr="true">QPushButton:hover {
-	background-color: rgba(100, 100, 100, 100);
-}
-QPushButton:checked {
-	background-color: rgba(100,100,100, 150);
-}</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string/>
+                   <string>Smelting</string>
                   </property>
                   <property name="icon">
                    <iconset resource="marketmanager.qrc">
-                    <normaloff>:/MarketManager/images/tradeskill_bar/smelting_off.png</normaloff>
-                    <normalon>:/MarketManager/images/tradeskill_bar/smelting_on.png</normalon>:/MarketManager/images/tradeskill_bar/smelting_off.png</iconset>
+                    <normaloff>:/MarketManager/images/ui/menu_bar/smelting_off.png</normaloff>
+                    <normalon>:/MarketManager/images/ui/menu_bar/smelting_on.png</normalon>:/MarketManager/images/ui/menu_bar/smelting_off.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>150</width>
-                    <height>75</height>
+                    <width>80</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="checkable">
                    <bool>true</bool>
                   </property>
                   <property name="checked">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="autoRepeat">
                    <bool>false</bool>
                   </property>
+                  <property name="toolButtonStyle">
+                   <enum>Qt::ToolButtonIconOnly</enum>
+                  </property>
+                  <property name="autoRaise">
+                   <bool>false</bool>
+                  </property>
+                  <property name="arrowType">
+                   <enum>Qt::NoArrow</enum>
+                  </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="woodworking_button">
+                 <widget class="QToolButton" name="woodworking_button">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>150</width>
-                    <height>75</height>
+                    <width>80</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777213</width>
+                    <width>16777215</width>
                     <height>16777215</height>
                    </size>
                   </property>
@@ -628,25 +336,20 @@ QPushButton:checked {
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">QPushButton:hover {
-	background-color: rgba(100, 100, 100, 100);
-}
-QPushButton:checked {
-	background-color: rgba(100,100,100, 150);
-}</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string/>
+                   <string>Woodworking</string>
                   </property>
                   <property name="icon">
                    <iconset resource="marketmanager.qrc">
-                    <normaloff>:/MarketManager/images/tradeskill_bar/woodworking_off.png</normaloff>
-                    <normalon>:/MarketManager/images/tradeskill_bar/woodworking_on.png</normalon>:/MarketManager/images/tradeskill_bar/woodworking_off.png</iconset>
+                    <normaloff>:/MarketManager/images/ui/menu_bar/woodworking_off.png</normaloff>
+                    <normalon>:/MarketManager/images/ui/menu_bar/woodworking_on.png</normalon>:/MarketManager/images/ui/menu_bar/woodworking_off.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>150</width>
-                    <height>75</height>
+                    <width>80</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="checkable">
@@ -655,25 +358,28 @@ QPushButton:checked {
                   <property name="autoRepeat">
                    <bool>false</bool>
                   </property>
+                  <property name="toolButtonStyle">
+                   <enum>Qt::ToolButtonIconOnly</enum>
+                  </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="weaving_button">
+                 <widget class="QToolButton" name="weaving_button">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>150</width>
-                    <height>75</height>
+                    <width>80</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777213</width>
+                    <width>16777215</width>
                     <height>16777215</height>
                    </size>
                   </property>
@@ -689,25 +395,20 @@ QPushButton:checked {
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">QPushButton:hover {
-	background-color: rgba(100, 100, 100, 100);
-}
-QPushButton:checked {
-	background-color: rgba(100,100,100, 150);
-}</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string/>
+                   <string>Weaving</string>
                   </property>
                   <property name="icon">
                    <iconset resource="marketmanager.qrc">
-                    <normaloff>:/MarketManager/images/tradeskill_bar/weaving_off.png</normaloff>
-                    <normalon>:/MarketManager/images/tradeskill_bar/weaving_on.png</normalon>:/MarketManager/images/tradeskill_bar/weaving_off.png</iconset>
+                    <normaloff>:/MarketManager/images/ui/menu_bar/weaving_off.png</normaloff>
+                    <normalon>:/MarketManager/images/ui/menu_bar/weaving_on.png</normalon>:/MarketManager/images/ui/menu_bar/weaving_off.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>150</width>
-                    <height>75</height>
+                    <width>80</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="checkable">
@@ -716,25 +417,28 @@ QPushButton:checked {
                   <property name="autoRepeat">
                    <bool>false</bool>
                   </property>
+                  <property name="toolButtonStyle">
+                   <enum>Qt::ToolButtonIconOnly</enum>
+                  </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="leatherworking_button">
+                 <widget class="QToolButton" name="leatherworking_button">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>150</width>
-                    <height>75</height>
+                    <width>80</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777213</width>
+                    <width>16777215</width>
                     <height>16777215</height>
                    </size>
                   </property>
@@ -750,25 +454,20 @@ QPushButton:checked {
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">QPushButton:hover {
-	background-color: rgba(100, 100, 100, 100);
-}
-QPushButton:checked {
-	background-color: rgba(100,100,100, 150);
-}</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string/>
+                   <string>Leatherworking</string>
                   </property>
                   <property name="icon">
                    <iconset resource="marketmanager.qrc">
-                    <normaloff>:/MarketManager/images/tradeskill_bar/leatherworking_off.png</normaloff>
-                    <normalon>:/MarketManager/images/tradeskill_bar/leatherworking_on.png</normalon>:/MarketManager/images/tradeskill_bar/leatherworking_off.png</iconset>
+                    <normaloff>:/MarketManager/images/ui/menu_bar/leatherworking_off.png</normaloff>
+                    <normalon>:/MarketManager/images/ui/menu_bar/leatherworking_on.png</normalon>:/MarketManager/images/ui/menu_bar/leatherworking_off.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>150</width>
-                    <height>75</height>
+                    <width>80</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="checkable">
@@ -777,25 +476,109 @@ QPushButton:checked {
                   <property name="autoRepeat">
                    <bool>false</bool>
                   </property>
+                  <property name="toolButtonStyle">
+                   <enum>Qt::ToolButtonIconOnly</enum>
+                  </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="stonecutting_button">
+                 <widget class="QToolButton" name="stonecutting_button">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>150</width>
-                    <height>75</height>
+                    <width>80</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777213</width>
+                    <width>16777215</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="baseSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>16</pointsize>
+                   </font>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::LeftToRight</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="inputMethodHints">
+                   <set>Qt::ImhNone</set>
+                  </property>
+                  <property name="text">
+                   <string>Stonecutting</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="marketmanager.qrc">
+                    <normaloff>:/MarketManager/images/ui/menu_bar/stonecutting_off.png</normaloff>
+                    <normalon>:/MarketManager/images/ui/menu_bar/stonecutting_on.png</normalon>:/MarketManager/images/ui/menu_bar/stonecutting_off.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>80</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="autoRepeat">
+                   <bool>false</bool>
+                  </property>
+                  <property name="toolButtonStyle">
+                   <enum>Qt::ToolButtonIconOnly</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="menu_buttons_spacer">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Expanding</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QToolButton" name="settings_button">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
                     <height>16777215</height>
                    </size>
                   </property>
@@ -811,25 +594,19 @@ QPushButton:checked {
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">QPushButton:hover {
-	background-color: rgba(100, 100, 100, 100);
-}
-QPushButton:checked {
-	background-color: rgba(100,100,100, 150);
-}</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string/>
+                   <string>Settings</string>
                   </property>
                   <property name="icon">
                    <iconset resource="marketmanager.qrc">
-                    <normaloff>:/MarketManager/images/tradeskill_bar/stonecutting_off.png</normaloff>
-                    <normalon>:/MarketManager/images/tradeskill_bar/stonecutting_on.png</normalon>:/MarketManager/images/tradeskill_bar/stonecutting_off.png</iconset>
+                    <normaloff>:/MarketManager/images/ui/menu_bar/settings.png</normaloff>:/MarketManager/images/ui/menu_bar/settings.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>150</width>
-                    <height>75</height>
+                    <width>80</width>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="checkable">
@@ -837,6 +614,9 @@ QPushButton:checked {
                   </property>
                   <property name="autoRepeat">
                    <bool>false</bool>
+                  </property>
+                  <property name="toolButtonStyle">
+                   <enum>Qt::ToolButtonIconOnly</enum>
                   </property>
                  </widget>
                 </item>
@@ -847,8 +627,8 @@ QPushButton:checked {
            </widget>
           </item>
           <item>
-           <widget class="QWidget" name="widget_8" native="true">
-            <layout class="QVBoxLayout" name="verticalLayout_6">
+           <widget class="QWidget" name="main_widget" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_2">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -865,7 +645,7 @@ QPushButton:checked {
               <number>0</number>
              </property>
              <item>
-              <widget class="QWidget" name="widget_12" native="true">
+              <widget class="QWidget" name="header_bar" native="true">
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
@@ -873,7 +653,10 @@ QPushButton:checked {
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true"/>
+                <string notr="true">#header_bar {
+background-color: rgb(61, 80, 95);
+border-top-right-radius: 10px;
+}</string>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_10">
                 <property name="spacing">
@@ -891,20 +674,90 @@ QPushButton:checked {
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item>
-                 <widget class="QWidget" name="widget_13" native="true">
+                <item alignment="Qt::AlignLeft">
+                 <widget class="QWidget" name="menu_control" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">#menu_control QPushButton {
+background: transparent;
+border-radius: 20px;
+}
+#menu_control QPushButton:hover {
+background-color: rgb(120, 157, 186);
+}</string>
+                  </property>
                   <layout class="QHBoxLayout" name="horizontalLayout_11">
+                   <property name="spacing">
+                    <number>5</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>5</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>5</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>5</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>5</number>
+                   </property>
                    <item>
-                    <widget class="QPushButton" name="pushButton">
-                     <property name="text">
-                      <string>PushButton</string>
+                    <widget class="QPushButton" name="menu_control_button">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
                      </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_3">
+                     <property name="minimumSize">
+                      <size>
+                       <width>40</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>9</pointsize>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="toolTip">
+                      <string>Expand Menu</string>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
                      <property name="text">
-                      <string>Menu</string>
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="marketmanager.qrc">
+                       <normaloff>:/MarketManager/images/ui/header_bar/expand_menu.png</normaloff>
+                       <normalon>:/MarketManager/images/ui/header_bar/collapse_menu.png</normalon>:/MarketManager/images/ui/header_bar/expand_menu.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>30</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="checkable">
+                      <bool>true</bool>
+                     </property>
+                     <property name="checked">
+                      <bool>false</bool>
                      </property>
                     </widget>
                    </item>
@@ -912,23 +765,14 @@ QPushButton:checked {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QWidget" name="widget_14" native="true"/>
-                </item>
-                <item>
-                 <widget class="QWidget" name="widget_15" native="true">
-                  <property name="minimumSize">
-                   <size>
-                    <width>150</width>
-                    <height>0</height>
-                   </size>
+                 <widget class="QWidget" name="header_title" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
                   </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>150</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                  <layout class="QHBoxLayout" name="horizontalLayout_12">
                    <property name="spacing">
                     <number>0</number>
                    </property>
@@ -945,91 +789,185 @@ QPushButton:checked {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QPushButton" name="minimize">
+                    <widget class="QLabel" name="header_title_label">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
-                       <width>50</width>
-                       <height>50</height>
+                       <width>0</width>
+                       <height>0</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>50</width>
-                       <height>50</height>
+                       <width>16777215</width>
+                       <height>16777215</height>
                       </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Calibri</family>
+                       <pointsize>16</pointsize>
+                       <bold>true</bold>
+                       <kerning>true</kerning>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(60, 231, 195);</string>
+                     </property>
+                     <property name="text">
+                      <string>New World Market Manager</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                     <property name="textInteractionFlags">
+                      <set>Qt::LinksAccessibleByMouse</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight">
+                 <widget class="QWidget" name="header_navigation" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">#header_navigation QPushButton {
+background: transparent;
+border-radius: 20px;
+}
+#header_navigation QPushButton:hover {
+background-color: rgb(120, 157, 186);
+}</string>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <property name="spacing">
+                    <number>5</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>5</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>5</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>5</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>5</number>
+                   </property>
+                   <item>
+                    <widget class="QPushButton" name="minimize_button">
+                     <property name="minimumSize">
+                      <size>
+                       <width>40</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>40</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="mouseTracking">
+                      <bool>true</bool>
                      </property>
                      <property name="toolTip">
                       <string>Minimize</string>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">QPushButton:hover {
-	background-color: rgb(100, 100, 100);
-	border-radius: 0px;
-}</string>
+                      <string notr="true"/>
                      </property>
                      <property name="text">
                       <string/>
                      </property>
                      <property name="icon">
                       <iconset resource="marketmanager.qrc">
-                       <normaloff>:/MarketManager/images/title_bar/minimize.png</normaloff>:/MarketManager/images/title_bar/minimize.png</iconset>
+                       <normaloff>:/MarketManager/images/ui/header_bar/minimize.png</normaloff>:/MarketManager/images/ui/header_bar/minimize.png</iconset>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="maximize_restore">
+                    <widget class="QPushButton" name="maximize_restore_button">
                      <property name="minimumSize">
                       <size>
-                       <width>50</width>
-                       <height>50</height>
+                       <width>40</width>
+                       <height>40</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>50</width>
-                       <height>50</height>
+                       <width>40</width>
+                       <height>40</height>
                       </size>
                      </property>
                      <property name="toolTip">
                       <string>Maximize</string>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">QPushButton:hover {
-	background-color: rgb(100, 100, 100);
-	border-radius: 0px;
-}</string>
+                      <string notr="true"/>
                      </property>
                      <property name="text">
                       <string/>
                      </property>
                      <property name="icon">
                       <iconset resource="marketmanager.qrc">
-                       <normaloff>:/MarketManager/images/title_bar/maximize.png</normaloff>:/MarketManager/images/title_bar/maximize.png</iconset>
+                       <normaloff>:/MarketManager/images/ui/header_bar/maximize.png</normaloff>
+                       <normalon>:/MarketManager/images/ui/header_bar/restore_down.png</normalon>:/MarketManager/images/ui/header_bar/maximize.png</iconset>
+                     </property>
+                     <property name="checkable">
+                      <bool>true</bool>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="close">
+                    <widget class="QPushButton" name="close_button">
                      <property name="minimumSize">
                       <size>
-                       <width>50</width>
-                       <height>50</height>
+                       <width>40</width>
+                       <height>40</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>50</width>
-                       <height>50</height>
+                       <width>40</width>
+                       <height>40</height>
                       </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
                      </property>
                      <property name="toolTip">
                       <string>Close</string>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton:hover {
-	background-color: red;
-	border-radius: 0px;
-	border-top-right-radius: 10px;
+background-color: rgb(175, 33, 39);
 }</string>
                      </property>
                      <property name="text">
@@ -1037,7 +975,7 @@ QPushButton:checked {
                      </property>
                      <property name="icon">
                       <iconset resource="marketmanager.qrc">
-                       <normaloff>:/MarketManager/images/title_bar/close.png</normaloff>:/MarketManager/images/title_bar/close.png</iconset>
+                       <normaloff>:/MarketManager/images/ui/header_bar/close.png</normaloff>:/MarketManager/images/ui/header_bar/close.png</iconset>
                      </property>
                      <property name="checkable">
                       <bool>false</bool>
@@ -1054,387 +992,37 @@ QPushButton:checked {
               </widget>
              </item>
              <item>
-              <widget class="QWidget" name="widget_11" native="true">
-               <widget class="QWidget" name="title_bar" native="true">
-                <property name="geometry">
-                 <rect>
-                  <x>40</x>
-                  <y>130</y>
-                  <width>472</width>
-                  <height>50</height>
-                 </rect>
+              <widget class="QWidget" name="content_widget" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <property name="spacing">
+                 <number>0</number>
                 </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>225</width>
-                  <height>50</height>
-                 </size>
+                <property name="leftMargin">
+                 <number>0</number>
                 </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>50</height>
-                 </size>
+                <property name="topMargin">
+                 <number>10</number>
                 </property>
-                <property name="styleSheet">
-                 <string notr="true"/>
+                <property name="rightMargin">
+                 <number>10</number>
                 </property>
-                <layout class="QHBoxLayout" name="horizontalLayout">
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <item>
-                  <widget class="QWidget" name="widget_title" native="true">
-                   <property name="minimumSize">
-                    <size>
-                     <width>75</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="cursor">
-                    <cursorShape>ArrowCursor</cursorShape>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_2">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QWidget" name="widget_icon" native="true">
-                      <property name="minimumSize">
-                       <size>
-                        <width>75</width>
-                        <height>50</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>75</width>
-                        <height>50</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">border-image: url(:/MarketManager/images/title_bar/icon.png);
-border-width: 5px;</string>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_6">
-                       <property name="spacing">
-                        <number>0</number>
-                       </property>
-                       <property name="leftMargin">
-                        <number>5</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>5</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>5</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="label_title">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>0</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Calibri</family>
-                        <pointsize>16</pointsize>
-                        <bold>true</bold>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">color: rgb(60, 231, 195);</string>
-                      </property>
-                      <property name="text">
-                       <string>New World Market Manager</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-               <widget class="QWidget" name="content_bar" native="true">
-                <property name="geometry">
-                 <rect>
-                  <x>70</x>
-                  <y>210</y>
-                  <width>401</width>
-                  <height>171</height>
-                 </rect>
+                <property name="bottomMargin">
+                 <number>0</number>
                 </property>
-                <property name="styleSheet">
-                 <string notr="true"/>
-                </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_5">
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <item>
-                  <widget class="QWidget" name="side_bar" native="true">
-                   <property name="maximumSize">
-                    <size>
-                     <width>50</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QPushButton" name="home">
-                      <property name="minimumSize">
-                       <size>
-                        <width>50</width>
-                        <height>50</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="icon">
-                       <iconset resource="marketmanager.qrc">
-                        <normaloff>:/MarketManager/images/side_bar/home.png</normaloff>:/MarketManager/images/side_bar/home.png</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>32</width>
-                        <height>32</height>
-                       </size>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <spacer name="side_bar_spacer">
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>50</width>
-                        <height>0</height>
-                       </size>
-                      </property>
-                     </spacer>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="settings">
-                      <property name="minimumSize">
-                       <size>
-                        <width>50</width>
-                        <height>50</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="icon">
-                       <iconset resource="marketmanager.qrc">
-                        <normaloff>:/MarketManager/images/side_bar/settings.png</normaloff>:/MarketManager/images/side_bar/settings.png</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>32</width>
-                        <height>32</height>
-                       </size>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QStackedWidget" name="stackedWidget">
-                   <property name="currentIndex">
-                    <number>0</number>
-                   </property>
-                   <widget class="QWidget" name="page">
-                    <layout class="QVBoxLayout" name="verticalLayout_3">
-                     <property name="spacing">
-                      <number>0</number>
-                     </property>
-                     <property name="leftMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="rightMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <item>
-                      <widget class="QWidget" name="tradeskill_selection_bar" native="true">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>75</height>
-                        </size>
-                       </property>
-                       <layout class="QHBoxLayout" name="horizontalLayout_7">
-                        <property name="spacing">
-                         <number>0</number>
-                        </property>
-                        <property name="leftMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="topMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="rightMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="bottomMargin">
-                         <number>0</number>
-                        </property>
-                       </layout>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QStackedWidget" name="stackedWidget_2">
-                       <property name="currentIndex">
-                        <number>1</number>
-                       </property>
-                       <widget class="QWidget" name="smelting_page">
-                        <widget class="QWidget" name="widget" native="true">
-                         <property name="geometry">
-                          <rect>
-                           <x>40</x>
-                           <y>60</y>
-                           <width>120</width>
-                           <height>80</height>
-                          </rect>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">image: url(:/MarketManager/images/items/resources/refined_resources/ingots/iron_ingot.png);</string>
-                         </property>
-                        </widget>
-                        <widget class="QWidget" name="widget_2" native="true">
-                         <property name="geometry">
-                          <rect>
-                           <x>50</x>
-                           <y>150</y>
-                           <width>120</width>
-                           <height>80</height>
-                          </rect>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">image: url(:/MarketManager/images/items/resources/refined_resources/ingots/steel_ingot.png);</string>
-                         </property>
-                        </widget>
-                        <widget class="QWidget" name="widget_3" native="true">
-                         <property name="geometry">
-                          <rect>
-                           <x>60</x>
-                           <y>250</y>
-                           <width>120</width>
-                           <height>80</height>
-                          </rect>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">image: url(:/MarketManager/images/items/resources/refined_resources/ingots/starmetal_ingot.png);</string>
-                         </property>
-                        </widget>
-                        <widget class="QWidget" name="widget_4" native="true">
-                         <property name="geometry">
-                          <rect>
-                           <x>80</x>
-                           <y>340</y>
-                           <width>120</width>
-                           <height>80</height>
-                          </rect>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">image: url(:/MarketManager/images/items/resources/refined_resources/ingots/orichalcum_ingot.png);</string>
-                         </property>
-                        </widget>
-                        <widget class="QWidget" name="widget_5" native="true">
-                         <property name="geometry">
-                          <rect>
-                           <x>80</x>
-                           <y>430</y>
-                           <width>120</width>
-                           <height>80</height>
-                          </rect>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">image: url(:/MarketManager/images/items/resources/refined_resources/ingots/asmodeum.png);</string>
-                         </property>
-                        </widget>
-                       </widget>
-                       <widget class="QWidget" name="woodworking_page"/>
-                       <widget class="QWidget" name="weaving_page"/>
-                       <widget class="QWidget" name="leatherworking_page"/>
-                       <widget class="QWidget" name="stonecutting_page"/>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QWidget" name="page_2"/>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
+                <item>
+                 <widget class="QStackedWidget" name="content_stacked_widget">
+                  <property name="currentIndex">
+                   <number>5</number>
+                  </property>
+                  <widget class="QWidget" name="smelting_page"/>
+                  <widget class="QWidget" name="woodworking_page"/>
+                  <widget class="QWidget" name="weaving_page"/>
+                  <widget class="QWidget" name="leatherworking_page"/>
+                  <widget class="QWidget" name="stonecutting_page"/>
+                  <widget class="QWidget" name="settings_page"/>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
             </layout>
@@ -1445,22 +1033,27 @@ border-width: 5px;</string>
        </item>
        <item>
         <widget class="QWidget" name="credits_bar" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>30</height>
+           <height>16777215</height>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: none;
-border-radius: 0px;</string>
+          <string notr="true"/>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <property name="spacing">
            <number>0</number>
           </property>
           <property name="leftMargin">
-           <number>15</number>
+           <number>5</number>
           </property>
           <property name="topMargin">
            <number>0</number>
@@ -1472,11 +1065,11 @@ border-radius: 0px;</string>
            <number>0</number>
           </property>
           <item>
-           <widget class="QLabel" name="label_credits">
+           <widget class="QLabel" name="credits_label">
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>30</height>
+              <height>0</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1484,6 +1077,12 @@ border-radius: 0px;</string>
             </property>
             <property name="text">
              <string>Created By: erickswong</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+            </property>
+            <property name="margin">
+             <number>5</number>
             </property>
            </widget>
           </item>
@@ -1493,39 +1092,8 @@ border-radius: 0px;</string>
       </layout>
      </widget>
     </item>
-    <item row="1" column="4" colspan="2">
-     <widget class="QFrame" name="border_top">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeVerCursor</cursorShape>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
     <item row="7" column="4" colspan="2">
-     <widget class="QFrame" name="border_bottom">
+     <widget class="QWidget" name="border_bottom" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -1547,44 +1115,29 @@ border-radius: 0px;</string>
       <property name="cursor">
        <cursorShape>SizeVerCursor</cursorShape>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <property name="lineWidth">
-       <number>1</number>
-      </property>
      </widget>
     </item>
-    <item row="4" column="1" rowspan="2">
-     <widget class="QFrame" name="border_left">
+    <item row="7" column="1">
+     <widget class="QWidget" name="border_bottom_left" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
       </property>
       <property name="maximumSize">
        <size>
         <width>10</width>
-        <height>16777215</height>
+        <height>10</height>
        </size>
       </property>
       <property name="cursor">
-       <cursorShape>SizeHorCursor</cursorShape>
+       <cursorShape>SizeBDiagCursor</cursorShape>
       </property>
      </widget>
     </item>
     <item row="4" column="7" rowspan="2">
-     <widget class="QFrame" name="border_right">
+     <widget class="QWidget" name="border_right" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -1600,11 +1153,276 @@ border-radius: 0px;</string>
       <property name="cursor">
        <cursorShape>SizeHorCursor</cursorShape>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
+     </widget>
+    </item>
+    <item row="7" column="3">
+     <widget class="QWidget" name="border_bottom_left_r" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+      <property name="maximumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeBDiagCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QWidget" name="border_bottom_left_t" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeBDiagCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="7">
+     <widget class="QWidget" name="border_bottom_right" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeFDiagCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="6">
+     <widget class="QWidget" name="border_bottom_right_l" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeFDiagCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="7">
+     <widget class="QWidget" name="border_bottom_right_t" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeFDiagCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1" rowspan="2">
+     <widget class="QWidget" name="border_left" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>10</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeHorCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4" colspan="2">
+     <widget class="QWidget" name="border_top" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeVerCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QWidget" name="border_top_left" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeFDiagCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QWidget" name="border_top_left_b" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeFDiagCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QWidget" name="border_top_left_r" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeFDiagCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="7">
+     <widget class="QWidget" name="border_top_right" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeBDiagCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="7">
+     <widget class="QWidget" name="border_top_right_b" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeBDiagCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="6">
+     <widget class="QWidget" name="border_top_right_l" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeBDiagCursor</cursorShape>
       </property>
      </widget>
     </item>

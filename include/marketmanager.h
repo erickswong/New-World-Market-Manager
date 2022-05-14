@@ -18,15 +18,18 @@ class MarketManager final : public QMainWindow {
         void mouseDoubleClickEvent(QMouseEvent* event) override;
 
     private slots:
-        void on_minimize_clicked();
-        void on_maximize_restore_clicked();
-        void on_close_clicked();
+        void on_minimize_button_clicked();
+        void on_maximize_restore_button_clicked();
+        void on_close_button_clicked();
+        void on_menu_control_button_clicked();
 
     private:
         Ui::MarketManagerClass ui;
         QGraphicsDropShadowEffect* shadow;
 
         void setDropShadow();
-        void setNormal() const;    // TODO: update stylesheet to new ui
-        void setMaximized() const; // TODO: update stylesheet to new ui
+        void setNormal() const;
+        void setMaximized() const;
+
+        static bool widgetContainsPoint(const QWidget* widget, QPointF global_pos);
 };

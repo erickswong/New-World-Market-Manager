@@ -22,14 +22,15 @@ void MarketManager::mousePressEvent(QMouseEvent* event) {
 	const QPointF mouse_pos = event->position();
 
     // Move or resize window
-    if (QRectF(ui.widget_title->rect()).contains(ui.widget_title->mapFromGlobal(mouse_global_pos))) {
+    if (widgetContainsPoint(ui.header_bar, mouse_global_pos) || widgetContainsPoint(ui.menu_header, mouse_global_pos)) {
+    	// Restore down if maximized
         if (this->isMaximized()) {
             setNormal();
         }
 
         // Move window
         this->windowHandle()->startSystemMove();
-    } else if (!QRectF(ui.drop_shadow_frame->rect()).contains(ui.drop_shadow_frame->mapFromGlobal(mouse_global_pos))) {
+    } else if (!widgetContainsPoint(ui.drop_shadow_frame, mouse_global_pos)) {
         // No resizing if maximized
         if (this->isMaximized()) {
             return;
@@ -59,16 +60,17 @@ void MarketManager::mousePressEvent(QMouseEvent* event) {
 void MarketManager::mouseDoubleClickEvent(QMouseEvent* event) {
 	const QPointF mouse_global_pos = event->globalPosition();
 
-	if (QRectF(ui.widget_title->rect()).contains(ui.widget_title->mapFromGlobal(mouse_global_pos))) {
-        on_maximize_restore_clicked();
+    // Double clicking header has same effect as clicking maximize/restore button
+	if (widgetContainsPoint(ui.header_bar, mouse_global_pos) || widgetContainsPoint(ui.menu_header, mouse_global_pos)) {
+        on_maximize_restore_button_clicked();
     }
 }
 
-void MarketManager::on_minimize_clicked() {
+void MarketManager::on_minimize_button_clicked() {
     this->showMinimized();
 }
 
-void MarketManager::on_maximize_restore_clicked() {
+void MarketManager::on_maximize_restore_button_clicked() {
     if (this->isMaximized()) {
         // Restore Down
         setNormal();
@@ -80,8 +82,34 @@ void MarketManager::on_maximize_restore_clicked() {
     }
 }
 
-void MarketManager::on_close_clicked() {
+void MarketManager::on_close_button_clicked() {
     this->close();
+}
+
+void MarketManager::on_menu_control_button_clicked() {
+	if (ui.menu_control_button->isChecked()) {
+        // Change to collapse menu tooltip
+        ui.menu_control_button->setToolTip("Collapse Menu");
+
+        // Restore text to buttons
+        ui.smelting_button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        ui.woodworking_button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        ui.weaving_button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        ui.leatherworking_button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        ui.stonecutting_button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        ui.settings_button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+		// Change to expand menu tooltip
+	} else {
+        ui.menu_control_button->setToolTip("Expand Menu");
+
+        // Remove text from buttons
+        ui.smelting_button->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        ui.woodworking_button->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        ui.weaving_button->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        ui.leatherworking_button->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        ui.stonecutting_button->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        ui.settings_button->setToolButtonStyle(Qt::ToolButtonIconOnly);
+	}
 }
 
 void MarketManager::setDropShadow() {
@@ -95,8 +123,8 @@ void MarketManager::setDropShadow() {
 
 void MarketManager::setNormal() const {
     // Change to maximize button
-    ui.maximize_restore->setIcon(QIcon(":/MarketManager/images/title_bar/maximize.png"));
-    ui.maximize_restore->setToolTip("Maximize");
+    ui.maximize_restore_button->setChecked(false);
+    ui.maximize_restore_button->setToolTip("Maximize");
 
     // Restore borders
     ui.border_top_left->setMinimumSize(BORDER_SIZE, BORDER_SIZE);
@@ -105,25 +133,24 @@ void MarketManager::setNormal() const {
     ui.border_bottom_right->setMaximumSize(BORDER_SIZE, BORDER_SIZE);
 
     // Restore border-radius
-    ui.drop_shadow_frame->setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(37, 37, 38, 255), stop:0.5 rgba(31, 31, 31, 255));"
-                                        "border-radius: 10px;");
-
-    // Restore border-top-right-radius to close button
-    ui.close->setStyleSheet("QPushButton {"
-                            "   border: none;"
-                            "   background: transparent;"
-                            "}"
-                            "QPushButton:hover {"
-                            "background-color: red;"
-                            "border-radius: 0px;"
-                            "border-top-right-radius: 10px;"
-                            "}");
+    ui.drop_shadow_frame->setStyleSheet("#drop_shadow_frame {"
+                                        "background-color: rgb(33, 43, 51);"
+                                        "border-radius: 10px;"
+                                        "}");
+    ui.menu_header->setStyleSheet("#menu_header {"
+                                  "background-color: rgb(61, 80, 95);"
+                                  "border-top-left-radius: 10px;"
+                                  "}");
+    ui.header_bar->setStyleSheet("#header_bar {"
+                                 "background-color: rgb(61, 80, 95);"
+                                 "border-top-right-radius: 10px;"
+                                 "}");
 }
 
 void MarketManager::setMaximized() const {
     // Change to restore button
-    ui.maximize_restore->setIcon(QIcon(":/MarketManager/images/title_bar/restore_down.png"));
-    ui.maximize_restore->setToolTip("Restore Down");
+    ui.maximize_restore_button->setChecked(true);
+    ui.maximize_restore_button->setToolTip("Restore Down");
 
     // Remove borders
     ui.border_top_left->setMinimumSize(0, 0);
@@ -132,17 +159,20 @@ void MarketManager::setMaximized() const {
     ui.border_bottom_right->setMaximumSize(0, 0);
 
     // Remove border-radius
-    ui.drop_shadow_frame->setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(37, 37, 38, 255), stop:0.5 rgba(31, 31, 31, 255));"
-                                        "border-radius: 0px;");
+    ui.drop_shadow_frame->setStyleSheet("#drop_shadow_frame {"
+                                        "background-color: rgb(33, 43, 51);"
+                                        "border-radius: 0px;"
+                                        "}");
+    ui.menu_header->setStyleSheet("#menu_header {"
+                                  "background-color: rgb(61, 80, 95);"
+                                  "border-top-left-radius: 0px;"
+                                  "}");
+    ui.header_bar->setStyleSheet("#header_bar {"
+                                 "background-color: rgb(61, 80, 95);"
+                                 "border-top-right-radius: 0px;"
+                                 "}");
+}
 
-    // Remove border-top-right-radius from close button
-    ui.close->setStyleSheet("QPushButton {"
-                            "   border: none;"
-                            "   background: transparent;"
-                            "}"
-                            "QPushButton:hover {"
-                            "background-color: red;"
-                            "border-radius: 0px;"
-                            "border-top-right-radius: 0px;"
-                            "}");
+bool MarketManager::widgetContainsPoint(const QWidget* widget, const QPointF global_pos) {
+    return QRectF(widget->rect()).contains(widget->mapFromGlobal(global_pos));
 }
