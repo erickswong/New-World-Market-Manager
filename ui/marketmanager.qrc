@@ -88,5 +88,30 @@
         <file>images/ui/menu_bar/woodworking_on.png</file>
         <file>images/ui/header_bar/collapse_menu.png</file>
         <file>images/ui/header_bar/expand_menu.png</file>
+        <file>images/armour_sets/smelter_set/smelters_headgear.png</file>
+        <file>images/armour_sets/smelter_set/smelters_mitts.png</file>
+        <file>images/armour_sets/smelter_set/smelters_pants.png</file>
+        <file>images/armour_sets/smelter_set/smelters_shoes.png</file>
+        <file>images/armour_sets/smelter_set/smelters_smock.png</file>
+        <file>images/armour_sets/woodworker_set/woodworkers_cap.png</file>
+        <file>images/armour_sets/woodworker_set/woodworkers_gloves.png</file>
+        <file>images/armour_sets/woodworker_set/woodworkers_pants.png</file>
+        <file>images/armour_sets/woodworker_set/woodworkers_shirt.png</file>
+        <file>images/armour_sets/woodworker_set/woodworkers_shoes.png</file>
+        <file>images/armour_sets/weaver_set/weavers_gloves.png</file>
+        <file>images/armour_sets/weaver_set/weavers_hat.png</file>
+        <file>images/armour_sets/weaver_set/weavers_pants.png</file>
+        <file>images/armour_sets/weaver_set/weavers_shirt.png</file>
+        <file>images/armour_sets/weaver_set/weavers_shoes.png</file>
+        <file>images/armour_sets/tanner_set/tanner_gloves.png</file>
+        <file>images/armour_sets/tanner_set/tanner_hat.png</file>
+        <file>images/armour_sets/tanner_set/tanner_pants.png</file>
+        <file>images/armour_sets/tanner_set/tanner_shirt.png</file>
+        <file>images/armour_sets/tanner_set/tanner_shoes.png</file>
+        <file>images/armour_sets/stonecutter_set/stonecutters_gloves.png</file>
+        <file>images/armour_sets/stonecutter_set/stonecutters_hat.png</file>
+        <file>images/armour_sets/stonecutter_set/stonecutters_pants.png</file>
+        <file>images/armour_sets/stonecutter_set/stonecutters_shirt.png</file>
+        <file>images/armour_sets/stonecutter_set/stonecutters_shoes.png</file>
     </qresource>
 </RCC>

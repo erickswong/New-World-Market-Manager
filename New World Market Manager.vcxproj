@@ -72,7 +72,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -115,6 +115,7 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\smelting_page.cpp" />
     <ClCompile Include="src\items\resources\refined_resources\blocks\blocks.cpp" />
     <ClCompile Include="src\items\resources\refined_resources\leathers\leathers.cpp" />
     <ClCompile Include="src\items\resources\refined_resources\cloths\cloths.cpp" />
@@ -144,9 +145,11 @@
     <ClInclude Include="include\settings\trade_skills.h" />
     <ClInclude Include="include\items\resources\refined_resources\planks\planks.h" />
     <ClInclude Include="include\items\resources\refined_resources\leathers\leathers.h" />
+    <QtMoc Include="include\smelting_page.h" />
     <None Include="cpp.hint" />
     <None Include="README.md" />
     <QtRcc Include="ui\marketmanager.qrc" />
+    <QtUic Include="ui\smelting_page.ui" />
     <QtUic Include="ui\marketmanager.ui" />
     <QtMoc Include="include\marketmanager.h" />
     <ClCompile Include="src\settings\armour_sets.cpp" />
