@@ -11,11 +11,11 @@ class ArmourSet {
 
 		[[nodiscard]] int numberAcquired() const;
 
-		[[nodiscard]] bool getHasHelmet() const;
-		void setHasHelmet(bool has_helmet);
+		[[nodiscard]] bool getHasHat() const;
+		void setHasHat(bool has_helmet);
 
-		[[nodiscard]] bool getHasChest() const;
-		void setHasChest(bool has_chest);
+		[[nodiscard]] bool getHasShirt() const;
+		void setHasShirt(bool has_chest);
 
 		[[nodiscard]] bool getHasGloves() const;
 		void setHasGloves(bool has_gloves);
@@ -27,8 +27,8 @@ class ArmourSet {
 		void setHasShoes(bool has_shoes);
 
 	private:
-		bool has_helmet = false;
-		bool has_chest = false;
+		bool has_hat = false;
+		bool has_shirt = false;
 		bool has_gloves = false;
 		bool has_pants = false;
 		bool has_shoes = false;

@@ -113,5 +113,7 @@
         <file>images/armour_sets/stonecutter_set/stonecutters_pants.png</file>
         <file>images/armour_sets/stonecutter_set/stonecutters_shirt.png</file>
         <file>images/armour_sets/stonecutter_set/stonecutters_shoes.png</file>
+        <file>images/ui/input_page/lock.png</file>
+        <file>images/ui/input_page/unlock.png</file>
     </qresource>
 </RCC>

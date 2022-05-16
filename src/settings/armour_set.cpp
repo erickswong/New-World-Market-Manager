@@ -7,31 +7,31 @@ ArmourSet::ArmourSet(const bool has_helmet,
 					 const bool has_gloves,
 					 const bool has_pants,
 					 const bool has_shoes)
-						 : has_helmet(has_helmet),
-                           has_chest(has_chest),
+						 : has_hat(has_helmet),
+                           has_shirt(has_chest),
                            has_gloves(has_gloves),
                            has_pants(has_pants),
                            has_shoes(has_shoes) {
 }
 
 int ArmourSet::numberAcquired() const {
-	return has_helmet + has_chest + has_gloves + has_pants + has_shoes;
+	return has_hat + has_shirt + has_gloves + has_pants + has_shoes;
 }
 
-bool ArmourSet::getHasHelmet() const {
-	return has_helmet;
+bool ArmourSet::getHasHat() const {
+	return has_hat;
 }
 
-void ArmourSet::setHasHelmet(const bool has_helmet) {
-	this->has_helmet = has_helmet;
+void ArmourSet::setHasHat(const bool has_helmet) {
+	this->has_hat = has_helmet;
 }
 
-bool ArmourSet::getHasChest() const {
-	return has_chest;
+bool ArmourSet::getHasShirt() const {
+	return has_shirt;
 }
 
-void ArmourSet::setHasChest(const bool has_chest) {
-	this->has_chest = has_chest;
+void ArmourSet::setHasShirt(const bool has_chest) {
+	this->has_shirt = has_chest;
 }
 
 bool ArmourSet::getHasGloves() const {

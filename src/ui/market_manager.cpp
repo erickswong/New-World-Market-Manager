@@ -1,4 +1,4 @@
-#include "marketmanager.h"
+#include "ui/market_manager.h"
 #include "stdafx.h"
 
 MarketManager::MarketManager(QWidget *parent)
@@ -6,15 +6,24 @@ MarketManager::MarketManager(QWidget *parent)
     ui.setupUi(this);
 
     // Remove title bar
-    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint); // TODO: Qt::WindowStaysOnTopHint
-    this->setAttribute(Qt::WA_TranslucentBackground);
+    setWindowFlags(Qt::Window | Qt::FramelessWindowHint); // TODO: Qt::WindowStaysOnTopHint
+    setAttribute(Qt::WA_TranslucentBackground);
 
     // Apply drop shadow effect
     setDropShadow();
+
+    // Initialize items and settings
+    setItems();
+    setSettings();
+
+    // Set stacked widget to default page
+    ui.content_stacked_widget->setCurrentIndex(static_cast<int>(MenuButtons::SMELTING));
 }
 
 MarketManager::~MarketManager() {
     delete shadow;
+    delete items;
+    delete settings;
 }
 
 void MarketManager::mousePressEvent(QMouseEvent* event) {
@@ -24,15 +33,15 @@ void MarketManager::mousePressEvent(QMouseEvent* event) {
     // Move or resize window
     if (widgetContainsPoint(ui.header_bar, mouse_global_pos) || widgetContainsPoint(ui.menu_header, mouse_global_pos)) {
     	// Restore down if maximized
-        if (this->isMaximized()) {
+        if (isMaximized()) {
             setNormal();
         }
 
         // Move window
-        this->windowHandle()->startSystemMove();
+        windowHandle()->startSystemMove();
     } else if (!widgetContainsPoint(ui.drop_shadow_frame, mouse_global_pos)) {
         // No resizing if maximized
-        if (this->isMaximized()) {
+        if (isMaximized()) {
             return;
         }
 
@@ -53,7 +62,7 @@ void MarketManager::mousePressEvent(QMouseEvent* event) {
         }
 
         // Resize window
-        this->windowHandle()->startSystemResize(edges);
+        windowHandle()->startSystemResize(edges);
     }
 }
 
@@ -66,27 +75,7 @@ void MarketManager::mouseDoubleClickEvent(QMouseEvent* event) {
     }
 }
 
-void MarketManager::on_minimize_button_clicked() {
-    this->showMinimized();
-}
-
-void MarketManager::on_maximize_restore_button_clicked() {
-    if (this->isMaximized()) {
-        // Restore Down
-        setNormal();
-        this->showNormal();
-    } else {
-        // Maximize
-        setMaximized();
-        this->showMaximized();
-    }
-}
-
-void MarketManager::on_close_button_clicked() {
-    this->close();
-}
-
-void MarketManager::on_menu_control_button_clicked() {
+void MarketManager::on_menu_control_button_clicked() const {
 	if (ui.menu_control_button->isChecked()) {
         // Change to collapse menu tooltip
         ui.menu_control_button->setToolTip("Collapse Menu");
@@ -112,13 +101,106 @@ void MarketManager::on_menu_control_button_clicked() {
 	}
 }
 
+void MarketManager::on_smelting_button_clicked() const {
+    ui.smelting_button->setChecked(true);
+    menuButtonClicked(MenuButtons::SMELTING);
+}
+
+void MarketManager::on_woodworking_button_clicked() const {
+    ui.woodworking_button->setChecked(true);
+    menuButtonClicked(MenuButtons::WOODWORKING);
+}
+
+void MarketManager::on_weaving_button_clicked() const {
+    ui.weaving_button->setChecked(true);
+    menuButtonClicked(MenuButtons::WEAVING);
+}
+
+void MarketManager::on_leatherworking_button_clicked() const {
+    ui.leatherworking_button->setChecked(true);
+    menuButtonClicked(MenuButtons::LEATHERWORKING);
+}
+
+void MarketManager::on_stonecutting_button_clicked() const {
+    ui.stonecutting_button->setChecked(true);
+    menuButtonClicked(MenuButtons::STONECUTTING);
+}
+
+void MarketManager::on_settings_button_clicked() const {
+    ui.settings_button->setChecked(true);
+    menuButtonClicked(MenuButtons::SETTINGS);
+}
+
+void MarketManager::on_minimize_button_clicked() {
+    showMinimized();
+}
+
+void MarketManager::on_maximize_restore_button_clicked() {
+    if (isMaximized()) {
+        // Restore Down
+        setNormal();
+        showNormal();
+    } else {
+        // Maximize
+        setMaximized();
+        showMaximized();
+    }
+}
+
+void MarketManager::on_close_button_clicked() {
+    close();
+}
+
+void MarketManager::menuButtonClicked(const MenuButtons button) const {
+    // Uncheck every other button
+    if (button != MenuButtons::SMELTING) {
+        ui.smelting_button->setChecked(false);
+    }
+    if (button != MenuButtons::WOODWORKING) {
+        ui.woodworking_button->setChecked(false);
+    }
+    if (button != MenuButtons::WEAVING) {
+        ui.weaving_button->setChecked(false);
+    }
+    if (button != MenuButtons::LEATHERWORKING) {
+        ui.leatherworking_button->setChecked(false);
+    }
+    if (button != MenuButtons::STONECUTTING) {
+        ui.stonecutting_button->setChecked(false);
+    }
+    if (button != MenuButtons::SETTINGS) {
+        ui.settings_button->setChecked(false);
+    }
+
+    // Set stacked widget to correct page
+    ui.content_stacked_widget->setCurrentIndex(static_cast<int>(button));
+}
+
 void MarketManager::setDropShadow() {
-    shadow = new QGraphicsDropShadowEffect();
+    shadow = new QGraphicsDropShadowEffect;
     shadow->setBlurRadius(2 * BORDER_SIZE);
     shadow->setXOffset(0);
     shadow->setYOffset(0);
     shadow->setColor(QColor(0, 0, 0, 200));
     ui.drop_shadow_frame->setGraphicsEffect(shadow);
+}
+
+void MarketManager::setItems() {
+    items = new Items;
+
+    // TODO: have initializer
+
+    // Set items for all children
+    ui.smelting_page->setItems(items);
+}
+
+void MarketManager::setSettings() {
+    settings = new Settings;
+
+    // TODO: have initializer
+
+    // Set settings for all children
+    ui.smelting_page->setSettings(settings);
 }
 
 void MarketManager::setNormal() const {

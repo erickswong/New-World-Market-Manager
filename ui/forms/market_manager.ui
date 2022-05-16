@@ -521,7 +521,7 @@ border-top-left-radius: 10px;
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="marketmanager.qrc">:/MarketManager/images/ui/menu_bar/icon.png</pixmap>
+                   <pixmap resource="../market_manager.qrc">:/MarketManager/images/ui/menu_bar/icon.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -608,7 +608,7 @@ background-color: rgb(33, 43, 51);
                    <string>Smelting</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="marketmanager.qrc">
+                   <iconset resource="../market_manager.qrc">
                     <normaloff>:/MarketManager/images/ui/menu_bar/smelting_off.png</normaloff>
                     <normalon>:/MarketManager/images/ui/menu_bar/smelting_on.png</normalon>:/MarketManager/images/ui/menu_bar/smelting_off.png</iconset>
                   </property>
@@ -676,7 +676,7 @@ background-color: rgb(33, 43, 51);
                    <string>Woodworking</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="marketmanager.qrc">
+                   <iconset resource="../market_manager.qrc">
                     <normaloff>:/MarketManager/images/ui/menu_bar/woodworking_off.png</normaloff>
                     <normalon>:/MarketManager/images/ui/menu_bar/woodworking_on.png</normalon>:/MarketManager/images/ui/menu_bar/woodworking_off.png</iconset>
                   </property>
@@ -735,7 +735,7 @@ background-color: rgb(33, 43, 51);
                    <string>Weaving</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="marketmanager.qrc">
+                   <iconset resource="../market_manager.qrc">
                     <normaloff>:/MarketManager/images/ui/menu_bar/weaving_off.png</normaloff>
                     <normalon>:/MarketManager/images/ui/menu_bar/weaving_on.png</normalon>:/MarketManager/images/ui/menu_bar/weaving_off.png</iconset>
                   </property>
@@ -794,7 +794,7 @@ background-color: rgb(33, 43, 51);
                    <string>Leatherworking</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="marketmanager.qrc">
+                   <iconset resource="../market_manager.qrc">
                     <normaloff>:/MarketManager/images/ui/menu_bar/leatherworking_off.png</normaloff>
                     <normalon>:/MarketManager/images/ui/menu_bar/leatherworking_on.png</normalon>:/MarketManager/images/ui/menu_bar/leatherworking_off.png</iconset>
                   </property>
@@ -859,7 +859,7 @@ background-color: rgb(33, 43, 51);
                    <string>Stonecutting</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="marketmanager.qrc">
+                   <iconset resource="../market_manager.qrc">
                     <normaloff>:/MarketManager/images/ui/menu_bar/stonecutting_off.png</normaloff>
                     <normalon>:/MarketManager/images/ui/menu_bar/stonecutting_on.png</normalon>:/MarketManager/images/ui/menu_bar/stonecutting_off.png</iconset>
                   </property>
@@ -934,7 +934,7 @@ background-color: rgb(33, 43, 51);
                    <string>Settings</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="marketmanager.qrc">
+                   <iconset resource="../market_manager.qrc">
                     <normaloff>:/MarketManager/images/ui/menu_bar/settings.png</normaloff>:/MarketManager/images/ui/menu_bar/settings.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -945,6 +945,9 @@ background-color: rgb(33, 43, 51);
                   </property>
                   <property name="checkable">
                    <bool>true</bool>
+                  </property>
+                  <property name="checked">
+                   <bool>false</bool>
                   </property>
                   <property name="autoRepeat">
                    <bool>false</bool>
@@ -1077,7 +1080,7 @@ background-color: rgb(120, 157, 186);
                       <string/>
                      </property>
                      <property name="icon">
-                      <iconset resource="marketmanager.qrc">
+                      <iconset resource="../market_manager.qrc">
                        <normaloff>:/MarketManager/images/ui/header_bar/expand_menu.png</normaloff>
                        <normalon>:/MarketManager/images/ui/header_bar/collapse_menu.png</normalon>:/MarketManager/images/ui/header_bar/expand_menu.png</iconset>
                      </property>
@@ -1239,7 +1242,7 @@ background-color: rgb(120, 157, 186);
                       <string/>
                      </property>
                      <property name="icon">
-                      <iconset resource="marketmanager.qrc">
+                      <iconset resource="../market_manager.qrc">
                        <normaloff>:/MarketManager/images/ui/header_bar/minimize.png</normaloff>:/MarketManager/images/ui/header_bar/minimize.png</iconset>
                      </property>
                     </widget>
@@ -1268,7 +1271,7 @@ background-color: rgb(120, 157, 186);
                       <string/>
                      </property>
                      <property name="icon">
-                      <iconset resource="marketmanager.qrc">
+                      <iconset resource="../market_manager.qrc">
                        <normaloff>:/MarketManager/images/ui/header_bar/maximize.png</normaloff>
                        <normalon>:/MarketManager/images/ui/header_bar/restore_down.png</normalon>:/MarketManager/images/ui/header_bar/maximize.png</iconset>
                      </property>
@@ -1308,7 +1311,7 @@ background-color: rgb(175, 33, 39);
                       <string/>
                      </property>
                      <property name="icon">
-                      <iconset resource="marketmanager.qrc">
+                      <iconset resource="../market_manager.qrc">
                        <normaloff>:/MarketManager/images/ui/header_bar/close.png</normaloff>:/MarketManager/images/ui/header_bar/close.png</iconset>
                      </property>
                      <property name="checkable">
@@ -1452,12 +1455,13 @@ background-color: rgb(175, 33, 39);
   <customwidget>
    <class>SmeltingPage</class>
    <extends>QWidget</extends>
-   <header>smelting_page.h</header>
+   <header>ui/content_pages/smelting_page.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="marketmanager.qrc"/>
+  <include location="../market_manager.qrc"/>
+  <include location="../market_manager.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -4,7 +4,7 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\marketmanager.cpp">
+    <ClCompile Include="src\ui\market_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\stdafx.cpp">
@@ -73,13 +73,27 @@
     <ClCompile Include="src\items\resources\refined_resources\blocks\blocks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\smelting_page.cpp">
+    <ClCompile Include="src\ui\content_pages\smelting_page.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\content_pages\input_pages\flux_input_page.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\content_pages\input_pages\ore_input_page.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\content_pages\input_pages\ingot_input_page.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\content_pages\input_pages\smelting_settings_input_page.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\content_pages\input_pages\general_settings_input_page.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
-    <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -102,10 +116,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="include\marketmanager.h">
+    <QtMoc Include="include\ui\market_manager.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="include\smelting_page.h">
+    <QtMoc Include="include\ui\content_pages\smelting_page.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\ui\content_pages\input_pages\flux_input_page.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\ui\content_pages\input_pages\ore_input_page.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\ui\content_pages\input_pages\ingot_input_page.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\ui\content_pages\input_pages\smelting_settings_input_page.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\ui\content_pages\input_pages\general_settings_input_page.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -183,15 +212,30 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="ui\marketmanager.qrc">
+    <QtRcc Include="ui\market_manager.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="ui\marketmanager.ui">
+    <QtUic Include="ui\forms\market_manager.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtUic Include="ui\smelting_page.ui">
+    <QtUic Include="ui\forms\content_pages\smelting_page.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ui\forms\content_pages\input_pages\flux_input_page.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ui\forms\content_pages\input_pages\ore_input_page.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ui\forms\content_pages\input_pages\ingot_input_page.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ui\forms\content_pages\input_pages\smelting_settings_input_page.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ui\forms\content_pages\input_pages\general_settings_input_page.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
