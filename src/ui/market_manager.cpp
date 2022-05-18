@@ -75,8 +75,8 @@ void MarketManager::mouseDoubleClickEvent(QMouseEvent* event) {
     }
 }
 
-void MarketManager::on_menu_control_button_clicked() const {
-	if (ui.menu_control_button->isChecked()) {
+void MarketManager::on_menu_control_button_clicked(const bool checked) const {
+	if (checked) {
         // Change to collapse menu tooltip
         ui.menu_control_button->setToolTip("Collapse Menu");
 

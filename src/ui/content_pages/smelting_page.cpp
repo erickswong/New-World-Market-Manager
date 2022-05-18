@@ -29,22 +29,22 @@ void SmeltingPage::setSettings(Settings* settings) {
     ui.settings_input_page->setSettings(settings);
 }
 
-void SmeltingPage::on_flux_input_button_clicked() {
+void SmeltingPage::on_flux_input_button_clicked() const {
 	ui.flux_input_button->setChecked(true);
 	inputPageButtonClicked(InputPageButtons::FLUX);
 }
 
-void SmeltingPage::on_ore_input_button_clicked() {
+void SmeltingPage::on_ore_input_button_clicked() const {
 	ui.ore_input_button->setChecked(true);
 	inputPageButtonClicked(InputPageButtons::ORE);
 }
 
-void SmeltingPage::on_ingot_input_button_clicked() {
+void SmeltingPage::on_ingot_input_button_clicked() const {
 	ui.ingot_input_button->setChecked(true);
 	inputPageButtonClicked(InputPageButtons::INGOT);
 }
 
-void SmeltingPage::on_settings_input_button_clicked() {
+void SmeltingPage::on_settings_input_button_clicked() const {
 	ui.settings_input_button->setChecked(true);
 	inputPageButtonClicked(InputPageButtons::SETTINGS);
 }

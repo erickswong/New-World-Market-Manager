@@ -20,7 +20,7 @@ class MarketManager final : public QMainWindow {
         void mouseDoubleClickEvent(QMouseEvent* event) override;
 
     private slots:
-        void on_menu_control_button_clicked() const;
+        void on_menu_control_button_clicked(bool checked) const;
         void on_smelting_button_clicked() const;
         void on_woodworking_button_clicked() const;
         void on_weaving_button_clicked() const;

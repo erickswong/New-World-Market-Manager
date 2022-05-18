@@ -115,6 +115,8 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\ui\content_pages\input_pages\input_page.cpp" />
+    <ClCompile Include="src\ui\content_pages\input_pages\input_item.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\general_settings_input_page.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\smelting_settings_input_page.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\ingot_input_page.cpp" />
@@ -130,6 +132,8 @@
     <ClCompile Include="src\settings\fort_bonuses.cpp" />
     <ClCompile Include="src\settings\taxes.cpp" />
     <ClCompile Include="src\settings\standing_bonuses.cpp" />
+    <QtMoc Include="include\ui\content_pages\input_pages\input_page.h" />
+    <QtMoc Include="include\ui\content_pages\input_pages\input_item.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\smelting_settings_input_page.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\ingot_input_page.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\ore_input_page.h" />
@@ -158,6 +162,8 @@
     <QtMoc Include="include\ui\content_pages\smelting_page.h" />
     <None Include="README.md" />
     <QtRcc Include="ui\market_manager.qrc" />
+    <QtUic Include="ui\forms\content_pages\input_pages\input_page.ui" />
+    <QtUic Include="ui\forms\content_pages\input_pages\input_item.ui" />
     <QtUic Include="ui\forms\content_pages\input_pages\general_settings_input_page.ui" />
     <QtUic Include="ui\forms\content_pages\input_pages\smelting_settings_input_page.ui" />
     <QtUic Include="ui\forms\content_pages\input_pages\ingot_input_page.ui" />

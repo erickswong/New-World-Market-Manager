@@ -83,12 +83,12 @@ ItemAnalysis& Items::getItemAnalysis(const std::string& item_name) const {
 	return getItem(item_name)->getAnalysis();
 }
 
-std::unordered_map<std::string, Item*> Items::getItems() const {
-	return items;
-}
-
 Item* Items::getItem(const std::string& item_name) const {
 	return items.at(item_name);
+}
+
+std::unordered_map<std::string, Item*> Items::getItems() const {
+	return items;
 }
 
 void Items::analyzeItem(const std::string& item_name, Settings& settings) const {

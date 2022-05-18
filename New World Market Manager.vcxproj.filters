@@ -91,6 +91,12 @@
     <ClCompile Include="src\ui\content_pages\input_pages\general_settings_input_page.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\ui\content_pages\input_pages\input_item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\content_pages\input_pages\input_page.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -135,6 +141,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="include\ui\content_pages\input_pages\general_settings_input_page.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\ui\content_pages\input_pages\input_item.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\ui\content_pages\input_pages\input_page.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -236,6 +248,12 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="ui\forms\content_pages\input_pages\general_settings_input_page.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ui\forms\content_pages\input_pages\input_item.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ui\forms\content_pages\input_pages\input_page.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

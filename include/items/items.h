@@ -38,12 +38,12 @@ class Items {
 
 		[[nodiscard]] ItemAnalysis& getItemAnalysis(const std::string& item_name) const;
 
+		[[nodiscard]] Item* getItem(const std::string& item_name) const;
+
 		[[nodiscard]] std::unordered_map<std::string, Item*> getItems() const;
 
 	private:
 		std::unordered_map<std::string, Item*> items;
-
-		[[nodiscard]] Item* getItem(const std::string& item_name) const;
 
 		void analyzeItem(const std::string& item_name, Settings& settings) const;
 		std::tuple<Recipe*, float> itemBestInstantCraftCost(const std::string& item_name, Settings& settings) const;

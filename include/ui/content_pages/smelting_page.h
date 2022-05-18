@@ -15,10 +15,10 @@ class SmeltingPage final : public QWidget {
 		void setSettings(Settings* settings);
 
 	private slots:
-		void on_flux_input_button_clicked();
-		void on_ore_input_button_clicked();
-		void on_ingot_input_button_clicked();
-		void on_settings_input_button_clicked();
+		void on_flux_input_button_clicked() const;
+		void on_ore_input_button_clicked() const;
+		void on_ingot_input_button_clicked() const;
+		void on_settings_input_button_clicked() const;
 
 	private:
 		Ui::SmeltingPage ui;
