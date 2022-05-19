@@ -1,4 +1,8 @@
 #include "ui/market_manager.h"
+
+#include <fstream>
+
+#include "exceptions.h"
 #include "stdafx.h"
 
 MarketManager::MarketManager(QWidget *parent)
@@ -148,6 +152,9 @@ void MarketManager::on_maximize_restore_button_clicked() {
 }
 
 void MarketManager::on_close_button_clicked() {
+    // Write settings to disk
+    settings->writeToDisk();
+
     close();
 }
 
@@ -195,9 +202,21 @@ void MarketManager::setItems() {
 }
 
 void MarketManager::setSettings() {
-    settings = new Settings;
+	try {
+        std::ifstream file("data/settings.json");
+        Json::Reader reader;
+        Json::Value json_value;
 
-    // TODO: have initializer
+        if (!reader.parse(file, json_value)) {
+            throw BadJsonException("Unable to parse settings.json");
+        }
+
+        settings = new Settings(json_value);
+	} catch (std::exception& e) {
+        settings = new Settings;
+
+        // TODO: alert that creating settings from settings.json was unsuccessful with message e.what()
+	}
 
     // Set settings for all children
     ui.smelting_page->setSettings(settings);

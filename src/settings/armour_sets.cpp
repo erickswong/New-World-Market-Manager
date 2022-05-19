@@ -16,23 +16,43 @@ ArmourSets::ArmourSets(const ArmourSet smelter_set,
                              stonecutter_set(stonecutter_set) {
 }
 
-float ArmourSets::smeltingYieldBonus() const {
+ArmourSets::ArmourSets(Json::Value json_value)
+	: smelter_set(json_value["smelter_set"]),
+      woodworker_set(json_value["woodworker_set"]),
+      weaver_set(json_value["weaver_set"]),
+      tanner_set(json_value["tanner_set"]),
+      stonecutter_set(json_value["stonecutter_set"]) {
+}
+
+Json::Value ArmourSets::getJsonValue() const {
+    Json::Value json_value;
+
+    json_value["smelter_set"] = smelter_set.getJsonValue();
+    json_value["woodworker_set"] = smelter_set.getJsonValue();
+    json_value["weaver_set"] = smelter_set.getJsonValue();
+    json_value["tanner_set"] = smelter_set.getJsonValue();
+    json_value["stonecutter_set"] = smelter_set.getJsonValue();
+
+    return json_value;
+}
+
+double ArmourSets::smeltingYieldBonus() const {
     return ARMOUR_YIELD_BONUS * smelter_set.numberAcquired();
 }
 
-float ArmourSets::woodworkingYieldBonus() const {
+double ArmourSets::woodworkingYieldBonus() const {
     return ARMOUR_YIELD_BONUS * woodworker_set.numberAcquired();
 }
 
-float ArmourSets::leatherworkingYieldBonus() const {
+double ArmourSets::leatherworkingYieldBonus() const {
     return ARMOUR_YIELD_BONUS * weaver_set.numberAcquired();
 }
 
-float ArmourSets::weavingYieldBonus() const {
+double ArmourSets::weavingYieldBonus() const {
     return ARMOUR_YIELD_BONUS * tanner_set.numberAcquired();
 }
 
-float ArmourSets::stonecuttingYieldBonus() const {
+double ArmourSets::stonecuttingYieldBonus() const {
     return ARMOUR_YIELD_BONUS * stonecutter_set.numberAcquired();
 }
 

@@ -1,38 +1,74 @@
 #include "settings/trade_skills.h"
 
 #include "constants.h"
+#include "exceptions.h"
 
 TradeSkills::TradeSkills() = default;
 
 TradeSkills::TradeSkills(const int smelting_level,
-               const int woodworking_level,
-               const int leatherworking_level,
-               const int weaving_level,
-               const int stonecutting_level)
-				   : smelting_level(smelting_level),
-                     woodworking_level(woodworking_level),
-                     leatherworking_level(leatherworking_level),
-                     weaving_level(weaving_level),
-                     stonecutting_level(stonecutting_level) {
+                         const int woodworking_level,
+                         const int leatherworking_level,
+                         const int weaving_level,
+                         const int stonecutting_level)
+	                         : smelting_level(smelting_level),
+                               woodworking_level(woodworking_level),
+                               leatherworking_level(leatherworking_level),
+                               weaving_level(weaving_level),
+                               stonecutting_level(stonecutting_level) {
 }
 
-float TradeSkills::smeltingYieldBonus() const {
+TradeSkills::TradeSkills(Json::Value json_value)
+	: smelting_level(json_value["smelting_level"].asInt()),
+      woodworking_level(json_value["woodworking_level"].asInt()),
+      leatherworking_level(json_value["leatherworking_level"].asInt()),
+      weaving_level(json_value["weaving_level"].asInt()),
+      stonecutting_level(json_value["stonecutting_level"].asInt()) {
+    if (smelting_level < 0 || smelting_level > 200) {
+        throw BadJsonException("Invalid smelting_level in settings.json");
+    }
+    if (woodworking_level < 0 || woodworking_level > 200) {
+        throw BadJsonException("Invalid woodworking_level in settings.json");
+    }
+    if (leatherworking_level < 0 || leatherworking_level > 200) {
+        throw BadJsonException("Invalid leatherworking_level in settings.json");
+    }
+    if (weaving_level < 0 || weaving_level > 200) {
+        throw BadJsonException("Invalid weaving_level in settings.json");
+    }
+    if (stonecutting_level < 0 || stonecutting_level > 200) {
+        throw BadJsonException("Invalid stonecutting_level in settings.json");
+    }
+}
+
+Json::Value TradeSkills::getJsonValue() const {
+    Json::Value json_value;
+
+    json_value["smelting_level"] = Json::Value(smelting_level);
+    json_value["woodworking_level"] = Json::Value(woodworking_level);
+    json_value["leatherworking_level"] = Json::Value(leatherworking_level);
+    json_value["weaving_level"] = Json::Value(weaving_level);
+    json_value["stonecutting_level"] = Json::Value(stonecutting_level);
+
+    return json_value;
+}
+
+double TradeSkills::smeltingYieldBonus() const {
     return LEVEL_YIELD_BONUS * smelting_level;
 }
 
-float TradeSkills::woodworkingYieldBonus() const {
+double TradeSkills::woodworkingYieldBonus() const {
     return LEVEL_YIELD_BONUS * woodworking_level;
 }
 
-float TradeSkills::leatherworkingYieldBonus() const {
+double TradeSkills::leatherworkingYieldBonus() const {
     return LEVEL_YIELD_BONUS * leatherworking_level;
 }
 
-float TradeSkills::weavingYieldBonus() const {
+double TradeSkills::weavingYieldBonus() const {
     return LEVEL_YIELD_BONUS * weaving_level;
 }
 
-float TradeSkills::stonecuttingYieldBonus() const {
+double TradeSkills::stonecuttingYieldBonus() const {
     return LEVEL_YIELD_BONUS * stonecutting_level;
 }
 

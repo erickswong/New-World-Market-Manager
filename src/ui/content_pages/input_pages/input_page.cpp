@@ -6,14 +6,6 @@ InputPage::InputPage(QWidget *parent)
 	ui.setupUi(this);
 }
 
-InputPage::~InputPage() {
-	for (InputItem* input_item : input_items) {
-		ui.verticalLayout->removeWidget(input_item);
-
-		delete input_item;
-	}
-}
-
 void InputPage::addInputItem(Item* item) {
 	const auto input_item = new InputItem(item, this);
 

@@ -1,23 +1,28 @@
 #pragma once
 
+#include "jsoncpp/json/json.h"
+
 class Taxes {
 	public:
 		Taxes();
-		Taxes(float trading_tax,
-			  float crafting_fee,
-			  float refining_fee);
+		Taxes(double trading_tax,
+			  double crafting_fee,
+			  double refining_fee);
+		explicit Taxes(Json::Value json_value);
 
-		[[nodiscard]] float getTradingTax() const;
-		void setTradingTax(float trading_tax);
+		[[nodiscard]] Json::Value getJsonValue() const;
 
-		[[nodiscard]] float getCraftingFee() const;
-		void setCraftingFee(float crafting_fee);
+		[[nodiscard]] double getTradingTax() const;
+		void setTradingTax(double trading_tax);
 
-		[[nodiscard]] float getRefiningFee() const;
-		void setRefiningFee(float refining_fee);
+		[[nodiscard]] double getCraftingFee() const;
+		void setCraftingFee(double crafting_fee);
+
+		[[nodiscard]] double getRefiningFee() const;
+		void setRefiningFee(double refining_fee);
 
 	private:
-		float trading_tax = 0.025f;
-		float crafting_fee = 0.5f;
-		float refining_fee = 0.5f;
+		double trading_tax = 0.025;
+		double crafting_fee = 0.5;
+		double refining_fee = 0.5;
 };

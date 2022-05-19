@@ -61,10 +61,10 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)lib;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)lib</AdditionalLibraryDirectories>
     </Link>
     <ResourceCompile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -72,10 +72,10 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)lib;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -115,6 +115,7 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="lib\jsoncpp\jsoncpp.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\input_page.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\input_item.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\general_settings_input_page.cpp" />
@@ -132,6 +133,10 @@
     <ClCompile Include="src\settings\fort_bonuses.cpp" />
     <ClCompile Include="src\settings\taxes.cpp" />
     <ClCompile Include="src\settings\standing_bonuses.cpp" />
+    <ClInclude Include="lib\jsoncpp\json\json-forwards.h" />
+    <ClInclude Include="lib\jsoncpp\json\json.h" />
+    <ClInclude Include="lib\json\json-forwards.h" />
+    <ClInclude Include="lib\json\json.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\input_page.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\input_item.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\smelting_settings_input_page.h" />
@@ -142,6 +147,8 @@
     <ClInclude Include="include\items\resources\refined_resources\blocks\blocks.h" />
     <ClInclude Include="include\items\resources\refined_resources\cloths\cloths.h" />
     <ClInclude Include="include\constants.h" />
+    <ClInclude Include="include\json\json-forwards.h" />
+    <ClInclude Include="include\json\json.h" />
     <ClInclude Include="include\settings\fort_bonuses.h" />
     <ClInclude Include="include\settings\armour_sets.h" />
     <ClInclude Include="include\settings\armour_set.h" />

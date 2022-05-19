@@ -10,11 +10,25 @@ FortBonuses::FortBonuses(const bool has_first_light,
                                has_weavers_fen(has_weavers_fen) {
 }
 
-float FortBonuses::yieldBonus() const {
+FortBonuses::FortBonuses(Json::Value json_value)
+	: has_first_light(json_value["has_first_light"].asBool()),
+	  has_weavers_fen(json_value["has_weavers_fen"].asBool()) {
+}
+
+Json::Value FortBonuses::getJsonValue() const {
+	Json::Value json_value;
+
+	json_value["has_first_light"] = Json::Value(has_first_light);
+	json_value["has_weavers_fen"] = Json::Value(has_weavers_fen);
+
+	return json_value;
+}
+
+double FortBonuses::yieldBonus() const {
 	return FIRST_LIGHT_YIELD_BONUS * has_first_light;
 }
 
-float FortBonuses::taxBonus() const {
+double FortBonuses::taxBonus() const {
 	return WEAVERS_FEN_TAX_BONUS * has_weavers_fen;
 }
 

@@ -1,18 +1,23 @@
 #pragma once
 
+#include "jsoncpp/json/json.h"
+
 class StandingBonuses {
 	public:
 		StandingBonuses();
-		StandingBonuses(float station_fee,
-						float trading_tax);
+		StandingBonuses(double station_fee,
+						double trading_tax);
+		explicit StandingBonuses(Json::Value json_value);
 
-		[[nodiscard]] float getStationFee() const;
-		void setStationFee(float station_fee);
+		[[nodiscard]] Json::Value getJsonValue() const;
 
-		[[nodiscard]] float getTradingTax() const;
-		void setTradingTax(float trading_tax);
+		[[nodiscard]] double getStationFee() const;
+		void setStationFee(double station_fee);
+
+		[[nodiscard]] double getTradingTax() const;
+		void setTradingTax(double trading_tax);
 
 	private:
-		float station_fee = 0.f;
-		float trading_tax = 0.f;
+		double station_fee = 0.;
+		double trading_tax = 0.;
 };

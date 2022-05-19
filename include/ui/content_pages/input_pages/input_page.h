@@ -13,7 +13,6 @@ class InputPage final : public QWidget
 
 public:
 	explicit InputPage(QWidget* parent = Q_NULLPTR);
-	~InputPage() override;
 
 	void addInputItem(Item* item);
 

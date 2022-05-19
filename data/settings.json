@@ -1,0 +1,59 @@
+{
+   "armour_sets" : {
+      "smelter_set" : {
+         "has_gloves" : false,
+         "has_hat" : false,
+         "has_pants" : false,
+         "has_shirt" : false,
+         "has_shoes" : false
+      },
+      "stonecutter_set" : {
+         "has_gloves" : false,
+         "has_hat" : false,
+         "has_pants" : false,
+         "has_shirt" : false,
+         "has_shoes" : false
+      },
+      "tanner_set" : {
+         "has_gloves" : false,
+         "has_hat" : false,
+         "has_pants" : false,
+         "has_shirt" : false,
+         "has_shoes" : false
+      },
+      "weaver_set" : {
+         "has_gloves" : false,
+         "has_hat" : false,
+         "has_pants" : false,
+         "has_shirt" : false,
+         "has_shoes" : false
+      },
+      "woodworker_set" : {
+         "has_gloves" : false,
+         "has_hat" : false,
+         "has_pants" : false,
+         "has_shirt" : false,
+         "has_shoes" : false
+      }
+   },
+   "fort_bonuses" : {
+      "has_first_light" : false,
+      "has_weavers_fen" : false
+   },
+   "standing_bonuses" : {
+      "station_fee" : 0.0,
+      "trading_tax" : 0.0
+   },
+   "taxes" : {
+      "crafting_fee" : 0.5,
+      "refining_fee" : 0.5,
+      "trading_tax" : 0.025000000000000001
+   },
+   "trade_skills" : {
+      "leatherworking_level" : 200,
+      "smelting_level" : 200,
+      "stonecutting_level" : 200,
+      "weaving_level" : 200,
+      "woodworking_level" : 200
+   }
+}

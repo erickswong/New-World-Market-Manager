@@ -1,19 +1,24 @@
 #pragma once
 
+#include "jsoncpp/json/json.h"
+
 class TradeSkills {
 	public:
 		TradeSkills();
 		TradeSkills(int smelting_level,
-			   int woodworking_level,
-			   int leatherworking_level,
-			   int weaving_level,
-			   int stonecutting_level);
+					int woodworking_level,
+					int leatherworking_level,
+					int weaving_level,
+					int stonecutting_level);
+		explicit TradeSkills(Json::Value json_value);
 
-		[[nodiscard]] float smeltingYieldBonus() const;
-		[[nodiscard]] float woodworkingYieldBonus() const;
-		[[nodiscard]] float leatherworkingYieldBonus() const;
-		[[nodiscard]] float weavingYieldBonus() const;
-		[[nodiscard]] float stonecuttingYieldBonus() const;
+		[[nodiscard]] Json::Value getJsonValue() const;
+
+		[[nodiscard]] double smeltingYieldBonus() const;
+		[[nodiscard]] double woodworkingYieldBonus() const;
+		[[nodiscard]] double leatherworkingYieldBonus() const;
+		[[nodiscard]] double weavingYieldBonus() const;
+		[[nodiscard]] double stonecuttingYieldBonus() const;
 
 		[[nodiscard]] int getSmeltingLevel() const;
 		void setSmeltingLevel(int smelting_level);

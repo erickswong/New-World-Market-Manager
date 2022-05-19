@@ -4,10 +4,10 @@
 
 class RawResource final : public Resource {
 	public:
-		RawResource(const std::string& item_name,
+		RawResource(std::string item_name,
+					std::string image_path,
 					int tier,
 					bool buy_equals_sell,
-					float sell_price,
-					float buy_price,
-					const std::string& image_path);
+					double sell_price,
+					double buy_price);
 };

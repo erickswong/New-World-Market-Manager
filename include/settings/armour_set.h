@@ -1,5 +1,7 @@
 #pragma once
 
+#include "jsoncpp/json/json.h"
+
 class ArmourSet {
 	public:
 		ArmourSet();
@@ -8,6 +10,9 @@ class ArmourSet {
 				  bool has_gloves,
 				  bool has_pants,
 				  bool has_shoes);
+		explicit ArmourSet(Json::Value json_value);
+
+		[[nodiscard]] Json::Value getJsonValue() const;
 
 		[[nodiscard]] int numberAcquired() const;
 

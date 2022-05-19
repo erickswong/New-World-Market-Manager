@@ -1,5 +1,7 @@
 #include "settings/settings.h"
 
+#include <fstream>
+
 Settings::Settings() = default;
 
 Settings::Settings(TradeSkills trade_skills,
@@ -14,23 +16,52 @@ Settings::Settings(TradeSkills trade_skills,
                          fort_bonuses(fort_bonuses) {
 }
 
-float Settings::smeltingYieldBonus() const {
+Settings::Settings(Json::Value json_value)
+	: trade_skills(json_value["trade_skills"]),
+      armour_sets(json_value["armour_sets"]),
+      taxes(json_value["taxes"]),
+      standing_bonuses(json_value["standing_bonuses"]),
+      fort_bonuses(json_value["fort_bonuses"]) {
+}
+
+void Settings::writeToDisk() const {
+    std::ofstream file("data/settings.json");
+    Json::StyledWriter styled_writer;
+
+    file << styled_writer.write(getJsonValue());
+
+    file.close();
+}
+
+Json::Value Settings::getJsonValue() const {
+    Json::Value json_value;
+
+    json_value["trade_skills"] = trade_skills.getJsonValue();
+    json_value["armour_sets"] = armour_sets.getJsonValue();
+    json_value["taxes"] = taxes.getJsonValue();
+    json_value["standing_bonuses"] = standing_bonuses.getJsonValue();
+    json_value["fort_bonuses"] = fort_bonuses.getJsonValue();
+
+    return json_value;
+}
+
+double Settings::smeltingYieldBonus() const {
     return trade_skills.smeltingYieldBonus() + armour_sets.smeltingYieldBonus() + fort_bonuses.yieldBonus();
 }
 
-float Settings::woodworkingYieldBonus() const {
+double Settings::woodworkingYieldBonus() const {
     return trade_skills.woodworkingYieldBonus() + armour_sets.woodworkingYieldBonus() + fort_bonuses.yieldBonus();
 }
 
-float Settings::leatherworkingYieldBonus() const {
+double Settings::leatherworkingYieldBonus() const {
     return trade_skills.leatherworkingYieldBonus() + armour_sets.leatherworkingYieldBonus() + fort_bonuses.yieldBonus();
 }
 
-float Settings::weavingYieldBonus() const {
+double Settings::weavingYieldBonus() const {
     return trade_skills.weavingYieldBonus() + armour_sets.weavingYieldBonus() + fort_bonuses.yieldBonus();
 }
 
-float Settings::stonecuttingYieldBonus() const {
+double Settings::stonecuttingYieldBonus() const {
     return trade_skills.stonecuttingYieldBonus() + armour_sets.stonecuttingYieldBonus() + fort_bonuses.yieldBonus();
 }
 

@@ -1,13 +1,18 @@
 #pragma once
 
+#include "jsoncpp/json/json.h"
+
 class FortBonuses {
 	public:
 		FortBonuses();
 		FortBonuses(bool has_first_light,
 					bool has_weavers_fen);
+		explicit FortBonuses(Json::Value json_value);
 
-		[[nodiscard]] float yieldBonus() const;
-		[[nodiscard]] float taxBonus() const;
+		[[nodiscard]] Json::Value getJsonValue() const;
+
+		[[nodiscard]] double yieldBonus() const;
+		[[nodiscard]] double taxBonus() const;
 
 		[[nodiscard]] bool getHasFirstLight() const;
 		void setHasFirstLight(bool has_first_light);

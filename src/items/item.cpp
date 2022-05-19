@@ -1,24 +1,28 @@
 #include "items/item.h"
 
-#include <algorithm>
-
 #include "exceptions.h"
+
+Item::Item(std::string item_name,
+           std::string image_path)
+			   : item_name(std::move(item_name)),
+                 image_path(std::move(image_path)) {
+}
 
 Item::~Item() = default;
 
-float Item::getBestInstantAcquireCost() {
-	return std::min(sell_price, analysis.best_instant_craft_cost);
-}
-
-float Item::getBestAcquireCost() {
-	return std::min({ sell_price, analysis.best_instant_craft_cost, analysis.best_craft_cost, buy_price });
-}
-
-float Item::getCraftTax(Settings& settings) {
+double Item::getBestInstantAcquireCost() {
 	throw NotUsedException();
 }
 
-float Item::getYield(Recipe& recipe, Settings& settings) {
+double Item::getBestAcquireCost() {
+	throw NotUsedException();
+}
+
+double Item::getCraftTax(Settings& settings) {
+	throw NotUsedException();
+}
+
+double Item::getYield(Recipe& recipe, Settings& settings) {
 	throw NotUsedException();
 }
 
@@ -27,7 +31,7 @@ std::string Item::getItemName() {
 }
 
 int Item::getTier() {
-	return tier;
+	throw NotUsedException();
 }
 
 bool Item::getBuyEqualsSell() {
@@ -35,32 +39,30 @@ bool Item::getBuyEqualsSell() {
 }
 
 bool Item::setBuyEqualsSell(const bool buy_equals_sell) {
-	return false;
-}
-
-float Item::getSellPrice() {
-	return sell_price;
-}
-
-bool Item::setSellPrice(const float sell_price) {
-	this->sell_price = sell_price;
-
-	return false;
-}
-
-float Item::getBuyPrice() {
 	throw NotUsedException();
 }
 
-bool Item::setBuyPrice(const float buy_price) {
-	return false;
-}
-
-float Item::getBaseYield() {
+double Item::getSellPrice() {
 	throw NotUsedException();
 }
 
-float Item::getBaseCraftTax() {
+bool Item::setSellPrice(const double sell_price) {
+	throw NotUsedException();
+}
+
+double Item::getBuyPrice() {
+	throw NotUsedException();
+}
+
+bool Item::setBuyPrice(const double buy_price) {
+	throw NotUsedException();
+}
+
+double Item::getBaseYield() {
+	throw NotUsedException();
+}
+
+double Item::getBaseCraftTax() {
 	throw NotUsedException();
 }
 

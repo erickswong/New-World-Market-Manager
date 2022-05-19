@@ -2,6 +2,8 @@
 
 #include "armour_set.h"
 
+#include "jsoncpp/json/json.h"
+
 class ArmourSets {
 	public:
 		ArmourSets();
@@ -10,12 +12,15 @@ class ArmourSets {
 		           ArmourSet weaver_set,
 		           ArmourSet tanner_set,
 		           ArmourSet stonecutter_set);
+		explicit ArmourSets(Json::Value json_value);
 
-		[[nodiscard]] float smeltingYieldBonus() const;
-		[[nodiscard]] float woodworkingYieldBonus() const;
-		[[nodiscard]] float leatherworkingYieldBonus() const;
-		[[nodiscard]] float weavingYieldBonus() const;
-		[[nodiscard]] float stonecuttingYieldBonus() const;
+		[[nodiscard]] Json::Value getJsonValue() const;
+
+		[[nodiscard]] double smeltingYieldBonus() const;
+		[[nodiscard]] double woodworkingYieldBonus() const;
+		[[nodiscard]] double leatherworkingYieldBonus() const;
+		[[nodiscard]] double weavingYieldBonus() const;
+		[[nodiscard]] double stonecuttingYieldBonus() const;
 
 		ArmourSet& getSmelterSet();
 		ArmourSet& getWoodworkerSet();

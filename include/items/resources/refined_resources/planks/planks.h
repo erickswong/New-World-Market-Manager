@@ -4,16 +4,16 @@
 
 class Planks final : public RefinedResource {
 	public:
-		Planks(const std::string& item_name,
+		Planks(std::string item_name,
+			   std::string image_path,
 			   int tier,
 			   bool buy_equals_sell,
-			   float sell_price,
-			   float buy_price,
-			   float base_yield,
-			   float base_craft_tax,
-			   Recipes recipes,
-			   const std::string& image_path);
+			   double sell_price,
+			   double buy_price,
+			   double base_yield,
+			   double base_craft_tax,
+			   const Recipes& recipes);
 
-		float getCraftTax(Settings& settings) override;
-		float getYield(Recipe& recipe, Settings& settings) override;
+		double getCraftTax(Settings& settings) override;
+		double getYield(Recipe& recipe, Settings& settings) override;
 };

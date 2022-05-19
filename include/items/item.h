@@ -6,22 +6,24 @@
 #include "settings/settings.h"
 
 struct ItemAnalysis {
-	float best_instant_craft_cost = INFINITY;
-	float best_craft_cost = INFINITY;
-	float best_instant_profit_margin = -INFINITY;
-	float best_profit_margin = -INFINITY;
+	double best_instant_craft_cost = HUGE_VAL;
+	double best_craft_cost = HUGE_VAL;
+	double best_instant_profit_margin = -HUGE_VAL;
+	double best_profit_margin = -HUGE_VAL;
 	Recipe best_instant_recipe;
 	Recipe best_recipe;
 };
 
 class Item {
 	public:
+		Item(std::string item_name,
+		     std::string image_path);
 		virtual ~Item();
 		
-		virtual float getBestInstantAcquireCost();
-		virtual float getBestAcquireCost();
-		virtual float getCraftTax(Settings& settings);
-		virtual float getYield(Recipe& recipe, Settings& settings);
+		virtual double getBestInstantAcquireCost();
+		virtual double getBestAcquireCost();
+		virtual double getCraftTax(Settings& settings);
+		virtual double getYield(Recipe& recipe, Settings& settings);
 
 		virtual std::string getItemName();
 
@@ -30,15 +32,15 @@ class Item {
 		virtual bool getBuyEqualsSell();
 		virtual bool setBuyEqualsSell(bool buy_equals_sell);
 
-		virtual float getSellPrice();
-		virtual bool setSellPrice(float sell_price);
+		virtual double getSellPrice();
+		virtual bool setSellPrice(double sell_price);
 
-		virtual float getBuyPrice();
-		virtual bool setBuyPrice(float buy_price);
+		virtual double getBuyPrice();
+		virtual bool setBuyPrice(double buy_price);
 
-		virtual float getBaseYield();
+		virtual double getBaseYield();
 
-		virtual float getBaseCraftTax();
+		virtual double getBaseCraftTax();
 
 		virtual Recipes& getRecipes();
 
@@ -50,10 +52,10 @@ class Item {
 		std::string item_name;
 		int tier = 0;
 		bool buy_equals_sell = true;
-		float sell_price = INFINITY;
-		float buy_price = INFINITY;
-		float base_yield = 0.f;
-		float base_craft_tax = 0.f;
+		double sell_price = HUGE_VAL;
+		double buy_price = HUGE_VAL;
+		double base_yield = 0.;
+		double base_craft_tax = 0.;
 		Recipes recipes;
 		std::string image_path;
 
