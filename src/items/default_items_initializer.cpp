@@ -1188,23 +1188,98 @@ void DefaultItemsInitializer::addRunestone() const {
 }
 
 void DefaultItemsInitializer::addSmelterSet() const {
-	// TODO: Implement
+	auto* smelters_headgear = new Item("Smelter's Headgear",
+		":/MarketManager/images/armour_sets/smelter_set/smelters_headgear.png");
+	auto* smelters_smock = new Item("Smelter's Smock",
+		":/MarketManager/images/armour_sets/smelter_set/smelters_smock.png");
+	auto* smelters_mitts = new Item("Smelter's Mitts",
+		":/MarketManager/images/armour_sets/smelter_set/smelters_mitts.png");
+	auto* smelters_pants = new Item("Smelter's Pants",
+		":/MarketManager/images/armour_sets/smelter_set/smelters_pants.png");
+	auto* smelters_shoes = new Item("Smelter's Shoes",
+		":/MarketManager/images/armour_sets/smelter_set/smelters_shoes.png");
+
+	items->addItem("Smelter's Headgear", smelters_headgear);
+	items->addItem("Smelter's Smock", smelters_smock);
+	items->addItem("Smelter's Mitts", smelters_mitts);
+	items->addItem("Smelter's Pants", smelters_pants);
+	items->addItem("Smelter's Shoes", smelters_shoes);
 }
 
 void DefaultItemsInitializer::addWoodworkerSet() const {
-	// TODO: Implement
+	auto* woodworkers_cap = new Item("Woodworker's Cap",
+		":/MarketManager/images/armour_sets/woodworker_set/woodworkers_cap.png");
+	auto* woodworkers_shirt = new Item("Woodworker's Shirt",
+		":/MarketManager/images/armour_sets/woodworker_set/woodworkers_shirt.png");
+	auto* woodworkers_gloves = new Item("Woodworker's Gloves",
+		":/MarketManager/images/armour_sets/woodworker_set/woodworkers_gloves.png");
+	auto* woodworkers_pants = new Item("Woodworker's Pants",
+		":/MarketManager/images/armour_sets/woodworker_set/woodworkers_pants.png");
+	auto* woodworkers_shoes = new Item("Woodworker's Shoes",
+		":/MarketManager/images/armour_sets/woodworker_set/woodworkers_shoes.png");
+
+	items->addItem("Woodworker's Cap", woodworkers_cap);
+	items->addItem("Woodworker's Shirt", woodworkers_shirt);
+	items->addItem("Woodworker's Gloves", woodworkers_gloves);
+	items->addItem("Woodworker's Pants", woodworkers_pants);
+	items->addItem("Woodworker's Shoes", woodworkers_shoes);
 }
 
 void DefaultItemsInitializer::addWeaverSet() const {
-	// TODO: Implement
+	auto* weavers_hat = new Item("Weaver's Hat",
+		":/MarketManager/images/armour_sets/weaver_set/weavers_hat.png");
+	auto* weavers_shirt = new Item("Weaver's Shirt",
+		":/MarketManager/images/armour_sets/weaver_set/weavers_shirt.png");
+	auto* weavers_gloves = new Item("Weaver's Gloves",
+		":/MarketManager/images/armour_sets/weaver_set/weavers_gloves.png");
+	auto* weavers_pants = new Item("Weaver's Pants",
+		":/MarketManager/images/armour_sets/weaver_set/weavers_pants.png");
+	auto* weavers_shoes = new Item("Weaver's Shoes",
+		":/MarketManager/images/armour_sets/weaver_set/weavers_shoes.png");
+
+	items->addItem("Weaver's Hat", weavers_hat);
+	items->addItem("Weaver's Shirt", weavers_shirt);
+	items->addItem("Weaver's Gloves", weavers_gloves);
+	items->addItem("Weaver's Pants", weavers_pants);
+	items->addItem("Weaver's Shoes", weavers_shoes);
 }
 
 void DefaultItemsInitializer::addTannerSet() const {
-	// TODO: Implement
+	auto* tanner_hat = new Item("Tanner Hat",
+		":/MarketManager/images/armour_sets/tanner_set/tanner_hat.png");
+	auto* tanner_shirt = new Item("Tanner Shirt",
+		":/MarketManager/images/armour_sets/tanner_set/tanner_shirt.png");
+	auto* tanner_gloves = new Item("Tanner Gloves",
+		":/MarketManager/images/armour_sets/tanner_set/tanner_gloves.png");
+	auto* tanner_pants = new Item("Tanner Pants",
+		":/MarketManager/images/armour_sets/tanner_set/tanner_pants.png");
+	auto* tanner_shoes = new Item("Tanner Shoes",
+		":/MarketManager/images/armour_sets/tanner_set/tanner_shoes.png");
+
+	items->addItem("Tanner Hat", tanner_hat);
+	items->addItem("Tanner Shirt", tanner_shirt);
+	items->addItem("Tanner Gloves", tanner_gloves);
+	items->addItem("Tanner Pants", tanner_pants);
+	items->addItem("Tanner Shoes", tanner_shoes);
 }
 
 void DefaultItemsInitializer::addStonecutterSet() const {
-	// TODO: Implement
+	auto* stonecutters_hat = new Item("Stonecutter's Hat",
+		":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_hat.png");
+	auto* stonecutters_shirt = new Item("Stonecutter's Shirt",
+		":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_shirt.png");
+	auto* stonecutters_gloves = new Item("Stonecutter's Gloves",
+		":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_gloves.png");
+	auto* stonecutters_pants = new Item("Stonecutter's Pants",
+		":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_pants.png");
+	auto* stonecutters_shoes = new Item("Stonecutter's Shoes",
+		":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_shoes.png");
+
+	items->addItem("Stonecutter's Hat", stonecutters_hat);
+	items->addItem("Stonecutter's Shirt", stonecutters_shirt);
+	items->addItem("Stonecutter's Gloves", stonecutters_gloves);
+	items->addItem("Stonecutter's Pants", stonecutters_pants);
+	items->addItem("Stonecutter's Shoes", stonecutters_shoes);
 }
 
 void DefaultItemsInitializer::addFluxes() const {
