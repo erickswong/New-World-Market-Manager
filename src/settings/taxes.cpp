@@ -17,7 +17,7 @@ Taxes::Taxes(Json::Value json_value)
 	// TODO: add BadJsonExceptions for out of range values
 }
 
-Json::Value Taxes::getJsonValue() const {
+Json::Value Taxes::toJson() const {
 	Json::Value json_value;
 
 	json_value["trading_tax"] = Json::Value(trading_tax);

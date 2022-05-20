@@ -14,7 +14,7 @@ StandingBonuses::StandingBonuses(Json::Value json_value)
 	// TODO: add BadJsonExceptions for out of range values
 }
 
-Json::Value StandingBonuses::getJsonValue() const {
+Json::Value StandingBonuses::toJson() const {
 	Json::Value json_value;
 
 	json_value["station_fee"] = Json::Value(station_fee);

@@ -1,17 +1,17 @@
 #include <algorithm>
 #include <utility>
 
-#include "items/resources/refined_resources/planks/planks.h"
+#include "items/resources/refined_resources/planks/plank.h"
 
-Planks::Planks(std::string item_name,
-			   std::string image_path,
-			   const int tier,
-			   const bool buy_equals_sell,
-			   const double sell_price,
-			   const double buy_price,
-			   const double base_yield,
-			   const double base_craft_tax,
-			   const Recipes& recipes)
+Plank::Plank(std::string item_name,
+             std::string image_path,
+             const int tier,
+             const bool buy_equals_sell,
+             const double sell_price,
+             const double buy_price,
+             const double base_yield,
+             const double base_craft_tax,
+             const Recipes& recipes)
 	               : RefinedResource(std::move(item_name),
 	                                 std::move(image_path),
 	                                 tier,
@@ -23,12 +23,24 @@ Planks::Planks(std::string item_name,
 	                                 recipes) {
 }
 
-double Planks::getCraftTax(Settings& settings) {
+Plank::Plank(Json::Value json_value)
+	: RefinedResource(std::move(json_value)) {
+}
+
+Json::Value Plank::toJson() const {
+	Json::Value json_value = RefinedResource::toJson();
+
+	json_value["item_type"] = "Plank";
+
+	return json_value;
+}
+
+double Plank::getCraftTax(Settings& settings) {
 	// TODO: implement craft_tax modifiers from settings
 	return base_craft_tax;
 }
 
-double Planks::getYield(Recipe& recipe, Settings& settings) {
+double Plank::getYield(Recipe& recipe, Settings& settings) {
 	// Determine the tier of the refining component in the given recipe
 	int refining_component_tier = 0;
 	for (const auto& [ingredient_name, amount] : recipe.getRecipe()) {

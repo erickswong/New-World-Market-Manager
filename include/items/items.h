@@ -8,7 +8,12 @@
 
 class Items {
 	public:
+		Items();
+		explicit Items(Json::Value json_value);
 		~Items();
+
+		void writeToDisk() const;
+		[[nodiscard]] Json::Value toJson() const;
 
 		void addItem(const std::string& item_name, Item* item);
 		void analyzeItem(const std::string& item_name, Settings& settings) const;

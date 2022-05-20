@@ -1,3 +1,5 @@
+#include <utility>
+
 #include "items/resources/refining_components/refining_component.h"
 
 RefiningComponent::RefiningComponent(std::string item_name,
@@ -12,4 +14,16 @@ RefiningComponent::RefiningComponent(std::string item_name,
 													buy_equals_sell,
 													sell_price,
 													buy_price) {
+}
+
+RefiningComponent::RefiningComponent(Json::Value json_value)
+	: Resource(std::move(json_value)) {
+}
+
+Json::Value RefiningComponent::toJson() const {
+	Json::Value json_value = Resource::toJson();
+
+	json_value["item_type"] = "RefiningComponent";
+
+	return json_value;
 }

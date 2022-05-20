@@ -15,7 +15,7 @@ FortBonuses::FortBonuses(Json::Value json_value)
 	  has_weavers_fen(json_value["has_weavers_fen"].asBool()) {
 }
 
-Json::Value FortBonuses::getJsonValue() const {
+Json::Value FortBonuses::toJson() const {
 	Json::Value json_value;
 
 	json_value["has_first_light"] = Json::Value(has_first_light);

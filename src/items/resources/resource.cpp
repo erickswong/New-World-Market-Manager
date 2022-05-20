@@ -17,6 +17,26 @@ Resource::Resource(std::string item_name,
 	this->buy_price = buy_price;
 }
 
+Resource::Resource(Json::Value json_value)
+	: Item(json_value) {
+	this->tier = json_value["tier"].asInt();
+	this->buy_equals_sell = json_value["buy_equals_sell"].asBool();
+	this->sell_price = json_value["sell_price"].asDouble();
+	this->buy_price = json_value["buy_price"].asDouble();
+}
+
+Json::Value Resource::toJson() const {
+	Json::Value json_value = Item::toJson();
+
+	json_value["item_type"] = "Resource";
+	json_value["tier"] = tier;
+	json_value["buy_equals_sell"] = buy_equals_sell;
+	json_value["sell_price"] = sell_price;
+	json_value["buy_price"] = buy_price;
+
+	return json_value;
+}
+
 double Resource::getBestInstantAcquireCost() {
 	return std::min(sell_price, analysis.best_instant_craft_cost);
 }

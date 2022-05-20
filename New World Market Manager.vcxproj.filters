@@ -55,22 +55,22 @@
     <ClCompile Include="src\settings\fort_bonuses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\items\resources\refined_resources\ingots\ingots.cpp">
+    <ClCompile Include="src\items\resources\refined_resources\ingots\ingot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\settings\trade_skills.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\items\resources\refined_resources\planks\planks.cpp">
+    <ClCompile Include="src\items\resources\refined_resources\planks\plank.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\items\resources\refined_resources\cloths\cloths.cpp">
+    <ClCompile Include="src\items\resources\refined_resources\cloths\cloth.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\items\resources\refined_resources\leathers\leathers.cpp">
+    <ClCompile Include="src\items\resources\refined_resources\leathers\leather.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\items\resources\refined_resources\blocks\blocks.cpp">
+    <ClCompile Include="src\items\resources\refined_resources\blocks\block.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ui\content_pages\smelting_page.cpp">
@@ -98,6 +98,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lib\jsoncpp\jsoncpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\items\default_items_initializer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -199,7 +202,7 @@
     <ClInclude Include="include\settings\fort_bonuses.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\items\resources\refined_resources\ingots\ingots.h">
+    <ClInclude Include="include\items\resources\refined_resources\ingots\ingot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\settings\trade_skills.h">
@@ -208,16 +211,16 @@
     <ClInclude Include="include\constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\items\resources\refined_resources\planks\planks.h">
+    <ClInclude Include="include\items\resources\refined_resources\planks\plank.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\items\resources\refined_resources\cloths\cloths.h">
+    <ClInclude Include="include\items\resources\refined_resources\cloths\cloth.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\items\resources\refined_resources\leathers\leathers.h">
+    <ClInclude Include="include\items\resources\refined_resources\leathers\leather.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\items\resources\refined_resources\blocks\blocks.h">
+    <ClInclude Include="include\items\resources\refined_resources\blocks\block.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\json\json.h">
@@ -236,6 +239,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lib\jsoncpp\json\json-forwards.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\items\default_items_initializer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

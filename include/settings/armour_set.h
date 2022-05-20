@@ -12,7 +12,7 @@ class ArmourSet {
 				  bool has_shoes);
 		explicit ArmourSet(Json::Value json_value);
 
-		[[nodiscard]] Json::Value getJsonValue() const;
+		[[nodiscard]] Json::Value toJson() const;
 
 		[[nodiscard]] int numberAcquired() const;
 

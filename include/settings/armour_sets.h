@@ -14,7 +14,7 @@ class ArmourSets {
 		           ArmourSet stonecutter_set);
 		explicit ArmourSets(Json::Value json_value);
 
-		[[nodiscard]] Json::Value getJsonValue() const;
+		[[nodiscard]] Json::Value toJson() const;
 
 		[[nodiscard]] double smeltingYieldBonus() const;
 		[[nodiscard]] double woodworkingYieldBonus() const;

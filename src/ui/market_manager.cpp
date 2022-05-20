@@ -152,7 +152,8 @@ void MarketManager::on_maximize_restore_button_clicked() {
 }
 
 void MarketManager::on_close_button_clicked() {
-    // Write settings to disk
+    // Write to disk TODO: Ask on close, have setting to not ask again
+    items->writeToDisk();
     settings->writeToDisk();
 
     close();
@@ -193,9 +194,21 @@ void MarketManager::setDropShadow() {
 }
 
 void MarketManager::setItems() {
-    items = new Items;
+	try {
+        std::ifstream file("data/items.json");
+        Json::Reader reader;
+        Json::Value json_value;
 
-    // TODO: have initializer
+        if (!reader.parse(file, json_value)) {
+            throw BadJsonException("Unable to parse items.json");
+        }
+
+        items = new Items(json_value);
+	} catch (std::exception& e) {
+        items = new Items;
+
+        // TODO: alert that creating items from items.json was unsuccessful with message e.what()
+	}
 
     // Set items for all children
     ui.smelting_page->setItems(items);

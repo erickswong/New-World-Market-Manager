@@ -24,14 +24,14 @@ ArmourSets::ArmourSets(Json::Value json_value)
       stonecutter_set(json_value["stonecutter_set"]) {
 }
 
-Json::Value ArmourSets::getJsonValue() const {
+Json::Value ArmourSets::toJson() const {
     Json::Value json_value;
 
-    json_value["smelter_set"] = smelter_set.getJsonValue();
-    json_value["woodworker_set"] = smelter_set.getJsonValue();
-    json_value["weaver_set"] = smelter_set.getJsonValue();
-    json_value["tanner_set"] = smelter_set.getJsonValue();
-    json_value["stonecutter_set"] = smelter_set.getJsonValue();
+    json_value["smelter_set"] = smelter_set.toJson();
+    json_value["woodworker_set"] = smelter_set.toJson();
+    json_value["weaver_set"] = smelter_set.toJson();
+    json_value["tanner_set"] = smelter_set.toJson();
+    json_value["stonecutter_set"] = smelter_set.toJson();
 
     return json_value;
 }

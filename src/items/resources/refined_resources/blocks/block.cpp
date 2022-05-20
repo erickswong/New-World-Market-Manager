@@ -1,17 +1,17 @@
 #include <algorithm>
 #include <utility>
 
-#include "items/resources/refined_resources/blocks/blocks.h"
+#include "items/resources/refined_resources/blocks/block.h"
 
-Blocks::Blocks(std::string item_name,
-			   std::string image_path,
-			   const int tier,
-			   const bool buy_equals_sell,
-			   const double sell_price,
-			   const double buy_price,
-			   const double base_yield,
-			   const double base_craft_tax,
-			   const Recipes& recipes)
+Block::Block(std::string item_name,
+             std::string image_path,
+             const int tier,
+             const bool buy_equals_sell,
+             const double sell_price,
+             const double buy_price,
+             const double base_yield,
+             const double base_craft_tax,
+             const Recipes& recipes)
 				   : RefinedResource(std::move(item_name),
 				                     std::move(image_path),
 				                     tier,
@@ -23,12 +23,24 @@ Blocks::Blocks(std::string item_name,
 				                     recipes) {
 }
 
-double Blocks::getCraftTax(Settings& settings) {
+Block::Block(Json::Value json_value)
+	: RefinedResource(std::move(json_value)) {
+}
+
+Json::Value Block::toJson() const {
+	Json::Value json_value = RefinedResource::toJson();
+
+	json_value["item_type"] = "Block";
+
+	return json_value;
+}
+
+double Block::getCraftTax(Settings& settings) {
 	// TODO: implement craft_tax modifiers from settings
 	return base_craft_tax;
 }
 
-double Blocks::getYield(Recipe& recipe, Settings& settings) {
+double Block::getYield(Recipe& recipe, Settings& settings) {
 	// Determine the tier of the refining component in the given recipe
 	int refining_component_tier = 0;
 	for (const auto& [ingredient_name, amount] : recipe.getRecipe()) {

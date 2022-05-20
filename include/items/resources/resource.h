@@ -10,6 +10,9 @@ class Resource : public Item {
 				 bool buy_equals_sell,
 				 double sell_price,
 				 double buy_price);
+		explicit Resource(Json::Value json_value);
+
+		[[nodiscard]] Json::Value toJson() const override;
 
 		double getBestInstantAcquireCost() override;
 		double getBestAcquireCost() override;

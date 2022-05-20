@@ -12,7 +12,7 @@ class TradeSkills {
 					int stonecutting_level);
 		explicit TradeSkills(Json::Value json_value);
 
-		[[nodiscard]] Json::Value getJsonValue() const;
+		[[nodiscard]] Json::Value toJson() const;
 
 		[[nodiscard]] double smeltingYieldBonus() const;
 		[[nodiscard]] double woodworkingYieldBonus() const;

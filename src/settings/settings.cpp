@@ -1,5 +1,6 @@
 #include "settings/settings.h"
 
+#include <filesystem>
 #include <fstream>
 
 Settings::Settings() = default;
@@ -25,22 +26,28 @@ Settings::Settings(Json::Value json_value)
 }
 
 void Settings::writeToDisk() const {
+    // Create data directory if missing
+    std::filesystem::create_directory("data");
+
+    // Create settings.json file
     std::ofstream file("data/settings.json");
+
+    // Write json into file
     Json::StyledWriter styled_writer;
+    file << styled_writer.write(toJson());
 
-    file << styled_writer.write(getJsonValue());
-
+    // Close file
     file.close();
 }
 
-Json::Value Settings::getJsonValue() const {
+Json::Value Settings::toJson() const {
     Json::Value json_value;
 
-    json_value["trade_skills"] = trade_skills.getJsonValue();
-    json_value["armour_sets"] = armour_sets.getJsonValue();
-    json_value["taxes"] = taxes.getJsonValue();
-    json_value["standing_bonuses"] = standing_bonuses.getJsonValue();
-    json_value["fort_bonuses"] = fort_bonuses.getJsonValue();
+    json_value["trade_skills"] = trade_skills.toJson();
+    json_value["armour_sets"] = armour_sets.toJson();
+    json_value["taxes"] = taxes.toJson();
+    json_value["standing_bonuses"] = standing_bonuses.toJson();
+    json_value["fort_bonuses"] = fort_bonuses.toJson();
 
     return json_value;
 }

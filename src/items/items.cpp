@@ -1,12 +1,84 @@
-#include <cmath>
-
 #include "items/items.h"
+
+#include <cmath>
+#include <filesystem>
+#include <fstream>
+
+#include "exceptions.h"
+
+#include "items/default_items_initializer.h"
+#include "items/resources/raw_resources/raw_resource.h"
+#include "items/resources/refined_resources/blocks/block.h"
+#include "items/resources/refined_resources/cloths/cloth.h"
+#include "items/resources/refined_resources/ingots/ingot.h"
+#include "items/resources/refined_resources/leathers/leather.h"
+#include "items/resources/refined_resources/planks/plank.h"
+#include "items/resources/refining_components/refining_component.h"
+
+Items::Items() {
+	DefaultItemsInitializer(this).initializeItems();
+}
+
+Items::Items(Json::Value json_value) {
+	for (const std::string& item_name : json_value.getMemberNames()) {
+		std::string item_type = json_value[item_name]["item_type"].asString();
+
+		if (item_type == "Item") {
+			addItem(item_name, new Item(json_value[item_name]));
+		} else if (item_type == "Resource") {
+			addItem(item_name, new Resource(json_value[item_name]));
+		} else if (item_type == "RawResource") {
+			addItem(item_name, new RawResource(json_value[item_name]));
+		} else if (item_type == "RefinedResource") {
+			addItem(item_name, new RefinedResource(json_value[item_name]));
+		} else if (item_type == "Block") {
+			addItem(item_name, new Block(json_value[item_name]));
+		} else if (item_type == "Cloth") {
+			addItem(item_name, new Cloth(json_value[item_name]));
+		} else if (item_type == "Ingot") {
+			addItem(item_name, new Ingot(json_value[item_name]));
+		} else if (item_type == "Leather") {
+			addItem(item_name, new Leather(json_value[item_name]));
+		} else if (item_type == "Plank") {
+			addItem(item_name, new Plank(json_value[item_name]));
+		} else if (item_type == "RefiningComponent") {
+			addItem(item_name, new RefiningComponent(json_value[item_name]));
+		} else {
+			throw BadJsonException("Unrecognized item_type in items.json");
+		}
+	}
+}
 
 Items::~Items() {
 	// Delete each item in items
 	for (const auto& [item_name, item] : items) {
 		delete item;
 	}
+}
+
+void Items::writeToDisk() const {
+	// Create data directory if missing
+	std::filesystem::create_directory("data");
+
+	// Create items.json file
+	std::ofstream file("data/items.json");
+
+	// Write json into file
+	Json::StyledWriter styled_writer;
+	file << styled_writer.write(toJson());
+
+	// Close file
+	file.close();
+}
+
+Json::Value Items::toJson() const {
+	Json::Value json_value;
+
+	for (const auto& [item_name, item] : items) {
+		json_value[item_name] = item->toJson();
+	}
+
+	return json_value;
 }
 
 void Items::addItem(const std::string& item_name, Item* item) {

@@ -19,7 +19,7 @@ class Settings {
 		explicit Settings(Json::Value json_value);
 
 		void writeToDisk() const;
-		[[nodiscard]] Json::Value getJsonValue() const;
+		[[nodiscard]] Json::Value toJson() const;
 
 		[[nodiscard]] double smeltingYieldBonus() const;
 		[[nodiscard]] double woodworkingYieldBonus() const;

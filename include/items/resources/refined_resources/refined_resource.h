@@ -13,6 +13,9 @@ class RefinedResource : public Resource {
 						double base_yield,
 						double base_craft_tax,
 						const Recipes& recipes);
+		explicit RefinedResource(Json::Value json_value);
+
+		[[nodiscard]] Json::Value toJson() const override;
 
 		bool setBuyEqualsSell(bool buy_equals_sell) override;
 

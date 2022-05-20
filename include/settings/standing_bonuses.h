@@ -9,7 +9,7 @@ class StandingBonuses {
 						double trading_tax);
 		explicit StandingBonuses(Json::Value json_value);
 
-		[[nodiscard]] Json::Value getJsonValue() const;
+		[[nodiscard]] Json::Value toJson() const;
 
 		[[nodiscard]] double getStationFee() const;
 		void setStationFee(double station_fee);

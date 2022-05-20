@@ -22,7 +22,7 @@ ArmourSet::ArmourSet(Json::Value json_value)
   	  has_shoes(json_value["has_shoes"].asBool()) {
 }
 
-Json::Value ArmourSet::getJsonValue() const {
+Json::Value ArmourSet::toJson() const {
 	Json::Value json_value;
 
 	json_value["has_hat"] = Json::Value(has_hat);

@@ -18,8 +18,11 @@ class Item {
 	public:
 		Item(std::string item_name,
 		     std::string image_path);
+		explicit Item(Json::Value json_value);
 		virtual ~Item();
-		
+
+		[[nodiscard]] virtual Json::Value toJson() const;
+
 		virtual double getBestInstantAcquireCost();
 		virtual double getBestAcquireCost();
 		virtual double getCraftTax(Settings& settings);

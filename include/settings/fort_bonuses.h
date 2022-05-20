@@ -9,7 +9,7 @@ class FortBonuses {
 					bool has_weavers_fen);
 		explicit FortBonuses(Json::Value json_value);
 
-		[[nodiscard]] Json::Value getJsonValue() const;
+		[[nodiscard]] Json::Value toJson() const;
 
 		[[nodiscard]] double yieldBonus() const;
 		[[nodiscard]] double taxBonus() const;

@@ -2,9 +2,9 @@
 
 #include "items/resources/refined_resources/refined_resource.h"
 
-class Planks final : public RefinedResource {
+class Plank final : public RefinedResource {
 	public:
-		Planks(std::string item_name,
+		Plank(std::string item_name,
 			   std::string image_path,
 			   int tier,
 			   bool buy_equals_sell,
@@ -13,6 +13,9 @@ class Planks final : public RefinedResource {
 			   double base_yield,
 			   double base_craft_tax,
 			   const Recipes& recipes);
+		explicit Plank(Json::Value json_value);
+
+		[[nodiscard]] Json::Value toJson() const override;
 
 		double getCraftTax(Settings& settings) override;
 		double getYield(Recipe& recipe, Settings& settings) override;

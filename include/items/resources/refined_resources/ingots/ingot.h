@@ -2,9 +2,9 @@
 
 #include "items/resources/refined_resources/refined_resource.h"
 
-class Ingots final : public RefinedResource {
+class Ingot final : public RefinedResource {
 	public:
-		Ingots(std::string item_name,
+		Ingot(std::string item_name,
 			   std::string image_path,
 			   int tier,
 			   bool buy_equals_sell,
@@ -13,6 +13,9 @@ class Ingots final : public RefinedResource {
 			   double base_yield,
 			   double base_craft_tax,
 			   const Recipes& recipes);
+		explicit Ingot(Json::Value json_value);
+
+		[[nodiscard]] Json::Value toJson() const override;
 
 		double getCraftTax(Settings& settings) override;
 		double getYield(Recipe& recipe, Settings& settings) override;

@@ -8,7 +8,22 @@ Item::Item(std::string item_name,
                  image_path(std::move(image_path)) {
 }
 
+Item::Item(Json::Value json_value)
+	: item_name(json_value["item_name"].asString()),
+      image_path(json_value["image_path"].asString()) {
+}
+
 Item::~Item() = default;
+
+Json::Value Item::toJson() const {
+	Json::Value json_value;
+
+	json_value["item_type"] = "Item";
+	json_value["item_name"] = item_name;
+	json_value["image_path"] = image_path;
+
+	return json_value;
+}
 
 double Item::getBestInstantAcquireCost() {
 	throw NotUsedException();

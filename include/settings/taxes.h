@@ -10,7 +10,7 @@ class Taxes {
 			  double refining_fee);
 		explicit Taxes(Json::Value json_value);
 
-		[[nodiscard]] Json::Value getJsonValue() const;
+		[[nodiscard]] Json::Value toJson() const;
 
 		[[nodiscard]] double getTradingTax() const;
 		void setTradingTax(double trading_tax);

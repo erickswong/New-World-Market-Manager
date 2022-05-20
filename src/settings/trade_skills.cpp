@@ -23,6 +23,7 @@ TradeSkills::TradeSkills(Json::Value json_value)
       leatherworking_level(json_value["leatherworking_level"].asInt()),
       weaving_level(json_value["weaving_level"].asInt()),
       stonecutting_level(json_value["stonecutting_level"].asInt()) {
+    // Check that values satisfy constraints TODO: abstract to own functions, to be used in setters as well
     if (smelting_level < 0 || smelting_level > 200) {
         throw BadJsonException("Invalid smelting_level in settings.json");
     }
@@ -40,7 +41,7 @@ TradeSkills::TradeSkills(Json::Value json_value)
     }
 }
 
-Json::Value TradeSkills::getJsonValue() const {
+Json::Value TradeSkills::toJson() const {
     Json::Value json_value;
 
     json_value["smelting_level"] = Json::Value(smelting_level);

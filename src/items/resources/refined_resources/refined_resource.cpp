@@ -21,6 +21,24 @@ RefinedResource::RefinedResource(std::string item_name,
 	this->recipes = recipes;
 }
 
+RefinedResource::RefinedResource(Json::Value json_value)
+	: Resource(json_value) {
+	this->base_yield = json_value["base_yield"].asDouble();
+	this->base_craft_tax = json_value["base_craft_tax"].asDouble();
+	this->recipes = Recipes(json_value["recipes"]);
+}
+
+Json::Value RefinedResource::toJson() const {
+	Json::Value json_value = Resource::toJson();
+
+	json_value["item_type"] = "RefinedResource";
+	json_value["base_yield"] = base_yield;
+	json_value["base_craft_tax"] = base_craft_tax;
+	json_value["recipes"] = recipes.toJson();
+
+	return json_value;
+}
+
 bool RefinedResource::setBuyEqualsSell(const bool buy_equals_sell) {
 	this->buy_equals_sell = buy_equals_sell;
 

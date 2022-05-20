@@ -10,4 +10,7 @@ class RawResource final : public Resource {
 					bool buy_equals_sell,
 					double sell_price,
 					double buy_price);
+		explicit RawResource(Json::Value json_value);
+
+		[[nodiscard]] Json::Value toJson() const override;
 };
