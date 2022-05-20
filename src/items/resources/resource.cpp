@@ -14,7 +14,11 @@ Resource::Resource(std::string item_name,
 	this->tier = tier;
 	this->buy_equals_sell = buy_equals_sell;
 	this->sell_price = sell_price;
-	this->buy_price = buy_price;
+	if (buy_equals_sell) {
+		this->buy_price = sell_price;
+	} else {
+		this->buy_price = buy_price;
+	}
 }
 
 Resource::Resource(Json::Value json_value)
@@ -22,7 +26,11 @@ Resource::Resource(Json::Value json_value)
 	this->tier = json_value["tier"].asInt();
 	this->buy_equals_sell = json_value["buy_equals_sell"].asBool();
 	this->sell_price = json_value["sell_price"].asDouble();
-	this->buy_price = json_value["buy_price"].asDouble();
+	if (buy_equals_sell) {
+		this->buy_price = sell_price;
+	} else {
+		this->buy_price = json_value["buy_price"].asDouble();
+	}
 }
 
 Json::Value Resource::toJson() const {
@@ -32,7 +40,9 @@ Json::Value Resource::toJson() const {
 	json_value["tier"] = tier;
 	json_value["buy_equals_sell"] = buy_equals_sell;
 	json_value["sell_price"] = sell_price;
-	json_value["buy_price"] = buy_price;
+	if (!buy_equals_sell) {
+		json_value["buy_price"] = buy_price;
+	}
 
 	return json_value;
 }

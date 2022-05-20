@@ -72,7 +72,7 @@ class DefaultItemsInitializer {
 
 		void addFluxes() const;
 		void addSandpapers() const;
+		void addWeaves() const;
 		void addTannins() const;
 		void addSolvents() const;
-		void addWeaves() const;
 };

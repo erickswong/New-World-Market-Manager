@@ -12,7 +12,6 @@
       "base_craft_tax" : 0.14999999999999999,
       "base_yield" : 0.80000000000000004,
       "buy_equals_sell" : true,
-      "buy_price" : 15.0,
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/asmodeum.png",
       "item_name" : "Asmodeum",
       "item_type" : "Ingot",
@@ -30,7 +29,6 @@
    },
    "Barbvine" : {
       "buy_equals_sell" : true,
-      "buy_price" : 10.0,
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/woods/barbvine.png",
       "item_name" : "Barbvine",
       "item_type" : "RawResource",
@@ -39,7 +37,6 @@
    },
    "Blisterweave" : {
       "buy_equals_sell" : true,
-      "buy_price" : 7.5,
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/fibers/blisterweave.png",
       "item_name" : "Blisterweave",
       "item_type" : "RawResource",
@@ -67,7 +64,6 @@
    },
    "Cinnabar" : {
       "buy_equals_sell" : true,
-      "buy_price" : 15.0,
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/ores/cinnabar.png",
       "item_name" : "Cinnabar",
       "item_type" : "RawResource",
@@ -76,7 +72,6 @@
    },
    "Elemental Lodestone" : {
       "buy_equals_sell" : true,
-      "buy_price" : 0.10000000000000001,
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/stones/elemental_lodestone.png",
       "item_name" : "Elemental Lodestone",
       "item_type" : "RawResource",
@@ -96,7 +91,6 @@
       "base_craft_tax" : 0.029999999999999999,
       "base_yield" : 0.94999999999999996,
       "buy_equals_sell" : true,
-      "buy_price" : 15.0,
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/gold_ingot.png",
       "item_name" : "Gold Ingot",
       "item_type" : "Ingot",
@@ -252,7 +246,6 @@
       "base_craft_tax" : 0.050000000000000003,
       "base_yield" : 0.93000000000000005,
       "buy_equals_sell" : true,
-      "buy_price" : 15.0,
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/platinum_ingot.png",
       "item_name" : "Platinum Ingot",
       "item_type" : "Ingot",
@@ -296,7 +289,6 @@
    },
    "Scalecloth" : {
       "buy_equals_sell" : true,
-      "buy_price" : 7.5,
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/fibers/scalecloth.png",
       "item_name" : "Scalecloth",
       "item_type" : "RawResource",
@@ -305,7 +297,6 @@
    },
    "Scarhide" : {
       "buy_equals_sell" : true,
-      "buy_price" : 15.0,
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/rawhide/scarhide.png",
       "item_name" : "Scarhide",
       "item_type" : "RawResource",
@@ -348,7 +339,6 @@
    },
    "Smolderhide" : {
       "buy_equals_sell" : true,
-      "buy_price" : 15.0,
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/rawhide/smolderhide.png",
       "item_name" : "Smolderhide",
       "item_type" : "RawResource",
@@ -443,7 +433,6 @@
    },
    "Tolvium" : {
       "buy_equals_sell" : true,
-      "buy_price" : 15.0,
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/ores/tolvium.png",
       "item_name" : "Tolvium",
       "item_type" : "RawResource",
@@ -452,7 +441,6 @@
    },
    "Wildwood" : {
       "buy_equals_sell" : true,
-      "buy_price" : 10.0,
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/woods/wildwood.png",
       "item_name" : "Wildwood",
       "item_type" : "RawResource",

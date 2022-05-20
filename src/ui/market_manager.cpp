@@ -203,6 +203,8 @@ void MarketManager::setItems() {
             throw BadJsonException("Unable to parse items.json");
         }
 
+        file.close();
+
         items = new Items(json_value);
 	} catch (std::exception& e) {
         items = new Items;
@@ -223,6 +225,8 @@ void MarketManager::setSettings() {
         if (!reader.parse(file, json_value)) {
             throw BadJsonException("Unable to parse settings.json");
         }
+
+        file.close();
 
         settings = new Settings(json_value);
 	} catch (std::exception& e) {
