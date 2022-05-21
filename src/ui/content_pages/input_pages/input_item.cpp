@@ -1,5 +1,7 @@
 #include "ui/content_pages/input_pages/input_item.h"
 
+#include <qstyle.h>
+
 InputItem::InputItem(Item* item, QWidget *parent)
 	: QWidget(parent),
       item(item)
@@ -19,12 +21,14 @@ InputItem::InputItem(Item* item, QWidget *parent)
 	ui.sell_price->setValue(item->getSellPrice());
 
 	// Set buy price
+	ui.buy_price->setReadOnly(item->getBuyEqualsSell());
 	ui.buy_price->setValue(item->getBuyPrice());
 }
 
 void InputItem::on_lock_clicked(const bool buy_equals_sell) const {
 	item->setBuyEqualsSell(buy_equals_sell);
 
+	ui.buy_price->setReadOnly(buy_equals_sell);
 	ui.buy_price->setValue(item->getBuyPrice());
 }
 

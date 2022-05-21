@@ -1,5 +1,7 @@
 #include "ui/content_pages/smelting_page.h"
 
+#include <qstyle.h>
+
 SmeltingPage::SmeltingPage(QWidget *parent)
 	: QWidget(parent)
 {
@@ -12,10 +14,10 @@ SmeltingPage::SmeltingPage(QWidget *parent)
 void SmeltingPage::setItems(Items* items) {
 	this->items = items;
 
+    // Setup input pages
+    setUpInputPages();
+
     // Set items for all children
-    ui.flux_input_page->setItems(items);
-    ui.ore_input_page->setItems(items);
-    ui.ingot_input_page->setItems(items);
     ui.settings_input_page->setItems(items);
 }
 
@@ -23,9 +25,6 @@ void SmeltingPage::setSettings(Settings* settings) {
 	this->settings = settings;
 
     // Set settings for all children
-    ui.flux_input_page->setSettings(settings);
-    ui.ore_input_page->setSettings(settings);
-    ui.ingot_input_page->setSettings(settings);
     ui.settings_input_page->setSettings(settings);
 }
 
@@ -66,4 +65,39 @@ void SmeltingPage::inputPageButtonClicked(const InputPageButtons button) const {
 
     // Set stacked widget to correct page
     ui.input_pages->setCurrentIndex(static_cast<int>(button));
+}
+
+void SmeltingPage::setUpInputPages() const {
+    setUpFluxInputPage();
+    setUpOreInputPage();
+    setUpIngotInputPage();
+}
+
+void SmeltingPage::setUpFluxInputPage() const {
+    ui.flux_input_page->addInputItem(items->getItem("Sand Flux"));
+    ui.flux_input_page->addInputItem(items->getItem("Shelldust Flux"));
+    ui.flux_input_page->addInputItem(items->getItem("Obsidian Flux"));
+}
+
+void SmeltingPage::setUpOreInputPage() const {
+    ui.ore_input_page->addInputItem(items->getItem("Iron Ore"));
+    ui.ore_input_page->addInputItem(items->getItem("Starmetal Ore"));
+    ui.ore_input_page->addInputItem(items->getItem("Orichalcum Ore"));
+    ui.ore_input_page->addInputItem(items->getItem("Silver Ore"));
+    ui.ore_input_page->addInputItem(items->getItem("Gold Ore"));
+    ui.ore_input_page->addInputItem(items->getItem("Platinum Ore"));
+    ui.ore_input_page->addInputItem(items->getItem("Cinnabar"));
+    ui.ore_input_page->addInputItem(items->getItem("Tolvium"));
+}
+
+void SmeltingPage::setUpIngotInputPage() const {
+    ui.ingot_input_page->addInputItem(items->getItem("Charcoal"));
+    ui.ingot_input_page->addInputItem(items->getItem("Iron Ingot"));
+    ui.ingot_input_page->addInputItem(items->getItem("Steel Ingot"));
+    ui.ingot_input_page->addInputItem(items->getItem("Starmetal Ingot"));
+    ui.ingot_input_page->addInputItem(items->getItem("Orichalcum Ingot"));
+    ui.ingot_input_page->addInputItem(items->getItem("Silver Ingot"));
+    ui.ingot_input_page->addInputItem(items->getItem("Gold Ingot"));
+    ui.ingot_input_page->addInputItem(items->getItem("Platinum Ingot"));
+    ui.ingot_input_page->addInputItem(items->getItem("Asmodeum"));
 }

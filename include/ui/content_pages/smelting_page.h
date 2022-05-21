@@ -33,4 +33,9 @@ class SmeltingPage final : public QWidget {
 		};
 
 		void inputPageButtonClicked(InputPageButtons button) const;
+
+		void setUpInputPages() const;
+		void setUpFluxInputPage() const;
+		void setUpOreInputPage() const;
+		void setUpIngotInputPage() const;
 };

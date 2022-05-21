@@ -121,9 +121,6 @@
     <ClCompile Include="src\ui\content_pages\input_pages\input_item.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\general_settings_input_page.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\smelting_settings_input_page.cpp" />
-    <ClCompile Include="src\ui\content_pages\input_pages\ingot_input_page.cpp" />
-    <ClCompile Include="src\ui\content_pages\input_pages\ore_input_page.cpp" />
-    <ClCompile Include="src\ui\content_pages\input_pages\flux_input_page.cpp" />
     <ClCompile Include="src\ui\content_pages\smelting_page.cpp" />
     <ClCompile Include="src\items\resources\refined_resources\blocks\block.cpp" />
     <ClCompile Include="src\items\resources\refined_resources\leathers\leather.cpp" />
@@ -142,9 +139,6 @@
     <QtMoc Include="include\ui\content_pages\input_pages\input_page.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\input_item.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\smelting_settings_input_page.h" />
-    <QtMoc Include="include\ui\content_pages\input_pages\ingot_input_page.h" />
-    <QtMoc Include="include\ui\content_pages\input_pages\ore_input_page.h" />
-    <QtMoc Include="include\ui\content_pages\input_pages\flux_input_page.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\general_settings_input_page.h" />
     <ClInclude Include="include\items\resources\refined_resources\blocks\block.h" />
     <ClInclude Include="include\items\resources\refined_resources\cloths\cloth.h" />
@@ -175,9 +169,6 @@
     <QtUic Include="ui\forms\content_pages\input_pages\input_item.ui" />
     <QtUic Include="ui\forms\content_pages\input_pages\general_settings_input_page.ui" />
     <QtUic Include="ui\forms\content_pages\input_pages\smelting_settings_input_page.ui" />
-    <QtUic Include="ui\forms\content_pages\input_pages\ingot_input_page.ui" />
-    <QtUic Include="ui\forms\content_pages\input_pages\ore_input_page.ui" />
-    <QtUic Include="ui\forms\content_pages\input_pages\flux_input_page.ui" />
     <QtUic Include="ui\forms\content_pages\smelting_page.ui" />
     <QtUic Include="ui\forms\market_manager.ui" />
     <QtMoc Include="include\ui\market_manager.h" />

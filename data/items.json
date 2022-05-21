@@ -1,4 +1,13 @@
 {
+   "Aged Tannin" : {
+      "buy_equals_sell" : false,
+      "buy_price" : 0.20000000000000001,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/aged_tannin.png",
+      "item_name" : "Aged Tannin",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.25,
+      "tier" : 5
+   },
    "Aged Wood" : {
       "buy_equals_sell" : false,
       "buy_price" : 0.20000000000000001,
@@ -9,7 +18,7 @@
       "tier" : 2
    },
    "Asmodeum" : {
-      "base_craft_tax" : 0.14999999999999999,
+      "base_craft_tax" : 0.19,
       "base_yield" : 0.80000000000000004,
       "buy_equals_sell" : true,
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/asmodeum.png",
@@ -20,11 +29,11 @@
             "Charcoal" : 2,
             "Cinnabar" : 1,
             "Obsidian Flux" : 1,
-            "Orichalcum Ore" : 5,
+            "Orichalcum Ingot" : 5,
             "Tolvium" : 1
          }
       ],
-      "sell_price" : 15.0,
+      "sell_price" : 300.0,
       "tier" : 5
    },
    "Barbvine" : {
@@ -47,7 +56,7 @@
       "base_craft_tax" : 0.01,
       "base_yield" : 1.0,
       "buy_equals_sell" : false,
-      "buy_price" : 0.29999999999999999,
+      "buy_price" : 0.34999999999999998,
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/charcoal.png",
       "item_name" : "Charcoal",
       "item_type" : "Ingot",
@@ -57,10 +66,31 @@
          },
          {
             "Aged Wood" : 2
+         },
+         {
+            "Wyrdwood" : 2
+         },
+         {
+            "Ironwood" : 2
+         },
+         {
+            "Timber" : 2
+         },
+         {
+            "Lumber" : 2
+         },
+         {
+            "Wyrdwood Planks" : 2
+         },
+         {
+            "Ironwood Planks" : 2
+         },
+         {
+            "Glittering Ebony" : 2
          }
       ],
-      "sell_price" : 0.34999999999999998,
-      "tier" : 1
+      "sell_price" : 0.40000000000000002,
+      "tier" : 2
    },
    "Cinnabar" : {
       "buy_equals_sell" : true,
@@ -69,6 +99,37 @@
       "item_type" : "RawResource",
       "sell_price" : 15.0,
       "tier" : 5
+   },
+   "Coarse Leather" : {
+      "base_craft_tax" : 0.01,
+      "base_yield" : 1.0,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/leathers/coarse_leather.png",
+      "item_name" : "Coarse Leather",
+      "item_type" : "Leather",
+      "recipes" : [
+         {
+            "Rawhide" : 4
+         }
+      ],
+      "sell_price" : 1.25,
+      "tier" : 2
+   },
+   "Coarse Sandpaper" : {
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/coarse_sandpaper.png",
+      "item_name" : "Coarse Sandpaper",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.29999999999999999,
+      "tier" : 3
+   },
+   "Crossweave" : {
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/crossweave.png",
+      "item_name" : "Crossweave",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.34999999999999998,
+      "tier" : 3
    },
    "Elemental Lodestone" : {
       "buy_equals_sell" : true,
@@ -87,8 +148,34 @@
       "sell_price" : 0.20000000000000001,
       "tier" : 1
    },
+   "Fine Sandpaper" : {
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/fine_sandpaper.png",
+      "item_name" : "Fine Sandpaper",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.20000000000000001,
+      "tier" : 4
+   },
+   "Glittering Ebony" : {
+      "base_craft_tax" : 0.19,
+      "base_yield" : 0.80000000000000004,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/planks/glittering_ebony.png",
+      "item_name" : "Glittering Ebony",
+      "item_type" : "Plank",
+      "recipes" : [
+         {
+            "Barbvine" : 1,
+            "Ironwood Planks" : 5,
+            "Obsidian Sandpaper" : 1,
+            "Wildwood" : 1
+         }
+      ],
+      "sell_price" : 70.0,
+      "tier" : 5
+   },
    "Gold Ingot" : {
-      "base_craft_tax" : 0.029999999999999999,
+      "base_craft_tax" : 0.040000000000000001,
       "base_yield" : 0.94999999999999996,
       "buy_equals_sell" : true,
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/gold_ingot.png",
@@ -111,8 +198,8 @@
             "Silver Ingot" : 2
          }
       ],
-      "sell_price" : 15.0,
-      "tier" : 5
+      "sell_price" : 3.75,
+      "tier" : 3
    },
    "Gold Ore" : {
       "buy_equals_sell" : false,
@@ -132,6 +219,60 @@
       "sell_price" : 0.25,
       "tier" : 1
    },
+   "Infused Leather" : {
+      "base_craft_tax" : 0.13,
+      "base_yield" : 0.93000000000000005,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/leathers/infused_leather.png",
+      "item_name" : "Infused Leather",
+      "item_type" : "Leather",
+      "recipes" : [
+         {
+            "Aged Tannin" : 1,
+            "Iron Hide" : 8,
+            "Layered Leather" : 2
+         },
+         {
+            "Iron Hide" : 8,
+            "Layered Leather" : 2,
+            "Rested Tannin" : 1
+         },
+         {
+            "Iron Hide" : 8,
+            "Layered Leather" : 2,
+            "Tannin" : 1
+         }
+      ],
+      "sell_price" : 8.1999999999999993,
+      "tier" : 5
+   },
+   "Infused Silk" : {
+      "base_craft_tax" : 0.13,
+      "base_yield" : 0.93000000000000005,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/cloths/infused_silk.png",
+      "item_name" : "Infused Silk",
+      "item_type" : "Cloth",
+      "recipes" : [
+         {
+            "Silk" : 2,
+            "Wirefiber" : 8,
+            "Wireweave" : 1
+         },
+         {
+            "Silk" : 2,
+            "Silkweave" : 1,
+            "Wirefiber" : 8
+         },
+         {
+            "Crossweave" : 1,
+            "Silk" : 2,
+            "Wirefiber" : 8
+         }
+      ],
+      "sell_price" : 13.0,
+      "tier" : 5
+   },
    "Iron Hide" : {
       "buy_equals_sell" : false,
       "buy_price" : 0.050000000000000003,
@@ -144,8 +285,7 @@
    "Iron Ingot" : {
       "base_craft_tax" : 0.01,
       "base_yield" : 1.0,
-      "buy_equals_sell" : false,
-      "buy_price" : 1.1000000000000001,
+      "buy_equals_sell" : true,
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/iron_ingot.png",
       "item_name" : "Iron Ingot",
       "item_type" : "Ingot",
@@ -154,8 +294,8 @@
             "Iron Ore" : 4
          }
       ],
-      "sell_price" : 1.3,
-      "tier" : 4
+      "sell_price" : 1.2,
+      "tier" : 2
    },
    "Iron Ore" : {
       "buy_equals_sell" : false,
@@ -175,6 +315,75 @@
       "sell_price" : 0.75,
       "tier" : 5
    },
+   "Ironwood Planks" : {
+      "base_craft_tax" : 0.13,
+      "base_yield" : 0.93000000000000005,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/planks/ironwood_planks.png",
+      "item_name" : "Ironwood Planks",
+      "item_type" : "Plank",
+      "recipes" : [
+         {
+            "Ironwood" : 8,
+            "Obsidian Sandpaper" : 1,
+            "Wyrdwood Planks" : 2
+         },
+         {
+            "Fine Sandpaper" : 1,
+            "Ironwood" : 8,
+            "Wyrdwood Planks" : 2
+         },
+         {
+            "Coarse Sandpaper" : 1,
+            "Ironwood" : 8,
+            "Wyrdwood Planks" : 2
+         }
+      ],
+      "sell_price" : 16.0,
+      "tier" : 5
+   },
+   "Layered Leather" : {
+      "base_craft_tax" : 0.070000000000000007,
+      "base_yield" : 0.94999999999999996,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/leathers/layered_leather.png",
+      "item_name" : "Layered Leather",
+      "item_type" : "Leather",
+      "recipes" : [
+         {
+            "Aged Tannin" : 1,
+            "Rugged Leather" : 2,
+            "Thick Hide" : 6
+         },
+         {
+            "Rested Tannin" : 1,
+            "Rugged Leather" : 2,
+            "Thick Hide" : 6
+         },
+         {
+            "Rugged Leather" : 2,
+            "Tannin" : 1,
+            "Thick Hide" : 6
+         }
+      ],
+      "sell_price" : 5.5,
+      "tier" : 4
+   },
+   "Linen" : {
+      "base_craft_tax" : 0.01,
+      "base_yield" : 1.0,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/cloths/linen.png",
+      "item_name" : "Linen",
+      "item_type" : "Cloth",
+      "recipes" : [
+         {
+            "Fibers" : 4
+         }
+      ],
+      "sell_price" : 1.0,
+      "tier" : 2
+   },
    "Lodestone" : {
       "buy_equals_sell" : false,
       "buy_price" : 0.5,
@@ -184,11 +393,109 @@
       "sell_price" : 0.59999999999999998,
       "tier" : 4
    },
-   "Orichalcum Ingot" : {
-      "base_craft_tax" : 0.10000000000000001,
-      "base_yield" : 0.93000000000000005,
+   "Lodestone Brick" : {
+      "base_craft_tax" : 0.070000000000000007,
+      "base_yield" : 0.94999999999999996,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/blocks/lodestone_brick.png",
+      "item_name" : "Lodestone Brick",
+      "item_type" : "Block",
+      "recipes" : [
+         {
+            "Lodestone" : 6,
+            "Obsidian Sandpaper" : 1,
+            "Stone Brick" : 2
+         },
+         {
+            "Fine Sandpaper" : 1,
+            "Lodestone" : 6,
+            "Stone Brick" : 2
+         },
+         {
+            "Coarse Sandpaper" : 1,
+            "Lodestone" : 6,
+            "Stone Brick" : 2
+         }
+      ],
+      "sell_price" : 4.2000000000000002,
+      "tier" : 4
+   },
+   "Lumber" : {
+      "base_craft_tax" : 0.040000000000000001,
+      "base_yield" : 0.97999999999999998,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/planks/lumber.png",
+      "item_name" : "Lumber",
+      "item_type" : "Plank",
+      "recipes" : [
+         {
+            "Aged Wood" : 4,
+            "Obsidian Sandpaper" : 1,
+            "Timber" : 2
+         },
+         {
+            "Aged Wood" : 4,
+            "Fine Sandpaper" : 1,
+            "Timber" : 2
+         },
+         {
+            "Aged Wood" : 4,
+            "Coarse Sandpaper" : 1,
+            "Timber" : 2
+         }
+      ],
+      "sell_price" : 2.2000000000000002,
+      "tier" : 3
+   },
+   "Obsidian Flux" : {
       "buy_equals_sell" : false,
-      "buy_price" : 0.25,
+      "buy_price" : 1.8,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/obsidian_flux.png",
+      "item_name" : "Obsidian Flux",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 2.2000000000000002,
+      "tier" : 5
+   },
+   "Obsidian Sandpaper" : {
+      "buy_equals_sell" : false,
+      "buy_price" : 0.29999999999999999,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/obsidian_sandpaper.png",
+      "item_name" : "Obsidian Sandpaper",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.5,
+      "tier" : 5
+   },
+   "Obsidian Voidstone" : {
+      "base_craft_tax" : 0.13,
+      "base_yield" : 0.93000000000000005,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/blocks/obsidian_voidstone.png",
+      "item_name" : "Obsidian Voidstone",
+      "item_type" : "Block",
+      "recipes" : [
+         {
+            "Lodestone" : 2,
+            "Lodestone Brick" : 8,
+            "Obsidian Sandpaper" : 1
+         },
+         {
+            "Fine Sandpaper" : 1,
+            "Lodestone" : 2,
+            "Lodestone Brick" : 8
+         },
+         {
+            "Coarse Sandpaper" : 1,
+            "Lodestone" : 2,
+            "Lodestone Brick" : 8
+         }
+      ],
+      "sell_price" : 25.0,
+      "tier" : 5
+   },
+   "Orichalcum Ingot" : {
+      "base_craft_tax" : 0.13,
+      "base_yield" : 0.93000000000000005,
+      "buy_equals_sell" : true,
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/orichalcum_ingot.png",
       "item_name" : "Orichalcum Ingot",
       "item_type" : "Ingot",
@@ -230,8 +537,8 @@
             "Sand Flux" : 1
          }
       ],
-      "sell_price" : 0.40000000000000002,
-      "tier" : 3
+      "sell_price" : 40.0,
+      "tier" : 5
    },
    "Orichalcum Ore" : {
       "buy_equals_sell" : false,
@@ -242,8 +549,26 @@
       "sell_price" : 2.5,
       "tier" : 5
    },
+   "Phoenixweave" : {
+      "base_craft_tax" : 0.19,
+      "base_yield" : 0.80000000000000004,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/cloths/phoenixweave.png",
+      "item_name" : "Phoenixweave",
+      "item_type" : "Cloth",
+      "recipes" : [
+         {
+            "Blisterweave" : 1,
+            "Infused Silk" : 5,
+            "Scalecloth" : 1,
+            "Wireweave" : 1
+         }
+      ],
+      "sell_price" : 145.0,
+      "tier" : 5
+   },
    "Platinum Ingot" : {
-      "base_craft_tax" : 0.050000000000000003,
+      "base_craft_tax" : 0.070000000000000007,
       "base_yield" : 0.93000000000000005,
       "buy_equals_sell" : true,
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/platinum_ingot.png",
@@ -266,8 +591,8 @@
             "Sand Flux" : 1
          }
       ],
-      "sell_price" : 15.0,
-      "tier" : 5
+      "sell_price" : 11.0,
+      "tier" : 4
    },
    "Platinum Ore" : {
       "buy_equals_sell" : false,
@@ -278,6 +603,23 @@
       "sell_price" : 1.0,
       "tier" : 4
    },
+   "Potent Solvent" : {
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/potent_solvent.png",
+      "item_name" : "Potent Solvent",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.69999999999999996,
+      "tier" : 4
+   },
+   "Pure Solvent" : {
+      "buy_equals_sell" : false,
+      "buy_price" : 1.0,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/pure_solvent.png",
+      "item_name" : "Pure Solvent",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 1.0,
+      "tier" : 5
+   },
    "Rawhide" : {
       "buy_equals_sell" : false,
       "buy_price" : 0.29999999999999999,
@@ -286,6 +628,105 @@
       "item_type" : "RawResource",
       "sell_price" : 0.34999999999999998,
       "tier" : 1
+   },
+   "Rested Tannin" : {
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/rested_tannin.png",
+      "item_name" : "Rested Tannin",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.20000000000000001,
+      "tier" : 4
+   },
+   "Rugged Leather" : {
+      "base_craft_tax" : 0.040000000000000001,
+      "base_yield" : 0.97999999999999998,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/leathers/rugged_leather.png",
+      "item_name" : "Rugged Leather",
+      "item_type" : "Leather",
+      "recipes" : [
+         {
+            "Aged Tannin" : 1,
+            "Coarse Leather" : 4
+         },
+         {
+            "Coarse Leather" : 4,
+            "Rested Tannin" : 1
+         },
+         {
+            "Coarse Leather" : 4,
+            "Tannin" : 1
+         }
+      ],
+      "sell_price" : 2.1000000000000001,
+      "tier" : 3
+   },
+   "Runestone" : {
+      "base_craft_tax" : 0.19,
+      "base_yield" : 0.80000000000000004,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/blocks/runestone.png",
+      "item_name" : "Runestone",
+      "item_type" : "Block",
+      "recipes" : [
+         {
+            "Elemental Lodestone" : 1,
+            "Obsidian Sandpaper" : 1,
+            "Obsidian Voidstone" : 5
+         }
+      ],
+      "sell_price" : 64.0,
+      "tier" : 5
+   },
+   "Runic Leather" : {
+      "base_craft_tax" : 0.19,
+      "base_yield" : 0.80000000000000004,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/leathers/runic_leather.png",
+      "item_name" : "Runic Leather",
+      "item_type" : "Leather",
+      "recipes" : [
+         {
+            "Aged Tannin" : 1,
+            "Infused Leather" : 5,
+            "Scarhide" : 1,
+            "Smolderhide" : 1
+         }
+      ],
+      "sell_price" : 130.0,
+      "tier" : 5
+   },
+   "Sand Flux" : {
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/sand_flux.png",
+      "item_name" : "Sand Flux",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.69999999999999996,
+      "tier" : 3
+   },
+   "Sateen" : {
+      "base_craft_tax" : 0.040000000000000001,
+      "base_yield" : 0.97999999999999998,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/cloths/sateen.png",
+      "item_name" : "Sateen",
+      "item_type" : "Cloth",
+      "recipes" : [
+         {
+            "Linen" : 4,
+            "Wireweave" : 1
+         },
+         {
+            "Linen" : 4,
+            "Silkweave" : 1
+         },
+         {
+            "Crossweave" : 1,
+            "Linen" : 4
+         }
+      ],
+      "sell_price" : 2.0,
+      "tier" : 3
    },
    "Scalecloth" : {
       "buy_equals_sell" : true,
@@ -303,6 +744,41 @@
       "sell_price" : 15.0,
       "tier" : 5
    },
+   "Shelldust Flux" : {
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/shelldust_flux.png",
+      "item_name" : "Shelldust Flux",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.84999999999999998,
+      "tier" : 4
+   },
+   "Silk" : {
+      "base_craft_tax" : 0.070000000000000007,
+      "base_yield" : 0.94999999999999996,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/cloths/silk.png",
+      "item_name" : "Silk",
+      "item_type" : "Cloth",
+      "recipes" : [
+         {
+            "Sateen" : 2,
+            "Silk Threads" : 6,
+            "Wireweave" : 1
+         },
+         {
+            "Sateen" : 2,
+            "Silk Threads" : 6,
+            "Silkweave" : 1
+         },
+         {
+            "Crossweave" : 1,
+            "Sateen" : 2,
+            "Silk Threads" : 6
+         }
+      ],
+      "sell_price" : 5.5,
+      "tier" : 4
+   },
    "Silk Threads" : {
       "buy_equals_sell" : false,
       "buy_price" : 0.5,
@@ -312,11 +788,18 @@
       "sell_price" : 0.69999999999999996,
       "tier" : 4
    },
+   "Silkweave" : {
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/silkweave.png",
+      "item_name" : "Silkweave",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.20000000000000001,
+      "tier" : 4
+   },
    "Silver Ingot" : {
       "base_craft_tax" : 0.01,
       "base_yield" : 0.97999999999999998,
-      "buy_equals_sell" : false,
-      "buy_price" : 0.75,
+      "buy_equals_sell" : true,
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/silver_ingot.png",
       "item_name" : "Silver Ingot",
       "item_type" : "Ingot",
@@ -325,8 +808,8 @@
             "Silver Ore" : 4
          }
       ],
-      "sell_price" : 1.0,
-      "tier" : 4
+      "sell_price" : 0.59999999999999998,
+      "tier" : 2
    },
    "Silver Ore" : {
       "buy_equals_sell" : false,
@@ -337,6 +820,31 @@
       "sell_price" : 0.20000000000000001,
       "tier" : 2
    },
+   "Smelter's Headgear" : {
+      "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_headgear.png",
+      "item_name" : "Smelter's Headgear",
+      "item_type" : "Item"
+   },
+   "Smelter's Mitts" : {
+      "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_mitts.png",
+      "item_name" : "Smelter's Mitts",
+      "item_type" : "Item"
+   },
+   "Smelter's Pants" : {
+      "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_pants.png",
+      "item_name" : "Smelter's Pants",
+      "item_type" : "Item"
+   },
+   "Smelter's Shoes" : {
+      "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_shoes.png",
+      "item_name" : "Smelter's Shoes",
+      "item_type" : "Item"
+   },
+   "Smelter's Smock" : {
+      "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_smock.png",
+      "item_name" : "Smelter's Smock",
+      "item_type" : "Item"
+   },
    "Smolderhide" : {
       "buy_equals_sell" : true,
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/rawhide/smolderhide.png",
@@ -346,10 +854,9 @@
       "tier" : 5
    },
    "Starmetal Ingot" : {
-      "base_craft_tax" : 0.050000000000000003,
+      "base_craft_tax" : 0.070000000000000007,
       "base_yield" : 0.94999999999999996,
-      "buy_equals_sell" : false,
-      "buy_price" : 0.14999999999999999,
+      "buy_equals_sell" : true,
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/starmetal_ingot.png",
       "item_name" : "Starmetal Ingot",
       "item_type" : "Ingot",
@@ -373,8 +880,8 @@
             "Steel Ingot" : 2
          }
       ],
-      "sell_price" : 0.20000000000000001,
-      "tier" : 2
+      "sell_price" : 13.0,
+      "tier" : 4
    },
    "Starmetal Ore" : {
       "buy_equals_sell" : false,
@@ -386,10 +893,9 @@
       "tier" : 4
    },
    "Steel Ingot" : {
-      "base_craft_tax" : 0.029999999999999999,
+      "base_craft_tax" : 0.040000000000000001,
       "base_yield" : 0.97999999999999998,
-      "buy_equals_sell" : false,
-      "buy_price" : 2.2000000000000002,
+      "buy_equals_sell" : true,
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/steel_ingot.png",
       "item_name" : "Steel Ingot",
       "item_type" : "Ingot",
@@ -410,8 +916,8 @@
             "Sand Flux" : 1
          }
       ],
-      "sell_price" : 2.5,
-      "tier" : 5
+      "sell_price" : 4.5,
+      "tier" : 3
    },
    "Stone" : {
       "buy_equals_sell" : false,
@@ -422,6 +928,103 @@
       "sell_price" : 0.20000000000000001,
       "tier" : 1
    },
+   "Stone Block" : {
+      "base_craft_tax" : 0.01,
+      "base_yield" : 1.0,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/blocks/stone_block.png",
+      "item_name" : "Stone Block",
+      "item_type" : "Leather",
+      "recipes" : [
+         {
+            "Stone" : 4
+         }
+      ],
+      "sell_price" : 1.0,
+      "tier" : 2
+   },
+   "Stone Brick" : {
+      "base_craft_tax" : 0.040000000000000001,
+      "base_yield" : 0.97999999999999998,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/blocks/stone_brick.png",
+      "item_name" : "Stone Brick",
+      "item_type" : "Block",
+      "recipes" : [
+         {
+            "Obsidian Sandpaper" : 1,
+            "Stone Block" : 4
+         },
+         {
+            "Fine Sandpaper" : 1,
+            "Stone Block" : 4
+         },
+         {
+            "Coarse Sandpaper" : 1,
+            "Stone Block" : 4
+         }
+      ],
+      "sell_price" : 2.2999999999999998,
+      "tier" : 3
+   },
+   "Stonecutter's Gloves" : {
+      "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_gloves.png",
+      "item_name" : "Stonecutter's Gloves",
+      "item_type" : "Item"
+   },
+   "Stonecutter's Hat" : {
+      "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_hat.png",
+      "item_name" : "Stonecutter's Hat",
+      "item_type" : "Item"
+   },
+   "Stonecutter's Pants" : {
+      "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_pants.png",
+      "item_name" : "Stonecutter's Pants",
+      "item_type" : "Item"
+   },
+   "Stonecutter's Shirt" : {
+      "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_shirt.png",
+      "item_name" : "Stonecutter's Shirt",
+      "item_type" : "Item"
+   },
+   "Stonecutter's Shoes" : {
+      "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_shoes.png",
+      "item_name" : "Stonecutter's Shoes",
+      "item_type" : "Item"
+   },
+   "Tanner Gloves" : {
+      "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_gloves.png",
+      "item_name" : "Tanner Gloves",
+      "item_type" : "Item"
+   },
+   "Tanner Hat" : {
+      "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_hat.png",
+      "item_name" : "Tanner Hat",
+      "item_type" : "Item"
+   },
+   "Tanner Pants" : {
+      "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_pants.png",
+      "item_name" : "Tanner Pants",
+      "item_type" : "Item"
+   },
+   "Tanner Shirt" : {
+      "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_shirt.png",
+      "item_name" : "Tanner Shirt",
+      "item_type" : "Item"
+   },
+   "Tanner Shoes" : {
+      "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_shoes.png",
+      "item_name" : "Tanner Shoes",
+      "item_type" : "Item"
+   },
+   "Tannin" : {
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/tannin.png",
+      "item_name" : "Tannin",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.20000000000000001,
+      "tier" : 3
+   },
    "Thick Hide" : {
       "buy_equals_sell" : false,
       "buy_price" : 0.55000000000000004,
@@ -431,6 +1034,21 @@
       "sell_price" : 0.59999999999999998,
       "tier" : 4
    },
+   "Timber" : {
+      "base_craft_tax" : 0.01,
+      "base_yield" : 1.0,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/planks/timber.png",
+      "item_name" : "Timber",
+      "item_type" : "Plank",
+      "recipes" : [
+         {
+            "Green Wood" : 4
+         }
+      ],
+      "sell_price" : 1.0,
+      "tier" : 2
+   },
    "Tolvium" : {
       "buy_equals_sell" : true,
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/ores/tolvium.png",
@@ -438,6 +1056,39 @@
       "item_type" : "RawResource",
       "sell_price" : 15.0,
       "tier" : 5
+   },
+   "Weak Solvent" : {
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/weak_solvent.png",
+      "item_name" : "Weak Solvent",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.25,
+      "tier" : 3
+   },
+   "Weaver's Gloves" : {
+      "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_gloves.png",
+      "item_name" : "Weaver's Gloves",
+      "item_type" : "Item"
+   },
+   "Weaver's Hat" : {
+      "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_hat.png",
+      "item_name" : "Weaver's Hat",
+      "item_type" : "Item"
+   },
+   "Weaver's Pants" : {
+      "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_pants.png",
+      "item_name" : "Weaver's Pants",
+      "item_type" : "Item"
+   },
+   "Weaver's Shirt" : {
+      "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_shirt.png",
+      "item_name" : "Weaver's Shirt",
+      "item_type" : "Item"
+   },
+   "Weaver's Shoes" : {
+      "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_shoes.png",
+      "item_name" : "Weaver's Shoes",
+      "item_type" : "Item"
    },
    "Wildwood" : {
       "buy_equals_sell" : true,
@@ -456,6 +1107,40 @@
       "sell_price" : 0.59999999999999998,
       "tier" : 5
    },
+   "Wireweave" : {
+      "buy_equals_sell" : false,
+      "buy_price" : 0.14999999999999999,
+      "image_path" : ":/MarketManager/images/items/resources/refining_components/wireweave.png",
+      "item_name" : "Wireweave",
+      "item_type" : "RefiningComponent",
+      "sell_price" : 0.25,
+      "tier" : 5
+   },
+   "Woodworker's Cap" : {
+      "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_cap.png",
+      "item_name" : "Woodworker's Cap",
+      "item_type" : "Item"
+   },
+   "Woodworker's Gloves" : {
+      "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_gloves.png",
+      "item_name" : "Woodworker's Gloves",
+      "item_type" : "Item"
+   },
+   "Woodworker's Pants" : {
+      "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_pants.png",
+      "item_name" : "Woodworker's Pants",
+      "item_type" : "Item"
+   },
+   "Woodworker's Shirt" : {
+      "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_shirt.png",
+      "item_name" : "Woodworker's Shirt",
+      "item_type" : "Item"
+   },
+   "Woodworker's Shoes" : {
+      "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_shoes.png",
+      "item_name" : "Woodworker's Shoes",
+      "item_type" : "Item"
+   },
    "Wyrdwood" : {
       "buy_equals_sell" : false,
       "buy_price" : 0.90000000000000002,
@@ -463,6 +1148,33 @@
       "item_name" : "Wyrdwood",
       "item_type" : "RawResource",
       "sell_price" : 1.1000000000000001,
+      "tier" : 4
+   },
+   "Wyrdwood Planks" : {
+      "base_craft_tax" : 0.070000000000000007,
+      "base_yield" : 0.94999999999999996,
+      "buy_equals_sell" : true,
+      "image_path" : ":/MarketManager/images/items/resources/refined_resources/planks/wyrdwood_planks.png",
+      "item_name" : "Wyrdwood Planks",
+      "item_type" : "Plank",
+      "recipes" : [
+         {
+            "Lumber" : 2,
+            "Obsidian Sandpaper" : 1,
+            "Wyrdwood" : 6
+         },
+         {
+            "Fine Sandpaper" : 1,
+            "Lumber" : 2,
+            "Wyrdwood" : 6
+         },
+         {
+            "Coarse Sandpaper" : 1,
+            "Lumber" : 2,
+            "Wyrdwood" : 6
+         }
+      ],
+      "sell_price" : 8.5,
       "tier" : 4
    }
 }

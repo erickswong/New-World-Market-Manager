@@ -76,15 +76,6 @@
     <ClCompile Include="src\ui\content_pages\smelting_page.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ui\content_pages\input_pages\flux_input_page.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\content_pages\input_pages\ore_input_page.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\content_pages\input_pages\ingot_input_page.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\ui\content_pages\input_pages\smelting_settings_input_page.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -132,15 +123,6 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="include\ui\content_pages\smelting_page.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="include\ui\content_pages\input_pages\flux_input_page.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="include\ui\content_pages\input_pages\ore_input_page.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="include\ui\content_pages\input_pages\ingot_input_page.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="include\ui\content_pages\input_pages\smelting_settings_input_page.h">
@@ -260,15 +242,6 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="ui\forms\content_pages\smelting_page.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="ui\forms\content_pages\input_pages\flux_input_page.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="ui\forms\content_pages\input_pages\ore_input_page.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="ui\forms\content_pages\input_pages\ingot_input_page.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="ui\forms\content_pages\input_pages\smelting_settings_input_page.ui">

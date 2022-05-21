@@ -14,6 +14,21 @@
    <string>SmeltingPage</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QLabel" name="title_label">
      <property name="sizePolicy">
@@ -42,6 +57,21 @@
    <item>
     <widget class="QWidget" name="widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QWidget" name="inputs" native="true">
         <property name="sizePolicy">
@@ -53,6 +83,12 @@
         <property name="styleSheet">
          <string notr="true">#inputs QPushButton {
 border: none;
+}
+#inputs QDoubleSpinBox:!read-only {
+background-color: rgb(61, 80, 95);
+}
+#inputs QDoubleSpinBox:read-only {
+background-color: rgb(101, 80, 95);
 }</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -268,99 +304,12 @@ border: none;
             </size>
            </property>
            <property name="currentIndex">
-            <number>3</number>
+            <number>0</number>
            </property>
-           <widget class="FluxInputPage" name="flux_input_page">
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_2">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <property name="horizontalSpacing">
-              <number>0</number>
-             </property>
-             <property name="verticalSpacing">
-              <number>5</number>
-             </property>
-            </layout>
-           </widget>
-           <widget class="OreInputPage" name="ore_input_page">
-            <layout class="QGridLayout" name="gridLayout_3">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <property name="horizontalSpacing">
-              <number>0</number>
-             </property>
-             <property name="verticalSpacing">
-              <number>5</number>
-             </property>
-            </layout>
-           </widget>
-           <widget class="IngotInputPage" name="ingot_input_page">
-            <layout class="QGridLayout" name="gridLayout_4">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <property name="horizontalSpacing">
-              <number>0</number>
-             </property>
-             <property name="verticalSpacing">
-              <number>5</number>
-             </property>
-            </layout>
-           </widget>
-           <widget class="SmeltingSettingsInputPage" name="settings_input_page">
-            <layout class="QGridLayout" name="gridLayout_5">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>10</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <property name="horizontalSpacing">
-              <number>0</number>
-             </property>
-             <property name="verticalSpacing">
-              <number>5</number>
-             </property>
-            </layout>
-           </widget>
+           <widget class="InputPage" name="flux_input_page"/>
+           <widget class="InputPage" name="ore_input_page"/>
+           <widget class="InputPage" name="ingot_input_page"/>
+           <widget class="SmeltingSettingsInputPage" name="settings_input_page"/>
           </widget>
          </item>
         </layout>
@@ -384,27 +333,15 @@ border: none;
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>FluxInputPage</class>
-   <extends>QWidget</extends>
-   <header>ui/content_pages/input_pages/flux_input_page.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>OreInputPage</class>
-   <extends>QWidget</extends>
-   <header>ui/content_pages/input_pages/ore_input_page.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>IngotInputPage</class>
-   <extends>QWidget</extends>
-   <header>ui/content_pages/input_pages/ingot_input_page.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>SmeltingSettingsInputPage</class>
    <extends>QWidget</extends>
    <header>ui/content_pages/input_pages/smelting_settings_input_page.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>InputPage</class>
+   <extends>QWidget</extends>
+   <header>ui/content_pages/input_pages/input_page.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
