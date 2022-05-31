@@ -72,5 +72,5 @@ double Ingot::getYield(Recipe& recipe, Settings& settings) {
 	}
 
 	// Return the yield
-	return std::max(1., yield);
+	return std::max(1., yield) * settings.fortYieldBonusMultiplier();
 }

@@ -26,6 +26,7 @@ class Settings {
 		[[nodiscard]] double leatherworkingYieldBonus() const;
 		[[nodiscard]] double weavingYieldBonus() const;
 		[[nodiscard]] double stonecuttingYieldBonus() const;
+		[[nodiscard]] double fortYieldBonusMultiplier() const;
 
 		// TODO: add tax calculator, may need parameter with base tax value
 

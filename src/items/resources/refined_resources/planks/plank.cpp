@@ -62,5 +62,5 @@ double Plank::getYield(Recipe& recipe, Settings& settings) {
 	const double yield = base_yield + settings.woodworkingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
 
 	// Return the yield
-	return std::max(1., yield);
+	return std::max(1., yield) * settings.fortYieldBonusMultiplier();
 }
