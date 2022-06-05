@@ -20,10 +20,10 @@ Json::Value Recipe::toJson() const {
     return json_value;
 }
 
-void Recipe::addIngredient(const std::string& ingredient_name, int amount) {
-	recipe.insert({ ingredient_name, amount });
+std::unordered_map<std::string, int>& Recipe::get() {
+	return recipe;
 }
 
-std::unordered_map<std::string, int> Recipe::getRecipe() const {
-	return recipe;
+void Recipe::addIngredient(const std::string& ingredient_name, int amount) {
+	recipe.insert({ ingredient_name, amount });
 }

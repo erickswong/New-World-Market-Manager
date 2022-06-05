@@ -35,17 +35,17 @@ Json::Value Ingot::toJson() const {
 	return json_value;
 }
 
-double Ingot::getCraftTax(Settings& settings) {
+double Ingot::getCraftTax(Settings* settings) {
 	// TODO: implement craft_tax modifiers from settings
 	return base_craft_tax;
 }
 
-double Ingot::getYield(Recipe& recipe, Settings& settings) {
-	double yield = base_yield + settings.smeltingYieldBonus();
+double Ingot::getYield(Recipe& recipe, Settings* settings) {
+	double yield = base_yield + settings->smeltingYieldBonus();
 
 	// Determine the tier of the refining component in the given recipe
 	int refining_component_tier = 0;
-	for (const auto& [ingredient_name, amount] : recipe.getRecipe()) {
+	for (const auto& [ingredient_name, amount] : recipe.get()) {
 		if (ingredient_name == "Obsidian Flux") {
 			refining_component_tier = 5;
 			break;
@@ -72,5 +72,5 @@ double Ingot::getYield(Recipe& recipe, Settings& settings) {
 	}
 
 	// Return the yield
-	return std::max(1., yield) * settings.fortYieldBonusMultiplier();
+	return std::max(1., yield) * settings->fortYieldBonusMultiplier();
 }

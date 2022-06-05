@@ -35,15 +35,15 @@ Json::Value Block::toJson() const {
 	return json_value;
 }
 
-double Block::getCraftTax(Settings& settings) {
+double Block::getCraftTax(Settings* settings) {
 	// TODO: implement craft_tax modifiers from settings
 	return base_craft_tax;
 }
 
-double Block::getYield(Recipe& recipe, Settings& settings) {
+double Block::getYield(Recipe& recipe, Settings* settings) {
 	// Determine the tier of the refining component in the given recipe
 	int refining_component_tier = 0;
-	for (const auto& [ingredient_name, amount] : recipe.getRecipe()) {
+	for (const auto& [ingredient_name, amount] : recipe.get()) {
 		if (ingredient_name == "Obsidian Sandpaper") {
 			refining_component_tier = 5;
 			break;
@@ -59,8 +59,8 @@ double Block::getYield(Recipe& recipe, Settings& settings) {
 	}
 
 	// Calculate the yield
-	const double yield = base_yield + settings.stonecuttingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
+	const double yield = base_yield + settings->stonecuttingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
 
 	// Return the yield
-	return std::max(1., yield) * settings.fortYieldBonusMultiplier();
+	return std::max(1., yield) * settings->fortYieldBonusMultiplier();
 }

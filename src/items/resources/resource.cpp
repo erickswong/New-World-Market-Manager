@@ -46,22 +46,14 @@ Json::Value Resource::toJson() const {
 
 	// Uncomment to save item update order in json
 	/*{
-		Json::Value json_value;
+		Json::Value item_update_order_json_value;
 		for (const auto& item : item_update_order) {
-			json_value.append(item->getItemName());
+			item_update_order_json_value.append(item->getItemName());
 		}
-		json_value["item_update_order"] = json_value;
+		json_value["item_update_order"] = item_update_order_json_value;
 	}*/
 
 	return json_value;
-}
-
-double Resource::getBestInstantAcquireCost() {
-	return std::min(sell_price, analysis.best_instant_craft_cost);
-}
-
-double Resource::getBestAcquireCost() {
-	return std::min({ sell_price, analysis.best_instant_craft_cost, analysis.best_craft_cost, buy_price });
 }
 
 int Resource::getTier() {
@@ -75,11 +67,13 @@ bool Resource::getBuyEqualsSell() {
 bool Resource::setBuyEqualsSell(const bool buy_equals_sell) {
 	this->buy_equals_sell = buy_equals_sell;
 
-	if (buy_equals_sell && buy_price != sell_price) {
-		buy_price = sell_price;
+	if (!buy_equals_sell || buy_price == sell_price) {
+		return false;
 	}
+	
+	buy_price = sell_price;
 
-	return false;
+	return true;
 }
 
 double Resource::getSellPrice() {
@@ -87,13 +81,17 @@ double Resource::getSellPrice() {
 }
 
 bool Resource::setSellPrice(const double sell_price) {
+	if (this->sell_price == sell_price) {
+		return false;
+	}
+
 	this->sell_price = sell_price;
 
 	if (buy_equals_sell) {
 		buy_price = sell_price;
 	}
 
-	return false;
+	return true;
 }
 
 double Resource::getBuyPrice() {
@@ -101,9 +99,13 @@ double Resource::getBuyPrice() {
 }
 
 bool Resource::setBuyPrice(const double buy_price) {
+	if (this->buy_price == buy_price) {
+		return false;
+	}
+
 	this->buy_price = buy_price;
 
-	return false;
+	return true;
 }
 
 std::list<Item*> Resource::getItemUpdateOrder() {
@@ -112,4 +114,12 @@ std::list<Item*> Resource::getItemUpdateOrder() {
 
 void Resource::setItemUpdateOrder(std::list<Item*> item_update_order) {
 	this->item_update_order = item_update_order;
+}
+
+double Resource::getBestInstantAcquireCost() {
+	return std::min(sell_price, analysis.best_instant_craft_cost);
+}
+
+double Resource::getBestAcquireCost() {
+	return std::min({ sell_price, analysis.best_instant_craft_cost, analysis.best_craft_cost, buy_price });
 }

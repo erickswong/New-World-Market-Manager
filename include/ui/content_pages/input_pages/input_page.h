@@ -11,12 +11,17 @@ class InputPage final : public QWidget
 {
 	Q_OBJECT
 
-public:
-	explicit InputPage(QWidget* parent = Q_NULLPTR);
+	public:
+		explicit InputPage(QWidget* parent = Q_NULLPTR);
 
-	void addInputItem(Item* item);
+		// TODO: change from Item* to string param
+		void addInputItem(std::string item_name);
+		void setItems(Items* items);
+		void setSettings(Settings* settings);
 
-private:
-	Ui::InputPage ui;
-	std::vector<InputItem*> input_items;
+	private:
+		Ui::InputPage ui;
+		std::vector<InputItem*> input_items;
+		Items* items = nullptr;
+		Settings* settings = nullptr;
 };

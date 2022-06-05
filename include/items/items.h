@@ -8,52 +8,34 @@
 
 class Items {
 	public:
-		Items();
-		explicit Items(Json::Value json_value);
+		Items(Settings* settings);
+		explicit Items(Json::Value json_value, Settings* settings);
 		~Items();
 
 		void writeToDisk() const;
 		[[nodiscard]] Json::Value toJson() const;
 
-		void addItem(const std::string& item_name, Item* item);
-		void analyzeItem(const std::string& item_name, Settings& settings) const;
+		[[nodiscard]] std::unordered_map<std::string, Item*>& get();
+
+		[[nodiscard]] Item* at(const std::string& item_name) const;
+
+		void insert(const std::string& item_name, Item* item);
 		
-		[[nodiscard]] double getItemBestInstantAcquireCost(const std::string& item_name) const;
-		[[nodiscard]] double getItemBestAcquireCost(const std::string& item_name) const;
-		[[nodiscard]] double getItemCraftTax(const std::string& item_name, Settings& settings) const;
-		[[nodiscard]] double getItemYield(const std::string& item_name, Recipe& recipe, Settings& settings) const;
-
-		[[nodiscard]] int getItemTier(const std::string& item_name) const;
-
-		[[nodiscard]] bool getItemBuyEqualsSell(const std::string& item_name) const;
-		void setItemBuyEqualsSell(const std::string& item_name, bool buy_equals_sell, Settings& settings) const;
-
-		[[nodiscard]] double getItemSellPrice(const std::string& item_name) const;
-		void setItemSellPrice(const std::string& item_name, double sell_price, Settings& settings) const;
-
-		[[nodiscard]] double getItemBuyPrice(const std::string& item_name) const;
-		void setItemBuyPrice(const std::string& item_name, double buy_price, Settings& settings) const;
-
-		[[nodiscard]] double getItemBaseProc(const std::string& item_name) const;
-
-		[[nodiscard]] double getItemBaseCraftTax(const std::string& item_name) const;
-
-		[[nodiscard]] Recipes& getItemRecipes(const std::string& item_name) const;
-
-		[[nodiscard]] std::string getItemImagePath(const std::string& item_name) const;
-
-		[[nodiscard]] ItemAnalysis& getItemAnalysis(const std::string& item_name) const;
-
-		[[nodiscard]] Item* getItem(const std::string& item_name) const;
-
-		[[nodiscard]] std::unordered_map<std::string, Item*> getItems() const;
+		void analyze(Item* item, Settings* settings) const;
+		void analyze(const std::list<Item*>& item_update_order, Settings* settings) const;
+		
+		void setBuyEqualsSell(Item* item, bool buy_equals_sell, Settings* settings) const;
+		
+		void setSellPrice(Item* item, double sell_price, Settings* settings) const;
+		
+		void setBuyPrice(Item* item, double buy_price, Settings* settings) const;
 
 	private:
 		std::unordered_map<std::string, Item*> items;
 
-		std::tuple<Recipe*, double> itemBestInstantCraftCost(const std::string& item_name, Settings& settings) const;
-		std::tuple<Recipe*, double> itemBestCraftCost(const std::string& item_name, Settings& settings) const;
+		std::pair<Recipe, double> getBestInstantCraft(Item* item, Settings* settings) const;
+		std::pair<Recipe, double> getBestCraft(Item* item, Settings* settings) const;
 		static double profitMargin(double sell_price, double acquire_cost);
 
-		void setItemUpdateOrders();
+		std::list<Item*> setItemUpdateOrders();
 };

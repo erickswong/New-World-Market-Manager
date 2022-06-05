@@ -14,9 +14,6 @@ class Resource : public Item {
 
 		[[nodiscard]] Json::Value toJson() const override;
 
-		double getBestInstantAcquireCost() override;
-		double getBestAcquireCost() override;
-
 		int getTier() override;
 
 		bool getBuyEqualsSell() override;
@@ -30,4 +27,8 @@ class Resource : public Item {
 
 		std::list<Item*> getItemUpdateOrder() override;
 		void setItemUpdateOrder(std::list<Item*> item_update_order) override;
+
+		double getBestInstantAcquireCost() override;
+
+		double getBestAcquireCost() override;
 };

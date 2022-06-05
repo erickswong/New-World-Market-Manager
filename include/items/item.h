@@ -24,11 +24,6 @@ class Item {
 
 		[[nodiscard]] virtual Json::Value toJson() const;
 
-		virtual double getBestInstantAcquireCost();
-		virtual double getBestAcquireCost();
-		virtual double getCraftTax(Settings& settings);
-		virtual double getYield(Recipe& recipe, Settings& settings);
-
 		virtual std::string getItemName();
 
 		virtual int getTier();
@@ -54,6 +49,14 @@ class Item {
 		virtual void setItemUpdateOrder(std::list<Item*> item_update_order);
 		
 		virtual ItemAnalysis& getAnalysis();
+
+		virtual double getBestInstantAcquireCost();
+
+		virtual double getBestAcquireCost();
+
+		virtual double getCraftTax(Settings* settings);
+
+		virtual double getYield(Recipe& recipe, Settings* settings);
 
 	protected:
 		std::string item_name;

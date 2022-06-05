@@ -35,15 +35,15 @@ Json::Value Leather::toJson() const {
 	return json_value;
 }
 
-double Leather::getCraftTax(Settings& settings) {
+double Leather::getCraftTax(Settings* settings) {
 	// TODO: implement craft_tax modifiers from settings
 	return base_craft_tax;
 }
 
-double Leather::getYield(Recipe& recipe, Settings& settings) {
+double Leather::getYield(Recipe& recipe, Settings* settings) {
 	// Determine the tier of the refining component in the given recipe
 	int refining_component_tier = 0;
-	for (const auto& [ingredient_name, amount] : recipe.getRecipe()) {
+	for (const auto& [ingredient_name, amount] : recipe.get()) {
 		if (ingredient_name == "Aged Tannin") {
 			refining_component_tier = 5;
 			break;
@@ -59,8 +59,8 @@ double Leather::getYield(Recipe& recipe, Settings& settings) {
 	}
 
 	// Calculate the yield
-	const double yield = base_yield + settings.leatherworkingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
+	const double yield = base_yield + settings->leatherworkingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
 
 	// Return the yield
-	return std::max(1., yield) * settings.fortYieldBonusMultiplier();
+	return std::max(1., yield) * settings->fortYieldBonusMultiplier();
 }

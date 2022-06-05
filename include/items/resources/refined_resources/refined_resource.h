@@ -17,12 +17,6 @@ class RefinedResource : public Resource {
 
 		[[nodiscard]] Json::Value toJson() const override;
 
-		bool setBuyEqualsSell(bool buy_equals_sell) override;
-
-		bool setSellPrice(double sell_price) override;
-
-		bool setBuyPrice(double buy_price) override;
-
 		double getBaseYield() override;
 
 		double getBaseCraftTax() override;

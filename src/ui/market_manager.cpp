@@ -16,9 +16,9 @@ MarketManager::MarketManager(QWidget *parent)
     // Apply drop shadow effect
     setDropShadow();
 
-    // Initialize items and settings
-    setItems();
+    // Initialize settings and items
     setSettings();
+    setItems();
 
     // Set stacked widget to default page
     ui.content_stacked_widget->setCurrentIndex(static_cast<int>(MenuButtons::SMELTING));
@@ -205,9 +205,9 @@ void MarketManager::setItems() {
 
         file.close();
 
-        items = new Items(json_value);
+        items = new Items(json_value, settings);
 	} catch (std::exception& e) {
-        items = new Items;
+        items = new Items(settings);
 
         // TODO: alert that creating items from items.json was unsuccessful with message e.what()
 	}

@@ -1,10 +1,10 @@
 #include "ui/content_pages/input_pages/input_item.h"
 
-#include <qstyle.h>
-
-InputItem::InputItem(Item* item, QWidget *parent)
+InputItem::InputItem(Item* item, Items* items, Settings* settings, QWidget *parent)
 	: QWidget(parent),
-      item(item)
+      item(item),
+      items(items),
+      settings(settings)
 {
 	ui.setupUi(this);
 
@@ -25,21 +25,36 @@ InputItem::InputItem(Item* item, QWidget *parent)
 	ui.buy_price->setValue(item->getBuyPrice());
 }
 
+void InputItem::setItems(Items* items) {
+	this->items = items;
+
+	// Set items for all children
+	// No children
+}
+
+void InputItem::setSettings(Settings* settings) {
+	this->settings = settings;
+
+	// Set settings for all children
+	// No children
+}
+
 void InputItem::on_lock_clicked(const bool buy_equals_sell) const {
-	item->setBuyEqualsSell(buy_equals_sell);
+	items->setBuyEqualsSell(item, buy_equals_sell, settings);
 
 	ui.buy_price->setReadOnly(buy_equals_sell);
 	ui.buy_price->setValue(item->getBuyPrice());
 }
 
 void InputItem::on_sell_price_valueChanged(const double sell_price) const {
-	item->setSellPrice(sell_price);
-
 	if (item->getBuyEqualsSell()) {
+		item->setSellPrice(sell_price);
 		ui.buy_price->setValue(item->getBuyPrice());
+	} else {
+		items->setSellPrice(item, sell_price, settings);
 	}
 }
 
 void InputItem::on_buy_price_valueChanged(const double buy_price) const {
-	item->setBuyPrice(buy_price);
+	items->setBuyPrice(item, buy_price, settings);
 }

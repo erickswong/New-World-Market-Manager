@@ -17,40 +17,41 @@
 #include "items/resources/refined_resources/planks/plank.h"
 #include "items/resources/refining_components/refining_component.h"
 
-Items::Items() {
+Items::Items(Settings* settings) {
 	DefaultItemsInitializer(this).initializeItems();
+	analyze(setItemUpdateOrders(), settings);
 }
 
-Items::Items(Json::Value json_value) {
+Items::Items(Json::Value json_value, Settings* settings) {
 	for (const std::string& item_name : json_value.getMemberNames()) {
 		std::string item_type = json_value[item_name]["item_type"].asString();
 
 		if (item_type == "Item") {
-			addItem(item_name, new Item(json_value[item_name]));
+			insert(item_name, new Item(json_value[item_name]));
 		} else if (item_type == "Resource") {
-			addItem(item_name, new Resource(json_value[item_name]));
+			insert(item_name, new Resource(json_value[item_name]));
 		} else if (item_type == "RawResource") {
-			addItem(item_name, new RawResource(json_value[item_name]));
+			insert(item_name, new RawResource(json_value[item_name]));
 		} else if (item_type == "RefinedResource") {
-			addItem(item_name, new RefinedResource(json_value[item_name]));
+			insert(item_name, new RefinedResource(json_value[item_name]));
 		} else if (item_type == "Block") {
-			addItem(item_name, new Block(json_value[item_name]));
+			insert(item_name, new Block(json_value[item_name]));
 		} else if (item_type == "Cloth") {
-			addItem(item_name, new Cloth(json_value[item_name]));
+			insert(item_name, new Cloth(json_value[item_name]));
 		} else if (item_type == "Ingot") {
-			addItem(item_name, new Ingot(json_value[item_name]));
+			insert(item_name, new Ingot(json_value[item_name]));
 		} else if (item_type == "Leather") {
-			addItem(item_name, new Leather(json_value[item_name]));
+			insert(item_name, new Leather(json_value[item_name]));
 		} else if (item_type == "Plank") {
-			addItem(item_name, new Plank(json_value[item_name]));
+			insert(item_name, new Plank(json_value[item_name]));
 		} else if (item_type == "RefiningComponent") {
-			addItem(item_name, new RefiningComponent(json_value[item_name]));
+			insert(item_name, new RefiningComponent(json_value[item_name]));
 		} else {
 			throw BadJsonException("Unrecognized item_type in items.json");
 		}
 	}
 
-	setItemUpdateOrders();
+	analyze(setItemUpdateOrders(), settings);
 }
 
 Items::~Items() {
@@ -85,119 +86,74 @@ Json::Value Items::toJson() const {
 	return json_value;
 }
 
-void Items::addItem(const std::string& item_name, Item* item) {
-	items.insert({ item_name, item });
-}
-
-void Items::analyzeItem(const std::string& item_name, Settings& settings) const {
-	auto& [best_instant_craft_cost, best_craft_cost, best_instant_profit_margin, best_profit_margin, best_instant_recipe, best_recipe] = getItemAnalysis(item_name);
-	const double sell_price = getItemSellPrice(item_name);
-	const std::tuple<Recipe*, double> best_instant_craft = itemBestInstantCraftCost(item_name, settings);
-	const std::tuple<Recipe*, double> best_craft = itemBestCraftCost(item_name, settings);
-
-	best_instant_craft_cost = std::get<1>(best_instant_craft);
-	best_craft_cost = std::get<1>(best_craft);
-	best_instant_profit_margin = profitMargin(sell_price, best_instant_craft_cost);
-	best_profit_margin = profitMargin(sell_price, best_craft_cost);
-	best_instant_recipe = *std::get<0>(best_instant_craft);
-	best_recipe = *std::get<0>(best_craft);
-}
-
-double Items::getItemBestInstantAcquireCost(const std::string& item_name) const {
-	return getItem(item_name)->getBestInstantAcquireCost();
-}
-
-double Items::getItemBestAcquireCost(const std::string& item_name) const {
-	return getItem(item_name)->getBestAcquireCost();
-}
-
-double Items::getItemCraftTax(const std::string& item_name, Settings& settings) const {
-	return getItem(item_name)->getCraftTax(settings);
-}
-
-double Items::getItemYield(const std::string& item_name, Recipe& recipe, Settings& settings) const {
-	return getItem(item_name)->getYield(recipe, settings);
-}
-
-int Items::getItemTier(const std::string& item_name) const {
-	return getItem(item_name)->getTier();
-}
-
-bool Items::getItemBuyEqualsSell(const std::string& item_name) const {
-	return getItem(item_name)->getBuyEqualsSell();
-}
-
-void Items::setItemBuyEqualsSell(const std::string& item_name, const bool buy_equals_sell, Settings& settings) const {
-	if (getItem(item_name)->setBuyEqualsSell(buy_equals_sell)) {
-		analyzeItem(item_name, settings);
-	}
-}
-
-double Items::getItemSellPrice(const std::string& item_name) const {
-	return getItem(item_name)->getSellPrice();
-}
-
-void Items::setItemSellPrice(const std::string& item_name, const double sell_price, Settings& settings) const {
-	if (getItem(item_name)->setSellPrice(sell_price)) {
-		analyzeItem(item_name, settings);
-	}
-}
-
-double Items::getItemBuyPrice(const std::string& item_name) const {
-	return getItem(item_name)->getBuyPrice();
-}
-
-void Items::setItemBuyPrice(const std::string& item_name, const double buy_price, Settings& settings) const {
-	if (getItem(item_name)->setBuyPrice(buy_price)) {
-		analyzeItem(item_name, settings);
-	}
-}
-
-double Items::getItemBaseProc(const std::string& item_name) const {
-	return getItem(item_name)->getBaseYield();
-}
-
-double Items::getItemBaseCraftTax(const std::string& item_name) const {
-	return getItem(item_name)->getBaseCraftTax();
-}
-
-Recipes& Items::getItemRecipes(const std::string& item_name) const {
-	return getItem(item_name)->getRecipes();
-}
-
-std::string Items::getItemImagePath(const std::string& item_name) const {
-	return getItem(item_name)->getImagePath();
-}
-
-ItemAnalysis& Items::getItemAnalysis(const std::string& item_name) const {
-	return getItem(item_name)->getAnalysis();
-}
-
-Item* Items::getItem(const std::string& item_name) const {
-	return items.at(item_name);
-}
-
-std::unordered_map<std::string, Item*> Items::getItems() const {
+std::unordered_map<std::string, Item*>& Items::get() {
 	return items;
 }
 
-std::tuple<Recipe*, double> Items::itemBestInstantCraftCost(const std::string& item_name, Settings& settings) const {
-	Recipe* best_instant_craft_recipe = nullptr;
+Item* Items::at(const std::string& item_name) const {
+	return items.at(item_name);
+}
+
+void Items::insert(const std::string& item_name, Item* item) {
+	items.insert({ item_name, item });
+}
+
+void Items::analyze(Item* item, Settings* settings) const {
+	try {
+		auto& [best_instant_craft_cost, best_craft_cost, best_instant_profit_margin, best_profit_margin, best_instant_recipe, best_recipe] = item->getAnalysis();
+		const auto sell_price = item->getSellPrice();
+
+		std::tie(best_instant_recipe, best_instant_craft_cost) = getBestInstantCraft(item, settings);
+		std::tie(best_recipe, best_craft_cost) = getBestCraft(item, settings);
+
+		best_instant_profit_margin = profitMargin(sell_price, best_instant_craft_cost);
+		best_profit_margin = profitMargin(sell_price, best_craft_cost);
+	} catch (NotUsedException& e) {
+		// Item does not use analysis
+	}
+}
+
+void Items::analyze(const std::list<Item*>& item_update_order, Settings* settings) const {
+	for (const auto& item : item_update_order) {
+		analyze(item, settings);
+	}
+}
+
+void Items::setBuyEqualsSell(Item* item, const bool buy_equals_sell, Settings* settings) const {
+	if (item->setBuyEqualsSell(buy_equals_sell)) {
+		analyze(item->getItemUpdateOrder(), settings);
+	}
+}
+
+void Items::setSellPrice(Item* item, const double sell_price, Settings* settings) const {
+	if (item->setSellPrice(sell_price)) {
+		analyze(item->getItemUpdateOrder(), settings);
+	}
+}
+
+void Items::setBuyPrice(Item* item, const double buy_price, Settings* settings) const {
+	if (item->setBuyPrice(buy_price)) {
+		analyze(item->getItemUpdateOrder(), settings);
+	}
+}
+
+std::pair<Recipe, double> Items::getBestInstantCraft(Item* item, Settings* settings) const {
+	Recipe best_instant_craft_recipe;
 	double best_instant_craft_cost = HUGE_VAL;
-	
-	for (Recipe& recipe : getItemRecipes(item_name).getRecipes()) {
+
+	for (auto& recipe : item->getRecipes().get()) {
 		// Calculate the total cost of the ingredients in the recipe
 		double recipe_cost = 0.;
-		for (const auto& [ingredient_name, amount] : recipe.getRecipe()) {
-			recipe_cost += amount * getItemBestInstantAcquireCost(ingredient_name);
+		for (const auto& [ingredient_name, amount] : recipe.get()) {
+			recipe_cost += amount * at(ingredient_name)->getBestInstantAcquireCost();
 		}
 
 		// Calculate the instant craft cost of the recipe
-		const double instant_craft_cost = (recipe_cost + getItemCraftTax(item_name, settings)) / getItemYield(item_name, recipe, settings);
+		const double instant_craft_cost = (recipe_cost + item->getCraftTax(settings)) / item->getYield(recipe, settings);
 
 		// Update best instant craft if current instant craft is better
 		if (instant_craft_cost < best_instant_craft_cost) {
-			best_instant_craft_recipe = &recipe;
+			best_instant_craft_recipe = recipe;
 			best_instant_craft_cost = instant_craft_cost;
 		}
 	}
@@ -206,23 +162,23 @@ std::tuple<Recipe*, double> Items::itemBestInstantCraftCost(const std::string& i
 	return { best_instant_craft_recipe, best_instant_craft_cost };
 }
 
-std::tuple<Recipe*, double> Items::itemBestCraftCost(const std::string& item_name, Settings& settings) const {
-	Recipe* best_craft_recipe = nullptr;
+std::pair<Recipe, double> Items::getBestCraft(Item* item, Settings* settings) const {
+	Recipe best_craft_recipe;
 	double best_craft_cost = HUGE_VAL;
 
-	for (Recipe& recipe : getItemRecipes(item_name).getRecipes()) {
+	for (auto& recipe : item->getRecipes().get()) {
 		// Calculate the total cost of the ingredients in the recipe
 		double recipe_cost = 0.;
-		for (const auto& [ingredient_name, amount] : recipe.getRecipe()) {
-			recipe_cost += amount * getItemBestAcquireCost(ingredient_name);
+		for (const auto& [ingredient_name, amount] : recipe.get()) {
+			recipe_cost += amount * at(ingredient_name)->getBestAcquireCost();
 		}
 
 		// Calculate the craft cost of the recipe
-		const double craft_cost = (recipe_cost + getItemCraftTax(item_name, settings)) / getItemYield(item_name, recipe, settings);
+		const double craft_cost = (recipe_cost + item->getCraftTax(settings)) / item->getYield(recipe, settings);
 
 		// Update the best craft is current craft is better
 		if (craft_cost < best_craft_cost) {
-			best_craft_recipe = &recipe;
+			best_craft_recipe = recipe;
 			best_craft_cost = craft_cost;
 		}
 	}
@@ -235,7 +191,7 @@ double Items::profitMargin(const double sell_price, const double acquire_cost) {
 	return (sell_price - acquire_cost) / sell_price;
 }
 
-void Items::setItemUpdateOrders() {
+std::list<Item*> Items::setItemUpdateOrders() {
 	// Item node
 	struct ItemNode {
 		std::unordered_set<Item*> parent_items;
@@ -244,13 +200,15 @@ void Items::setItemUpdateOrders() {
 		std::list<Item*> item_update_order;
 		bool completed = false;
 
-		explicit ItemNode(Item* item, const Items* items) {
+		ItemNode() = default;
+
+		ItemNode(Item* item, const Items* items) {
 			// Store unordered set of all parents for this item
 			try {
 				// Ingredients found in recipes are parents
-				for (const auto& recipe : item->getRecipes().getRecipes()) {
-					for (const auto& [ingredient_name, amount] : recipe.getRecipe()) {
-						parent_items.insert(items->getItem(ingredient_name));
+				for (auto& recipe : item->getRecipes().get()) {
+					for (const auto& [ingredient_name, amount] : recipe.get()) {
+						parent_items.insert(items->at(ingredient_name));
 					}
 				}
 			} catch (NotUsedException& e) {
@@ -260,25 +218,33 @@ void Items::setItemUpdateOrders() {
 	};
 
 	// Item graph
-	std::unordered_map<Item*, ItemNode> item_graph;
+	std::unordered_map<Item*, ItemNode*> item_graph;
 
-	// Populate item graph
+	// Master node
+	auto master_item = new Item("Master Node", "");
+	auto master_node = new ItemNode;
+
+	// Populate item graph and add every item as child of master node
 	for (const auto& [item_name, item] : items) {
-		item_graph.insert({ item, ItemNode(item, this) });
+		item_graph.insert({ item, new ItemNode(item, this) });
+		master_node->child_items.insert(item);
 	}
+
+	// Insert master node into item graph
+	item_graph.insert({ master_item, master_node });
 
 	// Store unordered set of all children for each item
 	for (const auto& [item, item_node] : item_graph) {
-		for (const auto& parent : item_node.parent_items) {
-			item_graph.at(parent).child_items.insert(item);
+		for (const auto& parent : item_node->parent_items) {
+			item_graph.at(parent)->child_items.insert(item);
 		}
 	}
 
 	// Recursive lambda function for finding item update order
 	std::function<std::list<Item*>(Item*)> find_item_update_order = [&](Item* item) {
 		// Get item node for this item
-		auto& [parent_items, child_items, item_update_order_items, item_update_order, completed] = item_graph.at(item);
-
+		auto& [parent_items, child_items, item_update_order_items, item_update_order, completed] = *item_graph.at(item);
+		
 		// Return early if item already completed
 		if (completed) {
 			return item_update_order;
@@ -289,7 +255,7 @@ void Items::setItemUpdateOrders() {
 			// Take item update order from first child as a starting point
 			auto it = child_items.begin();
 			item_update_order = find_item_update_order(*it);
-			item_update_order_items = item_graph.at(*it).item_update_order_items;
+			item_update_order_items = item_graph.at(*it)->item_update_order_items;
 			++it;
 
 			// Build item update order from the rest of the children
@@ -326,4 +292,17 @@ void Items::setItemUpdateOrders() {
 			// Item does not use item update order
 		}
 	}
+
+	// Save return value
+	master_node->item_update_order.pop_front();
+	std::list<Item*> master_item_update_order = master_node->item_update_order;
+
+	// Delete created objects
+	delete master_item;
+	for (const auto& [item, item_node] : item_graph) {
+		delete item_node;
+	}
+
+	// Return master item update order
+	return master_item_update_order;
 }

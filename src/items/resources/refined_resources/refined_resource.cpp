@@ -39,42 +39,6 @@ Json::Value RefinedResource::toJson() const {
 	return json_value;
 }
 
-bool RefinedResource::setBuyEqualsSell(const bool buy_equals_sell) {
-	this->buy_equals_sell = buy_equals_sell;
-
-	if (buy_equals_sell && buy_price != sell_price) {
-		buy_price = sell_price;
-
-		return true;
-	}
-
-	return false;
-}
-
-bool RefinedResource::setSellPrice(const double sell_price) {
-	if (this->sell_price != sell_price) {
-		this->sell_price = sell_price;
-
-		if (buy_equals_sell) {
-			buy_price = sell_price;
-		}
-
-		return true;
-	}
-
-	return false;
-}
-
-bool RefinedResource::setBuyPrice(const double buy_price) {
-	if (this->buy_price != buy_price) {
-		this->buy_price = buy_price;
-
-		return true;
-	}
-
-	return false;
-}
-
 double RefinedResource::getBaseYield() {
 	return base_yield;
 }

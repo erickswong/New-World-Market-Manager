@@ -25,22 +25,6 @@ Json::Value Item::toJson() const {
 	return json_value;
 }
 
-double Item::getBestInstantAcquireCost() {
-	throw NotUsedException();
-}
-
-double Item::getBestAcquireCost() {
-	throw NotUsedException();
-}
-
-double Item::getCraftTax(Settings& settings) {
-	throw NotUsedException();
-}
-
-double Item::getYield(Recipe& recipe, Settings& settings) {
-	throw NotUsedException();
-}
-
 std::string Item::getItemName() {
 	return item_name;
 }
@@ -98,5 +82,21 @@ void Item::setItemUpdateOrder(std::list<Item*> item_update_order) {
 }
 
 ItemAnalysis& Item::getAnalysis() {
+	throw NotUsedException();
+}
+
+double Item::getBestInstantAcquireCost() {
+	throw NotUsedException();
+}
+
+double Item::getBestAcquireCost() {
+	throw NotUsedException();
+}
+
+double Item::getCraftTax(Settings* settings) {
+	throw NotUsedException();
+}
+
+double Item::getYield(Recipe& recipe, Settings* settings) {
 	throw NotUsedException();
 }

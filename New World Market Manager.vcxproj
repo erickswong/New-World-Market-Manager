@@ -62,6 +62,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)lib;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)lib</AdditionalLibraryDirectories>
@@ -73,6 +74,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)lib;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>

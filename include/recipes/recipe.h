@@ -12,9 +12,9 @@ class Recipe {
 
 		[[nodiscard]] Json::Value toJson() const;
 
-		void addIngredient(const std::string& ingredient_name, int amount);
+		[[nodiscard]] std::unordered_map<std::string, int>& get();
 
-		[[nodiscard]] std::unordered_map<std::string, int> getRecipe() const;
+		void addIngredient(const std::string& ingredient_name, int amount);
 
 	private:
 		std::unordered_map<std::string, int> recipe;

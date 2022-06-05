@@ -18,10 +18,10 @@ Json::Value Recipes::toJson() const {
     return json_value;
 }
 
-void Recipes::addRecipe(const Recipe& recipe) {
-	recipes.push_back(recipe);
+std::vector<Recipe>& Recipes::get() {
+	return recipes;
 }
 
-std::vector<Recipe> Recipes::getRecipes() const {
-	return recipes;
+void Recipes::addRecipe(const Recipe& recipe) {
+	recipes.push_back(recipe);
 }
