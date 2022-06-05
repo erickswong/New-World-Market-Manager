@@ -44,6 +44,15 @@ Json::Value Resource::toJson() const {
 		json_value["buy_price"] = buy_price;
 	}
 
+	// Uncomment to save item update order in json
+	/*{
+		Json::Value json_value;
+		for (const auto& item : item_update_order) {
+			json_value.append(item->getItemName());
+		}
+		json_value["item_update_order"] = json_value;
+	}*/
+
 	return json_value;
 }
 
@@ -95,4 +104,12 @@ bool Resource::setBuyPrice(const double buy_price) {
 	this->buy_price = buy_price;
 
 	return false;
+}
+
+std::list<Item*> Resource::getItemUpdateOrder() {
+	return item_update_order;
+}
+
+void Resource::setItemUpdateOrder(std::list<Item*> item_update_order) {
+	this->item_update_order = item_update_order;
 }

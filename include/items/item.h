@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cmath>
+#include <list>
 
 #include "recipes/recipes.h"
 #include "settings/settings.h"
@@ -48,6 +49,9 @@ class Item {
 		virtual Recipes& getRecipes();
 
 		virtual std::string getImagePath();
+
+		virtual std::list<Item*> getItemUpdateOrder();
+		virtual void setItemUpdateOrder(std::list<Item*> item_update_order);
 		
 		virtual ItemAnalysis& getAnalysis();
 
@@ -61,6 +65,7 @@ class Item {
 		double base_craft_tax = 0.;
 		Recipes recipes;
 		std::string image_path;
+		std::list<Item*> item_update_order;
 
 		ItemAnalysis analysis;
 };

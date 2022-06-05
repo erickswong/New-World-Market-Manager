@@ -89,6 +89,14 @@ std::string Item::getImagePath() {
 	return image_path;
 }
 
+std::list<Item*> Item::getItemUpdateOrder() {
+	throw NotUsedException();
+}
+
+void Item::setItemUpdateOrder(std::list<Item*> item_update_order) {
+	throw NotUsedException();
+}
+
 ItemAnalysis& Item::getAnalysis() {
 	throw NotUsedException();
 }

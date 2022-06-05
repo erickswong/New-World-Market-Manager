@@ -55,5 +55,5 @@ class Items {
 		std::tuple<Recipe*, double> itemBestCraftCost(const std::string& item_name, Settings& settings) const;
 		static double profitMargin(double sell_price, double acquire_cost);
 
-		// TODO: add graph storing nodes with its out edges (maybe in edges as well?) later assert all nodes in items?
+		void setItemUpdateOrders();
 };

@@ -3,6 +3,8 @@
 #include <cmath>
 #include <filesystem>
 #include <fstream>
+#include <functional>
+#include <unordered_set>
 
 #include "exceptions.h"
 
@@ -47,6 +49,8 @@ Items::Items(Json::Value json_value) {
 			throw BadJsonException("Unrecognized item_type in items.json");
 		}
 	}
+
+	setItemUpdateOrders();
 }
 
 Items::~Items() {
@@ -229,4 +233,97 @@ std::tuple<Recipe*, double> Items::itemBestCraftCost(const std::string& item_nam
 
 double Items::profitMargin(const double sell_price, const double acquire_cost) {
 	return (sell_price - acquire_cost) / sell_price;
+}
+
+void Items::setItemUpdateOrders() {
+	// Item node
+	struct ItemNode {
+		std::unordered_set<Item*> parent_items;
+		std::unordered_set<Item*> child_items;
+		std::unordered_set<Item*> item_update_order_items;
+		std::list<Item*> item_update_order;
+		bool completed = false;
+
+		explicit ItemNode(Item* item, const Items* items) {
+			// Store unordered set of all parents for this item
+			try {
+				// Ingredients found in recipes are parents
+				for (const auto& recipe : item->getRecipes().getRecipes()) {
+					for (const auto& [ingredient_name, amount] : recipe.getRecipe()) {
+						parent_items.insert(items->getItem(ingredient_name));
+					}
+				}
+			} catch (NotUsedException& e) {
+				// Item has no recipes, thus no parents
+			}
+		}
+	};
+
+	// Item graph
+	std::unordered_map<Item*, ItemNode> item_graph;
+
+	// Populate item graph
+	for (const auto& [item_name, item] : items) {
+		item_graph.insert({ item, ItemNode(item, this) });
+	}
+
+	// Store unordered set of all children for each item
+	for (const auto& [item, item_node] : item_graph) {
+		for (const auto& parent : item_node.parent_items) {
+			item_graph.at(parent).child_items.insert(item);
+		}
+	}
+
+	// Recursive lambda function for finding item update order
+	std::function<std::list<Item*>(Item*)> find_item_update_order = [&](Item* item) {
+		// Get item node for this item
+		auto& [parent_items, child_items, item_update_order_items, item_update_order, completed] = item_graph.at(item);
+
+		// Return early if item already completed
+		if (completed) {
+			return item_update_order;
+		}
+
+		// Build item update order from item update order of children
+		if (!child_items.empty()) {
+			// Take item update order from first child as a starting point
+			auto it = child_items.begin();
+			item_update_order = find_item_update_order(*it);
+			item_update_order_items = item_graph.at(*it).item_update_order_items;
+			++it;
+
+			// Build item update order from the rest of the children
+			for (; it != child_items.end(); ++it) {
+				auto child_item_update_order = find_item_update_order(*it);
+
+				// Find first item in child item update order that is already in item update order items
+				auto it = child_item_update_order.begin();
+				for (; it != child_item_update_order.end(); ++it) {
+					if (!item_update_order_items.insert(*it).second) {
+						break;
+					}
+				}
+
+				// Add all items before this item to beginning of item update order
+				item_update_order.splice(item_update_order.begin(), child_item_update_order, child_item_update_order.begin(), it);
+			}
+		}
+
+		// Add itself to item update order before setting as completed
+		item_update_order_items.insert(item);
+		item_update_order.push_front(item);
+		completed = true;
+
+		// Return item update order
+		return item_update_order;
+	};
+
+	// Save item update order for each item
+	for (const auto& [item, item_node] : item_graph) {
+		try {
+			item->setItemUpdateOrder(find_item_update_order(item));
+		} catch (NotUsedException& e) {
+			// Item does not use item update order
+		}
+	}
 }

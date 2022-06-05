@@ -27,4 +27,7 @@ class Resource : public Item {
 
 		double getBuyPrice() override;
 		bool setBuyPrice(double buy_price) override;
+
+		std::list<Item*> getItemUpdateOrder() override;
+		void setItemUpdateOrder(std::list<Item*> item_update_order) override;
 };
