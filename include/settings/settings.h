@@ -6,8 +6,6 @@
 #include "taxes.h"
 #include "trade_skills.h"
 
-#include "jsoncpp/json/json.h"
-
 class Settings {
 	public:
 		Settings();

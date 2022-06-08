@@ -2,8 +2,6 @@
 
 #include "armour_set.h"
 
-#include "jsoncpp/json/json.h"
-
 class ArmourSets {
 	public:
 		ArmourSets();

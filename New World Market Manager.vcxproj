@@ -61,24 +61,32 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)lib;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)lib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <ResourceCompile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </ResourceCompile>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)lib;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)lib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(ProjectDir);$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -117,7 +125,6 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lib\jsoncpp\jsoncpp.cpp" />
     <ClCompile Include="src\items\default_items_initializer.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\input_page.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\input_item.cpp" />
@@ -134,8 +141,6 @@
     <ClCompile Include="src\settings\taxes.cpp" />
     <ClCompile Include="src\settings\standing_bonuses.cpp" />
     <ClInclude Include="include\items\default_items_initializer.h" />
-    <ClInclude Include="lib\jsoncpp\json\json-forwards.h" />
-    <ClInclude Include="lib\jsoncpp\json\json.h" />
     <ClInclude Include="lib\json\json-forwards.h" />
     <ClInclude Include="lib\json\json.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\input_page.h" />
@@ -200,6 +205,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ui\New World Market Manager.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\json.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
