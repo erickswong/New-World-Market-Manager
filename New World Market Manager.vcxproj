@@ -19,11 +19,11 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -61,32 +61,32 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)lib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <AdditionalLibraryDirectories>$(ProjectDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
+    <Link />
     <ResourceCompile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </ResourceCompile>
-    <PostBuildEvent>
-      <Command>
-      </Command>
-    </PostBuildEvent>
+    <PostBuildEvent />
+    <PreLinkEvent>
+      <Command>@ECHO ON
+"lib.exe" /NOLOGO /OUT:"$(OutDir)$(ProjectName).lib" "$(IntermediateOutputPath)*.obj"
+"lib.exe" /NOLOGO "$(OutDir)$(ProjectName).lib" /REMOVE:"$(IntermediateOutputPath)main.obj"</Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)lib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <AdditionalLibraryDirectories>$(ProjectDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-    <PostBuildEvent>
-      <Command>
-      </Command>
-    </PostBuildEvent>
+    <Link />
+    <PostBuildEvent />
+    <PreLinkEvent>
+      <Command>@ECHO ON
+"lib.exe" /NOLOGO /OUT:"$(OutDir)$(ProjectName).lib" "$(IntermediateOutputPath)*.obj"
+"lib.exe" /NOLOGO "$(OutDir)$(ProjectName).lib" /REMOVE:"$(IntermediateOutputPath)main.obj"</Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -150,8 +150,6 @@
     <ClInclude Include="include\items\resources\refined_resources\blocks\block.h" />
     <ClInclude Include="include\items\resources\refined_resources\cloths\cloth.h" />
     <ClInclude Include="include\constants.h" />
-    <ClInclude Include="include\json\json-forwards.h" />
-    <ClInclude Include="include\json\json.h" />
     <ClInclude Include="include\settings\fort_bonuses.h" />
     <ClInclude Include="include\settings\armour_sets.h" />
     <ClInclude Include="include\settings\armour_set.h" />
@@ -207,7 +205,9 @@
     <ResourceCompile Include="ui\New World Market Manager.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="lib\json.lib" />
+    <ProjectReference Include="include\json\json.vcxproj">
+      <Project>{345030bc-d6ea-4198-af65-ac2b2a3440a1}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

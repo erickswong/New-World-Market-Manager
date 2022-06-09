@@ -202,12 +202,6 @@
     <ClInclude Include="include\items\resources\refined_resources\blocks\block.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\json\json.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\json\json-forwards.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="lib\json\json.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -256,8 +250,5 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="ui\icon\New World Market Manager.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="lib\json.lib" />
   </ItemGroup>
 </Project>
