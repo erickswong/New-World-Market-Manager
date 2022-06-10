@@ -82,7 +82,7 @@
     <ClCompile Include="src\ui\content_pages\input_pages\input_page.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\items\default_initializer.cpp">
+    <ClCompile Include="src\items\default_items.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="modules\recipes\recipe.ixx" />
@@ -97,7 +97,7 @@
     <ClCompile Include="modules\settings\settings.ixx" />
     <ClCompile Include="modules\items\item.ixx" />
     <ClCompile Include="modules\items\items.ixx" />
-    <ClCompile Include="modules\items\default_initializer.ixx" />
+    <ClCompile Include="modules\items\default_items.ixx" />
     <ClCompile Include="modules\items\resources\resource.ixx" />
     <ClCompile Include="modules\items\resources\raw_resources\raw_resource.ixx" />
     <ClCompile Include="modules\items\resources\refining_components\refining_component.ixx" />

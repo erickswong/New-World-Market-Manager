@@ -1,4 +1,4 @@
-module items:default_initializer;
+module items:default_items;
 
 import :block;
 import :cloth;
@@ -8,22 +8,20 @@ import :plank;
 import :raw_resource;
 import :refining_component;
 
-DefaultInitializer::DefaultInitializer(Items* items) {
-	this->items = items;
-}
+void default_items::init(Items* items) {
+	default_items::items = items;
 
-void DefaultInitializer::init() const {
 	addResources();
 	addArmourSets();
 }
 
-void DefaultInitializer::addResources() const {
+void default_items::addResources() {
 	addRawResources();
 	addRefinedResources();
 	addRefiningComponents();
 }
 
-void DefaultInitializer::addArmourSets() const {
+void default_items::addArmourSets() {
 	addSmelterSet();
 	addWoodworkerSet();
 	addWeaverSet();
@@ -31,7 +29,7 @@ void DefaultInitializer::addArmourSets() const {
 	addStonecutterSet();
 }
 
-void DefaultInitializer::addRawResources() const {
+void default_items::addRawResources() {
 	addOres();
 	addWoods();
 	addFibers();
@@ -39,7 +37,7 @@ void DefaultInitializer::addRawResources() const {
 	addStones();
 }
 
-void DefaultInitializer::addRefinedResources() const {
+void default_items::addRefinedResources() {
 	addIngots();
 	addPlanks();
 	addCloths();
@@ -47,7 +45,7 @@ void DefaultInitializer::addRefinedResources() const {
 	addBlocks();
 }
 
-void DefaultInitializer::addRefiningComponents() const {
+void default_items::addRefiningComponents() {
 	addFluxes();
 	addSandpapers();
 	addTannins();
@@ -55,7 +53,7 @@ void DefaultInitializer::addRefiningComponents() const {
 	addWeaves();
 }
 
-void DefaultInitializer::addOres() const {
+void default_items::addOres() {
 	const auto iron_ore = new RawResource("Iron Ore",
 	                                      ":/MarketManager/images/items/resources/raw_resources/ores/iron_ore.png",
 	                                      1,
@@ -115,7 +113,7 @@ void DefaultInitializer::addOres() const {
 	items->insert("Tolvium", tolvium);
 }
 
-void DefaultInitializer::addWoods() const {
+void default_items::addWoods() {
 	const auto green_wood = new RawResource("Green Wood",
 	                                        ":/MarketManager/images/items/resources/raw_resources/woods/green_wood.png",
 	                                        1,
@@ -161,7 +159,7 @@ void DefaultInitializer::addWoods() const {
 	items->insert("Barbvine", barbvine);
 }
 
-void DefaultInitializer::addFibers() const {
+void default_items::addFibers() {
 	const auto fibers = new RawResource("Fibers",
 	                                    ":/MarketManager/images/items/resources/raw_resources/fibers/fibers.png",
 	                                    1,
@@ -200,7 +198,7 @@ void DefaultInitializer::addFibers() const {
 	items->insert("Scalecloth", scalecloth);
 }
 
-void DefaultInitializer::addRawhides() const {
+void default_items::addRawhides() {
 	const auto rawhide = new RawResource("Rawhide",
 	                                     ":/MarketManager/images/items/resources/raw_resources/rawhide/rawhide.png",
 	                                     1,
@@ -239,7 +237,7 @@ void DefaultInitializer::addRawhides() const {
 	items->insert("Scarhide", scarhide);
 }
 
-void DefaultInitializer::addStones() const {
+void default_items::addStones() {
 	const auto stone = new RawResource("Stone",
 	                                   ":/MarketManager/images/items/resources/raw_resources/stones/stone.png",
 	                                   1,
@@ -264,7 +262,7 @@ void DefaultInitializer::addStones() const {
 	items->insert("Elemental Lodestone", elemental_lodestone);
 }
 
-void DefaultInitializer::addIngots() const {
+void default_items::addIngots() {
 	addCharcoal();
 	addIronIngot();
 	addSteelIngot();
@@ -276,7 +274,7 @@ void DefaultInitializer::addIngots() const {
 	addAsmodeum();
 }
 
-void DefaultInitializer::addPlanks() const {
+void default_items::addPlanks() {
 	addTimber();
 	addLumber();
 	addWyrdwoodPlanks();
@@ -284,7 +282,7 @@ void DefaultInitializer::addPlanks() const {
 	addGlitteringEbony();
 }
 
-void DefaultInitializer::addCloths() const {
+void default_items::addCloths() {
 	addLinen();
 	addSateen();
 	addSilk();
@@ -292,7 +290,7 @@ void DefaultInitializer::addCloths() const {
 	addPhoenixweave();
 }
 
-void DefaultInitializer::addLeathers() const {
+void default_items::addLeathers() {
 	addCoarseLeather();
 	addRuggedLeather();
 	addLayeredLeather();
@@ -300,7 +298,7 @@ void DefaultInitializer::addLeathers() const {
 	addRunicLeather();
 }
 
-void DefaultInitializer::addBlocks() const {
+void default_items::addBlocks() {
 	addStoneBlock();
 	addStoneBrick();
 	addLodestoneBrick();
@@ -308,7 +306,7 @@ void DefaultInitializer::addBlocks() const {
 	addRunestone();
 }
 
-void DefaultInitializer::addCharcoal() const {
+void default_items::addCharcoal() {
 	Recipe recipe1;
 	Recipe recipe2;
 	Recipe recipe3;
@@ -354,7 +352,7 @@ void DefaultInitializer::addCharcoal() const {
 	items->insert("Charcoal", charcoal);
 }
 
-void DefaultInitializer::addIronIngot() const {
+void default_items::addIronIngot() {
 	Recipe recipe1;
 
 	recipe1.addIngredient("Iron Ore", 4);
@@ -376,7 +374,7 @@ void DefaultInitializer::addIronIngot() const {
 	items->insert("Iron Ingot", iron_ingot);
 }
 
-void DefaultInitializer::addSteelIngot() const {
+void default_items::addSteelIngot() {
 	Recipe recipe;
 
 	recipe.addIngredient("Iron Ingot", 3);
@@ -409,7 +407,7 @@ void DefaultInitializer::addSteelIngot() const {
 	items->insert("Steel Ingot", steel_ingot);
 }
 
-void DefaultInitializer::addStarmetalIngot() const {
+void default_items::addStarmetalIngot() {
 	Recipe recipe;
 
 	recipe.addIngredient("Starmetal Ore", 6);
@@ -443,7 +441,7 @@ void DefaultInitializer::addStarmetalIngot() const {
 	items->insert("Starmetal Ingot", starmetal_ingot);
 }
 
-void DefaultInitializer::addOrichalcumIngot() const {
+void default_items::addOrichalcumIngot() {
 	Recipe recipe;
 
 	recipe.addIngredient("Orichalcum Ore", 8);
@@ -494,7 +492,7 @@ void DefaultInitializer::addOrichalcumIngot() const {
 	items->insert("Orichalcum Ingot", orichalcum_ingot);
 }
 
-void DefaultInitializer::addSilverIngot() const {
+void default_items::addSilverIngot() {
 	Recipe recipe1;
 
 	recipe1.addIngredient("Silver Ore", 4);
@@ -516,7 +514,7 @@ void DefaultInitializer::addSilverIngot() const {
 	items->insert("Silver Ingot", silver_ingot);
 }
 
-void DefaultInitializer::addGoldIngot() const {
+void default_items::addGoldIngot() {
 	Recipe recipe;
 
 	recipe.addIngredient("Gold Ore", 5);
@@ -549,7 +547,7 @@ void DefaultInitializer::addGoldIngot() const {
 	items->insert("Gold Ingot", gold_ingot);
 }
 
-void DefaultInitializer::addPlatinumIngot() const {
+void default_items::addPlatinumIngot() {
 	Recipe recipe;
 
 	recipe.addIngredient("Platinum Ore", 6);
@@ -582,7 +580,7 @@ void DefaultInitializer::addPlatinumIngot() const {
 	items->insert("Platinum Ingot", platinum_ingot);
 }
 
-void DefaultInitializer::addAsmodeum() const {
+void default_items::addAsmodeum() {
 	Recipe recipe1;
 
 	recipe1.addIngredient("Orichalcum Ingot", 5);
@@ -608,7 +606,7 @@ void DefaultInitializer::addAsmodeum() const {
 	items->insert("Asmodeum", asmodeum);
 }
 
-void DefaultInitializer::addTimber() const {
+void default_items::addTimber() {
 	Recipe recipe1;
 
 	recipe1.addIngredient("Green Wood", 4);
@@ -630,7 +628,7 @@ void DefaultInitializer::addTimber() const {
 	items->insert("Timber", timber);
 }
 
-void DefaultInitializer::addLumber() const {
+void default_items::addLumber() {
 	Recipe recipe;
 
 	recipe.addIngredient("Aged Wood", 4);
@@ -663,7 +661,7 @@ void DefaultInitializer::addLumber() const {
 	items->insert("Lumber", lumber);
 }
 
-void DefaultInitializer::addWyrdwoodPlanks() const {
+void default_items::addWyrdwoodPlanks() {
 	Recipe recipe;
 
 	recipe.addIngredient("Wyrdwood", 6);
@@ -696,7 +694,7 @@ void DefaultInitializer::addWyrdwoodPlanks() const {
 	items->insert("Wyrdwood Planks", wyrdwood_planks);
 }
 
-void DefaultInitializer::addIronwoodPlanks() const {
+void default_items::addIronwoodPlanks() {
 	Recipe recipe;
 
 	recipe.addIngredient("Ironwood", 8);
@@ -729,7 +727,7 @@ void DefaultInitializer::addIronwoodPlanks() const {
 	items->insert("Ironwood Planks", ironwood_planks);
 }
 
-void DefaultInitializer::addGlitteringEbony() const {
+void default_items::addGlitteringEbony() {
 	Recipe recipe1;
 
 	recipe1.addIngredient("Ironwood Planks", 5);
@@ -754,7 +752,7 @@ void DefaultInitializer::addGlitteringEbony() const {
 	items->insert("Glittering Ebony", glittering_ebony);
 }
 
-void DefaultInitializer::addLinen() const {
+void default_items::addLinen() {
 	Recipe recipe1;
 
 	recipe1.addIngredient("Fibers", 4);
@@ -776,7 +774,7 @@ void DefaultInitializer::addLinen() const {
 	items->insert("Linen", linen);
 }
 
-void DefaultInitializer::addSateen() const {
+void default_items::addSateen() {
 	Recipe recipe;
 
 	recipe.addIngredient("Linen", 4);
@@ -808,7 +806,7 @@ void DefaultInitializer::addSateen() const {
 	items->insert("Sateen", sateen);
 }
 
-void DefaultInitializer::addSilk() const {
+void default_items::addSilk() {
 	Recipe recipe;
 
 	recipe.addIngredient("Silk Threads", 6);
@@ -841,7 +839,7 @@ void DefaultInitializer::addSilk() const {
 	items->insert("Silk", silk);
 }
 
-void DefaultInitializer::addInfusedSilk() const {
+void default_items::addInfusedSilk() {
 	Recipe recipe;
 
 	recipe.addIngredient("Wirefiber", 8);
@@ -874,7 +872,7 @@ void DefaultInitializer::addInfusedSilk() const {
 	items->insert("Infused Silk", infused_silk);
 }
 
-void DefaultInitializer::addPhoenixweave() const {
+void default_items::addPhoenixweave() {
 	Recipe recipe1;
 
 	recipe1.addIngredient("Infused Silk", 5);
@@ -899,7 +897,7 @@ void DefaultInitializer::addPhoenixweave() const {
 	items->insert("Phoenixweave", phoenixweave);
 }
 
-void DefaultInitializer::addCoarseLeather() const {
+void default_items::addCoarseLeather() {
 	Recipe recipe1;
 
 	recipe1.addIngredient("Rawhide", 4);
@@ -921,7 +919,7 @@ void DefaultInitializer::addCoarseLeather() const {
 	items->insert("Coarse Leather", coarse_leather);
 }
 
-void DefaultInitializer::addRuggedLeather() const {
+void default_items::addRuggedLeather() {
 	Recipe recipe;
 
 	recipe.addIngredient("Coarse Leather", 4);
@@ -953,7 +951,7 @@ void DefaultInitializer::addRuggedLeather() const {
 	items->insert("Rugged Leather", rugged_leather);
 }
 
-void DefaultInitializer::addLayeredLeather() const {
+void default_items::addLayeredLeather() {
 	Recipe recipe;
 
 	recipe.addIngredient("Thick Hide", 6);
@@ -986,7 +984,7 @@ void DefaultInitializer::addLayeredLeather() const {
 	items->insert("Layered Leather", layered_leather);
 }
 
-void DefaultInitializer::addInfusedLeather() const {
+void default_items::addInfusedLeather() {
 	Recipe recipe;
 
 	recipe.addIngredient("Iron Hide", 8);
@@ -1019,7 +1017,7 @@ void DefaultInitializer::addInfusedLeather() const {
 	items->insert("Infused Leather", infused_leather);
 }
 
-void DefaultInitializer::addRunicLeather() const {
+void default_items::addRunicLeather() {
 	Recipe recipe1;
 
 	recipe1.addIngredient("Infused Leather", 5);
@@ -1044,7 +1042,7 @@ void DefaultInitializer::addRunicLeather() const {
 	items->insert("Runic Leather", runic_leather);
 }
 
-void DefaultInitializer::addStoneBlock() const {
+void default_items::addStoneBlock() {
 	Recipe recipe1;
 
 	recipe1.addIngredient("Stone", 4);
@@ -1066,7 +1064,7 @@ void DefaultInitializer::addStoneBlock() const {
 	items->insert("Stone Block", stone_block);
 }
 
-void DefaultInitializer::addStoneBrick() const {
+void default_items::addStoneBrick() {
 	Recipe recipe;
 
 	recipe.addIngredient("Stone Block", 4);
@@ -1098,7 +1096,7 @@ void DefaultInitializer::addStoneBrick() const {
 	items->insert("Stone Brick", stone_brick);
 }
 
-void DefaultInitializer::addLodestoneBrick() const {
+void default_items::addLodestoneBrick() {
 	Recipe recipe;
 
 	recipe.addIngredient("Lodestone", 6);
@@ -1131,7 +1129,7 @@ void DefaultInitializer::addLodestoneBrick() const {
 	items->insert("Lodestone Brick", lodestone_brick);
 }
 
-void DefaultInitializer::addObsidianVoidstone() const {
+void default_items::addObsidianVoidstone() {
 	Recipe recipe;
 
 	recipe.addIngredient("Lodestone Brick", 8);
@@ -1164,7 +1162,7 @@ void DefaultInitializer::addObsidianVoidstone() const {
 	items->insert("Obsidian Voidstone", obsidian_voidstone);
 }
 
-void DefaultInitializer::addRunestone() const {
+void default_items::addRunestone() {
 	Recipe recipe1;
 
 	recipe1.addIngredient("Obsidian Voidstone", 5);
@@ -1188,7 +1186,7 @@ void DefaultInitializer::addRunestone() const {
 	items->insert("Runestone", runestone);
 }
 
-void DefaultInitializer::addSmelterSet() const {
+void default_items::addSmelterSet() {
 	const auto smelters_headgear = new Item("Smelter's Headgear",
 	                                        ":/MarketManager/images/armour_sets/smelter_set/smelters_headgear.png");
 	const auto smelters_smock = new Item("Smelter's Smock",
@@ -1207,7 +1205,7 @@ void DefaultInitializer::addSmelterSet() const {
 	items->insert("Smelter's Shoes", smelters_shoes);
 }
 
-void DefaultInitializer::addWoodworkerSet() const {
+void default_items::addWoodworkerSet() {
 	const auto woodworkers_cap = new Item("Woodworker's Cap",
 	                                      ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_cap.png");
 	const auto woodworkers_shirt = new Item("Woodworker's Shirt",
@@ -1226,7 +1224,7 @@ void DefaultInitializer::addWoodworkerSet() const {
 	items->insert("Woodworker's Shoes", woodworkers_shoes);
 }
 
-void DefaultInitializer::addWeaverSet() const {
+void default_items::addWeaverSet() {
 	const auto weavers_hat = new Item("Weaver's Hat",
 	                                  ":/MarketManager/images/armour_sets/weaver_set/weavers_hat.png");
 	const auto weavers_shirt = new Item("Weaver's Shirt",
@@ -1245,7 +1243,7 @@ void DefaultInitializer::addWeaverSet() const {
 	items->insert("Weaver's Shoes", weavers_shoes);
 }
 
-void DefaultInitializer::addTannerSet() const {
+void default_items::addTannerSet() {
 	const auto tanner_hat = new Item("Tanner Hat",
 	                                 ":/MarketManager/images/armour_sets/tanner_set/tanner_hat.png");
 	const auto tanner_shirt = new Item("Tanner Shirt",
@@ -1264,7 +1262,7 @@ void DefaultInitializer::addTannerSet() const {
 	items->insert("Tanner Shoes", tanner_shoes);
 }
 
-void DefaultInitializer::addStonecutterSet() const {
+void default_items::addStonecutterSet() {
 	const auto stonecutters_hat = new Item("Stonecutter's Hat",
 	                                       ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_hat.png");
 	const auto stonecutters_shirt = new Item("Stonecutter's Shirt",
@@ -1283,7 +1281,7 @@ void DefaultInitializer::addStonecutterSet() const {
 	items->insert("Stonecutter's Shoes", stonecutters_shoes);
 }
 
-void DefaultInitializer::addFluxes() const {
+void default_items::addFluxes() {
 	const auto sand_flux = new RefiningComponent("Sand Flux",
 	                                             ":/MarketManager/images/items/resources/refining_components/sand_flux.png",
 	                                             3,
@@ -1308,7 +1306,7 @@ void DefaultInitializer::addFluxes() const {
 	items->insert("Obsidian Flux", obsidian_flux);
 }
 
-void DefaultInitializer::addSandpapers() const {
+void default_items::addSandpapers() {
 	const auto coarse_sandpaper = new RefiningComponent("Coarse Sandpaper",
 	                                                    ":/MarketManager/images/items/resources/refining_components/coarse_sandpaper.png",
 	                                                    3,
@@ -1333,7 +1331,7 @@ void DefaultInitializer::addSandpapers() const {
 	items->insert("Obsidian Sandpaper", obsidian_sandpaper);
 }
 
-void DefaultInitializer::addWeaves() const {
+void default_items::addWeaves() {
 	const auto crossweave = new RefiningComponent("Crossweave",
 	                                              ":/MarketManager/images/items/resources/refining_components/crossweave.png",
 	                                              3,
@@ -1358,7 +1356,7 @@ void DefaultInitializer::addWeaves() const {
 	items->insert("Wireweave", wireweave);
 }
 
-void DefaultInitializer::addTannins() const {
+void default_items::addTannins() {
 	const auto tannin = new RefiningComponent("Tannin",
 	                                          ":/MarketManager/images/items/resources/refining_components/tannin.png",
 	                                          3,
@@ -1383,7 +1381,7 @@ void DefaultInitializer::addTannins() const {
 	items->insert("Aged Tannin", aged_tannin);
 }
 
-void DefaultInitializer::addSolvents() const {
+void default_items::addSolvents() {
 	const auto weak_solvent = new RefiningComponent("Weak Solvent",
 	                                                ":/MarketManager/images/items/resources/refining_components/weak_solvent.png",
 	                                                3,

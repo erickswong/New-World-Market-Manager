@@ -5,7 +5,7 @@ import std.filesystem;
 
 import exceptions;
 
-import :default_initializer;
+import :default_items;
 import :block;
 import :cloth;
 import :ingot;
@@ -16,7 +16,7 @@ import :refining_component;
 import :resource;
 
 Items::Items(Settings* settings) {
-	DefaultInitializer(this).init();
+	default_items::init(this);
 	analyze(setItemUpdateOrders(), settings);
 }
 

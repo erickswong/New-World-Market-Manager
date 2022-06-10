@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "recipes/recipe.h"
+import recipes;
 
 TEST(TestCaseName, TestName) {
 	Recipe recipe;
