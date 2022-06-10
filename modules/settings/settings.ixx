@@ -8,6 +8,14 @@ export import :trade_skills;
 
 import "json/json.h";
 
+// Forward declaration
+class Settings;
+
+namespace settings {
+	// Initializes Settings and returns a pointer to it
+	export Settings* init();
+};
+
 export class Settings {
 	public:
 		Settings();

@@ -1,7 +1,31 @@
 module settings;
 
+import exceptions;
 import std.core;
 import std.filesystem;
+
+Settings* settings::init() {
+    try {
+        // Open file for reading
+        std::ifstream file("data/settings.json");
+        Json::Reader reader;
+        Json::Value json_value;
+
+        // Read file into json_value
+        if (!reader.parse(file, json_value)) {
+            throw BadJsonException("Unable to parse settings.json");
+        }
+
+        // Close file
+        file.close();
+
+        return new Settings(json_value);
+    } catch (std::exception&) {
+        return new Settings;
+
+        // TODO: alert that creating settings from settings.json was unsuccessful with message e.what()
+    }
+}
 
 Settings::Settings() = default;
 

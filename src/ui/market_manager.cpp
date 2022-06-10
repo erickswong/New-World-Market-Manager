@@ -1,10 +1,6 @@
 #include "ui/market_manager.h"
 
-#include <fstream>
 #include "stdafx.h";
-
-import exceptions;
-import "json/json.h";
 
 MarketManager::MarketManager(QWidget *parent)
     : QMainWindow(parent) {
@@ -195,46 +191,16 @@ void MarketManager::setDropShadow() {
 }
 
 void MarketManager::setItems() {
-	try {
-        std::ifstream file("data/items.json");
-        Json::Reader reader;
-        Json::Value json_value;
-
-        if (!reader.parse(file, json_value)) {
-            throw BadJsonException("Unable to parse items.json");
-        }
-
-        file.close();
-
-        items = new Items(json_value, settings);
-	} catch (std::exception& e) {
-        items = new Items(settings);
-
-        // TODO: alert that creating items from items.json was unsuccessful with message e.what()
-	}
+	// Initialize items
+    items = items::init(settings);
 
     // Set items for all children
     ui.smelting_page->setItems(items);
 }
 
 void MarketManager::setSettings() {
-	try {
-        std::ifstream file("data/settings.json");
-        Json::Reader reader;
-        Json::Value json_value;
-
-        if (!reader.parse(file, json_value)) {
-            throw BadJsonException("Unable to parse settings.json");
-        }
-
-        file.close();
-
-        settings = new Settings(json_value);
-	} catch (std::exception& e) {
-        settings = new Settings;
-
-        // TODO: alert that creating settings from settings.json was unsuccessful with message e.what()
-	}
+    // Initialize settings
+    settings = settings::init();
 
     // Set settings for all children
     ui.smelting_page->setSettings(settings);

@@ -7,6 +7,15 @@ import recipes;
 import settings;
 import <unordered_map>;
 
+// Forward declaration
+class Items;
+
+namespace items {
+	// Initializes Items and returns a pointer to it
+	export Items* init(Settings* settings);
+};
+
+
 export class Items {
 	public:
 		Items(Settings* settings);

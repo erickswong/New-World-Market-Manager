@@ -1,9 +1,8 @@
 module items;
 
+import exceptions;
 import std.core;
 import std.filesystem;
-
-import exceptions;
 
 import :default_items;
 import :block;
@@ -14,6 +13,29 @@ import :plank;
 import :raw_resource;
 import :refining_component;
 import :resource;
+
+Items* items::init(Settings* settings) {
+	try {
+		// Open file for reading
+		std::ifstream file("data/items.json");
+		Json::Reader reader;
+		Json::Value json_value;
+
+		// Read file into json_value
+		if (!reader.parse(file, json_value)) {
+			throw BadJsonException("Unable to parse items.json");
+		}
+
+		// Close file
+		file.close();
+
+		return new Items(json_value, settings);
+	} catch (std::exception&) {
+		return new Items(settings);
+
+		// TODO: alert that creating settings from settings.json was unsuccessful with message e.what()
+	}
+}
 
 Items::Items(Settings* settings) {
 	default_items::init(this);
