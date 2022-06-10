@@ -1,24 +1,22 @@
-#include "items/items.h"
+module items;
 
-#include <cmath>
-#include <filesystem>
-#include <fstream>
-#include <functional>
-#include <unordered_set>
+import std.core;
+import std.filesystem;
 
-#include "exceptions.h"
+import exceptions;
 
-#include "items/default_items_initializer.h"
-#include "items/resources/raw_resources/raw_resource.h"
-#include "items/resources/refined_resources/blocks/block.h"
-#include "items/resources/refined_resources/cloths/cloth.h"
-#include "items/resources/refined_resources/ingots/ingot.h"
-#include "items/resources/refined_resources/leathers/leather.h"
-#include "items/resources/refined_resources/planks/plank.h"
-#include "items/resources/refining_components/refining_component.h"
+import :default_initializer;
+import :block;
+import :cloth;
+import :ingot;
+import :leather;
+import :plank;
+import :raw_resource;
+import :refining_component;
+import :resource;
 
 Items::Items(Settings* settings) {
-	DefaultItemsInitializer(this).initializeItems();
+	DefaultInitializer(this).init();
 	analyze(setItemUpdateOrders(), settings);
 }
 

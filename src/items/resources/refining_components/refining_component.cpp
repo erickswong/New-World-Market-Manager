@@ -1,6 +1,4 @@
-#include <utility>
-
-#include "items/resources/refining_components/refining_component.h"
+module items:refining_component;
 
 RefiningComponent::RefiningComponent(std::string item_name,
 									 std::string image_path,

@@ -3,7 +3,8 @@
 #include <QWidget>
 #include "ui_smelting_page.h"
 
-#include "items/items.h"
+import items;
+import settings;
 
 class SmeltingPage final : public QWidget {
 	Q_OBJECT

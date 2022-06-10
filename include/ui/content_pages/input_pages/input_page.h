@@ -1,11 +1,11 @@
 #pragma once
 
 #include <QWidget>
-
-#include "input_item.h"
 #include "ui_input_page.h"
 
-#include "items/item.h"
+#include "input_item.h"
+import items;
+import settings;
 
 class InputPage final : public QWidget
 {
@@ -14,7 +14,6 @@ class InputPage final : public QWidget
 	public:
 		explicit InputPage(QWidget* parent = Q_NULLPTR);
 
-		// TODO: change from Item* to string param
 		void addInputItem(std::string item_name);
 		void setItems(Items* items);
 		void setSettings(Settings* settings);

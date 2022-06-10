@@ -1,7 +1,6 @@
-#include "items/resources/resource.h"
+module items:resource;
 
-#include <algorithm>
-#include <utility>
+import std.core;
 
 Resource::Resource(std::string item_name,
                    std::string image_path,

@@ -1,7 +1,4 @@
-#include <algorithm>
-#include <utility>
-
-#include "items/resources/refined_resources/ingots/ingot.h"
+module items:ingot;
 
 Ingot::Ingot(std::string item_name,
              std::string image_path,

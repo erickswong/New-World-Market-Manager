@@ -1,6 +1,4 @@
-#include <utility>
-
-#include "items/resources/raw_resources/raw_resource.h"
+module items:raw_resource;
 
 RawResource::RawResource(std::string item_name,
 						 std::string image_path,

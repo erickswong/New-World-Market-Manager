@@ -1,6 +1,4 @@
-#include "settings/fort_bonuses.h"
-
-#include "constants.h"
+module settings:fort_bonuses;
 
 FortBonuses::FortBonuses() = default;
 

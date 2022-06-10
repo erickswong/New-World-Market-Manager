@@ -3,7 +3,8 @@
 #include <QWidget>
 #include "ui_smelting_settings_input_page.h"
 
-#include "items/items.h"
+import items;
+import settings;
 
 class SmeltingSettingsInputPage final : public QWidget
 {

@@ -1,18 +1,6 @@
-#include "settings/armour_set.h"
+module settings:armour_set;
 
 ArmourSet::ArmourSet() = default;
-
-ArmourSet::ArmourSet(const bool has_helmet,
-					 const bool has_chest,
-					 const bool has_gloves,
-					 const bool has_pants,
-					 const bool has_shoes)
-						 : has_hat(has_helmet),
-                           has_shirt(has_chest),
-                           has_gloves(has_gloves),
-                           has_pants(has_pants),
-                           has_shoes(has_shoes) {
-}
 
 ArmourSet::ArmourSet(Json::Value json_value)
 	: has_hat(json_value["has_hat"].asBool()),

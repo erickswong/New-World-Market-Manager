@@ -1,7 +1,6 @@
-#include "settings/trade_skills.h"
+module settings:trade_skills;
 
-#include "constants.h"
-#include "exceptions.h"
+import exceptions;
 
 TradeSkills::TradeSkills() = default;
 

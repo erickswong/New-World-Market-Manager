@@ -1,4 +1,4 @@
-#include "settings/taxes.h"
+module settings:taxes;
 
 Taxes::Taxes() = default;
 

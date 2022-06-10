@@ -64,7 +64,6 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <EnableModules>true</EnableModules>
-      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
     </ClCompile>
     <Link />
     <ResourceCompile>
@@ -82,7 +81,6 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <EnableModules>true</EnableModules>
-      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
     </ClCompile>
     <Link />
     <PostBuildEvent />
@@ -129,10 +127,33 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="modules\exceptions.ixx" />
+    <ClCompile Include="modules\items\default_initializer.ixx" />
     <ClCompile Include="modules\items\item.ixx" />
+    <ClCompile Include="modules\items\items.ixx" />
+    <ClCompile Include="modules\items\resources\raw_resources\raw_resource.ixx" />
+    <ClCompile Include="modules\items\resources\refined_resource\blocks\block.ixx" />
+    <ClCompile Include="modules\items\resources\refined_resource\cloths\cloth.ixx" />
+    <ClCompile Include="modules\items\resources\refined_resource\ingots\ingot.ixx" />
+    <ClCompile Include="modules\items\resources\refined_resource\leathers\leather.ixx" />
+    <ClCompile Include="modules\items\resources\refined_resource\planks\plank.ixx" />
+    <ClCompile Include="modules\items\resources\refined_resource\refined_resource.ixx" />
+    <ClCompile Include="modules\items\resources\refining_components\refining_component.ixx" />
+    <ClCompile Include="modules\items\resources\resource.ixx" />
     <ClCompile Include="modules\recipes\recipe.ixx" />
     <ClCompile Include="modules\recipes\recipes.ixx" />
-    <ClCompile Include="src\items\default_items_initializer.cpp" />
+    <ClCompile Include="modules\settings\armour_set.ixx" />
+    <ClCompile Include="modules\settings\armour_sets.ixx" />
+    <ClCompile Include="modules\settings\fort_bonuses.ixx" />
+    <ClCompile Include="modules\settings\settings.ixx" />
+    <ClCompile Include="modules\settings\standing_bonuses.ixx" />
+    <ClCompile Include="modules\settings\taxes.ixx" />
+    <ClCompile Include="modules\settings\trade_skills.ixx" />
+    <ClCompile Include="src\items\default_initializer.cpp" />
+    <ClCompile Include="src\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="src\ui\content_pages\input_pages\input_page.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\input_item.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\general_settings_input_page.cpp" />
@@ -147,33 +168,12 @@
     <ClCompile Include="src\settings\fort_bonuses.cpp" />
     <ClCompile Include="src\settings\taxes.cpp" />
     <ClCompile Include="src\settings\standing_bonuses.cpp" />
-    <ClInclude Include="include\items\default_items_initializer.h" />
     <ClInclude Include="lib\json\json-forwards.h" />
     <ClInclude Include="lib\json\json.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\input_page.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\input_item.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\smelting_settings_input_page.h" />
     <QtMoc Include="include\ui\content_pages\input_pages\general_settings_input_page.h" />
-    <ClInclude Include="include\items\resources\refined_resources\blocks\block.h" />
-    <ClInclude Include="include\items\resources\refined_resources\cloths\cloth.h" />
-    <ClInclude Include="include\constants.h" />
-    <ClInclude Include="include\settings\fort_bonuses.h" />
-    <ClInclude Include="include\settings\armour_sets.h" />
-    <ClInclude Include="include\settings\armour_set.h" />
-    <ClInclude Include="include\items\resources\resource.h" />
-    <ClInclude Include="include\items\resources\raw_resources\raw_resource.h" />
-    <ClInclude Include="include\items\resources\refined_resources\refined_resource.h" />
-    <ClInclude Include="include\recipes\recipe.h" />
-    <ClInclude Include="include\items\resources\refining_components\refining_component.h" />
-    <ClInclude Include="include\recipes\recipes.h" />
-    <ClInclude Include="include\items\items.h" />
-    <ClInclude Include="include\settings\settings.h" />
-    <ClInclude Include="include\settings\taxes.h" />
-    <ClInclude Include="include\settings\standing_bonuses.h" />
-    <ClInclude Include="include\items\resources\refined_resources\ingots\ingot.h" />
-    <ClInclude Include="include\settings\trade_skills.h" />
-    <ClInclude Include="include\items\resources\refined_resources\planks\plank.h" />
-    <ClInclude Include="include\items\resources\refined_resources\leathers\leather.h" />
     <QtMoc Include="include\ui\content_pages\smelting_page.h" />
     <None Include="README.md" />
     <QtRcc Include="ui\market_manager.qrc" />
@@ -186,7 +186,6 @@
     <QtMoc Include="include\ui\market_manager.h" />
     <ClCompile Include="src\settings\armour_sets.cpp" />
     <ClCompile Include="src\settings\armour_set.cpp" />
-    <ClCompile Include="include\exceptions.h" />
     <ClCompile Include="src\settings\settings.cpp" />
     <ClCompile Include="src\items\items.cpp" />
     <ClCompile Include="src\recipes\recipes.cpp" />
@@ -198,12 +197,7 @@
     <ClCompile Include="src\items\item.cpp" />
     <ClCompile Include="src\ui\market_manager.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClInclude Include="include\items\item.h" />
     <ClInclude Include="include\stdafx.h" />
-    <ClCompile Include="src\stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="ui\icon\New World Market Manager.ico" />

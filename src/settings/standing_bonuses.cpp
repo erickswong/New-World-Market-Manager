@@ -1,4 +1,4 @@
-#include "settings/standing_bonuses.h"
+module settings:standing_bonuses;
 
 StandingBonuses::StandingBonuses() = default;
 

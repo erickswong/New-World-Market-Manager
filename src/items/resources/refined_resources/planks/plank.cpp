@@ -1,7 +1,4 @@
-#include <algorithm>
-#include <utility>
-
-#include "items/resources/refined_resources/planks/plank.h"
+module items:plank;
 
 Plank::Plank(std::string item_name,
              std::string image_path,

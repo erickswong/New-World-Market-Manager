@@ -4,7 +4,8 @@
 #include <QGraphicsDropShadowEffect>
 #include "ui_market_manager.h"
 
-#include "items/items.h"
+import items;
+import settings;
 
 class MarketManager final : public QMainWindow {
     Q_OBJECT

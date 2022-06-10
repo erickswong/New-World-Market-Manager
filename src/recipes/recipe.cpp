@@ -1,10 +1,10 @@
-#include "recipes/recipe.h"
+module recipes:recipe;
 
 Recipe::Recipe() = default;
 
 Recipe::Recipe(Json::Value json_value) {
     for (const std::string& ingredient_name : json_value.getMemberNames()) {
-	    const int amount = json_value[ingredient_name].asInt();
+        const int amount = json_value[ingredient_name].asInt();
 
         addIngredient(ingredient_name, amount);
     }
@@ -21,9 +21,9 @@ Json::Value Recipe::toJson() const {
 }
 
 std::unordered_map<std::string, int>& Recipe::get() {
-	return recipe;
+    return recipe;
 }
 
 void Recipe::addIngredient(const std::string& ingredient_name, int amount) {
-	recipe.insert({ ingredient_name, amount });
+    recipe.insert({ ingredient_name, amount });
 }

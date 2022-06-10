@@ -1,7 +1,4 @@
-#include <algorithm>
-#include <utility>
-
-#include "items/resources/refined_resources/cloths/cloth.h"
+module items:cloth;
 
 Cloth::Cloth(std::string item_name,
              std::string image_path,

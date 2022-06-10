@@ -1,21 +1,9 @@
-#include "settings/settings.h"
+module settings;
 
-#include <filesystem>
-#include <fstream>
+import std.core;
+import std.filesystem;
 
 Settings::Settings() = default;
-
-Settings::Settings(TradeSkills trade_skills,
-                   ArmourSets armour_sets,
-                   Taxes taxes,
-                   StandingBonuses standing_bonuses,
-                   FortBonuses fort_bonuses)
-	                   : trade_skills(trade_skills),
-                         armour_sets(armour_sets),
-                         taxes(taxes),
-                         standing_bonuses(standing_bonuses),
-                         fort_bonuses(fort_bonuses) {
-}
 
 Settings::Settings(Json::Value json_value)
 	: trade_skills(json_value["trade_skills"]),

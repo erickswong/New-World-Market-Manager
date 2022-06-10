@@ -1,6 +1,4 @@
-#include <utility>
-
-#include "items/resources/refined_resources/refined_resource.h"
+module items:refined_resource;
 
 RefinedResource::RefinedResource(std::string item_name,
 								 std::string image_path,

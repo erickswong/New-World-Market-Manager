@@ -1,6 +1,4 @@
-#include "settings/armour_sets.h"
-
-#include "constants.h"
+module settings:armour_sets;
 
 ArmourSets::ArmourSets() = default;
 

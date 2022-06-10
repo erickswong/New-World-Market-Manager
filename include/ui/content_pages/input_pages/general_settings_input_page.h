@@ -3,7 +3,8 @@
 #include <QWidget>
 #include "ui_general_settings_input_page.h"
 
-#include "items/items.h"
+import items;
+import settings;
 
 class GeneralSettingsInputPage final : public QWidget
 {

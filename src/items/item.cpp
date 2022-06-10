@@ -1,6 +1,6 @@
-#include "items/item.h"
+module items:item;
 
-#include "exceptions.h"
+import exceptions;
 
 Item::Item(std::string item_name,
            std::string image_path)

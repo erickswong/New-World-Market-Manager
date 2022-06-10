@@ -1,7 +1,4 @@
-#include <algorithm>
-#include <utility>
-
-#include "items/resources/refined_resources/leathers/leather.h"
+module items:leather;
 
 Leather::Leather(std::string item_name,
                  std::string image_path,

@@ -1,9 +1,10 @@
 #include "ui/market_manager.h"
 
 #include <fstream>
+#include "stdafx.h";
 
-#include "exceptions.h"
-#include "stdafx.h"
+import exceptions;
+import "json/json.h";
 
 MarketManager::MarketManager(QWidget *parent)
     : QMainWindow(parent) {

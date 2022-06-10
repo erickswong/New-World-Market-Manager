@@ -1,4 +1,4 @@
-#include "recipes/recipes.h"
+module recipes;
 
 Recipes::Recipes() = default;
 
@@ -19,9 +19,9 @@ Json::Value Recipes::toJson() const {
 }
 
 std::vector<Recipe>& Recipes::get() {
-	return recipes;
+    return recipes;
 }
 
 void Recipes::addRecipe(const Recipe& recipe) {
-	recipes.push_back(recipe);
+    recipes.push_back(recipe);
 }
