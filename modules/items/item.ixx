@@ -2,7 +2,6 @@ export module items:item;
 
 import "json/json.h";
 import recipes;
-import settings;
 
 export struct ItemAnalysis {
 	double best_instant_craft_cost = HUGE_VAL;
@@ -52,9 +51,9 @@ export class Item {
 
 		virtual double getBestAcquireCost();
 
-		virtual double getCraftTax(Settings* settings);
+		virtual double getCraftTax();
 
-		virtual double getYield(Recipe& recipe, Settings* settings);
+		virtual double getYield(Recipe& recipe);
 
 	protected:
 		std::string item_name;

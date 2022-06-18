@@ -2,22 +2,21 @@ export module settings:standing_bonuses;
 
 import "json/json.h";
 
-export class StandingBonuses {
-	public:
-		StandingBonuses();
-		StandingBonuses(double station_fee,
-						double trading_tax);
-		explicit StandingBonuses(Json::Value json_value);
+namespace settings::standing_bonuses {
+	double station_fee = 0.;
+	double trading_tax = 0.;
 
-		[[nodiscard]] Json::Value toJson() const;
+	// Resets members to default values
+	export void reset() noexcept;
 
-		[[nodiscard]] double getStationFee() const;
-		void setStationFee(double station_fee);
+	// Sets members to values from json
+	export void fromJson(Json::Value json_value);
+	// Returns a json representing this namespace
+	export [[nodiscard]] Json::Value toJson();
 
-		[[nodiscard]] double getTradingTax() const;
-		void setTradingTax(double trading_tax);
+	export [[nodiscard]] double getStationFee();
+	export void setStationFee(double new_station_fee);
 
-	private:
-		double station_fee = 0.;
-		double trading_tax = 0.;
+	export [[nodiscard]] double getTradingTax();
+	export void setTradingTax(double new_trading_tax);
 };

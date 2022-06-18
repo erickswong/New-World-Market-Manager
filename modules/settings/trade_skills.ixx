@@ -4,43 +4,39 @@ import "json/json.h";
 
 static constexpr double LEVEL_YIELD_BONUS = 0.001;
 
-export class TradeSkills {
-	public:
-		TradeSkills();
-		TradeSkills(int smelting_level,
-					int woodworking_level,
-					int leatherworking_level,
-					int weaving_level,
-					int stonecutting_level);
-		explicit TradeSkills(Json::Value json_value);
+namespace settings::trade_skills {
+	int smelting_level = 200;
+	int woodworking_level = 200;
+	int leatherworking_level = 200;
+	int weaving_level = 200;
+	int stonecutting_level = 200;
 
-		[[nodiscard]] Json::Value toJson() const;
+	// Resets members to default values
+	export void reset() noexcept;
 
-		[[nodiscard]] double smeltingYieldBonus() const;
-		[[nodiscard]] double woodworkingYieldBonus() const;
-		[[nodiscard]] double leatherworkingYieldBonus() const;
-		[[nodiscard]] double weavingYieldBonus() const;
-		[[nodiscard]] double stonecuttingYieldBonus() const;
+	// Sets members to values from json
+	export void fromJson(Json::Value json_value);
+	// Returns a json representing this namespace
+	export [[nodiscard]] Json::Value toJson();
 
-		[[nodiscard]] int getSmeltingLevel() const;
-		void setSmeltingLevel(int smelting_level);
+	export [[nodiscard]] double smeltingYieldBonus();
+	export [[nodiscard]] double woodworkingYieldBonus();
+	export [[nodiscard]] double leatherworkingYieldBonus();
+	export [[nodiscard]] double weavingYieldBonus();
+	export [[nodiscard]] double stonecuttingYieldBonus();
 
-		[[nodiscard]] int getWoodworkingLevel() const;
-		void setWoodworkingLevel(int woodworking_level);
+	export [[nodiscard]] int getSmeltingLevel();
+	export void setSmeltingLevel(int smelting_level);
 
-		[[nodiscard]] int getLeatherworkingLevel() const;
-		void setLeatherworkingLevel(int leatherworking_level);
+	export [[nodiscard]] int getWoodworkingLevel();
+	export void setWoodworkingLevel(int woodworking_level);
 
-		[[nodiscard]] int getWeavingLevel() const;
-		void setWeavingLevel(int weaving_level);
+	export [[nodiscard]] int getLeatherworkingLevel();
+	export void setLeatherworkingLevel(int leatherworking_level);
 
-		[[nodiscard]] int getStonecuttingLevel() const;
-		void setStonecuttingLevel(int stonecutting_level);
+	export [[nodiscard]] int getWeavingLevel();
+	export void setWeavingLevel(int weaving_level);
 
-	private:
-		int smelting_level = 200;
-		int woodworking_level = 200;
-		int leatherworking_level = 200;
-		int weaving_level = 200;
-		int stonecutting_level = 200;
+	export [[nodiscard]] int getStonecuttingLevel();
+	export void setStonecuttingLevel(int stonecutting_level);
 };

@@ -30,43 +30,43 @@ std::string Item::getItemName() {
 }
 
 int Item::getTier() {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use getTier");
 }
 
 bool Item::getBuyEqualsSell() {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use getBuyEqualsSell");
 }
 
 bool Item::setBuyEqualsSell(const bool buy_equals_sell) {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use setBuyEqualsSell");
 }
 
 double Item::getSellPrice() {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use getSellPrice");
 }
 
 bool Item::setSellPrice(const double sell_price) {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use setSellPrice");
 }
 
 double Item::getBuyPrice() {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use getBuyPrice");
 }
 
 bool Item::setBuyPrice(const double buy_price) {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use setBuyPrice");
 }
 
 double Item::getBaseYield() {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use getBaseYield");
 }
 
 double Item::getBaseCraftTax() {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use getBaseCraftTax");
 }
 
 Recipes& Item::getRecipes() {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use getRecipes");
 }
 
 std::string Item::getImagePath() {
@@ -74,29 +74,29 @@ std::string Item::getImagePath() {
 }
 
 std::list<Item*> Item::getItemUpdateOrder() {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use getItemUpdateOrder");
 }
 
 void Item::setItemUpdateOrder(std::list<Item*> item_update_order) {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use setItemUpdateOrder");
 }
 
 ItemAnalysis& Item::getAnalysis() {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use getAnalysis");
 }
 
 double Item::getBestInstantAcquireCost() {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use getBestInstantAcquireCost");
 }
 
 double Item::getBestAcquireCost() {
-	throw NotUsedException();
+	throw NotUsedException("Item \"" + item_name + "\" does not use getBestAcquireCost");
 }
 
-double Item::getCraftTax(Settings* settings) {
-	throw NotUsedException();
+double Item::getCraftTax() {
+	throw NotUsedException("Item \"" + item_name + "\" does not use getCraftTax");
 }
 
-double Item::getYield(Recipe& recipe, Settings* settings) {
-	throw NotUsedException();
+double Item::getYield(Recipe& recipe) {
+	throw NotUsedException("Item \"" + item_name + "\" does not use getYield");
 }

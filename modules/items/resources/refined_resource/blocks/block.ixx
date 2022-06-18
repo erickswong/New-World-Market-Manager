@@ -17,7 +17,7 @@ export class Block final : public RefinedResource {
 
 		[[nodiscard]] Json::Value toJson() const override;
 
-		double getCraftTax(Settings* settings) override;
+		double getCraftTax() override;
 
-		double getYield(Recipe& recipe, Settings* settings) override;
+		double getYield(Recipe& recipe) override;
 };

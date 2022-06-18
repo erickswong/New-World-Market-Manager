@@ -4,7 +4,6 @@
 #include "ui_smelting_settings_input_page.h"
 
 import items;
-import settings;
 
 class SmeltingSettingsInputPage final : public QWidget
 {
@@ -14,10 +13,8 @@ class SmeltingSettingsInputPage final : public QWidget
 		explicit SmeltingSettingsInputPage(QWidget *parent = Q_NULLPTR);
 
 		void setItems(Items* items);
-		void setSettings(Settings* settings);
 
 	private:
 		Ui::SmeltingSettingsInputPage ui;
 		Items* items = nullptr;
-		Settings* settings = nullptr;
 };

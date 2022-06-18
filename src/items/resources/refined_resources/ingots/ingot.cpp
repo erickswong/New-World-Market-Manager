@@ -1,5 +1,7 @@
 module items:ingot;
 
+import settings;
+
 Ingot::Ingot(std::string item_name,
              std::string image_path,
              const int tier,
@@ -32,13 +34,13 @@ Json::Value Ingot::toJson() const {
 	return json_value;
 }
 
-double Ingot::getCraftTax(Settings* settings) {
+double Ingot::getCraftTax() {
 	// TODO: implement craft_tax modifiers from settings
 	return base_craft_tax;
 }
 
-double Ingot::getYield(Recipe& recipe, Settings* settings) {
-	double yield = base_yield + settings->smeltingYieldBonus();
+double Ingot::getYield(Recipe& recipe) {
+	double yield = base_yield + settings::smeltingYieldBonus();
 
 	// Determine the tier of the refining component in the given recipe
 	int refining_component_tier = 0;
@@ -69,5 +71,5 @@ double Ingot::getYield(Recipe& recipe, Settings* settings) {
 	}
 
 	// Return the yield
-	return std::max(1., yield) * settings->fortYieldBonusMultiplier();
+	return std::max(1., yield) * settings::fortYieldBonusMultiplier();
 }

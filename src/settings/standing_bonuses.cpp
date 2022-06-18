@@ -1,40 +1,52 @@
 module settings:standing_bonuses;
 
-StandingBonuses::StandingBonuses() = default;
+import exceptions;
 
-StandingBonuses::StandingBonuses(const double station_fee,
-								 const double trading_tax)
-									 : station_fee(station_fee),
-                                       trading_tax(trading_tax) {
-}
+namespace settings::standing_bonuses {
+	void reset() noexcept {
+		station_fee = 0.;
+		trading_tax = 0.;
+	}
 
-StandingBonuses::StandingBonuses(Json::Value json_value)
-	: station_fee(json_value["station_fee"].asDouble()),
-      trading_tax(json_value["trading_tax"].asDouble()) {
-	// TODO: add BadJsonExceptions for out of range values
-}
+	void fromJson(Json::Value json_value) {
+		try {
+			setStationFee(json_value["station_fee"].asDouble());
+			setTradingTax(json_value["trading_tax"].asDouble());
+		} catch (const std::exception& e) {
+			throw BadJsonException("standing_bonuses is malformed", e);
+		}
+	}
 
-Json::Value StandingBonuses::toJson() const {
-	Json::Value json_value;
+	Json::Value toJson() {
+		Json::Value json_value;
 
-	json_value["station_fee"] = Json::Value(station_fee);
-	json_value["trading_tax"] = Json::Value(trading_tax);
+		json_value["station_fee"] = Json::Value(station_fee);
+		json_value["trading_tax"] = Json::Value(trading_tax);
 
-	return json_value;
-};
+		return json_value;
+	}
 
-double StandingBonuses::getStationFee() const {
-	return station_fee;
-}
+	double getStationFee() {
+		return station_fee;
+	}
 
-void StandingBonuses::setStationFee(const double station_fee) {
-	this->station_fee = station_fee;
-}
+	void setStationFee(const double new_station_fee) {
+		if (new_station_fee < 0) {
+			throw BadValueException("station_fee cannot be less than 0");
+		} // TODO: throw exception if greater than upper bound
 
-double StandingBonuses::getTradingTax() const {
-	return trading_tax;
-}
+		station_fee = new_station_fee;
+	}
 
-void StandingBonuses::setTradingTax(const double trading_tax) {
-	this->trading_tax = trading_tax;
+	double getTradingTax() {
+		return trading_tax;
+	}
+
+	void setTradingTax(const double new_trading_tax) {
+		if (new_trading_tax < 0) {
+			throw BadValueException("trading_tax cannot be less than 0");
+		} // TODO: throw exception if greater than upper bound
+
+		trading_tax = new_trading_tax;
+	}
 }

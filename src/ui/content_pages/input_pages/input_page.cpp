@@ -7,7 +7,7 @@ InputPage::InputPage(QWidget *parent)
 }
 
 void InputPage::addInputItem(const std::string item_name) {
-	const auto input_item = new InputItem(items->at(item_name), items, settings, this);
+	const auto input_item = new InputItem(items->at(item_name), items, this);
 
 	input_items.push_back(input_item);
 
@@ -20,14 +20,5 @@ void InputPage::setItems(Items* items) {
 	// Set items for all children
 	for (const auto& input_item : input_items) {
 		input_item->setItems(items);
-	}
-}
-
-void InputPage::setSettings(Settings* settings) {
-	this->settings = settings;
-
-	// Set settings for all children
-	for (const auto& input_item : input_items) {
-		input_item->setSettings(settings);
 	}
 }

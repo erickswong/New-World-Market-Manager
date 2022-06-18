@@ -1,8 +1,7 @@
 #include "ui/content_pages/smelting_page.h"
 
 SmeltingPage::SmeltingPage(QWidget *parent)
-	: QWidget(parent)
-{
+	: QWidget(parent) {
 	ui.setupUi(this);
 
     // Set stacked widget to default page
@@ -20,16 +19,6 @@ void SmeltingPage::setItems(Items* items) {
 
     // Setup input pages
     setUpInputPages();
-}
-
-void SmeltingPage::setSettings(Settings* settings) {
-	this->settings = settings;
-
-    // Set settings for all children
-    ui.flux_input_page->setSettings(settings);
-    ui.ore_input_page->setSettings(settings);
-    ui.ingot_input_page->setSettings(settings);
-    ui.settings_input_page->setSettings(settings);
 }
 
 void SmeltingPage::on_flux_input_button_clicked() const {

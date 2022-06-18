@@ -5,7 +5,6 @@
 
 #include "input_item.h"
 import items;
-import settings;
 
 class InputPage final : public QWidget
 {
@@ -16,11 +15,9 @@ class InputPage final : public QWidget
 
 		void addInputItem(std::string item_name);
 		void setItems(Items* items);
-		void setSettings(Settings* settings);
 
 	private:
 		Ui::InputPage ui;
 		std::vector<InputItem*> input_items;
 		Items* items = nullptr;
-		Settings* settings = nullptr;
 };

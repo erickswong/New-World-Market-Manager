@@ -2,6 +2,8 @@
 
 #include "stdafx.h";
 
+import settings;
+
 MarketManager::MarketManager(QWidget *parent)
     : QMainWindow(parent) {
     ui.setupUi(this);
@@ -14,7 +16,7 @@ MarketManager::MarketManager(QWidget *parent)
     setDropShadow();
 
     // Initialize settings and items
-    setSettings();
+    settings::setUp();
     setItems();
 
     // Set stacked widget to default page
@@ -24,7 +26,6 @@ MarketManager::MarketManager(QWidget *parent)
 MarketManager::~MarketManager() {
     delete shadow;
     delete items;
-    delete settings;
 }
 
 void MarketManager::mousePressEvent(QMouseEvent* event) {
@@ -149,9 +150,9 @@ void MarketManager::on_maximize_restore_button_clicked() {
 }
 
 void MarketManager::on_close_button_clicked() {
-    // Write to disk TODO: Ask on close, have setting to not ask again
+    // Write to disk          TODO: Ask on close, have setting to not ask again
     items->writeToDisk();
-    settings->writeToDisk();
+    settings::writeToDisk();
 
     close();
 }
@@ -192,18 +193,10 @@ void MarketManager::setDropShadow() {
 
 void MarketManager::setItems() {
 	// Initialize items
-    items = items::init(settings);
+    items = items::init();
 
     // Set items for all children
     ui.smelting_page->setItems(items);
-}
-
-void MarketManager::setSettings() {
-    // Initialize settings
-    settings = settings::init();
-
-    // Set settings for all children
-    ui.smelting_page->setSettings(settings);
 }
 
 void MarketManager::setNormal() const {

@@ -1,5 +1,7 @@
 module items:cloth;
 
+import settings;
+
 Cloth::Cloth(std::string item_name,
              std::string image_path,
              const int tier,
@@ -32,12 +34,12 @@ Json::Value Cloth::toJson() const {
 	return json_value;
 }
 
-double Cloth::getCraftTax(Settings* settings) {
+double Cloth::getCraftTax() {
 	// TODO: implement craft_tax modifiers from settings
 	return base_craft_tax;
 }
 
-double Cloth::getYield(Recipe& recipe, Settings* settings) {
+double Cloth::getYield(Recipe& recipe) {
 	// Determine the tier of the refining component in the given recipe
 	int refining_component_tier = 0;
 	for (const auto& [ingredient_name, amount] : recipe.get()) {
@@ -56,8 +58,8 @@ double Cloth::getYield(Recipe& recipe, Settings* settings) {
 	}
 
 	// Calculate the yield
-	const double yield = base_yield + settings->weavingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
+	const double yield = base_yield + settings::weavingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
 
 	// Return the yield
-	return std::max(1., yield) * settings->fortYieldBonusMultiplier();
+	return std::max(1., yield) * settings::fortYieldBonusMultiplier();
 }

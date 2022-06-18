@@ -12,10 +12,3 @@ void SmeltingSettingsInputPage::setItems(Items* items) {
 	// Set items for all children
 	ui.general_settings_input_page->setItems(items);
 }
-
-void SmeltingSettingsInputPage::setSettings(Settings* settings) {
-	this->settings = settings;
-
-	// Set settings for all children
-	ui.general_settings_input_page->setSettings(settings);
-}

@@ -1,52 +1,67 @@
 module settings:taxes;
 
-Taxes::Taxes() = default;
+import exceptions;
 
-Taxes::Taxes(const double trading_tax,
-			 const double crafting_fee,
-			 const double refining_fee)
-				 : trading_tax(trading_tax),
-                   crafting_fee(crafting_fee),
-                   refining_fee(refining_fee) {
-}
+namespace settings::taxes {
+	void reset() noexcept {
+		trading_tax  = 0.025;
+		crafting_fee = 0.5;
+		refining_fee = 0.5;
+	}
 
-Taxes::Taxes(Json::Value json_value)
-	: trading_tax(json_value["trading_tax"].asDouble()),
-	  crafting_fee(json_value["crafting_fee"].asDouble()),
-	  refining_fee(json_value["refining_fee"].asDouble()) {
-	// TODO: add BadJsonExceptions for out of range values
-}
+	void fromJson(Json::Value json_value) {
+		try {
+			setTradingTax(json_value["trading_tax"].asDouble());
+			setCraftingFee(json_value["crafting_fee"].asDouble());
+			setRefiningFee(json_value["refining_fee"].asDouble());
+		} catch (const std::exception& e) {
+			throw BadJsonException("taxes is malformed", e);
+		}
+	}
 
-Json::Value Taxes::toJson() const {
-	Json::Value json_value;
+	Json::Value toJson() {
+		Json::Value json_value;
 
-	json_value["trading_tax"] = Json::Value(trading_tax);
-	json_value["crafting_fee"] = Json::Value(crafting_fee);
-	json_value["refining_fee"] = Json::Value(refining_fee);
+		json_value["trading_tax"]  = Json::Value(trading_tax);
+		json_value["crafting_fee"] = Json::Value(crafting_fee);
+		json_value["refining_fee"] = Json::Value(refining_fee);
 
-	return json_value;
-}
+		return json_value;
+	}
 
-double Taxes::getTradingTax() const {
-	return trading_tax;
-}
+	double getTradingTax() {
+		return trading_tax;
+	}
 
-void Taxes::setTradingTax(const double trading_tax) {
-	this->trading_tax = trading_tax;
-}
+	void setTradingTax(const double new_trading_tax) {
+		if (new_trading_tax < 0.025) {
+			throw BadValueException("trading_tax cannot be less than 0.025");
+		} // TODO: throw exception if greater than upper bound
 
-double Taxes::getCraftingFee() const {
-	return crafting_fee;
-}
+		trading_tax = new_trading_tax;
+	}
 
-void Taxes::setCraftingFee(const double crafting_fee) {
-	this->crafting_fee = crafting_fee;
-}
+	double getCraftingFee() {
+		return crafting_fee;
+	}
 
-double Taxes::getRefiningFee() const {
-	return refining_fee;
-}
+	void setCraftingFee(const double new_crafting_fee) {
+		if (new_crafting_fee < 0.5) {
+			throw BadValueException("crafting_fee cannot be less than 0.5");
+		} // TODO: throw exception if greater than upper bound
 
-void Taxes::setRefiningFee(const double refining_fee) {
-	this->refining_fee = refining_fee;
+		crafting_fee = new_crafting_fee;
+	}
+
+	double getRefiningFee() {
+		return refining_fee;
+	}
+
+	void setRefiningFee(const double new_refining_fee) {
+		if (new_refining_fee < 0.5) {
+			throw BadValueException("refining_fee cannot be less than 0.5");
+		} // TODO: throw exception if greater than upper bound
+
+		refining_fee = new_refining_fee;
+	}
 }

@@ -4,7 +4,6 @@ export import :item;
 
 import "json/json.h";
 import recipes;
-import settings;
 import <unordered_map>;
 
 // Forward declaration
@@ -12,14 +11,14 @@ class Items;
 
 namespace items {
 	// Initializes Items and returns a pointer to it
-	export Items* init(Settings* settings);
+	export Items* init();
 };
 
 
 export class Items {
 	public:
-		Items(Settings* settings);
-		explicit Items(Json::Value json_value, Settings* settings);
+		Items();
+		explicit Items(Json::Value json_value);
 		~Items();
 
 		void writeToDisk() const;
@@ -31,21 +30,21 @@ export class Items {
 
 		void insert(const std::string& item_name, Item* item);
 
-		void analyze(Item* item, Settings* settings) const;
-		void analyze(const std::list<Item*>& item_update_order, Settings* settings) const;
+		void analyze(Item* item) const;
+		void analyze(const std::list<Item*>& item_update_order) const;
 
-		void setBuyEqualsSell(Item* item, bool buy_equals_sell, Settings* settings) const;
+		void setBuyEqualsSell(Item* item, bool buy_equals_sell) const;
 
-		void setSellPrice(Item* item, double sell_price, Settings* settings) const;
+		void setSellPrice(Item* item, double sell_price) const;
 
-		void setBuyPrice(Item* item, double buy_price, Settings* settings) const;
+		void setBuyPrice(Item* item, double buy_price) const;
 
 	private:
 		std::unordered_map<std::string, Item*> items;
 
-		std::pair<Recipe, double> getBestInstantCraft(Item* item, Settings* settings) const;
-		std::pair<Recipe, double> getBestCraft(Item* item, Settings* settings) const;
+		std::pair<Recipe, double> getBestInstantCraft(Item* item) const;
+		std::pair<Recipe, double> getBestCraft(Item* item) const;
 		static double profitMargin(double sell_price, double acquire_cost);
 
-		std::list<Item*> setItemUpdateOrders();
+		std::list<Item*> itemUpdateOrder();
 };

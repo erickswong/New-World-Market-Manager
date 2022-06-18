@@ -1,15 +1,10 @@
 #include "ui/content_pages/input_pages/general_settings_input_page.h"
 
 GeneralSettingsInputPage::GeneralSettingsInputPage(QWidget *parent)
-	: QWidget(parent)
-{
+	: QWidget(parent) {
 	ui.setupUi(this);
 }
 
 void GeneralSettingsInputPage::setItems(Items* items) {
 	this->items = items;
-}
-
-void GeneralSettingsInputPage::setSettings(Settings* settings) {
-	this->settings = settings;
 }

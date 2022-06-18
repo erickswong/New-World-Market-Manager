@@ -1,5 +1,7 @@
 module items:block;
 
+import settings;
+
 Block::Block(std::string item_name,
              std::string image_path,
              const int tier,
@@ -32,12 +34,12 @@ Json::Value Block::toJson() const {
 	return json_value;
 }
 
-double Block::getCraftTax(Settings* settings) {
+double Block::getCraftTax() {
 	// TODO: implement craft_tax modifiers from settings
 	return base_craft_tax;
 }
 
-double Block::getYield(Recipe& recipe, Settings* settings) {
+double Block::getYield(Recipe& recipe) {
 	// Determine the tier of the refining component in the given recipe
 	int refining_component_tier = 0;
 	for (const auto& [ingredient_name, amount] : recipe.get()) {
@@ -56,8 +58,8 @@ double Block::getYield(Recipe& recipe, Settings* settings) {
 	}
 
 	// Calculate the yield
-	const double yield = base_yield + settings->stonecuttingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
+	const double yield = base_yield + settings::stonecuttingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
 
 	// Return the yield
-	return std::max(1., yield) * settings->fortYieldBonusMultiplier();
+	return std::max(1., yield) * settings::fortYieldBonusMultiplier();
 }

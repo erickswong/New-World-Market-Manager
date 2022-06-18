@@ -2,27 +2,25 @@ export module settings:taxes;
 
 import "json/json.h";
 
-export class Taxes {
-	public:
-		Taxes();
-		Taxes(double trading_tax,
-			  double crafting_fee,
-			  double refining_fee);
-		explicit Taxes(Json::Value json_value);
+namespace settings::taxes {
+	double trading_tax = 0.025;
+	double crafting_fee = 0.5;
+	double refining_fee = 0.5;
 
-		[[nodiscard]] Json::Value toJson() const;
+	// Resets members to default values
+	export void reset() noexcept;
 
-		[[nodiscard]] double getTradingTax() const;
-		void setTradingTax(double trading_tax);
+	// Sets members to values from json
+	export void fromJson(Json::Value json_value);
+	// Returns a json representing this namespace
+	export [[nodiscard]] Json::Value toJson();
 
-		[[nodiscard]] double getCraftingFee() const;
-		void setCraftingFee(double crafting_fee);
+	export [[nodiscard]] double getTradingTax();
+	export void setTradingTax(double trading_tax);
 
-		[[nodiscard]] double getRefiningFee() const;
-		void setRefiningFee(double refining_fee);
+	export [[nodiscard]] double getCraftingFee();
+	export void setCraftingFee(double crafting_fee);
 
-	private:
-		double trading_tax = 0.025;
-		double crafting_fee = 0.5;
-		double refining_fee = 0.5;
+	export [[nodiscard]] double getRefiningFee();
+	export void setRefiningFee(double refining_fee);
 };

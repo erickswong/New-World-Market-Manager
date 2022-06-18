@@ -6,34 +6,30 @@ import "json/json.h";
 
 static constexpr double ARMOUR_YIELD_BONUS = 0.02;
 
-export class ArmourSets {
-	public:
-		ArmourSets();
-		ArmourSets(ArmourSet smelter_set,
-				   ArmourSet woodworker_set,
-				   ArmourSet weaver_set,
-				   ArmourSet tanner_set,
-				   ArmourSet stonecutter_set);
-		explicit ArmourSets(Json::Value json_value);
+namespace settings::armour_sets {
+	ArmourSet smelter_set;
+	ArmourSet woodworker_set;
+	ArmourSet weaver_set;
+	ArmourSet tanner_set;
+	ArmourSet stonecutter_set;
 
-		[[nodiscard]] Json::Value toJson() const;
+	// Resets members to default values
+	export void reset() noexcept;
 
-		[[nodiscard]] double smeltingYieldBonus() const;
-		[[nodiscard]] double woodworkingYieldBonus() const;
-		[[nodiscard]] double leatherworkingYieldBonus() const;
-		[[nodiscard]] double weavingYieldBonus() const;
-		[[nodiscard]] double stonecuttingYieldBonus() const;
+	// Sets members to values from json
+	export void fromJson(Json::Value json_value);
+	// Returns a json representing this namespace
+	export [[nodiscard]] Json::Value toJson();
 
-		ArmourSet& getSmelterSet();
-		ArmourSet& getWoodworkerSet();
-		ArmourSet& getWeaverSet();
-		ArmourSet& getTannerSet();
-		ArmourSet& getStonecutterSet();
+	export [[nodiscard]] double smeltingYieldBonus();
+	export [[nodiscard]] double woodworkingYieldBonus();
+	export [[nodiscard]] double leatherworkingYieldBonus();
+	export [[nodiscard]] double weavingYieldBonus();
+	export [[nodiscard]] double stonecuttingYieldBonus();
 
-	private:
-		ArmourSet smelter_set;
-		ArmourSet woodworker_set;
-		ArmourSet weaver_set;
-		ArmourSet tanner_set;
-		ArmourSet stonecutter_set;
+	export ArmourSet& getSmelterSet();
+	export ArmourSet& getWoodworkerSet();
+	export ArmourSet& getWeaverSet();
+	export ArmourSet& getTannerSet();
+	export ArmourSet& getStonecutterSet();
 };

@@ -1,5 +1,7 @@
 module items:plank;
 
+import settings;
+
 Plank::Plank(std::string item_name,
              std::string image_path,
              const int tier,
@@ -32,12 +34,12 @@ Json::Value Plank::toJson() const {
 	return json_value;
 }
 
-double Plank::getCraftTax(Settings* settings) {
+double Plank::getCraftTax() {
 	// TODO: implement craft_tax modifiers from settings
 	return base_craft_tax;
 }
 
-double Plank::getYield(Recipe& recipe, Settings* settings) {
+double Plank::getYield(Recipe& recipe) {
 	// Determine the tier of the refining component in the given recipe
 	int refining_component_tier = 0;
 	for (const auto& [ingredient_name, amount] : recipe.get()) {
@@ -56,8 +58,8 @@ double Plank::getYield(Recipe& recipe, Settings* settings) {
 	}
 
 	// Calculate the yield
-	const double yield = base_yield + settings->woodworkingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
+	const double yield = base_yield + settings::woodworkingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
 
 	// Return the yield
-	return std::max(1., yield) * settings->fortYieldBonusMultiplier();
+	return std::max(1., yield) * settings::fortYieldBonusMultiplier();
 }

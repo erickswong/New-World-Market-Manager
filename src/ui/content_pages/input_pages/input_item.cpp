@@ -1,11 +1,9 @@
 #include "ui/content_pages/input_pages/input_item.h"
 
-InputItem::InputItem(Item* item, Items* items, Settings* settings, QWidget *parent)
+InputItem::InputItem(Item* item, Items* items, QWidget *parent)
 	: QWidget(parent),
       item(item),
-      items(items),
-      settings(settings)
-{
+      items(items) {
 	ui.setupUi(this);
 
 	// Set image
@@ -32,15 +30,8 @@ void InputItem::setItems(Items* items) {
 	// No children
 }
 
-void InputItem::setSettings(Settings* settings) {
-	this->settings = settings;
-
-	// Set settings for all children
-	// No children
-}
-
 void InputItem::on_lock_clicked(const bool buy_equals_sell) const {
-	items->setBuyEqualsSell(item, buy_equals_sell, settings);
+	items->setBuyEqualsSell(item, buy_equals_sell);
 
 	ui.buy_price->setReadOnly(buy_equals_sell);
 	ui.buy_price->setValue(item->getBuyPrice());
@@ -51,10 +42,10 @@ void InputItem::on_sell_price_valueChanged(const double sell_price) const {
 		item->setSellPrice(sell_price);
 		ui.buy_price->setValue(item->getBuyPrice());
 	} else {
-		items->setSellPrice(item, sell_price, settings);
+		items->setSellPrice(item, sell_price);
 	}
 }
 
 void InputItem::on_buy_price_valueChanged(const double buy_price) const {
-	items->setBuyPrice(item, buy_price, settings);
+	items->setBuyPrice(item, buy_price);
 }

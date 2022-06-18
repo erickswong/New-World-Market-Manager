@@ -12,37 +12,24 @@ import "json/json.h";
 class Settings;
 
 namespace settings {
-	// Initializes Settings and returns a pointer to it
-	export Settings* init();
-};
+	// Set up settings
+	export void setUp();
+	// Resets members to default values
+	export void reset() noexcept;
 
-export class Settings {
-	public:
-		Settings();
-		explicit Settings(Json::Value json_value);
+	// Sets members to values from json
+	export void fromJson(Json::Value json_value);
+	// Returns a json representing this namespace
+	export [[nodiscard]] Json::Value toJson();
+	// Writes a json representing this namespace to disk
+	export void writeToDisk();
 
-		void writeToDisk() const;
-		[[nodiscard]] Json::Value toJson() const;
+	export [[nodiscard]] double smeltingYieldBonus();
+	export [[nodiscard]] double woodworkingYieldBonus();
+	export [[nodiscard]] double leatherworkingYieldBonus();
+	export [[nodiscard]] double weavingYieldBonus();
+	export [[nodiscard]] double stonecuttingYieldBonus();
+	export [[nodiscard]] double fortYieldBonusMultiplier();
 
-		[[nodiscard]] double smeltingYieldBonus() const;
-		[[nodiscard]] double woodworkingYieldBonus() const;
-		[[nodiscard]] double leatherworkingYieldBonus() const;
-		[[nodiscard]] double weavingYieldBonus() const;
-		[[nodiscard]] double stonecuttingYieldBonus() const;
-		[[nodiscard]] double fortYieldBonusMultiplier() const;
-
-		// TODO: add tax calculator, may need parameter with base tax value
-
-		[[nodiscard]] TradeSkills& getTradeSkills();
-		[[nodiscard]] ArmourSets& getArmourSets();
-		[[nodiscard]] Taxes& getTaxes();
-		[[nodiscard]] StandingBonuses& getStandingBonuses();
-		[[nodiscard]] FortBonuses& getFortBonuses();
-
-	private:
-		TradeSkills trade_skills;
-		ArmourSets armour_sets;
-		Taxes taxes;
-		StandingBonuses standing_bonuses;
-		FortBonuses fort_bonuses;
+	// TODO: add tax calculator, may need parameter with base tax value
 };

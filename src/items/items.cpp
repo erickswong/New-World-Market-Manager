@@ -14,7 +14,7 @@ import :raw_resource;
 import :refining_component;
 import :resource;
 
-Items* items::init(Settings* settings) {
+Items* items::init() {
 	try {
 		// Open file for reading
 		std::ifstream file("data/items.json");
@@ -29,20 +29,20 @@ Items* items::init(Settings* settings) {
 		// Close file
 		file.close();
 
-		return new Items(json_value, settings);
+		return new Items(json_value);
 	} catch (std::exception&) {
-		return new Items(settings);
+		return new Items();
 
-		// TODO: alert that creating settings from settings.json was unsuccessful with message e.what()
+		// TODO: alert that creating items from json was unsuccessful with message e.what()
 	}
 }
 
-Items::Items(Settings* settings) {
+Items::Items() {
 	default_items::init(this);
-	analyze(setItemUpdateOrders(), settings);
+	analyze(itemUpdateOrder());
 }
 
-Items::Items(Json::Value json_value, Settings* settings) {
+Items::Items(Json::Value json_value) {
 	for (const std::string& item_name : json_value.getMemberNames()) {
 		std::string item_type = json_value[item_name]["item_type"].asString();
 
@@ -71,7 +71,7 @@ Items::Items(Json::Value json_value, Settings* settings) {
 		}
 	}
 
-	analyze(setItemUpdateOrders(), settings);
+	analyze(itemUpdateOrder());
 }
 
 Items::~Items() {
@@ -118,46 +118,46 @@ void Items::insert(const std::string& item_name, Item* item) {
 	items.insert({ item_name, item });
 }
 
-void Items::analyze(Item* item, Settings* settings) const {
+void Items::analyze(Item* item) const {
 	try {
 		auto& [best_instant_craft_cost, best_craft_cost, best_instant_profit_margin, best_profit_margin, best_instant_recipe, best_recipe] = item->getAnalysis();
 		const auto sell_price = item->getSellPrice();
 
-		std::tie(best_instant_recipe, best_instant_craft_cost) = getBestInstantCraft(item, settings);
-		std::tie(best_recipe, best_craft_cost) = getBestCraft(item, settings);
+		std::tie(best_instant_recipe, best_instant_craft_cost) = getBestInstantCraft(item);
+		std::tie(best_recipe, best_craft_cost) = getBestCraft(item);
 
 		best_instant_profit_margin = profitMargin(sell_price, best_instant_craft_cost);
 		best_profit_margin = profitMargin(sell_price, best_craft_cost);
-	} catch (NotUsedException& e) {
+	} catch (NotUsedException&) {
 		// Item does not use analysis
 	}
 }
 
-void Items::analyze(const std::list<Item*>& item_update_order, Settings* settings) const {
+void Items::analyze(const std::list<Item*>& item_update_order) const {
 	for (const auto& item : item_update_order) {
-		analyze(item, settings);
+		analyze(item);
 	}
 }
 
-void Items::setBuyEqualsSell(Item* item, const bool buy_equals_sell, Settings* settings) const {
+void Items::setBuyEqualsSell(Item* item, const bool buy_equals_sell) const {
 	if (item->setBuyEqualsSell(buy_equals_sell)) {
-		analyze(item->getItemUpdateOrder(), settings);
+		analyze(item->getItemUpdateOrder());
 	}
 }
 
-void Items::setSellPrice(Item* item, const double sell_price, Settings* settings) const {
+void Items::setSellPrice(Item* item, const double sell_price) const {
 	if (item->setSellPrice(sell_price)) {
-		analyze(item->getItemUpdateOrder(), settings);
+		analyze(item->getItemUpdateOrder());
 	}
 }
 
-void Items::setBuyPrice(Item* item, const double buy_price, Settings* settings) const {
+void Items::setBuyPrice(Item* item, const double buy_price) const {
 	if (item->setBuyPrice(buy_price)) {
-		analyze(item->getItemUpdateOrder(), settings);
+		analyze(item->getItemUpdateOrder());
 	}
 }
 
-std::pair<Recipe, double> Items::getBestInstantCraft(Item* item, Settings* settings) const {
+std::pair<Recipe, double> Items::getBestInstantCraft(Item* item) const {
 	Recipe best_instant_craft_recipe;
 	double best_instant_craft_cost = HUGE_VAL;
 
@@ -169,7 +169,7 @@ std::pair<Recipe, double> Items::getBestInstantCraft(Item* item, Settings* setti
 		}
 
 		// Calculate the instant craft cost of the recipe
-		const double instant_craft_cost = (recipe_cost + item->getCraftTax(settings)) / item->getYield(recipe, settings);
+		const double instant_craft_cost = (recipe_cost + item->getCraftTax()) / item->getYield(recipe);
 
 		// Update best instant craft if current instant craft is better
 		if (instant_craft_cost < best_instant_craft_cost) {
@@ -182,7 +182,7 @@ std::pair<Recipe, double> Items::getBestInstantCraft(Item* item, Settings* setti
 	return { best_instant_craft_recipe, best_instant_craft_cost };
 }
 
-std::pair<Recipe, double> Items::getBestCraft(Item* item, Settings* settings) const {
+std::pair<Recipe, double> Items::getBestCraft(Item* item) const {
 	Recipe best_craft_recipe;
 	double best_craft_cost = HUGE_VAL;
 
@@ -194,7 +194,7 @@ std::pair<Recipe, double> Items::getBestCraft(Item* item, Settings* settings) co
 		}
 
 		// Calculate the craft cost of the recipe
-		const double craft_cost = (recipe_cost + item->getCraftTax(settings)) / item->getYield(recipe, settings);
+		const double craft_cost = (recipe_cost + item->getCraftTax()) / item->getYield(recipe);
 
 		// Update the best craft is current craft is better
 		if (craft_cost < best_craft_cost) {
@@ -211,7 +211,7 @@ double Items::profitMargin(const double sell_price, const double acquire_cost) {
 	return (sell_price - acquire_cost) / sell_price;
 }
 
-std::list<Item*> Items::setItemUpdateOrders() {
+std::list<Item*> Items::itemUpdateOrder() {
 	// Item node
 	struct ItemNode {
 		std::unordered_set<Item*> parent_items;

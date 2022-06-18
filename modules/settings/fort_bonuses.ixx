@@ -5,25 +5,24 @@ import "json/json.h";
 static constexpr double FIRST_LIGHT_YIELD_BONUS = 0.1;
 static constexpr double WEAVERS_FEN_TAX_BONUS = 0.1;
 
-export class FortBonuses {
-	public:
-		FortBonuses();
-		FortBonuses(bool has_first_light,
-					bool has_weavers_fen);
-		explicit FortBonuses(Json::Value json_value);
+namespace settings::fort_bonuses {
+	bool has_first_light = false;
+	bool has_weavers_fen = false;
 
-		[[nodiscard]] Json::Value toJson() const;
+	// Resets members to default values
+	export void reset() noexcept;
 
-		[[nodiscard]] double yieldBonus() const;
-		[[nodiscard]] double taxBonus() const;
+	// Sets members to values from json
+	export void fromJson(Json::Value json_value);
+	// Returns a json representing this namespace
+	export [[nodiscard]] Json::Value toJson();
 
-		[[nodiscard]] bool getHasFirstLight() const;
-		void setHasFirstLight(bool has_first_light);
+	export [[nodiscard]] double yieldBonus();
+	export [[nodiscard]] double taxBonus();
 
-		[[nodiscard]] bool getHasWeaversFen() const;
-		void setHasWeaversFen(bool has_weavers_fen);
+	export [[nodiscard]] bool getHasFirstLight();
+	export void setHasFirstLight(bool new_has_first_light);
 
-	private:
-		bool has_first_light = false;
-		bool has_weavers_fen = false;
+	export [[nodiscard]] bool getHasWeaversFen();
+	export void setHasWeaversFen(bool new_has_weavers_fen);
 };
