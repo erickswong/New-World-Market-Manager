@@ -3,15 +3,11 @@
 #include <QWidget>
 #include "ui_smelting_page.h"
 
-import items;
-
 class SmeltingPage final : public QWidget {
 	Q_OBJECT
 
 	public:
 		explicit SmeltingPage(QWidget* parent = Q_NULLPTR);
-
-		void setItems(Items* items);
 
 	private slots:
 		void on_flux_input_button_clicked() const;
@@ -21,7 +17,6 @@ class SmeltingPage final : public QWidget {
 
 	private:
 		Ui::SmeltingPage ui;
-		Items* items = nullptr;
 
 		enum class InputPageButtons {
 			FLUX,

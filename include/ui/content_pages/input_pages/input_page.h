@@ -4,7 +4,6 @@
 #include "ui_input_page.h"
 
 #include "input_item.h"
-import items;
 
 class InputPage final : public QWidget
 {
@@ -12,12 +11,11 @@ class InputPage final : public QWidget
 
 	public:
 		explicit InputPage(QWidget* parent = Q_NULLPTR);
+		~InputPage();
 
 		void addInputItem(std::string item_name);
-		void setItems(Items* items);
 
 	private:
 		Ui::InputPage ui;
 		std::vector<InputItem*> input_items;
-		Items* items = nullptr;
 };

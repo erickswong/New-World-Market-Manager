@@ -6,16 +6,6 @@ SmeltingPage::SmeltingPage(QWidget *parent)
 
     // Set stacked widget to default page
     ui.input_pages->setCurrentIndex(static_cast<int>(InputPageButtons::FLUX));
-}
-
-void SmeltingPage::setItems(Items* items) {
-	this->items = items;
-
-    // Set items for all children
-    ui.flux_input_page->setItems(items);
-    ui.ore_input_page->setItems(items);
-    ui.ingot_input_page->setItems(items);
-    ui.settings_input_page->setItems(items);
 
     // Setup input pages
     setUpInputPages();

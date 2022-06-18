@@ -1,12 +1,8 @@
 export module items:default_items;
 
-import items;
-
-namespace default_items {
-	Items* items;
-
-	// Perform default initialization for items
-	export void init(Items* items);
+namespace items::default_items {
+	// Perform default set up for items
+	export void setUp();
 
 	void addResources();
 	void addArmourSets();

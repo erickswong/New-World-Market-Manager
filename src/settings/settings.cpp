@@ -19,7 +19,7 @@ namespace settings {
 
             // Set members to values from json
             fromJson(json_value);
-        } catch (std::exception&) {
+        } catch (const std::exception&) {
             // Reset members to default values
             reset();
 
@@ -68,7 +68,7 @@ namespace settings {
 
         // Write json into file
         Json::StyledWriter styled_writer;
-        file << styled_writer.write(settings::toJson());
+        file << styled_writer.write(settings::toJson()); // TODO: check remove settings:: ?
     }
 
     double smeltingYieldBonus() {

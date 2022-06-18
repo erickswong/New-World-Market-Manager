@@ -8,9 +8,6 @@ export import :trade_skills;
 
 import "json/json.h";
 
-// Forward declaration
-class Settings;
-
 namespace settings {
 	// Set up settings
 	export void setUp();

@@ -5,10 +5,3 @@ SmeltingSettingsInputPage::SmeltingSettingsInputPage(QWidget *parent)
 {
 	ui.setupUi(this);
 }
-
-void SmeltingSettingsInputPage::setItems(Items* items) {
-	this->items = items;
-
-	// Set items for all children
-	ui.general_settings_input_page->setItems(items);
-}

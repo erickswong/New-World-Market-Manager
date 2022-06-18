@@ -19,13 +19,13 @@
     <ClCompile Include="src\items\resources\refined_resources\refined_resource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\recipes\recipe.cpp">
+    <ClCompile Include="src\items\recipes\recipe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\items\resources\refining_components\refining_component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\recipes\recipes.cpp">
+    <ClCompile Include="src\items\recipes\recipes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\items\items.cpp">
@@ -85,8 +85,8 @@
     <ClCompile Include="src\items\default_items.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="modules\recipes\recipe.ixx" />
-    <ClCompile Include="modules\recipes\recipes.ixx" />
+    <ClCompile Include="modules\items\recipes\recipe.ixx" />
+    <ClCompile Include="modules\items\recipes\recipes.ixx" />
     <ClCompile Include="modules\settings\armour_set.ixx" />
     <ClCompile Include="modules\settings\armour_sets.ixx" />
     <ClCompile Include="modules\settings\fort_bonuses.ixx" />

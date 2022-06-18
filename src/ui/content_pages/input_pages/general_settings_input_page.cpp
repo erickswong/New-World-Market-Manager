@@ -4,7 +4,3 @@ GeneralSettingsInputPage::GeneralSettingsInputPage(QWidget *parent)
 	: QWidget(parent) {
 	ui.setupUi(this);
 }
-
-void GeneralSettingsInputPage::setItems(Items* items) {
-	this->items = items;
-}

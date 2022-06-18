@@ -5,13 +5,14 @@
 
 import items;
 
+using items::Item;
+
 class InputItem final : public QWidget
 {
 	Q_OBJECT
 
 	public:
-		explicit InputItem(Item* item, Items* items, QWidget* parent = Q_NULLPTR);
-		void setItems(Items* items);
+		explicit InputItem(const std::string& item_name, QWidget* parent = Q_NULLPTR);
 
 private slots:
 		void on_lock_clicked(bool buy_equals_sell) const;
@@ -20,8 +21,7 @@ private slots:
 
 	private:
 		Ui::InputItem ui;
-		Item* item;
-		Items* items = nullptr;
+		std::string item_name;
 
 		// TODO: add function to call display update
 };

@@ -1,10 +1,13 @@
 #include "ui/content_pages/input_pages/input_item.h"
 
-InputItem::InputItem(Item* item, Items* items, QWidget *parent)
+InputItem::InputItem(const std::string& item_name, QWidget *parent)
 	: QWidget(parent),
-      item(item),
-      items(items) {
+      item_name(item_name) {
+	// Set up ui
 	ui.setupUi(this);
+
+	// Get item
+	Item* item = items::at(item_name);
 
 	// Set image
 	ui.image->setPixmap(QPixmap(QString(item->getImagePath().c_str())));
@@ -23,29 +26,37 @@ InputItem::InputItem(Item* item, Items* items, QWidget *parent)
 	ui.buy_price->setValue(item->getBuyPrice());
 }
 
-void InputItem::setItems(Items* items) {
-	this->items = items;
-
-	// Set items for all children
-	// No children
-}
-
 void InputItem::on_lock_clicked(const bool buy_equals_sell) const {
-	items->setBuyEqualsSell(item, buy_equals_sell);
+	// Get item
+	Item* item = items::at(item_name);
 
+	// Set buy equal sell for item, updating buy price if needed, and analyze if necessary
+	items::setBuyEqualsSell(item, buy_equals_sell);
+
+	// Set display to reflect buy equals sell state
 	ui.buy_price->setReadOnly(buy_equals_sell);
+
+	// Set buy price display to reflect up-to-date buy price
+	// Will not call analyze again as no change is guaranteed
 	ui.buy_price->setValue(item->getBuyPrice());
 }
 
 void InputItem::on_sell_price_valueChanged(const double sell_price) const {
-	if (item->getBuyEqualsSell()) {
-		item->setSellPrice(sell_price);
-		ui.buy_price->setValue(item->getBuyPrice());
-	} else {
-		items->setSellPrice(item, sell_price);
-	}
+	// Get item
+	Item* item = items::at(item_name);
+
+	// Set sell price for item, updating buy price if needed, and analyze if necessary
+	items::setSellPrice(item, sell_price);
+
+	// Set buy price display to reflect up-to-date buy price
+	// Will not call analyze again as no change is guaranteed
+	ui.buy_price->setValue(item->getBuyPrice());
 }
 
 void InputItem::on_buy_price_valueChanged(const double buy_price) const {
-	items->setBuyPrice(item, buy_price);
+	// Get item
+	Item* item = items::at(item_name);
+
+	// Set buy price for item and analyze if necessary
+	items::setBuyPrice(item, buy_price);
 }

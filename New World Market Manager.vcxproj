@@ -141,8 +141,8 @@
     <ClCompile Include="modules\items\resources\refined_resource\refined_resource.ixx" />
     <ClCompile Include="modules\items\resources\refining_components\refining_component.ixx" />
     <ClCompile Include="modules\items\resources\resource.ixx" />
-    <ClCompile Include="modules\recipes\recipe.ixx" />
-    <ClCompile Include="modules\recipes\recipes.ixx" />
+    <ClCompile Include="modules\items\recipes\recipe.ixx" />
+    <ClCompile Include="modules\items\recipes\recipes.ixx" />
     <ClCompile Include="modules\settings\armour_set.ixx" />
     <ClCompile Include="modules\settings\armour_sets.ixx" />
     <ClCompile Include="modules\settings\fort_bonuses.ixx" />
@@ -189,9 +189,9 @@
     <ClCompile Include="src\settings\armour_set.cpp" />
     <ClCompile Include="src\settings\settings.cpp" />
     <ClCompile Include="src\items\items.cpp" />
-    <ClCompile Include="src\recipes\recipes.cpp" />
+    <ClCompile Include="src\items\recipes\recipes.cpp" />
     <ClCompile Include="src\items\resources\refining_components\refining_component.cpp" />
-    <ClCompile Include="src\recipes\recipe.cpp" />
+    <ClCompile Include="src\items\recipes\recipe.cpp" />
     <ClCompile Include="src\items\resources\refined_resources\refined_resource.cpp" />
     <ClCompile Include="src\items\resources\raw_resources\raw_resource.cpp" />
     <ClCompile Include="src\items\resources\resource.cpp" />

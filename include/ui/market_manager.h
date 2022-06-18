@@ -4,8 +4,6 @@
 #include <QGraphicsDropShadowEffect>
 #include "ui_market_manager.h"
 
-import items;
-
 class MarketManager final : public QMainWindow {
     Q_OBJECT
 
@@ -35,7 +33,6 @@ class MarketManager final : public QMainWindow {
     private:
         Ui::MarketManagerClass ui;
         QGraphicsDropShadowEffect* shadow;
-        Items* items;
 
         enum class MenuButtons {
             SMELTING,
@@ -49,7 +46,6 @@ class MarketManager final : public QMainWindow {
         void menuButtonClicked(MenuButtons button) const;
 
         void setDropShadow();
-        void setItems();
         void setNormal() const;
         void setMaximized() const;
 

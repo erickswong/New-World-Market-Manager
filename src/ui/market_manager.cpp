@@ -2,10 +2,16 @@
 
 #include "stdafx.h";
 
+import items;
 import settings;
 
 MarketManager::MarketManager(QWidget *parent)
     : QMainWindow(parent) {
+    // Initialize settings and items
+    settings::setUp();
+    items::setUp();
+
+    // Set up ui
     ui.setupUi(this);
 
     // Remove title bar
@@ -15,17 +21,12 @@ MarketManager::MarketManager(QWidget *parent)
     // Apply drop shadow effect
     setDropShadow();
 
-    // Initialize settings and items
-    settings::setUp();
-    setItems();
-
     // Set stacked widget to default page
     ui.content_stacked_widget->setCurrentIndex(static_cast<int>(MenuButtons::SMELTING));
 }
 
 MarketManager::~MarketManager() {
     delete shadow;
-    delete items;
 }
 
 void MarketManager::mousePressEvent(QMouseEvent* event) {
@@ -151,7 +152,7 @@ void MarketManager::on_maximize_restore_button_clicked() {
 
 void MarketManager::on_close_button_clicked() {
     // Write to disk          TODO: Ask on close, have setting to not ask again
-    items->writeToDisk();
+    items::writeToDisk();
     settings::writeToDisk();
 
     close();
@@ -189,14 +190,6 @@ void MarketManager::setDropShadow() {
     shadow->setYOffset(0);
     shadow->setColor(QColor(0, 0, 0, 200));
     ui.drop_shadow_frame->setGraphicsEffect(shadow);
-}
-
-void MarketManager::setItems() {
-	// Initialize items
-    items = items::init();
-
-    // Set items for all children
-    ui.smelting_page->setItems(items);
 }
 
 void MarketManager::setNormal() const {
