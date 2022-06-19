@@ -6,6 +6,8 @@ import "json/json.h";
 
 namespace items {
 	export class Recipes {
+		std::vector<Recipe> recipes;
+
 		public:
 			// Default constructor
 			Recipes() = default;
@@ -19,9 +21,6 @@ namespace items {
 			void addRecipe(const Recipe& recipe);
 
 			// Returns a reference to recipes
-			[[nodiscard]] std::vector<Recipe>& get();
-
-		private:
-			std::vector<Recipe> recipes;
+			[[nodiscard]] std::vector<Recipe>& get(); // TODO: remove this function?
 	};
 };

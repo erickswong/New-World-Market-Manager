@@ -823,27 +823,27 @@
    "Smelter's Headgear" : {
       "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_headgear.png",
       "item_name" : "Smelter's Headgear",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Smelter's Mitts" : {
       "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_mitts.png",
       "item_name" : "Smelter's Mitts",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Smelter's Pants" : {
       "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_pants.png",
       "item_name" : "Smelter's Pants",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Smelter's Shoes" : {
       "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_shoes.png",
       "item_name" : "Smelter's Shoes",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Smelter's Smock" : {
       "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_smock.png",
       "item_name" : "Smelter's Smock",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Smolderhide" : {
       "buy_equals_sell" : true,
@@ -970,52 +970,52 @@
    "Stonecutter's Gloves" : {
       "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_gloves.png",
       "item_name" : "Stonecutter's Gloves",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Stonecutter's Hat" : {
       "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_hat.png",
       "item_name" : "Stonecutter's Hat",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Stonecutter's Pants" : {
       "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_pants.png",
       "item_name" : "Stonecutter's Pants",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Stonecutter's Shirt" : {
       "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_shirt.png",
       "item_name" : "Stonecutter's Shirt",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Stonecutter's Shoes" : {
       "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_shoes.png",
       "item_name" : "Stonecutter's Shoes",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Tanner Gloves" : {
       "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_gloves.png",
       "item_name" : "Tanner Gloves",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Tanner Hat" : {
       "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_hat.png",
       "item_name" : "Tanner Hat",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Tanner Pants" : {
       "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_pants.png",
       "item_name" : "Tanner Pants",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Tanner Shirt" : {
       "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_shirt.png",
       "item_name" : "Tanner Shirt",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Tanner Shoes" : {
       "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_shoes.png",
       "item_name" : "Tanner Shoes",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Tannin" : {
       "buy_equals_sell" : true,
@@ -1068,27 +1068,27 @@
    "Weaver's Gloves" : {
       "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_gloves.png",
       "item_name" : "Weaver's Gloves",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Weaver's Hat" : {
       "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_hat.png",
       "item_name" : "Weaver's Hat",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Weaver's Pants" : {
       "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_pants.png",
       "item_name" : "Weaver's Pants",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Weaver's Shirt" : {
       "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_shirt.png",
       "item_name" : "Weaver's Shirt",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Weaver's Shoes" : {
       "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_shoes.png",
       "item_name" : "Weaver's Shoes",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Wildwood" : {
       "buy_equals_sell" : true,
@@ -1119,27 +1119,27 @@
    "Woodworker's Cap" : {
       "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_cap.png",
       "item_name" : "Woodworker's Cap",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Woodworker's Gloves" : {
       "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_gloves.png",
       "item_name" : "Woodworker's Gloves",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Woodworker's Pants" : {
       "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_pants.png",
       "item_name" : "Woodworker's Pants",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Woodworker's Shirt" : {
       "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_shirt.png",
       "item_name" : "Woodworker's Shirt",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Woodworker's Shoes" : {
       "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_shoes.png",
       "item_name" : "Woodworker's Shoes",
-      "item_type" : "Item"
+      "item_type" : "Gear"
    },
    "Wyrdwood" : {
       "buy_equals_sell" : false,

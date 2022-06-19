@@ -7,12 +7,12 @@ import std.filesystem;
 import :default_items;
 import :block;
 import :cloth;
+import :gear;
 import :ingot;
 import :leather;
 import :plank;
 import :raw_resource;
 import :refining_component;
-import :resource;
 
 namespace items {
 	void setUp() {
@@ -49,28 +49,25 @@ namespace items {
 			reset();
 
 			for (const std::string& item_name : json_value.getMemberNames()) {
-				std::string item_type = json_value[item_name]["item_type"].asString();
+				Json::Value item_json_value = json_value[item_name];
+				std::string item_type = item_json_value["item_type"].asString();
 
-				if (item_type == "Item") {
-					insert(item_name, new Item(json_value[item_name]));
-				} else if (item_type == "Resource") {
-					insert(item_name, new Resource(json_value[item_name]));
-				} else if (item_type == "RawResource") {
-					insert(item_name, new RawResource(json_value[item_name]));
-				} else if (item_type == "RefinedResource") {
-					insert(item_name, new RefinedResource(json_value[item_name]));
-				} else if (item_type == "Block") {
-					insert(item_name, new Block(json_value[item_name]));
+				if (item_type == "Block") {
+					insert(item_name, new Block(item_json_value));
 				} else if (item_type == "Cloth") {
-					insert(item_name, new Cloth(json_value[item_name]));
+					insert(item_name, new Cloth(item_json_value));
+				} else if (item_type == "Gear") {
+					insert(item_name, new Gear(item_json_value));
 				} else if (item_type == "Ingot") {
-					insert(item_name, new Ingot(json_value[item_name]));
+					insert(item_name, new Ingot(item_json_value));
 				} else if (item_type == "Leather") {
-					insert(item_name, new Leather(json_value[item_name]));
+					insert(item_name, new Leather(item_json_value));
 				} else if (item_type == "Plank") {
-					insert(item_name, new Plank(json_value[item_name]));
+					insert(item_name, new Plank(item_json_value));
+				} else if (item_type == "RawResource") {
+					insert(item_name, new RawResource(item_json_value));
 				} else if (item_type == "RefiningComponent") {
-					insert(item_name, new RefiningComponent(json_value[item_name]));
+					insert(item_name, new RefiningComponent(item_json_value));
 				} else {
 					throw BadValueException("Unrecognized item_type \"" + item_type + "\" in items");
 				}
@@ -101,7 +98,7 @@ namespace items {
 
 		// Write json into file
 		Json::StyledWriter styled_writer;
-		file << styled_writer.write(items::toJson());
+		file << styled_writer.write(toJson());
 	}
 
 	Item* at(const std::string& item_name) {
@@ -181,7 +178,11 @@ namespace items {
 		std::unordered_map<Item*, ItemNode*> item_graph;
 
 		// Master node
-		auto master_item = new Item("Master Node", "");
+		class MasterItem final : public Item {
+			public:
+				MasterItem() : Item("Master Item", "") {}
+		};
+		auto master_item = new MasterItem;
 		auto master_node = new ItemNode;
 
 		// Populate item graph and add every item as child of master node

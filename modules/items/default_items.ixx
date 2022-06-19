@@ -5,7 +5,7 @@ namespace items::default_items {
 	export void setUp();
 
 	void addResources();
-	void addArmourSets();
+	void addGears();
 
 	void addRawResources();
 	void addRefinedResources();

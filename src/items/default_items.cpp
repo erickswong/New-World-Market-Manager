@@ -4,6 +4,7 @@ import items;
 
 import :block;
 import :cloth;
+import :gear;
 import :ingot;
 import :leather;
 import :plank;
@@ -15,7 +16,7 @@ namespace items::default_items {
 		reset();
 
 		addResources();
-		addArmourSets();
+		addGears();
 
 		analyze(itemUpdateOrder());
 	}
@@ -26,7 +27,7 @@ namespace items::default_items {
 		addRefiningComponents();
 	}
 
-	void addArmourSets() {
+	void addGears() {
 		addSmelterSet();
 		addWoodworkerSet();
 		addWeaverSet();
@@ -1192,15 +1193,15 @@ namespace items::default_items {
 	}
 
 	void addSmelterSet() {
-		const auto smelters_headgear = new Item("Smelter's Headgear",
+		const auto smelters_headgear = new Gear("Smelter's Headgear",
 												":/MarketManager/images/armour_sets/smelter_set/smelters_headgear.png");
-		const auto smelters_smock = new Item("Smelter's Smock",
+		const auto smelters_smock = new Gear("Smelter's Smock",
 											 ":/MarketManager/images/armour_sets/smelter_set/smelters_smock.png");
-		const auto smelters_mitts = new Item("Smelter's Mitts",
+		const auto smelters_mitts = new Gear("Smelter's Mitts",
 											 ":/MarketManager/images/armour_sets/smelter_set/smelters_mitts.png");
-		const auto smelters_pants = new Item("Smelter's Pants",
+		const auto smelters_pants = new Gear("Smelter's Pants",
 											 ":/MarketManager/images/armour_sets/smelter_set/smelters_pants.png");
-		const auto smelters_shoes = new Item("Smelter's Shoes",
+		const auto smelters_shoes = new Gear("Smelter's Shoes",
 											 ":/MarketManager/images/armour_sets/smelter_set/smelters_shoes.png");
 
 		insert("Smelter's Headgear", smelters_headgear);
@@ -1211,15 +1212,15 @@ namespace items::default_items {
 	}
 
 	void addWoodworkerSet() {
-		const auto woodworkers_cap = new Item("Woodworker's Cap",
+		const auto woodworkers_cap = new Gear("Woodworker's Cap",
 											  ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_cap.png");
-		const auto woodworkers_shirt = new Item("Woodworker's Shirt",
+		const auto woodworkers_shirt = new Gear("Woodworker's Shirt",
 												":/MarketManager/images/armour_sets/woodworker_set/woodworkers_shirt.png");
-		const auto woodworkers_gloves = new Item("Woodworker's Gloves",
+		const auto woodworkers_gloves = new Gear("Woodworker's Gloves",
 												 ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_gloves.png");
-		const auto woodworkers_pants = new Item("Woodworker's Pants",
+		const auto woodworkers_pants = new Gear("Woodworker's Pants",
 												":/MarketManager/images/armour_sets/woodworker_set/woodworkers_pants.png");
-		const auto woodworkers_shoes = new Item("Woodworker's Shoes",
+		const auto woodworkers_shoes = new Gear("Woodworker's Shoes",
 												":/MarketManager/images/armour_sets/woodworker_set/woodworkers_shoes.png");
 
 		insert("Woodworker's Cap", woodworkers_cap);
@@ -1230,15 +1231,15 @@ namespace items::default_items {
 	}
 
 	void addWeaverSet() {
-		const auto weavers_hat = new Item("Weaver's Hat",
+		const auto weavers_hat = new Gear("Weaver's Hat",
 										  ":/MarketManager/images/armour_sets/weaver_set/weavers_hat.png");
-		const auto weavers_shirt = new Item("Weaver's Shirt",
+		const auto weavers_shirt = new Gear("Weaver's Shirt",
 											":/MarketManager/images/armour_sets/weaver_set/weavers_shirt.png");
-		const auto weavers_gloves = new Item("Weaver's Gloves",
+		const auto weavers_gloves = new Gear("Weaver's Gloves",
 											 ":/MarketManager/images/armour_sets/weaver_set/weavers_gloves.png");
-		const auto weavers_pants = new Item("Weaver's Pants",
+		const auto weavers_pants = new Gear("Weaver's Pants",
 											":/MarketManager/images/armour_sets/weaver_set/weavers_pants.png");
-		const auto weavers_shoes = new Item("Weaver's Shoes",
+		const auto weavers_shoes = new Gear("Weaver's Shoes",
 											":/MarketManager/images/armour_sets/weaver_set/weavers_shoes.png");
 
 		insert("Weaver's Hat", weavers_hat);
@@ -1249,15 +1250,15 @@ namespace items::default_items {
 	}
 
 	void addTannerSet() {
-		const auto tanner_hat = new Item("Tanner Hat",
+		const auto tanner_hat = new Gear("Tanner Hat",
 										 ":/MarketManager/images/armour_sets/tanner_set/tanner_hat.png");
-		const auto tanner_shirt = new Item("Tanner Shirt",
+		const auto tanner_shirt = new Gear("Tanner Shirt",
 										   ":/MarketManager/images/armour_sets/tanner_set/tanner_shirt.png");
-		const auto tanner_gloves = new Item("Tanner Gloves",
+		const auto tanner_gloves = new Gear("Tanner Gloves",
 											":/MarketManager/images/armour_sets/tanner_set/tanner_gloves.png");
-		const auto tanner_pants = new Item("Tanner Pants",
+		const auto tanner_pants = new Gear("Tanner Pants",
 										   ":/MarketManager/images/armour_sets/tanner_set/tanner_pants.png");
-		const auto tanner_shoes = new Item("Tanner Shoes",
+		const auto tanner_shoes = new Gear("Tanner Shoes",
 										   ":/MarketManager/images/armour_sets/tanner_set/tanner_shoes.png");
 
 		insert("Tanner Hat", tanner_hat);
@@ -1268,15 +1269,15 @@ namespace items::default_items {
 	}
 
 	void addStonecutterSet() {
-		const auto stonecutters_hat = new Item("Stonecutter's Hat",
+		const auto stonecutters_hat = new Gear("Stonecutter's Hat",
 											   ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_hat.png");
-		const auto stonecutters_shirt = new Item("Stonecutter's Shirt",
+		const auto stonecutters_shirt = new Gear("Stonecutter's Shirt",
 												 ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_shirt.png");
-		const auto stonecutters_gloves = new Item("Stonecutter's Gloves",
+		const auto stonecutters_gloves = new Gear("Stonecutter's Gloves",
 												  ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_gloves.png");
-		const auto stonecutters_pants = new Item("Stonecutter's Pants",
+		const auto stonecutters_pants = new Gear("Stonecutter's Pants",
 												 ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_pants.png");
-		const auto stonecutters_shoes = new Item("Stonecutter's Shoes",
+		const auto stonecutters_shoes = new Gear("Stonecutter's Shoes",
 												 ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_shoes.png");
 
 		insert("Stonecutter's Hat", stonecutters_hat);
