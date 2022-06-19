@@ -4,9 +4,9 @@ export import :armour_set;
 
 import "json/json.h";
 
-static constexpr double ARMOUR_YIELD_BONUS = 0.02;
-
 namespace settings::armour_sets {
+	static constexpr double ARMOUR_YIELD_BONUS = 0.02;
+
 	ArmourSet smelter_set;
 	ArmourSet woodworker_set;
 	ArmourSet weaver_set;

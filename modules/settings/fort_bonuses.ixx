@@ -2,10 +2,10 @@ export module settings:fort_bonuses;
 
 import "json/json.h";
 
-static constexpr double FIRST_LIGHT_YIELD_BONUS = 0.1;
-static constexpr double WEAVERS_FEN_TAX_BONUS = 0.1;
-
 namespace settings::fort_bonuses {
+	static constexpr double FIRST_LIGHT_YIELD_BONUS = 0.1;
+	static constexpr double WEAVERS_FEN_TAX_BONUS   = 0.1;
+
 	bool has_first_light = false;
 	bool has_weavers_fen = false;
 

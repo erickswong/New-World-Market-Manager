@@ -68,7 +68,7 @@ namespace settings {
 
         // Write json into file
         Json::StyledWriter styled_writer;
-        file << styled_writer.write(settings::toJson()); // TODO: check remove settings:: ?
+        file << styled_writer.write(toJson());
     }
 
     double smeltingYieldBonus() {

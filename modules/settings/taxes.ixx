@@ -3,9 +3,16 @@ export module settings:taxes;
 import "json/json.h";
 
 namespace settings::taxes {
-	double trading_tax = 0.025;
-	double crafting_fee = 0.5;
-	double refining_fee = 0.5;
+	static constexpr double MIN_CRAFTING_FEE = 0.5;
+	static constexpr double MAX_CRAFTING_FEE = 100.; // TODO: determine max
+	static constexpr double MIN_REFINING_FEE = 0.5;
+	static constexpr double MAX_REFINING_FEE = 100.; // TODO: determine max
+	static constexpr double MIN_TRADING_TAX  = 0.025;
+	static constexpr double MAX_TRADING_TAX  = 100.; // TODO: determine max
+
+	double crafting_fee = MIN_CRAFTING_FEE;
+	double refining_fee = MIN_REFINING_FEE;
+	double trading_tax  = MIN_TRADING_TAX;
 
 	// Resets members to default values
 	export void reset() noexcept;
@@ -15,12 +22,12 @@ namespace settings::taxes {
 	// Returns a json representing this namespace
 	export [[nodiscard]] Json::Value toJson();
 
-	export [[nodiscard]] double getTradingTax();
-	export void setTradingTax(double trading_tax);
-
 	export [[nodiscard]] double getCraftingFee();
 	export void setCraftingFee(double crafting_fee);
 
 	export [[nodiscard]] double getRefiningFee();
 	export void setRefiningFee(double refining_fee);
+
+	export [[nodiscard]] double getTradingTax();
+	export void setTradingTax(double trading_tax);
 };

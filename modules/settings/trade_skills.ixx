@@ -2,14 +2,16 @@ export module settings:trade_skills;
 
 import "json/json.h";
 
-static constexpr double LEVEL_YIELD_BONUS = 0.001;
-
 namespace settings::trade_skills {
-	int smelting_level = 200;
-	int woodworking_level = 200;
-	int leatherworking_level = 200;
-	int weaving_level = 200;
-	int stonecutting_level = 200;
+	static constexpr int MIN_TRADE_SKILL_LEVEL = 0;
+	static constexpr int MAX_TRADE_SKILL_LEVEL = 200;
+	static constexpr double LEVEL_YIELD_BONUS  = 0.001;
+
+	int smelting_level       = MAX_TRADE_SKILL_LEVEL;
+	int woodworking_level    = MAX_TRADE_SKILL_LEVEL;
+	int leatherworking_level = MAX_TRADE_SKILL_LEVEL;
+	int weaving_level        = MAX_TRADE_SKILL_LEVEL;
+	int stonecutting_level   = MAX_TRADE_SKILL_LEVEL;
 
 	// Resets members to default values
 	export void reset() noexcept;

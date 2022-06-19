@@ -4,11 +4,11 @@ import exceptions;
 
 namespace settings::trade_skills {
     void reset() noexcept {
-        smelting_level       = 200;
-        woodworking_level    = 200;
-        leatherworking_level = 200;
-        weaving_level        = 200;
-        stonecutting_level   = 200;
+        smelting_level       = MAX_TRADE_SKILL_LEVEL;
+        woodworking_level    = MAX_TRADE_SKILL_LEVEL;
+        leatherworking_level = MAX_TRADE_SKILL_LEVEL;
+        weaving_level        = MAX_TRADE_SKILL_LEVEL;
+        stonecutting_level   = MAX_TRADE_SKILL_LEVEL;
     }
 
     void fromJson(Json::Value json_value) {
@@ -60,10 +60,10 @@ namespace settings::trade_skills {
     }
 
     void setSmeltingLevel(int new_smelting_level) {
-        if (new_smelting_level < 0) {
-            throw BadValueException("smelting_level cannot be less than 0");
-        } else if (new_smelting_level > 200) {
-            throw BadValueException("smelting_level cannot be greater than 200");
+        if (new_smelting_level < MIN_TRADE_SKILL_LEVEL) {
+            throw BadValueException("smelting_level cannot be less than MIN_TRADE_SKILL_LEVEL");
+        } else if (new_smelting_level > MAX_TRADE_SKILL_LEVEL) {
+            throw BadValueException("smelting_level cannot be greater than MAX_TRADE_SKILL_LEVEL");
         }
 
         smelting_level = new_smelting_level;
@@ -74,10 +74,10 @@ namespace settings::trade_skills {
     }
 
     void setWoodworkingLevel(int new_woodworking_level) {
-        if (new_woodworking_level < 0) {
-            throw BadValueException("woodworking_level cannot be less than 0");
-        } else if (new_woodworking_level > 200) {
-            throw BadValueException("woodworking_level cannot be greater than 200");
+        if (new_woodworking_level < MIN_TRADE_SKILL_LEVEL) {
+            throw BadValueException("woodworking_level cannot be less than MIN_TRADE_SKILL_LEVEL");
+        } else if (new_woodworking_level > MAX_TRADE_SKILL_LEVEL) {
+            throw BadValueException("woodworking_level cannot be greater than MAX_TRADE_SKILL_LEVEL");
         }
 
         woodworking_level = new_woodworking_level;
@@ -88,10 +88,10 @@ namespace settings::trade_skills {
     }
 
     void setLeatherworkingLevel(int new_leatherworking_level) {
-        if (new_leatherworking_level < 0) {
-            throw BadValueException("leatherworking_level cannot be less than 0");
-        } else if (new_leatherworking_level > 200) {
-            throw BadValueException("leatherworking_level cannot be greater than 200");
+        if (new_leatherworking_level < MIN_TRADE_SKILL_LEVEL) {
+            throw BadValueException("leatherworking_level cannot be less than MIN_TRADE_SKILL_LEVEL");
+        } else if (new_leatherworking_level > MAX_TRADE_SKILL_LEVEL) {
+            throw BadValueException("leatherworking_level cannot be greater than MAX_TRADE_SKILL_LEVEL");
         }
 
         leatherworking_level = new_leatherworking_level;
@@ -102,10 +102,10 @@ namespace settings::trade_skills {
     }
 
     void setWeavingLevel(int new_weaving_level) {
-        if (new_weaving_level < 0) {
-            throw BadValueException("weaving_level cannot be less than 0");
-        } else if (new_weaving_level > 200) {
-            throw BadValueException("weaving_level cannot be greater than 200");
+        if (new_weaving_level < MIN_TRADE_SKILL_LEVEL) {
+            throw BadValueException("weaving_level cannot be less than MIN_TRADE_SKILL_LEVEL");
+        } else if (new_weaving_level > MAX_TRADE_SKILL_LEVEL) {
+            throw BadValueException("weaving_level cannot be greater than MAX_TRADE_SKILL_LEVEL");
         }
 
         weaving_level = new_weaving_level;
@@ -116,10 +116,10 @@ namespace settings::trade_skills {
     }
 
     void setStonecuttingLevel(int new_stonecutting_level) {
-        if (new_stonecutting_level < 0) {
-            throw BadValueException("stonecutting_level cannot be less than 0");
-        } else if (new_stonecutting_level > 200) {
-            throw BadValueException("stonecutting_level cannot be greater than 200");
+        if (new_stonecutting_level < MIN_TRADE_SKILL_LEVEL) {
+            throw BadValueException("stonecutting_level cannot be less than MIN_TRADE_SKILL_LEVEL");
+        } else if (new_stonecutting_level > MAX_TRADE_SKILL_LEVEL) {
+            throw BadValueException("stonecutting_level cannot be greater than MAX_TRADE_SKILL_LEVEL");
         }
 
         stonecutting_level = new_stonecutting_level;

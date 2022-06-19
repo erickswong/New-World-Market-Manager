@@ -4,8 +4,8 @@ import exceptions;
 
 namespace settings::standing_bonuses {
 	void reset() noexcept {
-		station_fee = 0.;
-		trading_tax = 0.;
+		station_fee = MIN_STATION_FEE;
+		trading_tax = MIN_TRADING_TAX;
 	}
 
 	void fromJson(Json::Value json_value) {
@@ -31,9 +31,11 @@ namespace settings::standing_bonuses {
 	}
 
 	void setStationFee(const double new_station_fee) {
-		if (new_station_fee < 0) {
-			throw BadValueException("station_fee cannot be less than 0");
-		} // TODO: throw exception if greater than upper bound
+		if (new_station_fee < MIN_STATION_FEE) {
+			throw BadValueException("station_fee cannot be less than MIN_STATION_FEE");
+		} else if (new_station_fee > MAX_STATION_FEE) {
+			throw BadValueException("station_fee cannot be greather than MAX_STATION_FEE");
+		}
 
 		station_fee = new_station_fee;
 	}
@@ -43,9 +45,11 @@ namespace settings::standing_bonuses {
 	}
 
 	void setTradingTax(const double new_trading_tax) {
-		if (new_trading_tax < 0) {
-			throw BadValueException("trading_tax cannot be less than 0");
-		} // TODO: throw exception if greater than upper bound
+		if (new_trading_tax < MIN_TRADING_TAX) {
+			throw BadValueException("trading_tax cannot be less than MIN_TRADING_TAX");
+		} else if (new_trading_tax > MAX_TRADING_TAX) {
+			throw BadValueException("trading_tax cannot be greater than MAX_TRADING_TAX");
+		}
 
 		trading_tax = new_trading_tax;
 	}

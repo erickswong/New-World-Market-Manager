@@ -5,6 +5,12 @@ import <string>;
 
 namespace settings::armour_sets {
 	export class ArmourSet {
+		bool has_hat = false;
+		bool has_shirt = false;
+		bool has_gloves = false;
+		bool has_pants = false;
+		bool has_shoes = false;
+
 		public:
 			// Resets members to default values
 			void reset() noexcept;
@@ -31,12 +37,5 @@ namespace settings::armour_sets {
 
 			[[nodiscard]] bool getHasShoes() const;
 			void setHasShoes(bool new_has_shoes);
-
-		private:
-			bool has_hat = false;
-			bool has_shirt = false;
-			bool has_gloves = false;
-			bool has_pants = false;
-			bool has_shoes = false;
 	};
 };

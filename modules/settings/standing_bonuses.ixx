@@ -3,8 +3,13 @@ export module settings:standing_bonuses;
 import "json/json.h";
 
 namespace settings::standing_bonuses {
-	double station_fee = 0.;
-	double trading_tax = 0.;
+	static constexpr double MIN_STATION_FEE = 0.;
+	static constexpr double MAX_STATION_FEE = 65.28;
+	static constexpr double MIN_TRADING_TAX = 0.;
+	static constexpr double MAX_TRADING_TAX = 62.78;
+
+	double station_fee = MIN_STATION_FEE;
+	double trading_tax = MIN_TRADING_TAX;
 
 	// Resets members to default values
 	export void reset() noexcept;
