@@ -7,9 +7,21 @@
 class MarketManager final : public QMainWindow {
     Q_OBJECT
 
-    public:
-        static constexpr qreal BORDER_SIZE = 10;
+    static constexpr qreal BORDER_SIZE = 10;
 
+    Ui::MarketManagerClass ui;
+    QGraphicsDropShadowEffect* shadow;
+
+    enum class MenuButtons {
+        SMELTING,
+        WOODWORKING,
+        WEAVING,
+        LEATHERWORKING,
+        STONECUTTING,
+        SETTINGS
+    };
+
+    public:
 		explicit MarketManager(QWidget *parent = Q_NULLPTR);
         ~MarketManager() override;
 
@@ -31,18 +43,6 @@ class MarketManager final : public QMainWindow {
         void on_close_button_clicked();
 
     private:
-        Ui::MarketManagerClass ui;
-        QGraphicsDropShadowEffect* shadow;
-
-        enum class MenuButtons {
-            SMELTING,
-            WOODWORKING,
-            WEAVING,
-            LEATHERWORKING,
-            STONECUTTING,
-            SETTINGS
-        };
-
         void menuButtonClicked(MenuButtons button) const;
 
         void setDropShadow();

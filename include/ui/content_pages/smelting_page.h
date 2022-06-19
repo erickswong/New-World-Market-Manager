@@ -6,6 +6,15 @@
 class SmeltingPage final : public QWidget {
 	Q_OBJECT
 
+	Ui::SmeltingPage ui;
+
+	enum class InputPageButtons {
+		FLUX,
+		ORE,
+		INGOT,
+		SETTINGS
+	};
+
 	public:
 		explicit SmeltingPage(QWidget* parent = Q_NULLPTR);
 
@@ -16,15 +25,6 @@ class SmeltingPage final : public QWidget {
 		void on_settings_input_button_clicked() const;
 
 	private:
-		Ui::SmeltingPage ui;
-
-		enum class InputPageButtons {
-			FLUX,
-			ORE,
-			INGOT,
-			SETTINGS
-		};
-
 		void inputPageButtonClicked(InputPageButtons button) const;
 
 		void setUpInputPages() const;

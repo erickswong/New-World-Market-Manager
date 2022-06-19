@@ -7,9 +7,8 @@ class SmeltingSettingsInputPage final : public QWidget
 {
 	Q_OBJECT
 
+	Ui::SmeltingSettingsInputPage ui;
+
 	public:
 		explicit SmeltingSettingsInputPage(QWidget *parent = Q_NULLPTR);
-
-	private:
-		Ui::SmeltingSettingsInputPage ui;
 };
