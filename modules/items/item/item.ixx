@@ -16,6 +16,7 @@ namespace items {
 	export class Item {
 		protected:
 			std::string item_name;
+			std::string image_path;
 			int tier = 0;
 			bool buy_equals_sell = true;
 			double sell_price = HUGE_VAL;
@@ -23,7 +24,6 @@ namespace items {
 			double base_yield = 0.;
 			double base_craft_tax = 0.;
 			Recipes recipes;
-			std::string image_path;
 			std::list<Item*> item_update_order;
 			ItemAnalysis analysis;
 			
@@ -34,14 +34,14 @@ namespace items {
 			 * @param image_path 
 			 */
 			Item(const std::string& item_name,
-				 const std::string& image_path); // TODO: look at using optional parameters
+				 const std::string& image_path); // TODO: look at using optional parameters, default no image path
 
 			/**
 			 * @brief Construct a new Item object
 			 * 
 			 * @param json_value 
 			 */
-			explicit Item(Json::Value json_value);
+			explicit Item(Json::Value json_value); // TODO: change to const Json::Value&
 
 		public:
 			/**
@@ -49,17 +49,16 @@ namespace items {
 			 */
 			virtual ~Item() = default;
 
-			// TODO: turn into pure virtual function
 			/**
 			 * @brief Returns a json representing this object
 			 * 
 			 * @return The json
 			 */
-			[[nodiscard]] virtual Json::Value toJson() const;
+			[[nodiscard]] virtual Json::Value toJson() const = 0;
 
 			virtual std::string getItemName();
 
-			// TODO: turn into pure virtual function
+			// TODO: turn into pure virtual function, move throw into final classes
 			virtual int getTier();
 
 			virtual bool getBuyEqualsSell();
@@ -113,5 +112,13 @@ namespace items {
 			virtual double getCraftTax();
 
 			virtual double getYield(Recipe& recipe);
+
+		protected:
+			/**
+			 * @brief Returns a json representing members used in this object
+			 * 
+			 * @return The json
+			 */
+			[[nodiscard]] virtual Json::Value membersToJson() const;
 	};
 };

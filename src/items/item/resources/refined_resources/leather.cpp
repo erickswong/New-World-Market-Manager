@@ -28,7 +28,7 @@ namespace items {
 	}
 
 	Json::Value Leather::toJson() const {
-		Json::Value json_value = RefinedResource::toJson();
+		Json::Value json_value = membersToJson();
 
 		json_value["item_type"] = "Leather";
 

@@ -14,16 +14,6 @@ namespace items {
 		image_path(json_value["image_path"].asString()) {
 	}
 
-	Json::Value Item::toJson() const {
-		Json::Value json_value;
-
-		json_value["item_type"] = "Item";
-		json_value["item_name"] = item_name;
-		json_value["image_path"] = image_path;
-
-		return json_value;
-	}
-
 	std::string Item::getItemName() {
 		return item_name;
 	}
@@ -98,5 +88,14 @@ namespace items {
 
 	double Item::getYield(Recipe& recipe) {
 		throw NotUsedException("Item \"" + item_name + "\" does not use getYield");
+	}
+
+	Json::Value Item::membersToJson() const {
+		Json::Value json_value;
+
+		json_value["item_name"]       = item_name;
+		json_value["image_path"]      = image_path;
+
+		return json_value;
 	}
 }

@@ -12,7 +12,7 @@ namespace items {
 	}
 
 	Json::Value Gear::toJson() const {
-		Json::Value json_value = Item::toJson();
+		Json::Value json_value = membersToJson();
 
 		json_value["item_type"] = "Gear";
 

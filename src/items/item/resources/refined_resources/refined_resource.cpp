@@ -27,17 +27,6 @@ namespace items {
 		this->recipes = Recipes(json_value["recipes"]);
 	}
 
-	Json::Value RefinedResource::toJson() const {
-		Json::Value json_value = Resource::toJson();
-
-		json_value["item_type"] = "RefinedResource";
-		json_value["base_yield"] = base_yield;
-		json_value["base_craft_tax"] = base_craft_tax;
-		json_value["recipes"] = recipes.toJson();
-
-		return json_value;
-	}
-
 	double RefinedResource::getBaseYield() {
 		return base_yield;
 	}
@@ -86,5 +75,15 @@ namespace items {
 			default:
 				return 0.;
 		}
+	}
+
+	Json::Value RefinedResource::membersToJson() const {
+		Json::Value json_value = Resource::membersToJson();
+
+		json_value["base_yield"]      = base_yield;
+		json_value["base_craft_tax"]  = base_craft_tax;
+		json_value["recipes"]         = recipes.toJson();
+
+		return json_value;
 	}
 }

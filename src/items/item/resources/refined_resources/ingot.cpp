@@ -28,7 +28,7 @@ namespace items {
 	}
 
 	Json::Value Ingot::toJson() const {
-		Json::Value json_value = RefinedResource::toJson();
+		Json::Value json_value = membersToJson();
 
 		json_value["item_type"] = "Ingot";
 

@@ -5,21 +5,35 @@ import :item;
 namespace items {
 	export class Resource : public Item {
 		protected:
+			/**
+			 * @brief Construct a new Resource object
+			 * 
+			 * @param item_name 
+			 * @param image_path 
+			 * @param tier 
+			 * @param buy_equals_sell 
+			 * @param sell_price 
+			 * @param buy_price 
+			 */
 			Resource(const std::string& item_name,
 					 const std::string& image_path,
 					 int tier,
 					 bool buy_equals_sell,
 					 double sell_price,
 					 double buy_price);
+
+			/**
+			 * @brief Construct a new Resource object
+			 * 
+			 * @param json_value 
+			 */
 			explicit Resource(Json::Value json_value);
 			
 		public:
 			/**
-			 * @brief Returns a json representing this object
-			 * 
-			 * @return The json
+			 * @brief Destroy the Resource object
 			 */
-			[[nodiscard]] Json::Value toJson() const override;
+			virtual ~Resource() = default;
 
 			int getTier() override;
 
@@ -60,5 +74,13 @@ namespace items {
 			double getBestInstantAcquireCost() override;
 
 			double getBestAcquireCost() override;
+
+		protected:
+			/**
+			 * @brief Returns a json representing members used in this object
+			 * 
+			 * @return The json
+			 */
+			[[nodiscard]] Json::Value membersToJson() const override;
 	};
 };

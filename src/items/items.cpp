@@ -178,11 +178,7 @@ namespace items {
 		std::unordered_map<Item*, ItemNode*> item_graph;
 
 		// Master node
-		class MasterItem final : public Item {
-			public:
-				MasterItem() : Item("Master Item", "") {}
-		};
-		auto master_item = new MasterItem;
+		auto master_item = new Gear("Master Item", ""); // Using Gear but can use any Item
 		auto master_node = new ItemNode;
 
 		// Populate item graph and add every item as child of master node
