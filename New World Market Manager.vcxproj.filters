@@ -49,22 +49,22 @@
     <ClCompile Include="src\settings\fort_bonuses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\items\item\resources\refined_resources\ingots\ingot.cpp">
+    <ClCompile Include="src\items\item\resources\refined_resources\ingot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\settings\trade_skills.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\items\item\resources\refined_resources\planks\plank.cpp">
+    <ClCompile Include="src\items\item\resources\refined_resources\plank.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\items\item\resources\refined_resources\cloths\cloth.cpp">
+    <ClCompile Include="src\items\item\resources\refined_resources\cloth.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\items\item\resources\refined_resources\leathers\leather.cpp">
+    <ClCompile Include="src\items\item\resources\refined_resources\leather.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\items\item\resources\refined_resources\blocks\block.cpp">
+    <ClCompile Include="src\items\item\resources\refined_resources\block.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ui\content_pages\smelting_page.cpp">
@@ -101,12 +101,12 @@
     <ClCompile Include="modules\items\item\resources\resource.ixx" />
     <ClCompile Include="modules\items\item\resources\raw_resources\raw_resource.ixx" />
     <ClCompile Include="modules\items\item\resources\refining_components\refining_component.ixx" />
-    <ClCompile Include="modules\items\item\resources\refined_resource\refined_resource.ixx" />
-    <ClCompile Include="modules\items\item\resources\refined_resource\blocks\block.ixx" />
-    <ClCompile Include="modules\items\item\resources\refined_resource\cloths\cloth.ixx" />
-    <ClCompile Include="modules\items\item\resources\refined_resource\ingots\ingot.ixx" />
-    <ClCompile Include="modules\items\item\resources\refined_resource\leathers\leather.ixx" />
-    <ClCompile Include="modules\items\item\resources\refined_resource\planks\plank.ixx" />
+    <ClCompile Include="modules\items\item\resources\refined_resources\refined_resource.ixx" />
+    <ClCompile Include="modules\items\item\resources\refined_resources\block.ixx" />
+    <ClCompile Include="modules\items\item\resources\refined_resources\cloth.ixx" />
+    <ClCompile Include="modules\items\item\resources\refined_resources\ingot.ixx" />
+    <ClCompile Include="modules\items\item\resources\refined_resources\leather.ixx" />
+    <ClCompile Include="modules\items\item\resources\refined_resources\plank.ixx" />
     <ClCompile Include="src\stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
