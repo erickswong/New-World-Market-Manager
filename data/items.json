@@ -139,8 +139,8 @@
       "tier" : 3
    },
    "Elemental Lodestone" : {
-      "buy_equals_sell" : true,
-      "buy_price" : 0.5,
+      "buy_equals_sell" : false,
+      "buy_price" : 0.10000000000000001,
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/stones/elemental_lodestone.png",
       "item_name" : "Elemental Lodestone",
       "item_type" : "RawResource",
@@ -730,7 +730,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/sand_flux.png",
       "item_name" : "Sand Flux",
       "item_type" : "RefiningComponent",
-      "sell_price" : 0.70000000000000007,
+      "sell_price" : 0.69999999999999996,
       "tier" : 3
    },
    "Sateen" : {

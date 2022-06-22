@@ -14,88 +14,37 @@ namespace items {
 		image_path(json_value["image_path"].asString()) {
 	}
 
-	std::string Item::getItemName() {
+	Json::Value Item::toJson() const {
+		Json::Value json_value;
+
+		json_value["item_name"]  = item_name;
+		json_value["image_path"] = image_path;
+
+		// Uncomment to save item update order in json
+		/*{
+			Json::Value item_update_order_json_value;
+			for (const auto& item : item_update_order) {
+				item_update_order_json_value.append(item->getItemName());
+			}
+			json_value["item_update_order"] = item_update_order_json_value;
+		}*/
+
+		return json_value;
+	}
+
+	std::string Item::getItemName() const {
 		return item_name;
 	}
 
-	int Item::getTier() {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getTier");
-	}
-
-	bool Item::getBuyEqualsSell() {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getBuyEqualsSell");
-	}
-
-	bool Item::setBuyEqualsSell(const bool buy_equals_sell) {
-		throw NotUsedException("Item \"" + item_name + "\" does not use setBuyEqualsSell");
-	}
-
-	double Item::getSellPrice() {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getSellPrice");
-	}
-
-	bool Item::setSellPrice(const double sell_price) {
-		throw NotUsedException("Item \"" + item_name + "\" does not use setSellPrice");
-	}
-
-	double Item::getBuyPrice() {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getBuyPrice");
-	}
-
-	bool Item::setBuyPrice(const double buy_price) {
-		throw NotUsedException("Item \"" + item_name + "\" does not use setBuyPrice");
-	}
-
-	double Item::getBaseYield() {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getBaseYield");
-	}
-
-	double Item::getBaseCraftTax() {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getBaseCraftTax");
-	}
-
-	Recipes& Item::getRecipes() {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getRecipes");
-	}
-
-	std::string Item::getImagePath() {
+	std::string Item::getImagePath() const {
 		return image_path;
 	}
 
 	std::list<Item*> Item::getItemUpdateOrder() {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getItemUpdateOrder");
+		return item_update_order;
 	}
 
 	void Item::setItemUpdateOrder(std::list<Item*> item_update_order) {
-		throw NotUsedException("Item \"" + item_name + "\" does not use setItemUpdateOrder");
-	}
-
-	ItemAnalysis& Item::getAnalysis() {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getAnalysis");
-	}
-
-	double Item::getBestInstantAcquireCost() {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getBestInstantAcquireCost");
-	}
-
-	double Item::getBestAcquireCost() {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getBestAcquireCost");
-	}
-
-	double Item::getCraftTax() {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getCraftTax");
-	}
-
-	double Item::getYield(Recipe& recipe) {
-		throw NotUsedException("Item \"" + item_name + "\" does not use getYield");
-	}
-
-	Json::Value Item::membersToJson() const {
-		Json::Value json_value;
-
-		json_value["item_name"]       = item_name;
-		json_value["image_path"]      = image_path;
-
-		return json_value;
+		this->item_update_order = item_update_order;
 	}
 }

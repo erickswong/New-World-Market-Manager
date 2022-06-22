@@ -13,11 +13,7 @@ namespace items {
 							  double buy_price);
 			explicit RefiningComponent(Json::Value json_value);
 
-			/**
-			 * @brief Returns a json representing this object
-			 * 
-			 * @return The json
-			 */
+			// Returns a json representing this object
 			[[nodiscard]] Json::Value toJson() const override;
 	};
 };

@@ -4,83 +4,48 @@ import :item;
 
 namespace items {
 	export class Resource : public Item {
+		int tier;
+		bool buy_equals_sell;
+		double sell_price;
+		double buy_price;
+
 		protected:
-			/**
-			 * @brief Construct a new Resource object
-			 * 
-			 * @param item_name 
-			 * @param image_path 
-			 * @param tier 
-			 * @param buy_equals_sell 
-			 * @param sell_price 
-			 * @param buy_price 
-			 */
 			Resource(const std::string& item_name,
 					 const std::string& image_path,
 					 int tier,
 					 bool buy_equals_sell,
 					 double sell_price,
 					 double buy_price);
-
-			/**
-			 * @brief Construct a new Resource object
-			 * 
-			 * @param json_value 
-			 */
 			explicit Resource(Json::Value json_value);
 			
 		public:
-			/**
-			 * @brief Destroy the Resource object
-			 */
 			virtual ~Resource() = default;
-
-			int getTier() override;
-
-			bool getBuyEqualsSell() override;
-
-			/**
-			 * @brief Set the state of buy equals sell
-			 * 
-			 * @param buy_equals_sell 
-			 * @return Whether there is a change in the sell or buy price
-			 */
-			bool setBuyEqualsSell(bool buy_equals_sell) override;
-
-			double getSellPrice() override;
-
-			/**
-			 * @brief Set the sell price
-			 * 
-			 * @param sell_price 
-			 * @return Whether there is a change in the sell or buy price
-			 */
-			bool setSellPrice(double sell_price) override;
-
-			double getBuyPrice() override;
 			
-			/**
-			 * @brief Set the buy price
-			 * 
-			 * @param buy_price 
-			 * @return Whether there is a change in the sell or buy price
-			 */
-			bool setBuyPrice(double buy_price) override;
+			// Returns a json representing this object
+			[[nodiscard]] Json::Value toJson() const override;
 
-			std::list<Item*> getItemUpdateOrder() override;
+			// Returns the best instant acquire cost
+			[[nodiscard]] virtual double bestInstantAcquireCost();
 
-			void setItemUpdateOrder(std::list<Item*> item_update_order) override;
+			// Returns the best acquire cost
+			[[nodiscard]] virtual double bestAcquireCost();
 
-			double getBestInstantAcquireCost() override;
+			// Returns tier
+			[[nodiscard]] int getTier();
 
-			double getBestAcquireCost() override;
+			// Returns buy_equals_sell
+			[[nodiscard]] bool getBuyEqualsSell();
+			// Sets buy_equals_sell and returns whether there is a change in sell_price or buy_price
+			bool setBuyEqualsSell(bool buy_equals_sell);
 
-		protected:
-			/**
-			 * @brief Returns a json representing members used in this object
-			 * 
-			 * @return The json
-			 */
-			[[nodiscard]] Json::Value membersToJson() const override;
+			// Returns sell_price
+			[[nodiscard]] double getSellPrice();
+			// Sets sell_price and returns whether there is a change in sell_price or buy_price
+			bool setSellPrice(double sell_price);
+
+			// Returns buy_price
+			[[nodiscard]] double getBuyPrice();
+			// Sets buy_price and returns whether there is a change in sell_price or buy_price
+			bool setBuyPrice(double buy_price);
 	};
 };

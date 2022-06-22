@@ -3,21 +3,22 @@ export module items:refined_resource;
 import :resource;
 
 namespace items {
+	export struct ItemAnalysis { // TODO: rename to Analysis, move into RefinedResource
+		double best_instant_craft_cost = HUGE_VAL;
+		double best_craft_cost = HUGE_VAL;
+		double best_instant_profit_margin = -HUGE_VAL;
+		double best_profit_margin = -HUGE_VAL;
+		Recipe best_instant_recipe;
+		Recipe best_recipe;
+	};
+
 	export class RefinedResource : public Resource {
+		double base_yield;
+		double base_craft_tax;
+		Recipes recipes;
+		ItemAnalysis analysis;
+			
 		protected:
-			/**
-			 * @brief Construct a new Refined Resource object
-			 * 
-			 * @param item_name 
-			 * @param image_path 
-			 * @param tier 
-			 * @param buy_equals_sell 
-			 * @param sell_price 
-			 * @param buy_price 
-			 * @param base_yield 
-			 * @param base_craft_tax 
-			 * @param recipes 
-			 */
 			RefinedResource(const std::string& item_name,
 							const std::string& image_path,
 							int tier,
@@ -27,36 +28,40 @@ namespace items {
 							double base_yield,
 							double base_craft_tax,
 							const Recipes& recipes);
-
-			/**
-			 * @brief Construct a new Refined Resource object
-			 * 
-			 * @param json_value 
-			 */
 			explicit RefinedResource(Json::Value json_value);
 
 		public:
-			/**
-			 * @brief Destroy the RefinedResource object
-			 */
 			virtual ~RefinedResource() = default;
 
-			double getBaseYield() override;
+			// Returns a json representing this object
+			[[nodiscard]] Json::Value toJson() const override;
 
-			double getBaseCraftTax() override;
+			// Returns the best instant acquire cost
+			[[nodiscard]] double bestInstantAcquireCost() override;
 
-			Recipes& getRecipes() override;
+			// Returns the best acquire cost
+			[[nodiscard]] double bestAcquireCost() override;
 
-			ItemAnalysis& getAnalysis() override;
+			// Returns the craft tax
+			[[nodiscard]] virtual double craftTax() = 0;
+
+			// Returns the yield when using the given recipe
+			[[nodiscard]] virtual double yield(Recipe& recipe) = 0;
+
+			// Returns base_yield
+			[[nodiscard]] double getBaseYield();
+
+			// Returns base_craft_tax
+			[[nodiscard]] double getBaseCraftTax();
+
+			// Returns recipes
+			Recipes& getRecipes();
+
+			// Returns analysis
+			[[nodiscard]] ItemAnalysis& getAnalysis();
 
 		protected:
+			// Returns the yield bonus contributed by the refining component
 			static double refiningComponentYieldBonus(int refined_resource_tier, int refining_component_tier);
-
-			/**
-			 * @brief Returns a json representing members used in this object
-			 * 
-			 * @return The json
-			 */
-			[[nodiscard]] Json::Value membersToJson() const override;
 	};
 };

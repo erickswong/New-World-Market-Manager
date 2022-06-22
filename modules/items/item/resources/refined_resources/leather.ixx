@@ -16,15 +16,13 @@ namespace items {
 					const Recipes& recipes);
 			explicit Leather(Json::Value json_value);
 
-			/**
-			 * @brief Returns a json representing this object
-			 * 
-			 * @return The json
-			 */
+			// Returns a json representing this object
 			[[nodiscard]] Json::Value toJson() const override;
 
-			double getCraftTax() override;
+			// Returns the craft tax
+			double craftTax() override;
 
-			double getYield(Recipe& recipe) override;
+			// Returns the yield when using the given recipe
+			double yield(Recipe& recipe) override;
 	};
 };

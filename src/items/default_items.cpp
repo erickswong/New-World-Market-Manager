@@ -18,7 +18,7 @@ namespace items::default_items {
 		addResources();
 		addGears();
 
-		analyze(itemUpdateOrder());
+		update(itemUpdateOrder());
 	}
 
 	void addResources() {
@@ -259,7 +259,7 @@ namespace items::default_items {
 		const auto elemental_lodestone = new RawResource("Elemental Lodestone",
 														 ":/MarketManager/images/items/resources/raw_resources/stones/elemental_lodestone.png",
 														 3,
-														 true,
+														 false,
 														 0.5,
 														 0.1);
 

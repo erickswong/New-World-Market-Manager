@@ -5,8 +5,7 @@
 
 #include "input_item.h"
 
-class InputPage final : public QWidget
-{
+class InputPage final : public QWidget {
 	Q_OBJECT
 
 	Ui::InputPage ui;

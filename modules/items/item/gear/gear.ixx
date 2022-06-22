@@ -9,11 +9,7 @@ namespace items {
 				 const std::string& image_path);
 			explicit Gear(Json::Value json_value);
 
-			/**
-			 * @brief Returns a json representing this object
-			 * 
-			 * @return The json
-			 */
+			// Returns a json representing this object
 			[[nodiscard]] Json::Value toJson() const override;
 	};
 }

@@ -10,27 +10,38 @@ namespace items {
 					   const double sell_price,
 					   const double buy_price) :
 		Item(item_name,
-			 image_path) {
-		this->tier = tier;
-		this->buy_equals_sell = buy_equals_sell;
-		this->sell_price = sell_price;
-		if (buy_equals_sell) {
-			this->buy_price = sell_price;
-		} else {
-			this->buy_price = buy_price;
-		}
+			 image_path),
+		tier(tier),
+		buy_equals_sell(buy_equals_sell),
+		sell_price(sell_price),
+		buy_price(buy_price) {
 	}
 
 	Resource::Resource(Json::Value json_value) :
-		Item(json_value) {
-		this->tier = json_value["tier"].asInt();
-		this->buy_equals_sell = json_value["buy_equals_sell"].asBool();
-		this->sell_price = json_value["sell_price"].asDouble();
-		if (buy_equals_sell) {
-			this->buy_price = sell_price;
-		} else {
-			this->buy_price = json_value["buy_price"].asDouble();
-		}
+		Item(json_value),
+		tier(json_value["tier"].asInt()),
+		buy_equals_sell(json_value["buy_equals_sell"].asBool()),
+		sell_price(json_value["sell_price"].asDouble()),
+		buy_price(json_value["buy_price"].asDouble()) {
+	}
+
+	Json::Value Resource::toJson() const {
+		Json::Value json_value = Item::toJson();
+
+		json_value["tier"]            = tier;
+		json_value["buy_equals_sell"] = buy_equals_sell;
+		json_value["sell_price"]      = sell_price;
+		json_value["buy_price"]       = buy_price;
+
+		return json_value;
+	}
+
+	double Resource::bestInstantAcquireCost() {
+		return sell_price;
+	}
+
+	double Resource::bestAcquireCost() {
+		return std::min(sell_price, buy_price);
 	}
 
 	int Resource::getTier() {
@@ -83,41 +94,5 @@ namespace items {
 		this->buy_price = buy_price;
 
 		return true;
-	}
-
-	std::list<Item*> Resource::getItemUpdateOrder() {
-		return item_update_order;
-	}
-
-	void Resource::setItemUpdateOrder(std::list<Item*> item_update_order) {
-		this->item_update_order = item_update_order;
-	}
-
-	double Resource::getBestInstantAcquireCost() {
-		return std::min(sell_price, analysis.best_instant_craft_cost);
-	}
-
-	double Resource::getBestAcquireCost() {
-		return std::min({ sell_price, analysis.best_instant_craft_cost, analysis.best_craft_cost, buy_price });
-	}
-
-	Json::Value Resource::membersToJson() const {
-		Json::Value json_value = Item::membersToJson();
-
-		json_value["tier"]            = tier;
-		json_value["buy_equals_sell"] = buy_equals_sell;
-		json_value["sell_price"]      = sell_price;
-		json_value["buy_price"]       = buy_price;
-
-		// Uncomment to save item update order in json
-		/*{
-			Json::Value item_update_order_json_value;
-			for (const auto& item : item_update_order) {
-				item_update_order_json_value.append(item->getItemName());
-			}
-			json_value["item_update_order"] = item_update_order_json_value;
-		}*/
-
-		return json_value;
 	}
 }

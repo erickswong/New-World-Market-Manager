@@ -3,12 +3,7 @@
 #include <QWidget>
 #include "ui_input_item.h"
 
-import items;
-
-using items::Item;
-
-class InputItem final : public QWidget
-{
+class InputItem final : public QWidget { // TODO: Rename to InputResource, later add Input____ for other types
 	Q_OBJECT
 
 	Ui::InputItem ui;

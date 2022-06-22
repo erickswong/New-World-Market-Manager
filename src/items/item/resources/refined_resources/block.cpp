@@ -28,19 +28,19 @@ namespace items {
 	}
 
 	Json::Value Block::toJson() const {
-		Json::Value json_value = membersToJson();
+		Json::Value json_value = RefinedResource::toJson();
 
 		json_value["item_type"] = "Block";
 
 		return json_value;
 	}
 
-	double Block::getCraftTax() {
+	double Block::craftTax() {
 		// TODO: implement craft_tax modifiers from settings
-		return base_craft_tax;
+		return getBaseCraftTax();
 	}
 
-	double Block::getYield(Recipe& recipe) {
+	double Block::yield(Recipe& recipe) {
 		// Determine the tier of the refining component in the given recipe
 		int refining_component_tier = 0;
 		for (const auto& [ingredient_name, amount] : recipe.get()) {
@@ -59,7 +59,7 @@ namespace items {
 		}
 
 		// Calculate the yield
-		const double yield = base_yield + settings::stonecuttingYieldBonus() + refiningComponentYieldBonus(tier, refining_component_tier);
+		const double yield = getBaseYield() + settings::stonecuttingYieldBonus() + refiningComponentYieldBonus(getTier(), refining_component_tier);
 
 		// Return the yield
 		return std::max(1., yield) * settings::fortYieldBonusMultiplier();

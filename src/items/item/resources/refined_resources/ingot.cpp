@@ -28,20 +28,20 @@ namespace items {
 	}
 
 	Json::Value Ingot::toJson() const {
-		Json::Value json_value = membersToJson();
+		Json::Value json_value = RefinedResource::toJson();
 
 		json_value["item_type"] = "Ingot";
 
 		return json_value;
 	}
 
-	double Ingot::getCraftTax() {
+	double Ingot::craftTax() {
 		// TODO: implement craft_tax modifiers from settings
-		return base_craft_tax;
+		return getBaseCraftTax();
 	}
 
-	double Ingot::getYield(Recipe& recipe) {
-		double yield = base_yield + settings::smeltingYieldBonus();
+	double Ingot::yield(Recipe& recipe) {
+		double yield = getBaseYield() + settings::smeltingYieldBonus();
 
 		// Determine the tier of the refining component in the given recipe
 		int refining_component_tier = 0;
@@ -61,14 +61,14 @@ namespace items {
 		}
 
 		// Gold Ingot Anomaly
-		if (item_name == "Gold Ingot") {
+		if (getItemName() == "Gold Ingot") {
 			if (refining_component_tier == 5) {
 				yield += 0.5;
 			} else if (refining_component_tier == 4) {
 				yield += 0.25;
 			}
 		} else {
-			yield += refiningComponentYieldBonus(tier, refining_component_tier);
+			yield += refiningComponentYieldBonus(getTier(), refining_component_tier);
 		}
 
 		// Return the yield

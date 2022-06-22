@@ -1,5 +1,6 @@
 module items:refined_resource;
 
+import std.core;
 namespace items {
 	RefinedResource::RefinedResource(const std::string& item_name,
 									 const std::string& image_path,
@@ -12,19 +13,38 @@ namespace items {
 									 const Recipes& recipes) :
 		Resource(item_name,
 				 image_path,
-				 tier, buy_equals_sell,
+				 tier,
+				 buy_equals_sell,
 				 sell_price,
-				 buy_price) {
-		this->base_yield = base_yield;
-		this->base_craft_tax = base_craft_tax;
-		this->recipes = recipes;
+				 buy_price),
+		base_yield(base_yield),
+		base_craft_tax(base_craft_tax),
+		recipes(recipes) {
 	}
 
 	RefinedResource::RefinedResource(Json::Value json_value) :
-		Resource(json_value) {
-		this->base_yield = json_value["base_yield"].asDouble();
-		this->base_craft_tax = json_value["base_craft_tax"].asDouble();
-		this->recipes = Recipes(json_value["recipes"]);
+		Resource(json_value),
+		base_yield(json_value["base_yield"].asDouble()),
+		base_craft_tax(json_value["base_craft_tax"].asDouble()),
+		recipes(Recipes(json_value["recipes"])) {
+	}
+
+	Json::Value RefinedResource::toJson() const {
+		Json::Value json_value = Resource::toJson();
+
+		json_value["base_yield"]     = base_yield;
+		json_value["base_craft_tax"] = base_craft_tax;
+		json_value["recipes"]        = recipes.toJson();
+
+		return json_value;
+	}
+
+	double RefinedResource::bestInstantAcquireCost() {
+		return std::min(getSellPrice(), analysis.best_instant_craft_cost);
+	}
+
+	double RefinedResource::bestAcquireCost() {
+		return std::min({ getSellPrice(), analysis.best_instant_craft_cost, analysis.best_craft_cost, getBuyPrice() });
 	}
 
 	double RefinedResource::getBaseYield() {
@@ -75,15 +95,5 @@ namespace items {
 			default:
 				return 0.;
 		}
-	}
-
-	Json::Value RefinedResource::membersToJson() const {
-		Json::Value json_value = Resource::membersToJson();
-
-		json_value["base_yield"]      = base_yield;
-		json_value["base_craft_tax"]  = base_craft_tax;
-		json_value["recipes"]         = recipes.toJson();
-
-		return json_value;
 	}
 }

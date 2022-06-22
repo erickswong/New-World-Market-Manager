@@ -12,7 +12,9 @@ import :ingot;
 import :leather;
 import :plank;
 import :raw_resource;
+import :refined_resource;
 import :refining_component;
+import :resource;
 
 namespace items {
 	void setUp() {
@@ -73,7 +75,7 @@ namespace items {
 				}
 			}
 
-			analyze(itemUpdateOrder());
+			update(itemUpdateOrder());
 		} catch (const std::exception& e) {
 			throw BadJsonException("items is malformed", e);
 		}
@@ -109,42 +111,67 @@ namespace items {
 		items.insert({ item_name, item });
 	}
 
-	void analyze(Item* item) {
-		try {
-			auto& [best_instant_craft_cost, best_craft_cost, best_instant_profit_margin, best_profit_margin, best_instant_recipe, best_recipe] = item->getAnalysis();
-			const auto sell_price = item->getSellPrice();
+	void update(RefinedResource* refined_resource) {
+		auto& [best_instant_craft_cost, best_craft_cost, best_instant_profit_margin, best_profit_margin, best_instant_recipe, best_recipe] = refined_resource->getAnalysis();
+		const auto sell_price = refined_resource->getSellPrice();
 
-			std::tie(best_instant_recipe, best_instant_craft_cost) = getBestInstantCraft(item);
-			std::tie(best_recipe, best_craft_cost) = getBestCraft(item);
-
-			best_instant_profit_margin = profitMargin(sell_price, best_instant_craft_cost);
-			best_profit_margin = profitMargin(sell_price, best_craft_cost);
-		} catch (NotUsedException&) {
-			// Item does not use analysis
-		}
+		std::tie(best_instant_recipe, best_instant_craft_cost) = bestInstantCraft(refined_resource);
+		std::tie(best_recipe, best_craft_cost) = bestCraft(refined_resource);
+		
+		best_instant_profit_margin = profitMargin(sell_price, best_instant_craft_cost);
+		best_profit_margin = profitMargin(sell_price, best_craft_cost);
 	}
 
-	void analyze(const std::list<Item*>& item_update_order) {
+	void update(const std::list<Item*>& item_update_order) {
 		for (const auto& item : item_update_order) {
-			analyze(item);
+			if (RefinedResource* refined_resource = dynamic_cast<RefinedResource*>(item); refined_resource) {
+				update(refined_resource);
+			} // else if dynamic cast to another item if and overload update with other item
 		}
 	}
 
 	void setBuyEqualsSell(Item* item, const bool buy_equals_sell) {
-		if (item->setBuyEqualsSell(buy_equals_sell)) {
-			analyze(item->getItemUpdateOrder());
+		// Only a Resource has buy_equals_sell
+		Resource* resource = dynamic_cast<Resource*>(item);
+
+		// Return early if item cannot dynamic cast to a Resource
+		if (!resource) {
+			return;
+		}
+
+		// Set buy_equals_sell then update if necessary
+		if (resource->setBuyEqualsSell(buy_equals_sell)) {
+			update(resource->getItemUpdateOrder());
 		}
 	}
 
 	void setSellPrice(Item* item, const double sell_price) {
-		if (item->setSellPrice(sell_price)) {
-			analyze(item->getItemUpdateOrder());
+		// Only a Resource has sell_price
+		Resource* resource = dynamic_cast<Resource*>(item);
+
+		// Return early if item cannot dynamic cast to a Resource
+		if (!resource) {
+			return;
+		}
+
+		// Set sell_price then update if necessary
+		if (resource->setSellPrice(sell_price)) {
+			update(resource->getItemUpdateOrder());
 		}
 	}
 
 	void setBuyPrice(Item* item, const double buy_price) {
-		if (item->setBuyPrice(buy_price)) {
-			analyze(item->getItemUpdateOrder());
+		// Only a Resource has buy_price
+		Resource* resource = dynamic_cast<Resource*>(item);
+
+		// Return early if item cannot dynamic cast to a Resource
+		if (!resource) {
+			return;
+		}
+
+		// Set buy_price then update if necessary
+		if (resource->setBuyPrice(buy_price)) {
+			update(resource->getItemUpdateOrder());
 		}
 	}
 
@@ -160,16 +187,19 @@ namespace items {
 			ItemNode() = default;
 
 			explicit ItemNode(Item* item) {
-				// Store unordered set of all parents for this item
-				try {
-					// Ingredients found in recipes are parents
-					for (auto& recipe : item->getRecipes().get()) {
-						for (const auto& [ingredient_name, amount] : recipe.get()) {
-							parent_items.insert(at(ingredient_name));
-						}
+				// Only a RefinedResource has parents
+				RefinedResource* refined_resource = dynamic_cast<RefinedResource*>(item);
+
+				// Return early if item cannot dynamic cast to a RefinedResource
+				if (!refined_resource) {
+					return;
+				}
+
+				// Ingredients found in recipes are parents
+				for (auto& recipe : refined_resource->getRecipes().get()) {
+					for (const auto& [ingredient_name, amount] : recipe.get()) {
+						parent_items.insert(at(ingredient_name));
 					}
-				} catch (NotUsedException& e) {
-					// Item has no recipes, thus no parents
 				}
 			}
 		};
@@ -243,11 +273,7 @@ namespace items {
 
 		// Save item update order for each item
 		for (const auto& [item, item_node] : item_graph) {
-			try {
-				item->setItemUpdateOrder(find_item_update_order(item));
-			} catch (NotUsedException& e) {
-				// Item does not use item update order
-			}
+			item->setItemUpdateOrder(find_item_update_order(item));
 		}
 
 		// Save return value
@@ -268,19 +294,19 @@ namespace items {
 		return items;
 	}
 
-	std::pair<Recipe, double> getBestInstantCraft(Item* item) {
+	std::pair<Recipe, double> bestInstantCraft(RefinedResource* refined_resource) {
 		Recipe best_instant_craft_recipe;
 		double best_instant_craft_cost = HUGE_VAL;
 
-		for (auto& recipe : item->getRecipes().get()) {
+		for (auto& recipe : refined_resource->getRecipes().get()) {
 			// Calculate the total cost of the ingredients in the recipe
 			double recipe_cost = 0.;
 			for (const auto& [ingredient_name, amount] : recipe.get()) {
-				recipe_cost += amount * at(ingredient_name)->getBestInstantAcquireCost();
+				recipe_cost += amount * dynamic_cast<Resource*>(at(ingredient_name))->bestInstantAcquireCost();
 			}
 
 			// Calculate the instant craft cost of the recipe
-			const double instant_craft_cost = (recipe_cost + item->getCraftTax()) / item->getYield(recipe);
+			const double instant_craft_cost = (recipe_cost + refined_resource->craftTax()) / refined_resource->yield(recipe);
 
 			// Update best instant craft if current instant craft is better
 			if (instant_craft_cost < best_instant_craft_cost) {
@@ -293,19 +319,19 @@ namespace items {
 		return { best_instant_craft_recipe, best_instant_craft_cost };
 	}
 
-	std::pair<Recipe, double> getBestCraft(Item* item) {
+	std::pair<Recipe, double> bestCraft(RefinedResource* refined_resource) {
 		Recipe best_craft_recipe;
 		double best_craft_cost = HUGE_VAL;
 
-		for (auto& recipe : item->getRecipes().get()) {
+		for (auto& recipe : refined_resource->getRecipes().get()) {
 			// Calculate the total cost of the ingredients in the recipe
 			double recipe_cost = 0.;
 			for (const auto& [ingredient_name, amount] : recipe.get()) {
-				recipe_cost += amount * at(ingredient_name)->getBestAcquireCost();
+				recipe_cost += amount * dynamic_cast<Resource*>(at(ingredient_name))->bestAcquireCost();
 			}
 
 			// Calculate the craft cost of the recipe
-			const double craft_cost = (recipe_cost + item->getCraftTax()) / item->getYield(recipe);
+			const double craft_cost = (recipe_cost + refined_resource->craftTax()) / refined_resource->yield(recipe);
 
 			// Update the best craft is current craft is better
 			if (craft_cost < best_craft_cost) {

@@ -20,7 +20,7 @@ namespace items {
 	}
 
 	Json::Value RawResource::toJson() const {
-		Json::Value json_value = membersToJson();
+		Json::Value json_value = Resource::toJson();
 
 		json_value["item_type"] = "RawResource";
 
