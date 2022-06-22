@@ -53,9 +53,11 @@ namespace items {
 	// Sets item update order for all items and returns the master item update order
 	export std::list<Item*> itemUpdateOrder();
 
-	export [[nodiscard]] std::unordered_map<std::string, Item*>& get(); // TODO: remove this function?
+	// Returns a const reference to items
+	export [[nodiscard]] const std::unordered_map<std::string, Item*>& get();
 
-	std::pair<Recipe, double> bestInstantCraft(RefinedResource* refined_resource);
-	std::pair<Recipe, double> bestCraft(RefinedResource* refined_resource);
-	static double profitMargin(double sell_price, double acquire_cost);
+	// Finds and saves the best instant craft cost and recipe for refined_resource
+	void bestInstantCraft(RefinedResource* refined_resource);
+	// Finds and saves the best craft cost and recipe for refined_resource
+	void bestCraft(RefinedResource* refined_resource);
 };

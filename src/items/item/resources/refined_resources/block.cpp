@@ -35,12 +35,12 @@ namespace items {
 		return json_value;
 	}
 
-	double Block::craftTax() {
+	double Block::craftTax() const {
 		// TODO: implement craft_tax modifiers from settings
 		return getBaseCraftTax();
 	}
 
-	double Block::yield(Recipe& recipe) {
+	double Block::yield(const Recipe& recipe) const {
 		// Determine the tier of the refining component in the given recipe
 		int refining_component_tier = 0;
 		for (const auto& [ingredient_name, amount] : recipe.get()) {

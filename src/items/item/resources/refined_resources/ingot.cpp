@@ -35,12 +35,12 @@ namespace items {
 		return json_value;
 	}
 
-	double Ingot::craftTax() {
+	double Ingot::craftTax() const {
 		// TODO: implement craft_tax modifiers from settings
 		return getBaseCraftTax();
 	}
 
-	double Ingot::yield(Recipe& recipe) {
+	double Ingot::yield(const Recipe& recipe) const {
 		double yield = getBaseYield() + settings::smeltingYieldBonus();
 
 		// Determine the tier of the refining component in the given recipe

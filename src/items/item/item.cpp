@@ -40,7 +40,7 @@ namespace items {
 		return image_path;
 	}
 
-	std::list<Item*> Item::getItemUpdateOrder() {
+	std::list<Item*> Item::getItemUpdateOrder() const {
 		return item_update_order;
 	}
 

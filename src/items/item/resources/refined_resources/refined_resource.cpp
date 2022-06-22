@@ -39,28 +39,72 @@ namespace items {
 		return json_value;
 	}
 
-	double RefinedResource::bestInstantAcquireCost() {
-		return std::min(getSellPrice(), analysis.best_instant_craft_cost);
+	double RefinedResource::bestInstantAcquireCost() const {
+		return std::min(getSellPrice(), best_instant_craft_cost);
 	}
 
-	double RefinedResource::bestAcquireCost() {
-		return std::min({ getSellPrice(), analysis.best_instant_craft_cost, analysis.best_craft_cost, getBuyPrice() });
+	double RefinedResource::bestAcquireCost() const {
+		return std::min({ getSellPrice(), best_instant_craft_cost, best_craft_cost, getBuyPrice() });
 	}
 
-	double RefinedResource::getBaseYield() {
+	double RefinedResource::bestInstantMargin() const {
+		return margin(getSellPrice(), best_instant_craft_cost);
+	}
+
+	double RefinedResource::bestMargin() const {
+		return margin(getSellPrice(), best_craft_cost);
+	}
+
+	double RefinedResource::bestInstantMarkup() const {
+		return markup(getSellPrice(), best_instant_craft_cost);
+	}
+
+	double RefinedResource::bestMarkup() const {
+		return markup(getSellPrice(), best_craft_cost);
+	}
+
+	double RefinedResource::getBaseYield() const {
 		return base_yield;
 	}
 
-	double RefinedResource::getBaseCraftTax() {
+	double RefinedResource::getBaseCraftTax() const {
 		return base_craft_tax;
 	}
 
-	Recipes& RefinedResource::getRecipes() {
+	const Recipes& RefinedResource::getRecipes() const {
 		return recipes;
 	}
+	
+	double RefinedResource::getBestInstantCraftCost() const {
+		return best_instant_craft_cost;
+	}
 
-	ItemAnalysis& RefinedResource::getAnalysis() {
-		return analysis;
+	void RefinedResource::setBestInstantCraftCost(double best_instant_craft_cost) {
+		this->best_instant_craft_cost = best_instant_craft_cost;
+	}
+	
+	double RefinedResource::getBestCraftCost() const {
+		return best_craft_cost;
+	}
+
+	void RefinedResource::setBestCraftCost(double best_craft_cost) {
+		this->best_craft_cost = best_craft_cost;
+	}
+	
+	const Recipe& RefinedResource::getBestInstantRecipe() const {
+		return best_instant_recipe;
+	}
+
+	void RefinedResource::setBestInstantRecipe(Recipe best_instant_recipe) {
+		this->best_instant_recipe = best_instant_recipe;
+	}
+	
+	const Recipe& RefinedResource::getBestRecipe() const {
+		return best_recipe;
+	}
+
+	void RefinedResource::setBestRecipe(Recipe best_recipe) {
+		this->best_recipe = best_recipe;
 	}
 
 	double RefinedResource::refiningComponentYieldBonus(const int refined_resource_tier, const int refining_component_tier) {
@@ -95,5 +139,13 @@ namespace items {
 			default:
 				return 0.;
 		}
+	}
+
+	double RefinedResource::margin(const double sell_price, const double acquire_cost) {
+		return (sell_price - acquire_cost) / sell_price;
+	}
+
+	double RefinedResource::markup(const double sell_price, const double acquire_cost) {
+		return (sell_price - acquire_cost) / acquire_cost;
 	}
 }

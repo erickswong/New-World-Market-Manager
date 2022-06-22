@@ -36,19 +36,19 @@ namespace items {
 		return json_value;
 	}
 
-	double Resource::bestInstantAcquireCost() {
+	double Resource::bestInstantAcquireCost() const {
 		return sell_price;
 	}
 
-	double Resource::bestAcquireCost() {
+	double Resource::bestAcquireCost() const {
 		return std::min(sell_price, buy_price);
 	}
 
-	int Resource::getTier() {
+	int Resource::getTier() const {
 		return tier;
 	}
 
-	bool Resource::getBuyEqualsSell() {
+	bool Resource::getBuyEqualsSell() const {
 		return buy_equals_sell;
 	}
 
@@ -64,7 +64,7 @@ namespace items {
 		return true;
 	}
 
-	double Resource::getSellPrice() {
+	double Resource::getSellPrice() const {
 		return sell_price;
 	}
 
@@ -82,7 +82,7 @@ namespace items {
 		return true;
 	}
 
-	double Resource::getBuyPrice() {
+	double Resource::getBuyPrice() const {
 		return buy_price;
 	}
 

@@ -25,26 +25,26 @@ namespace items {
 			[[nodiscard]] Json::Value toJson() const override;
 
 			// Returns the best instant acquire cost
-			[[nodiscard]] virtual double bestInstantAcquireCost();
+			[[nodiscard]] virtual double bestInstantAcquireCost() const;
 
 			// Returns the best acquire cost
-			[[nodiscard]] virtual double bestAcquireCost();
+			[[nodiscard]] virtual double bestAcquireCost() const;
 
 			// Returns tier
-			[[nodiscard]] int getTier();
+			[[nodiscard]] int getTier() const;
 
 			// Returns buy_equals_sell
-			[[nodiscard]] bool getBuyEqualsSell();
+			[[nodiscard]] bool getBuyEqualsSell() const;
 			// Sets buy_equals_sell and returns whether there is a change in sell_price or buy_price
 			bool setBuyEqualsSell(bool buy_equals_sell);
 
 			// Returns sell_price
-			[[nodiscard]] double getSellPrice();
+			[[nodiscard]] double getSellPrice() const;
 			// Sets sell_price and returns whether there is a change in sell_price or buy_price
 			bool setSellPrice(double sell_price);
 
 			// Returns buy_price
-			[[nodiscard]] double getBuyPrice();
+			[[nodiscard]] double getBuyPrice() const;
 			// Sets buy_price and returns whether there is a change in sell_price or buy_price
 			bool setBuyPrice(double buy_price);
 	};

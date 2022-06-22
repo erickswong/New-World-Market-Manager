@@ -27,7 +27,7 @@ namespace items {
 			[[nodiscard]] std::string getImagePath() const;
 
 			// Returns item_update_order
-			[[nodiscard]] std::list<Item*> getItemUpdateOrder();
+			[[nodiscard]] std::list<Item*> getItemUpdateOrder() const;
 			// Sets item_update_order
 			void setItemUpdateOrder(std::list<Item*> item_update_order);
 	};

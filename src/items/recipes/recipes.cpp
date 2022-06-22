@@ -21,7 +21,7 @@ namespace items {
         recipes.push_back(recipe);
     }
 
-    std::vector<Recipe>& Recipes::get() {
+    const std::vector<Recipe>& Recipes::get() const {
         return recipes;
     }
 }

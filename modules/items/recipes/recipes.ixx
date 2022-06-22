@@ -20,7 +20,7 @@ namespace items {
 			// Adds a recipe to recipes
 			void addRecipe(const Recipe& recipe);
 
-			// Returns a reference to recipes
-			[[nodiscard]] std::vector<Recipe>& get(); // TODO: remove this function?
+			// Returns a const reference to recipes
+			[[nodiscard]] const std::vector<Recipe>& get() const;
 	};
 };

@@ -35,12 +35,12 @@ namespace items {
 		return json_value;
 	}
 
-	double Leather::craftTax() {
+	double Leather::craftTax() const {
 		// TODO: implement craft_tax modifiers from settings
 		return getBaseCraftTax();
 	}
 
-	double Leather::yield(Recipe& recipe) {
+	double Leather::yield(const Recipe& recipe) const {
 		// Determine the tier of the refining component in the given recipe
 		int refining_component_tier = 0;
 		for (const auto& [ingredient_name, amount] : recipe.get()) {

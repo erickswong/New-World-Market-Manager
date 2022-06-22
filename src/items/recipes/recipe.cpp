@@ -19,11 +19,11 @@ namespace items {
         return json_value;
     }
 
-    void Recipe::addIngredient(const std::string& ingredient_name, int amount) {
+    void Recipe::addIngredient(const std::string& ingredient_name, const int amount) {
         recipe.insert({ ingredient_name, amount });
     }
 
-    std::unordered_map<std::string, int>& Recipe::get() {
+    const std::unordered_map<std::string, int>& Recipe::get() const {
         return recipe;
     }
 }

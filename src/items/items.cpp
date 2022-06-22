@@ -112,14 +112,8 @@ namespace items {
 	}
 
 	void update(RefinedResource* refined_resource) {
-		auto& [best_instant_craft_cost, best_craft_cost, best_instant_profit_margin, best_profit_margin, best_instant_recipe, best_recipe] = refined_resource->getAnalysis();
-		const auto sell_price = refined_resource->getSellPrice();
-
-		std::tie(best_instant_recipe, best_instant_craft_cost) = bestInstantCraft(refined_resource);
-		std::tie(best_recipe, best_craft_cost) = bestCraft(refined_resource);
-		
-		best_instant_profit_margin = profitMargin(sell_price, best_instant_craft_cost);
-		best_profit_margin = profitMargin(sell_price, best_craft_cost);
+		bestInstantCraft(refined_resource);
+		bestCraft(refined_resource);
 	}
 
 	void update(const std::list<Item*>& item_update_order) {
@@ -290,15 +284,15 @@ namespace items {
 		return master_item_update_order;
 	}
 
-	std::unordered_map<std::string, Item*>& get() {
+	const std::unordered_map<std::string, Item*>& get() {
 		return items;
 	}
 
-	std::pair<Recipe, double> bestInstantCraft(RefinedResource* refined_resource) {
-		Recipe best_instant_craft_recipe;
+	void bestInstantCraft(RefinedResource* refined_resource) {
 		double best_instant_craft_cost = HUGE_VAL;
+		Recipe best_instant_recipe;
 
-		for (auto& recipe : refined_resource->getRecipes().get()) {
+		for (const auto& recipe : refined_resource->getRecipes().get()) {
 			// Calculate the total cost of the ingredients in the recipe
 			double recipe_cost = 0.;
 			for (const auto& [ingredient_name, amount] : recipe.get()) {
@@ -310,20 +304,21 @@ namespace items {
 
 			// Update best instant craft if current instant craft is better
 			if (instant_craft_cost < best_instant_craft_cost) {
-				best_instant_craft_recipe = recipe;
 				best_instant_craft_cost = instant_craft_cost;
+				best_instant_recipe = recipe;
 			}
 		}
 
-		// Return the best instant craft
-		return { best_instant_craft_recipe, best_instant_craft_cost };
+		// Save the best instant craft cost and recipe
+		refined_resource->setBestInstantCraftCost(best_instant_craft_cost);
+		refined_resource->setBestInstantRecipe(best_instant_recipe);
 	}
 
-	std::pair<Recipe, double> bestCraft(RefinedResource* refined_resource) {
-		Recipe best_craft_recipe;
+	void bestCraft(RefinedResource* refined_resource) {
 		double best_craft_cost = HUGE_VAL;
+		Recipe best_recipe;
 
-		for (auto& recipe : refined_resource->getRecipes().get()) {
+		for (const auto& recipe : refined_resource->getRecipes().get()) {
 			// Calculate the total cost of the ingredients in the recipe
 			double recipe_cost = 0.;
 			for (const auto& [ingredient_name, amount] : recipe.get()) {
@@ -335,16 +330,13 @@ namespace items {
 
 			// Update the best craft is current craft is better
 			if (craft_cost < best_craft_cost) {
-				best_craft_recipe = recipe;
 				best_craft_cost = craft_cost;
+				best_recipe = recipe;
 			}
 		}
 
-		// Return the best craft
-		return { best_craft_recipe, best_craft_cost };
-	}
-
-	double profitMargin(const double sell_price, const double acquire_cost) {
-		return (sell_price - acquire_cost) / sell_price;
+		// Save the best craft cost and recipe
+		refined_resource->setBestCraftCost(best_craft_cost);
+		refined_resource->setBestRecipe(best_recipe);
 	}
 }

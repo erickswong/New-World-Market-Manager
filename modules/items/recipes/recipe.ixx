@@ -15,9 +15,9 @@ namespace items {
 			[[nodiscard]] Json::Value toJson() const;
 
 			// Adds an ingredient to the recipe
-			void addIngredient(const std::string& ingredient_name, int amount);  // TODO: const int?
+			void addIngredient(const std::string& ingredient_name, const int amount);
 
-			// Returns a reference to the recipe
-			[[nodiscard]] std::unordered_map<std::string, int>& get(); // TODO: remove this function?
+			// Returns a const reference to the recipe
+			[[nodiscard]] const std::unordered_map<std::string, int>& get() const;
 	};
 };

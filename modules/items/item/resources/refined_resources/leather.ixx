@@ -20,9 +20,9 @@ namespace items {
 			[[nodiscard]] Json::Value toJson() const override;
 
 			// Returns the craft tax
-			double craftTax() override;
+			double craftTax() const override;
 
 			// Returns the yield when using the given recipe
-			double yield(Recipe& recipe) override;
+			double yield(const Recipe& recipe) const override;
 	};
 };
