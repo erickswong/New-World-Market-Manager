@@ -7,7 +7,7 @@ namespace items {
 			 image_path) {
 	}
 
-	Gear::Gear(Json::Value json_value) :
+	Gear::Gear(const Json::Value& json_value) :
 		Item(json_value) {
 	}
 

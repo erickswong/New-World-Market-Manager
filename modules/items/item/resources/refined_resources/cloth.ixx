@@ -14,7 +14,7 @@ namespace items {
 				  double base_yield,
 				  double base_craft_tax,
 				  const Recipes& recipes);
-			explicit Cloth(Json::Value json_value);
+			explicit Cloth(const Json::Value& json_value);
 
 			// Returns a json representing this object
 			[[nodiscard]] Json::Value toJson() const override;

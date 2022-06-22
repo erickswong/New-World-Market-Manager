@@ -46,7 +46,7 @@ namespace items {
 		}
 	}
 
-	void fromJson(Json::Value json_value) {
+	void fromJson(const Json::Value& json_value) {
 		try {
 			reset();
 

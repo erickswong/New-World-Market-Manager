@@ -22,7 +22,7 @@ namespace items {
 		recipes(recipes) {
 	}
 
-	RefinedResource::RefinedResource(Json::Value json_value) :
+	RefinedResource::RefinedResource(const Json::Value& json_value) :
 		Resource(json_value),
 		base_yield(json_value["base_yield"].asDouble()),
 		base_craft_tax(json_value["base_craft_tax"].asDouble()),

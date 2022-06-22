@@ -17,7 +17,7 @@ namespace items {
 		buy_price(buy_price) {
 	}
 
-	Resource::Resource(Json::Value json_value) :
+	Resource::Resource(const Json::Value& json_value) :
 		Item(json_value),
 		tier(json_value["tier"].asInt()),
 		buy_equals_sell(json_value["buy_equals_sell"].asBool()),

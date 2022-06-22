@@ -12,7 +12,7 @@ namespace items {
 		protected:
 			Item(const std::string& item_name,
 				 const std::string& image_path);
-			explicit Item(Json::Value json_value); // TODO: change to const Json::Value&
+			explicit Item(const Json::Value& json_value);
 
 		public:
 			virtual ~Item() = default;

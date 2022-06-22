@@ -11,7 +11,7 @@ namespace items {
 							  bool buy_equals_sell,
 							  double sell_price,
 							  double buy_price);
-			explicit RefiningComponent(Json::Value json_value);
+			explicit RefiningComponent(const Json::Value& json_value);
 
 			// Returns a json representing this object
 			[[nodiscard]] Json::Value toJson() const override;

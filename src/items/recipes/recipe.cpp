@@ -1,7 +1,7 @@
 module items:recipe;
 
 namespace items {
-    Recipe::Recipe(Json::Value json_value) {
+    Recipe::Recipe(const Json::Value& json_value) {
         for (const std::string& ingredient_name : json_value.getMemberNames()) {
             const int amount = json_value[ingredient_name].asInt();
 

@@ -23,8 +23,8 @@ namespace items {
 						recipes) {
 	}
 
-	Cloth::Cloth(Json::Value json_value) :
-		RefinedResource(std::move(json_value)) {
+	Cloth::Cloth(const Json::Value& json_value) :
+		RefinedResource(json_value) {
 	}
 
 	Json::Value Cloth::toJson() const {

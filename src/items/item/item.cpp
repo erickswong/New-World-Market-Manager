@@ -9,7 +9,7 @@ namespace items {
 		image_path(image_path) {
 	}
 
-	Item::Item(Json::Value json_value) :
+	Item::Item(const Json::Value& json_value) :
 		item_name(json_value["item_name"].asString()),
 		image_path(json_value["image_path"].asString()) {
 	}

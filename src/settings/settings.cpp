@@ -35,7 +35,7 @@ namespace settings {
         trade_skills::reset();
     }
 
-    void fromJson(Json::Value json_value) {
+    void fromJson(const Json::Value& json_value) {
         try {
             armour_sets::fromJson(json_value["armour_sets"]);
             fort_bonuses::fromJson(json_value["fort_bonuses"]);

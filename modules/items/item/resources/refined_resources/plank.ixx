@@ -14,7 +14,7 @@ namespace items {
 				  double base_yield,
 				  double base_craft_tax,
 				  const Recipes& recipes);
-			explicit Plank(Json::Value json_value);
+			explicit Plank(const Json::Value& json_value);
 
 			// Returns a json representing this object
 			[[nodiscard]] Json::Value toJson() const override;

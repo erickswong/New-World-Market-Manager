@@ -8,10 +8,8 @@ namespace items {
 		std::unordered_map<std::string, int> recipe;
 
 		public:
-			// Default constructor
 			Recipe() = default;
-			// Constructs the recipe represented by the json
-			explicit Recipe(Json::Value json_value); // TODO: const json_value&
+			explicit Recipe(const Json::Value& json_value);
 
 			// Returns a json representing this object
 			[[nodiscard]] Json::Value toJson() const;

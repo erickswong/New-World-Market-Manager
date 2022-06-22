@@ -23,8 +23,8 @@ namespace items {
 						recipes) {
 	}
 
-	Block::Block(Json::Value json_value) :
-		RefinedResource(std::move(json_value)) {
+	Block::Block(const Json::Value& json_value) :
+		RefinedResource(json_value) {
 	}
 
 	Json::Value Block::toJson() const {

@@ -28,7 +28,7 @@ namespace items {
 							double base_yield,
 							double base_craft_tax,
 							const Recipes& recipes);
-			explicit RefinedResource(Json::Value json_value);
+			explicit RefinedResource(const Json::Value& json_value);
 
 		public:
 			virtual ~RefinedResource() = default;

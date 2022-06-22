@@ -8,7 +8,7 @@ namespace settings::standing_bonuses {
 		trading_tax = MIN_TRADING_TAX;
 	}
 
-	void fromJson(Json::Value json_value) {
+	void fromJson(const Json::Value& json_value) {
 		try {
 			setStationFee(json_value["station_fee"].asDouble());
 			setTradingTax(json_value["trading_tax"].asDouble());

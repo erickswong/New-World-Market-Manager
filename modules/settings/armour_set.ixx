@@ -16,7 +16,7 @@ namespace settings::armour_sets {
 			void reset() noexcept;
 
 			// Sets members to values from json
-			void fromJson(Json::Value json_value, std::string armour_set = "armour_set");
+			void fromJson(const Json::Value& json_value, std::string armour_set = "armour_set");
 			// Returns a json representing this object
 			[[nodiscard]] Json::Value toJson() const;
 

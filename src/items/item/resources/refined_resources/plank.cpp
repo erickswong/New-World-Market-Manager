@@ -23,8 +23,8 @@ namespace items {
 						recipes) {
 	}
 
-	Plank::Plank(Json::Value json_value) :
-		RefinedResource(std::move(json_value)) {
+	Plank::Plank(const Json::Value& json_value) :
+		RefinedResource(json_value) {
 	}
 
 	Json::Value Plank::toJson() const {

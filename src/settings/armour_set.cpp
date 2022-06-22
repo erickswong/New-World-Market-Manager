@@ -11,7 +11,7 @@ namespace settings::armour_sets {
 		has_shoes  = false;
 	}
 
-	void ArmourSet::fromJson(Json::Value json_value, std::string armour_set) {
+	void ArmourSet::fromJson(const Json::Value& json_value, std::string armour_set) {
 		try {
 			has_hat    = json_value["has_hat"].asBool();
 			has_shirt  = json_value["has_shirt"].asBool();

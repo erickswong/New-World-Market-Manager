@@ -15,8 +15,8 @@ namespace items {
 				 buy_price) {
 	}
 
-	RawResource::RawResource(Json::Value json_value) :
-		Resource(std::move(json_value)) {
+	RawResource::RawResource(const Json::Value& json_value) :
+		Resource(json_value) {
 	}
 
 	Json::Value RawResource::toJson() const {

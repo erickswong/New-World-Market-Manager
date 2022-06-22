@@ -11,7 +11,7 @@ namespace settings::trade_skills {
         stonecutting_level   = MAX_TRADE_SKILL_LEVEL;
     }
 
-    void fromJson(Json::Value json_value) {
+    void fromJson(const Json::Value& json_value) {
         try {
             setSmeltingLevel(json_value["smelting_level"].asInt());
             setWoodworkingLevel(json_value["woodworking_level"].asInt());

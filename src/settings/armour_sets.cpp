@@ -11,13 +11,13 @@ namespace settings::armour_sets {
         stonecutter_set.reset();
     }
 
-    void fromJson(Json::Value json_value) {
+    void fromJson(const Json::Value& json_value) {
         try {
-            smelter_set.fromJson(json_value["smelter_set"]);
-            woodworker_set.fromJson(json_value["woodworker_set"]);
-            weaver_set.fromJson(json_value["weaver_set"]);
-            tanner_set.fromJson(json_value["tanner_set"]);
-            stonecutter_set.fromJson(json_value["stonecutter_set"]);
+            smelter_set.fromJson(json_value["smelter_set"], "smelter_set");
+            woodworker_set.fromJson(json_value["woodworker_set"], "woodworker_set");
+            weaver_set.fromJson(json_value["weaver_set"], "weaver_set");
+            tanner_set.fromJson(json_value["tanner_set"], "tanner_set");
+            stonecutter_set.fromJson(json_value["stonecutter_set"], "stonecutter_set");
         } catch (const std::exception& e) {
             throw BadJsonException("armour_sets is malformed", e);
         }

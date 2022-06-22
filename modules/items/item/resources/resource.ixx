@@ -16,7 +16,7 @@ namespace items {
 					 bool buy_equals_sell,
 					 double sell_price,
 					 double buy_price);
-			explicit Resource(Json::Value json_value);
+			explicit Resource(const Json::Value& json_value);
 			
 		public:
 			virtual ~Resource() = default;

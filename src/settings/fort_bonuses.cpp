@@ -8,7 +8,7 @@ namespace settings::fort_bonuses {
 		has_weavers_fen = false;
 	}
 
-	void fromJson(Json::Value json_value) {
+	void fromJson(const Json::Value& json_value) {
 		try {
 			has_first_light = json_value["has_first_light"].asBool();
 			has_weavers_fen = json_value["has_weavers_fen"].asBool();

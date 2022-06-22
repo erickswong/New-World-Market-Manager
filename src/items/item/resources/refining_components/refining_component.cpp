@@ -15,8 +15,8 @@ namespace items {
 				 buy_price) {
 	}
 
-	RefiningComponent::RefiningComponent(Json::Value json_value) :
-		Resource(std::move(json_value)) {
+	RefiningComponent::RefiningComponent(const Json::Value& json_value) :
+		Resource(json_value) {
 	}
 
 	Json::Value RefiningComponent::toJson() const {

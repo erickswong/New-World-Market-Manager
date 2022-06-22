@@ -17,7 +17,7 @@ namespace settings::armour_sets {
 	export void reset() noexcept;
 
 	// Sets members to values from json
-	export void fromJson(Json::Value json_value);
+	export void fromJson(const Json::Value& json_value);
 	// Returns a json representing this namespace
 	export [[nodiscard]] Json::Value toJson();
 

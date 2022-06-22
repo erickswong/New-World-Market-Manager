@@ -9,7 +9,7 @@ namespace settings::taxes {
 		trading_tax  = MIN_TRADING_TAX;
 	}
 
-	void fromJson(Json::Value json_value) {
+	void fromJson(const Json::Value& json_value) {
 		try {
 			setCraftingFee(json_value["crafting_fee"].asDouble());
 			setRefiningFee(json_value["refining_fee"].asDouble());

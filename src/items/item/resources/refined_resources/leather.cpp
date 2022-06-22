@@ -23,8 +23,8 @@ namespace items {
 						recipes) {
 	}
 
-	Leather::Leather(Json::Value json_value) :
-		RefinedResource(std::move(json_value)) {
+	Leather::Leather(const Json::Value& json_value) :
+		RefinedResource(json_value) {
 	}
 
 	Json::Value Leather::toJson() const {
