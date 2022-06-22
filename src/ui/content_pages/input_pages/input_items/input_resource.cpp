@@ -1,23 +1,23 @@
-#include "ui/content_pages/input_pages/input_item.h"
+#include "ui/content_pages/input_pages/input_items/input_resource.h"
 
 import items;
 
 using items::Resource;
 
-InputItem::InputItem(const std::string& item_name, QWidget *parent)
-	: QWidget(parent),
-      item_name(item_name) {
+InputResource::InputResource(const std::string& resource_name, QWidget *parent)
+	: InputItem(parent),
+      resource_name(resource_name) {
 	// Set up ui
 	ui.setupUi(this);
 
 	// Get resource
-	Resource* resource = dynamic_cast<Resource*>(items::at(item_name));
+	Resource* resource = dynamic_cast<Resource*>(items::at(resource_name));
 
 	// Set image
 	ui.image->setPixmap(QPixmap(QString(resource->getImagePath().c_str())));
 
 	// Set label
-	ui.label->setText(QCoreApplication::translate("InputItem", resource->getItemName().c_str(), nullptr));
+	ui.label->setText(QCoreApplication::translate("InputResource", resource->getItemName().c_str(), nullptr));
 
 	// Set lock
 	ui.lock->setChecked(resource->getBuyEqualsSell());
@@ -30,11 +30,11 @@ InputItem::InputItem(const std::string& item_name, QWidget *parent)
 	ui.buy_price->setValue(resource->getBuyPrice());
 }
 
-void InputItem::on_lock_clicked(const bool buy_equals_sell) const {
+void InputResource::on_lock_clicked(const bool buy_equals_sell) const {
 	// Get resource
-	Resource* resource = dynamic_cast<Resource*>(items::at(item_name));
+	Resource* resource = dynamic_cast<Resource*>(items::at(resource_name));
 
-	// Set buy equal sell for item, updating buy price if needed, and analyze if necessary
+	// Set buy equal sell for resource, updating buy price if needed, and analyze if necessary
 	items::setBuyEqualsSell(resource, buy_equals_sell);
 
 	// Set display to reflect buy equals sell state
@@ -45,11 +45,11 @@ void InputItem::on_lock_clicked(const bool buy_equals_sell) const {
 	ui.buy_price->setValue(resource->getBuyPrice());
 }
 
-void InputItem::on_sell_price_valueChanged(const double sell_price) const {
+void InputResource::on_sell_price_valueChanged(const double sell_price) const {
 	// Get resource
-	Resource* resource = dynamic_cast<Resource*>(items::at(item_name));
+	Resource* resource = dynamic_cast<Resource*>(items::at(resource_name));
 
-	// Set sell price for item, updating buy price if needed, and analyze if necessary
+	// Set sell price for resource, updating buy price if needed, and analyze if necessary
 	items::setSellPrice(resource, sell_price);
 
 	// Set buy price display to reflect up-to-date buy price
@@ -57,10 +57,10 @@ void InputItem::on_sell_price_valueChanged(const double sell_price) const {
 	ui.buy_price->setValue(resource->getBuyPrice());
 }
 
-void InputItem::on_buy_price_valueChanged(const double buy_price) const {
+void InputResource::on_buy_price_valueChanged(const double buy_price) const {
 	// Get resource
-	Resource* resource = dynamic_cast<Resource*>(items::at(item_name));
+	Resource* resource = dynamic_cast<Resource*>(items::at(resource_name));
 
-	// Set buy price for item and analyze if necessary
+	// Set buy price for resource and analyze if necessary
 	items::setBuyPrice(resource, buy_price);
 }

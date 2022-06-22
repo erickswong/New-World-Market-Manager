@@ -57,30 +57,30 @@ void SmeltingPage::setUpInputPages() const {
 }
 
 void SmeltingPage::setUpFluxInputPage() const {
-    ui.flux_input_page->addInputItem("Sand Flux");
-    ui.flux_input_page->addInputItem("Shelldust Flux");
-    ui.flux_input_page->addInputItem("Obsidian Flux");
+    ui.flux_input_page->addInputResource("Sand Flux");
+    ui.flux_input_page->addInputResource("Shelldust Flux");
+    ui.flux_input_page->addInputResource("Obsidian Flux");
 }
 
 void SmeltingPage::setUpOreInputPage() const {
-    ui.ore_input_page->addInputItem("Iron Ore");
-    ui.ore_input_page->addInputItem("Starmetal Ore");
-    ui.ore_input_page->addInputItem("Orichalcum Ore");
-    ui.ore_input_page->addInputItem("Silver Ore");
-    ui.ore_input_page->addInputItem("Gold Ore");
-    ui.ore_input_page->addInputItem("Platinum Ore");
-    ui.ore_input_page->addInputItem("Cinnabar");
-    ui.ore_input_page->addInputItem("Tolvium");
+    ui.ore_input_page->addInputResource("Iron Ore");
+    ui.ore_input_page->addInputResource("Starmetal Ore");
+    ui.ore_input_page->addInputResource("Orichalcum Ore");
+    ui.ore_input_page->addInputResource("Silver Ore");
+    ui.ore_input_page->addInputResource("Gold Ore");
+    ui.ore_input_page->addInputResource("Platinum Ore");
+    ui.ore_input_page->addInputResource("Cinnabar");
+    ui.ore_input_page->addInputResource("Tolvium");
 }
 
 void SmeltingPage::setUpIngotInputPage() const {
-    ui.ingot_input_page->addInputItem("Charcoal");
-    ui.ingot_input_page->addInputItem("Iron Ingot");
-    ui.ingot_input_page->addInputItem("Steel Ingot");
-    ui.ingot_input_page->addInputItem("Starmetal Ingot");
-    ui.ingot_input_page->addInputItem("Orichalcum Ingot");
-    ui.ingot_input_page->addInputItem("Silver Ingot");
-    ui.ingot_input_page->addInputItem("Gold Ingot");
-    ui.ingot_input_page->addInputItem("Platinum Ingot");
-    ui.ingot_input_page->addInputItem("Asmodeum");
+    ui.ingot_input_page->addInputResource("Charcoal");
+    ui.ingot_input_page->addInputResource("Iron Ingot");
+    ui.ingot_input_page->addInputResource("Steel Ingot");
+    ui.ingot_input_page->addInputResource("Starmetal Ingot");
+    ui.ingot_input_page->addInputResource("Orichalcum Ingot");
+    ui.ingot_input_page->addInputResource("Silver Ingot");
+    ui.ingot_input_page->addInputResource("Gold Ingot");
+    ui.ingot_input_page->addInputResource("Platinum Ingot");
+    ui.ingot_input_page->addInputResource("Asmodeum");
 }

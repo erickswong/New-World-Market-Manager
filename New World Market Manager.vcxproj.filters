@@ -76,7 +76,7 @@
     <ClCompile Include="src\ui\content_pages\input_pages\general_settings_input_page.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ui\content_pages\input_pages\input_item.cpp">
+    <ClCompile Include="src\ui\content_pages\input_pages\input_items\input_resource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ui\content_pages\input_pages\input_page.cpp">
@@ -112,6 +112,9 @@
     </ClCompile>
     <ClCompile Include="modules\items\item\gear\gear.ixx" />
     <ClCompile Include="src\items\item\gear\gear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\content_pages\input_pages\input_items\input_item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -151,10 +154,13 @@
     <QtMoc Include="include\ui\content_pages\input_pages\general_settings_input_page.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="include\ui\content_pages\input_pages\input_item.h">
+    <QtMoc Include="include\ui\content_pages\input_pages\input_items\input_resource.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="include\ui\content_pages\input_pages\input_page.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\ui\content_pages\input_pages\input_items\input_item.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -192,10 +198,10 @@
     <QtUic Include="ui\forms\content_pages\input_pages\general_settings_input_page.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtUic Include="ui\forms\content_pages\input_pages\input_item.ui">
+    <QtUic Include="ui\forms\content_pages\input_pages\input_items\input_resource.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtUic Include="ui\forms\content_pages\input_pages\input_page.ui">
+    <QtUic Include="ui\forms\content_pages\input_pages\input_items\input_page.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

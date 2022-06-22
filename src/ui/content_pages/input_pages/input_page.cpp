@@ -1,4 +1,5 @@
 #include "ui/content_pages/input_pages/input_page.h"
+#include "ui/content_pages/input_pages/input_items/input_resource.h"
 
 InputPage::InputPage(QWidget *parent)
 	: QWidget(parent)
@@ -12,8 +13,8 @@ InputPage::~InputPage() {
 	}
 }
 
-void InputPage::addInputItem(const std::string item_name) {
-	const auto input_item = new InputItem(item_name, this);
+void InputPage::addInputResource(const std::string resource_name) {
+	const auto input_item = new InputResource(resource_name, this);
 
 	input_items.push_back(input_item);
 
