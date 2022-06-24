@@ -7,6 +7,19 @@ using items::Resource;
 InputResource::InputResource(const std::string& resource_name, QWidget *parent)
 	: InputItem(parent),
       resource_name(resource_name) {
+	// Insert this into the cyclic list
+	if (const auto& [element, isFirst] = input_resource_map.insert({ resource_name, this }); isFirst) {
+		prev = this;
+		next = this;
+	} else {
+		const auto first = (*element).second;
+		const auto last = first->prev;
+		prev = last;
+		next = first;
+		last->next = this;
+		first->prev = this;
+	}
+
 	// Set up ui
 	ui.setupUi(this);
 
@@ -30,7 +43,24 @@ InputResource::InputResource(const std::string& resource_name, QWidget *parent)
 	ui.buy_price->setValue(resource->getBuyPrice());
 }
 
-void InputResource::on_lock_clicked(const bool buy_equals_sell) const {
+InputResource::~InputResource() {
+	// This is the only InputResource in its cyclic list
+	if (next == this) {
+		input_resource_map.erase(resource_name);
+		return;
+	}
+
+	// This is a pointed to InputResource in input_resource_map
+	if (auto& first = input_resource_map.at(resource_name); first == this) {
+		first = next;
+	}
+
+	// Remove from cyclic list
+	prev->next = next;
+	next->prev = prev;
+}
+
+void InputResource::on_lock_toggled(const bool buy_equals_sell) const {
 	// Get resource
 	Resource* resource = dynamic_cast<Resource*>(items::at(resource_name));
 
@@ -43,6 +73,9 @@ void InputResource::on_lock_clicked(const bool buy_equals_sell) const {
 	// Set buy price display to reflect up-to-date buy price
 	// Will not call analyze again as no change is guaranteed
 	ui.buy_price->setValue(resource->getBuyPrice());
+
+	// Update next InputResource in the cyclic list
+	next->ui.lock->setChecked(buy_equals_sell);
 }
 
 void InputResource::on_sell_price_valueChanged(const double sell_price) const {
@@ -55,6 +88,9 @@ void InputResource::on_sell_price_valueChanged(const double sell_price) const {
 	// Set buy price display to reflect up-to-date buy price
 	// Will not call analyze again as no change is guaranteed
 	ui.buy_price->setValue(resource->getBuyPrice());
+
+	// Update next InputResource in the cyclic list
+	next->ui.sell_price->setValue(sell_price);
 }
 
 void InputResource::on_buy_price_valueChanged(const double buy_price) const {
@@ -63,4 +99,7 @@ void InputResource::on_buy_price_valueChanged(const double buy_price) const {
 
 	// Set buy price for resource and analyze if necessary
 	items::setBuyPrice(resource, buy_price);
+
+	// Update next InputResource in the cyclic list
+	next->ui.buy_price->setValue(buy_price);
 }
