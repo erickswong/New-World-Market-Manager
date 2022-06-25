@@ -115,6 +115,17 @@ background-color: rgb(101, 80, 95);
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="styleSheet">
+            <string notr="true">#input_page_buttons QPushButton {
+border: none;
+}
+#input_page_buttons QPushButton:hover {
+background-color: rgba(44, 57, 68, 100);
+}
+#input_page_buttons QPushButton:checked {
+background-color: rgb(44, 57, 68);
+}</string>
+           </property>
            <layout class="QHBoxLayout" name="horizontalLayout_7">
             <property name="spacing">
              <number>0</number>
@@ -316,14 +327,7 @@ background-color: rgb(101, 80, 95);
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="display">
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-       </widget>
+       <widget class="QWidget" name="display" native="true"/>
       </item>
      </layout>
     </widget>

@@ -1,6 +1,6 @@
 #include "ui/market_manager.h"
 
-#include "stdafx.h";
+#include "stdafx.h"
 
 import items;
 import settings;
