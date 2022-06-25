@@ -21,13 +21,13 @@ namespace items {
 		json_value["image_path"] = image_path;
 
 		// Uncomment to save item update order in json
-		{
+		/*{
 			Json::Value item_update_order_json_value;
 			for (const auto& item : item_update_order) {
 				item_update_order_json_value.append(item->getItemName());
 			}
 			json_value["item_update_order"] = item_update_order_json_value;
-		}
+		}*/
 
 		return json_value;
 	}

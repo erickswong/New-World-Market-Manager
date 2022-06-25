@@ -6,7 +6,7 @@ import <list>;
 namespace items {
 	export class Item {
 		std::string item_name;
-		std::string image_path;
+		std::string image_path; // TODO: move to image map
 		std::list<Item*> item_update_order;
 		
 		protected:

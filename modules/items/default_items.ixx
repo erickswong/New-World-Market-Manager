@@ -9,7 +9,7 @@ namespace items::default_items {
 
 	void addRawResources();
 	void addRefinedResources();
-	void addRefiningComponents();
+	void addRefiningComponents(); // Remove refining components that are gone from ingame
 
 	void addOres();
 	void addWoods();
