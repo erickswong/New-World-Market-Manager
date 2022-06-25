@@ -99,6 +99,13 @@ namespace recipe_book::default_recipe_book {
 			.addIngredient("Charcoal", 2)
 			.addIngredient("Obsidian Flux", 1)
 		);
+		addRecipe(
+			Recipe("Orichalcum Ingot")
+			.addIngredient("Orichalcum Ore", 8)
+			.addIngredient("Platinum Ingot", 3)
+			.addIngredient("Charcoal", 2)
+			.addIngredient("Obsidian Flux", 1)
+		);
 	}
 
 	void addSilverIngot() {
