@@ -73,7 +73,7 @@ namespace recipe_book {
 		recipe_book.insert({ recipe.getItemName(), recipe });
 	}
 
-	auto recipeRange(const std::string& item_name) {
+	RecipeRange recipeRange(const std::string& item_name) {
 		return std::as_const(recipe_book).equal_range(item_name);
 	}
 }

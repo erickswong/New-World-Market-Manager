@@ -9,8 +9,7 @@ namespace items {
 									 const double sell_price,
 									 const double buy_price,
 									 const double base_yield,
-									 const double base_craft_tax,
-									 const Recipes& recipes) :
+									 const double base_craft_tax) :
 		Resource(item_name,
 				 image_path,
 				 tier,
@@ -19,14 +18,16 @@ namespace items {
 				 buy_price),
 		base_yield(base_yield),
 		base_craft_tax(base_craft_tax),
-		recipes(recipes) {
+		best_instant_recipe(recipe_book::Recipe(item_name)),
+		best_recipe(recipe_book::Recipe(item_name)) {
 	}
 
 	RefinedResource::RefinedResource(const Json::Value& json_value) :
 		Resource(json_value),
 		base_yield(json_value["base_yield"].asDouble()),
 		base_craft_tax(json_value["base_craft_tax"].asDouble()),
-		recipes(Recipes(json_value["recipes"])) {
+		best_instant_recipe(recipe_book::Recipe(getItemName())),
+		best_recipe(recipe_book::Recipe(getItemName())) {
 	}
 
 	Json::Value RefinedResource::toJson() const {
@@ -34,7 +35,6 @@ namespace items {
 
 		json_value["base_yield"]     = base_yield;
 		json_value["base_craft_tax"] = base_craft_tax;
-		json_value["recipes"]        = recipes.toJson();
 
 		return json_value;
 	}
@@ -70,10 +70,6 @@ namespace items {
 	double RefinedResource::getBaseCraftTax() const {
 		return base_craft_tax;
 	}
-
-	const Recipes& RefinedResource::getRecipes() const {
-		return recipes;
-	}
 	
 	double RefinedResource::getBestInstantCraftCost() const {
 		return best_instant_craft_cost;
@@ -91,19 +87,19 @@ namespace items {
 		this->best_craft_cost = best_craft_cost;
 	}
 	
-	const Recipe& RefinedResource::getBestInstantRecipe() const {
+	const recipe_book::Recipe& RefinedResource::getBestInstantRecipe() const {
 		return best_instant_recipe;
 	}
 
-	void RefinedResource::setBestInstantRecipe(Recipe best_instant_recipe) {
+	void RefinedResource::setBestInstantRecipe(recipe_book::Recipe best_instant_recipe) {
 		this->best_instant_recipe = best_instant_recipe;
 	}
 	
-	const Recipe& RefinedResource::getBestRecipe() const {
+	const recipe_book::Recipe& RefinedResource::getBestRecipe() const {
 		return best_recipe;
 	}
 
-	void RefinedResource::setBestRecipe(Recipe best_recipe) {
+	void RefinedResource::setBestRecipe(recipe_book::Recipe best_recipe) {
 		this->best_recipe = best_recipe;
 	}
 

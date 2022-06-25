@@ -313,38 +313,6 @@ namespace items::default_items {
 	}
 
 	void addCharcoal() {
-		Recipe recipe1;
-		Recipe recipe2;
-		Recipe recipe3;
-		Recipe recipe4;
-		Recipe recipe5;
-		Recipe recipe6;
-		Recipe recipe7;
-		Recipe recipe8;
-		Recipe recipe9;
-
-		recipe1.addIngredient("Green Wood", 2);
-		recipe2.addIngredient("Aged Wood", 2);
-		recipe3.addIngredient("Wyrdwood", 2);
-		recipe4.addIngredient("Ironwood", 2);
-		recipe5.addIngredient("Timber", 2);
-		recipe6.addIngredient("Lumber", 2);
-		recipe7.addIngredient("Wyrdwood Planks", 2);
-		recipe8.addIngredient("Ironwood Planks", 2);
-		recipe9.addIngredient("Glittering Ebony", 2);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-		recipes.addRecipe(recipe4);
-		recipes.addRecipe(recipe5);
-		recipes.addRecipe(recipe6);
-		recipes.addRecipe(recipe7);
-		recipes.addRecipe(recipe8);
-		recipes.addRecipe(recipe9);
-
 		auto charcoal = new Ingot("Charcoal",
 								   ":/MarketManager/images/items/resources/refined_resources/ingots/charcoal.png",
 								   2,
@@ -352,21 +320,12 @@ namespace items::default_items {
 								   0.4,
 								   0.35,
 								   1.,
-								   0.01,
-								   recipes);
+								   0.01);
 
 		insert("Charcoal", charcoal);
 	}
 
 	void addIronIngot() {
-		Recipe recipe1;
-
-		recipe1.addIngredient("Iron Ore", 4);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-
 		const auto iron_ingot = new Ingot("Iron Ingot",
 										  ":/MarketManager/images/items/resources/refined_resources/ingots/iron_ingot.png",
 										  2,
@@ -374,32 +333,12 @@ namespace items::default_items {
 										  1.2,
 										  1.2,
 										  1.,
-										  0.01,
-										  recipes);
+										  0.01);
 
 		insert("Iron Ingot", iron_ingot);
 	}
 
 	void addSteelIngot() {
-		Recipe recipe;
-
-		recipe.addIngredient("Iron Ingot", 3);
-		recipe.addIngredient("Charcoal", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Obsidian Flux", 1);
-		recipe2.addIngredient("Shelldust Flux", 1);
-		recipe3.addIngredient("Sand Flux", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto steel_ingot = new Ingot("Steel Ingot",
 										   ":/MarketManager/images/items/resources/refined_resources/ingots/steel_ingot.png",
 										   3,
@@ -407,33 +346,12 @@ namespace items::default_items {
 										   4.5,
 										   4.5,
 										   0.98,
-										   0.04,
-										   recipes);
+										   0.04);
 
 		insert("Steel Ingot", steel_ingot);
 	}
 
 	void addStarmetalIngot() {
-		Recipe recipe;
-
-		recipe.addIngredient("Starmetal Ore", 6);
-		recipe.addIngredient("Steel Ingot", 2);
-		recipe.addIngredient("Charcoal", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Obsidian Flux", 1);
-		recipe2.addIngredient("Shelldust Flux", 1);
-		recipe3.addIngredient("Sand Flux", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto starmetal_ingot = new Ingot("Starmetal Ingot",
 											   ":/MarketManager/images/items/resources/refined_resources/ingots/starmetal_ingot.png",
 											   4,
@@ -441,50 +359,12 @@ namespace items::default_items {
 											   13.,
 											   13.,
 											   0.95,
-											   0.07,
-											   recipes);
+											   0.07);
 
 		insert("Starmetal Ingot", starmetal_ingot);
 	}
 
 	void addOrichalcumIngot() {
-		Recipe recipe;
-
-		recipe.addIngredient("Orichalcum Ore", 8);
-		recipe.addIngredient("Starmetal Ingot", 2);
-		recipe.addIngredient("Charcoal", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Obsidian Flux", 1);
-		recipe2.addIngredient("Shelldust Flux", 1);
-		recipe3.addIngredient("Sand Flux", 1);
-
-		recipe = Recipe();
-
-		recipe.addIngredient("Orichalcum Ore", 8);
-		recipe.addIngredient("Platinum Ingot", 3);
-		recipe.addIngredient("Charcoal", 2);
-
-		Recipe recipe4 = recipe;
-		Recipe recipe5 = recipe;
-		Recipe recipe6 = recipe;
-
-		recipe4.addIngredient("Obsidian Flux", 1);
-		recipe5.addIngredient("Shelldust Flux", 1);
-		recipe6.addIngredient("Sand Flux", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-		recipes.addRecipe(recipe4);
-		recipes.addRecipe(recipe5);
-		recipes.addRecipe(recipe6);
-
 		auto orichalcum_ingot = new Ingot("Orichalcum Ingot",
 										   ":/MarketManager/images/items/resources/refined_resources/ingots/orichalcum_ingot.png",
 										   5,
@@ -492,21 +372,12 @@ namespace items::default_items {
 										   40.,
 										   40.,
 										   0.93,
-										   0.13,
-										   recipes);
+										   0.13);
 
 		insert("Orichalcum Ingot", orichalcum_ingot);
 	}
 
 	void addSilverIngot() {
-		Recipe recipe1;
-
-		recipe1.addIngredient("Silver Ore", 4);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-
 		const auto silver_ingot = new Ingot("Silver Ingot",
 											":/MarketManager/images/items/resources/refined_resources/ingots/silver_ingot.png",
 											2,
@@ -514,32 +385,12 @@ namespace items::default_items {
 											0.6,
 											0.6,
 											0.98,
-											0.01,
-											recipes);
+											0.01);
 
 		insert("Silver Ingot", silver_ingot);
 	}
 
 	void addGoldIngot() {
-		Recipe recipe;
-
-		recipe.addIngredient("Gold Ore", 5);
-		recipe.addIngredient("Silver Ingot", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Obsidian Flux", 1);
-		recipe2.addIngredient("Shelldust Flux", 1);
-		recipe3.addIngredient("Sand Flux", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto gold_ingot = new Ingot("Gold Ingot",
 										  ":/MarketManager/images/items/resources/refined_resources/ingots/gold_ingot.png",
 										  3,
@@ -547,32 +398,12 @@ namespace items::default_items {
 										  3.75,
 										  3.75,
 										  0.95,
-										  0.04,
-										  recipes);
+										  0.04);
 
 		insert("Gold Ingot", gold_ingot);
 	}
 
 	void addPlatinumIngot() {
-		Recipe recipe;
-
-		recipe.addIngredient("Platinum Ore", 6);
-		recipe.addIngredient("Gold Ingot", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Obsidian Flux", 1);
-		recipe2.addIngredient("Shelldust Flux", 1);
-		recipe3.addIngredient("Sand Flux", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto platinum_ingot = new Ingot("Platinum Ingot",
 											  ":/MarketManager/images/items/resources/refined_resources/ingots/platinum_ingot.png",
 											  4,
@@ -580,25 +411,12 @@ namespace items::default_items {
 											  11.,
 											  11.,
 											  0.93,
-											  0.07,
-											  recipes);
+											  0.07);
 
 		insert("Platinum Ingot", platinum_ingot);
 	}
 
 	void addAsmodeum() {
-		Recipe recipe1;
-
-		recipe1.addIngredient("Orichalcum Ingot", 5);
-		recipe1.addIngredient("Tolvium", 1);
-		recipe1.addIngredient("Cinnabar", 1);
-		recipe1.addIngredient("Obsidian Flux", 1);
-		recipe1.addIngredient("Charcoal", 2);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-
 		const auto asmodeum = new Ingot("Asmodeum",
 										":/MarketManager/images/items/resources/refined_resources/ingots/asmodeum.png",
 										5,
@@ -606,21 +424,12 @@ namespace items::default_items {
 										300.,
 										300.,
 										0.8,
-										0.19,
-										recipes);
+										0.19);
 
 		insert("Asmodeum", asmodeum);
 	}
 
 	void addTimber() {
-		Recipe recipe1;
-
-		recipe1.addIngredient("Green Wood", 4);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-
 		const auto timber = new Plank("Timber",
 									  ":/MarketManager/images/items/resources/refined_resources/planks/timber.png",
 									  2,
@@ -628,32 +437,12 @@ namespace items::default_items {
 									  1.,
 									  1.,
 									  1.,
-									  0.01,
-									  recipes);
+									  0.01);
 
 		insert("Timber", timber);
 	}
 
 	void addLumber() {
-		Recipe recipe;
-
-		recipe.addIngredient("Aged Wood", 4);
-		recipe.addIngredient("Timber", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Obsidian Sandpaper", 1);
-		recipe2.addIngredient("Fine Sandpaper", 1);
-		recipe3.addIngredient("Coarse Sandpaper", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto lumber = new Plank("Lumber",
 									  ":/MarketManager/images/items/resources/refined_resources/planks/lumber.png",
 									  3,
@@ -661,32 +450,12 @@ namespace items::default_items {
 									  2.2,
 									  2.2,
 									  0.98,
-									  0.04,
-									  recipes);
+									  0.04);
 
 		insert("Lumber", lumber);
 	}
 
 	void addWyrdwoodPlanks() {
-		Recipe recipe;
-
-		recipe.addIngredient("Wyrdwood", 6);
-		recipe.addIngredient("Lumber", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Obsidian Sandpaper", 1);
-		recipe2.addIngredient("Fine Sandpaper", 1);
-		recipe3.addIngredient("Coarse Sandpaper", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto wyrdwood_planks = new Plank("Wyrdwood Planks",
 											   ":/MarketManager/images/items/resources/refined_resources/planks/wyrdwood_planks.png",
 											   4,
@@ -694,32 +463,12 @@ namespace items::default_items {
 											   8.5,
 											   8.5,
 											   0.95,
-											   0.07,
-											   recipes);
+											   0.07);
 
 		insert("Wyrdwood Planks", wyrdwood_planks);
 	}
 
 	void addIronwoodPlanks() {
-		Recipe recipe;
-
-		recipe.addIngredient("Ironwood", 8);
-		recipe.addIngredient("Wyrdwood Planks", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Obsidian Sandpaper", 1);
-		recipe2.addIngredient("Fine Sandpaper", 1);
-		recipe3.addIngredient("Coarse Sandpaper", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto ironwood_planks = new Plank("Ironwood Planks",
 											   ":/MarketManager/images/items/resources/refined_resources/planks/ironwood_planks.png",
 											   5,
@@ -727,24 +476,12 @@ namespace items::default_items {
 											   16.,
 											   16.,
 											   0.93,
-											   0.13,
-											   recipes);
+											   0.13);
 
 		insert("Ironwood Planks", ironwood_planks);
 	}
 
 	void addGlitteringEbony() {
-		Recipe recipe1;
-
-		recipe1.addIngredient("Ironwood Planks", 5);
-		recipe1.addIngredient("Wildwood", 1);
-		recipe1.addIngredient("Barbvine", 1);
-		recipe1.addIngredient("Obsidian Sandpaper", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-
 		const auto glittering_ebony = new Plank("Glittering Ebony",
 												":/MarketManager/images/items/resources/refined_resources/planks/glittering_ebony.png",
 												5,
@@ -752,21 +489,12 @@ namespace items::default_items {
 												70.,
 												70.,
 												0.8,
-												0.19,
-												recipes);
+												0.19);
 
 		insert("Glittering Ebony", glittering_ebony);
 	}
 
 	void addLinen() {
-		Recipe recipe1;
-
-		recipe1.addIngredient("Fibers", 4);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-
 		const auto linen = new Cloth("Linen",
 									 ":/MarketManager/images/items/resources/refined_resources/cloths/linen.png",
 									 2,
@@ -774,31 +502,12 @@ namespace items::default_items {
 									 1.,
 									 1.,
 									 1.,
-									 0.01,
-									 recipes);
+									 0.01);
 
 		insert("Linen", linen);
 	}
 
 	void addSateen() {
-		Recipe recipe;
-
-		recipe.addIngredient("Linen", 4);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Wireweave", 1);
-		recipe2.addIngredient("Silkweave", 1);
-		recipe3.addIngredient("Crossweave", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto sateen = new Cloth("Sateen",
 									  ":/MarketManager/images/items/resources/refined_resources/cloths/sateen.png",
 									  3,
@@ -806,32 +515,12 @@ namespace items::default_items {
 									  2.,
 									  2.,
 									  0.98,
-									  0.04,
-									  recipes);
+									  0.04);
 
 		insert("Sateen", sateen);
 	}
 
 	void addSilk() {
-		Recipe recipe;
-
-		recipe.addIngredient("Silk Threads", 6);
-		recipe.addIngredient("Sateen", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Wireweave", 1);
-		recipe2.addIngredient("Silkweave", 1);
-		recipe3.addIngredient("Crossweave", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto silk = new Cloth("Silk",
 									":/MarketManager/images/items/resources/refined_resources/cloths/silk.png",
 									4,
@@ -839,32 +528,12 @@ namespace items::default_items {
 									5.5,
 									5.5,
 									0.95,
-									0.07,
-									recipes);
+									0.07);
 
 		insert("Silk", silk);
 	}
 
 	void addInfusedSilk() {
-		Recipe recipe;
-
-		recipe.addIngredient("Wirefiber", 8);
-		recipe.addIngredient("Silk", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Wireweave", 1);
-		recipe2.addIngredient("Silkweave", 1);
-		recipe3.addIngredient("Crossweave", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto infused_silk = new Cloth("Infused Silk",
 											":/MarketManager/images/items/resources/refined_resources/cloths/infused_silk.png",
 											5,
@@ -872,24 +541,12 @@ namespace items::default_items {
 											13.,
 											13.,
 											0.93,
-											0.13,
-											recipes);
+											0.13);
 
 		insert("Infused Silk", infused_silk);
 	}
 
 	void addPhoenixweave() {
-		Recipe recipe1;
-
-		recipe1.addIngredient("Infused Silk", 5);
-		recipe1.addIngredient("Scalecloth", 1);
-		recipe1.addIngredient("Blisterweave", 1);
-		recipe1.addIngredient("Wireweave", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-
 		const auto phoenixweave = new Cloth("Phoenixweave",
 											":/MarketManager/images/items/resources/refined_resources/cloths/phoenixweave.png",
 											5,
@@ -897,21 +554,12 @@ namespace items::default_items {
 											145.,
 											145.,
 											0.8,
-											0.19,
-											recipes);
+											0.19);
 
 		insert("Phoenixweave", phoenixweave);
 	}
 
 	void addCoarseLeather() {
-		Recipe recipe1;
-
-		recipe1.addIngredient("Rawhide", 4);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-
 		const auto coarse_leather = new Leather("Coarse Leather",
 												":/MarketManager/images/items/resources/refined_resources/leathers/coarse_leather.png",
 												2,
@@ -919,31 +567,12 @@ namespace items::default_items {
 												1.25,
 												1.25,
 												1.,
-												0.01,
-												recipes);
+												0.01);
 
 		insert("Coarse Leather", coarse_leather);
 	}
 
 	void addRuggedLeather() {
-		Recipe recipe;
-
-		recipe.addIngredient("Coarse Leather", 4);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Aged Tannin", 1);
-		recipe2.addIngredient("Rested Tannin", 1);
-		recipe3.addIngredient("Tannin", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto rugged_leather = new Leather("Rugged Leather",
 												":/MarketManager/images/items/resources/refined_resources/leathers/rugged_leather.png",
 												3,
@@ -951,32 +580,12 @@ namespace items::default_items {
 												2.1,
 												2.1,
 												0.98,
-												0.04,
-												recipes);
+												0.04);
 
 		insert("Rugged Leather", rugged_leather);
 	}
 
 	void addLayeredLeather() {
-		Recipe recipe;
-
-		recipe.addIngredient("Thick Hide", 6);
-		recipe.addIngredient("Rugged Leather", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Aged Tannin", 1);
-		recipe2.addIngredient("Rested Tannin", 1);
-		recipe3.addIngredient("Tannin", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto layered_leather = new Leather("Layered Leather",
 												 ":/MarketManager/images/items/resources/refined_resources/leathers/layered_leather.png",
 												 4,
@@ -984,32 +593,12 @@ namespace items::default_items {
 												 5.5,
 												 5.5,
 												 0.95,
-												 0.07,
-												 recipes);
+												 0.07);
 
 		insert("Layered Leather", layered_leather);
 	}
 
 	void addInfusedLeather() {
-		Recipe recipe;
-
-		recipe.addIngredient("Iron Hide", 8);
-		recipe.addIngredient("Layered Leather", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Aged Tannin", 1);
-		recipe2.addIngredient("Rested Tannin", 1);
-		recipe3.addIngredient("Tannin", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto infused_leather = new Leather("Infused Leather",
 												 ":/MarketManager/images/items/resources/refined_resources/leathers/infused_leather.png",
 												 5,
@@ -1017,24 +606,12 @@ namespace items::default_items {
 												 8.2,
 												 8.2,
 												 0.93,
-												 0.13,
-												 recipes);
+												 0.13);
 
 		insert("Infused Leather", infused_leather);
 	}
 
 	void addRunicLeather() {
-		Recipe recipe1;
-
-		recipe1.addIngredient("Infused Leather", 5);
-		recipe1.addIngredient("Smolderhide", 1);
-		recipe1.addIngredient("Scarhide", 1);
-		recipe1.addIngredient("Aged Tannin", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-
 		const auto runic_leather = new Leather("Runic Leather",
 											   ":/MarketManager/images/items/resources/refined_resources/leathers/runic_leather.png",
 											   5,
@@ -1042,21 +619,12 @@ namespace items::default_items {
 											   130.,
 											   130.,
 											   0.8,
-											   0.19,
-											   recipes);
+											   0.19);
 
 		insert("Runic Leather", runic_leather);
 	}
 
 	void addStoneBlock() {
-		Recipe recipe1;
-
-		recipe1.addIngredient("Stone", 4);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-
 		const auto stone_block = new Leather("Stone Block",
 											 ":/MarketManager/images/items/resources/refined_resources/blocks/stone_block.png",
 											 2,
@@ -1064,31 +632,12 @@ namespace items::default_items {
 											 1.,
 											 1.,
 											 1.,
-											 0.01,
-											 recipes);
+											 0.01);
 
 		insert("Stone Block", stone_block);
 	}
 
 	void addStoneBrick() {
-		Recipe recipe;
-
-		recipe.addIngredient("Stone Block", 4);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Obsidian Sandpaper", 1);
-		recipe2.addIngredient("Fine Sandpaper", 1);
-		recipe3.addIngredient("Coarse Sandpaper", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto stone_brick = new Block("Stone Brick",
 										   ":/MarketManager/images/items/resources/refined_resources/blocks/stone_brick.png",
 										   3,
@@ -1096,32 +645,12 @@ namespace items::default_items {
 										   2.3,
 										   2.3,
 										   0.98,
-										   0.04,
-										   recipes);
+										   0.04);
 
 		insert("Stone Brick", stone_brick);
 	}
 
 	void addLodestoneBrick() {
-		Recipe recipe;
-
-		recipe.addIngredient("Lodestone", 6);
-		recipe.addIngredient("Stone Brick", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Obsidian Sandpaper", 1);
-		recipe2.addIngredient("Fine Sandpaper", 1);
-		recipe3.addIngredient("Coarse Sandpaper", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto lodestone_brick = new Block("Lodestone Brick",
 											   ":/MarketManager/images/items/resources/refined_resources/blocks/lodestone_brick.png",
 											   4,
@@ -1129,32 +658,12 @@ namespace items::default_items {
 											   4.2,
 											   4.2,
 											   0.95,
-											   0.07,
-											   recipes);
+											   0.07);
 
 		insert("Lodestone Brick", lodestone_brick);
 	}
 
 	void addObsidianVoidstone() {
-		Recipe recipe;
-
-		recipe.addIngredient("Lodestone Brick", 8);
-		recipe.addIngredient("Lodestone", 2);
-
-		Recipe recipe1 = recipe;
-		Recipe recipe2 = recipe;
-		Recipe recipe3 = recipe;
-
-		recipe1.addIngredient("Obsidian Sandpaper", 1);
-		recipe2.addIngredient("Fine Sandpaper", 1);
-		recipe3.addIngredient("Coarse Sandpaper", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-		recipes.addRecipe(recipe2);
-		recipes.addRecipe(recipe3);
-
 		const auto obsidian_voidstone = new Block("Obsidian Voidstone",
 												  ":/MarketManager/images/items/resources/refined_resources/blocks/obsidian_voidstone.png",
 												  5,
@@ -1162,23 +671,12 @@ namespace items::default_items {
 												  25.,
 												  25.,
 												  0.93,
-												  0.13,
-												  recipes);
+												  0.13);
 
 		insert("Obsidian Voidstone", obsidian_voidstone);
 	}
 
 	void addRunestone() {
-		Recipe recipe1;
-
-		recipe1.addIngredient("Obsidian Voidstone", 5);
-		recipe1.addIngredient("Obsidian Sandpaper", 1);
-		recipe1.addIngredient("Elemental Lodestone", 1);
-
-		Recipes recipes;
-
-		recipes.addRecipe(recipe1);
-
 		const auto runestone = new Block("Runestone",
 										 ":/MarketManager/images/items/resources/refined_resources/blocks/runestone.png",
 										 5,
@@ -1186,8 +684,7 @@ namespace items::default_items {
 										 64.,
 										 64.,
 										 0.8,
-										 0.19,
-										 recipes);
+										 0.19);
 
 		insert("Runestone", runestone);
 	}

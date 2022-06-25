@@ -13,7 +13,6 @@ export import :refining_component;
 export import :resource;
 
 import "json/json.h";
-import :recipes;
 import :refined_resource;
 import <unordered_map>;
 

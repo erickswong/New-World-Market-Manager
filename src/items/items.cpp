@@ -190,8 +190,8 @@ namespace items {
 				}
 
 				// Ingredients found in recipes are parents
-				for (auto& recipe : refined_resource->getRecipes().get()) {
-					for (const auto& [ingredient_name, amount] : recipe.get()) {
+				for (auto [cit, cend] = recipe_book::recipeRange(refined_resource->getItemName()); cit != cend; ++cit) {
+					for (const auto& [ingredient_name, amount] : cit->second.getIngredients()) {
 						parent_items.insert(at(ingredient_name));
 					}
 				}
@@ -290,12 +290,15 @@ namespace items {
 
 	void bestInstantCraft(RefinedResource* refined_resource) {
 		double best_instant_craft_cost = HUGE_VAL;
-		Recipe best_instant_recipe;
+		recipe_book::Recipe best_instant_recipe(refined_resource->getItemName());
 
-		for (const auto& recipe : refined_resource->getRecipes().get()) {
+		for (auto [cit, cend] = recipe_book::recipeRange(refined_resource->getItemName()); cit != cend; ++cit) {
+			// Get Recipe
+			recipe_book::Recipe recipe = cit->second;
+
 			// Calculate the total cost of the ingredients in the recipe
 			double recipe_cost = 0.;
-			for (const auto& [ingredient_name, amount] : recipe.get()) {
+			for (const auto& [ingredient_name, amount] : recipe.getIngredients()) {
 				recipe_cost += amount * dynamic_cast<Resource*>(at(ingredient_name))->bestInstantAcquireCost();
 			}
 
@@ -316,12 +319,15 @@ namespace items {
 
 	void bestCraft(RefinedResource* refined_resource) {
 		double best_craft_cost = HUGE_VAL;
-		Recipe best_recipe;
+		recipe_book::Recipe best_recipe(refined_resource->getItemName());
 
-		for (const auto& recipe : refined_resource->getRecipes().get()) {
+		for (auto [cit, cend] = recipe_book::recipeRange(refined_resource->getItemName()); cit != cend; ++cit) {
+			// Get Recipe
+			recipe_book::Recipe recipe = cit->second;
+
 			// Calculate the total cost of the ingredients in the recipe
 			double recipe_cost = 0.;
-			for (const auto& [ingredient_name, amount] : recipe.get()) {
+			for (const auto& [ingredient_name, amount] : recipe.getIngredients()) {
 				recipe_cost += amount * dynamic_cast<Resource*>(at(ingredient_name))->bestAcquireCost();
 			}
 

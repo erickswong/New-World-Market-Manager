@@ -10,8 +10,7 @@ namespace items {
 				 const double sell_price,
 				 const double buy_price,
 				 const double base_yield,
-				 const double base_craft_tax,
-				 const Recipes& recipes) :
+				 const double base_craft_tax) :
 		RefinedResource(item_name,
 						image_path,
 						tier,
@@ -19,8 +18,7 @@ namespace items {
 						sell_price,
 						buy_price,
 						base_yield,
-						base_craft_tax,
-						recipes) {
+						base_craft_tax) {
 	}
 
 	Cloth::Cloth(const Json::Value& json_value) :
@@ -40,10 +38,10 @@ namespace items {
 		return getBaseCraftTax();
 	}
 
-	double Cloth::yield(const Recipe& recipe) const {
+	double Cloth::yield(const recipe_book::Recipe& recipe) const {
 		// Determine the tier of the refining component in the given recipe
 		int refining_component_tier = 0;
-		for (const auto& [ingredient_name, amount] : recipe.get()) {
+		for (const auto& [ingredient_name, amount] : recipe.getIngredients()) {
 			if (ingredient_name == "Wireweave") {
 				refining_component_tier = 5;
 				break;

@@ -6,7 +6,10 @@ import "json/json.h";
 import <unordered_map>;
 
 namespace recipe_book {
-	std::unordered_multimap<std::string, Recipe> recipe_book;
+	using RecipeBook = std::unordered_multimap<std::string, Recipe>;
+	using RecipeRange = std::pair<RecipeBook::const_iterator, RecipeBook::const_iterator>;
+
+	RecipeBook recipe_book;
 
 	// Set up recipe_book
 	export void setUp();
@@ -24,5 +27,5 @@ namespace recipe_book {
 	export void addRecipe(const Recipe& recipe);
 
 	// Returns a pair of two const_iterators representing the range containing all Recipes with item_name
-	export [[nodiscard]] auto recipeRange(const std::string& item_name);
+	export [[nodiscard]] RecipeRange recipeRange(const std::string& item_name);
 };

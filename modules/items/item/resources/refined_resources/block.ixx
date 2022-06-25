@@ -1,5 +1,7 @@
 export module items:block;
 
+import recipe_book;
+
 import :refined_resource;
 
 namespace items {
@@ -12,8 +14,7 @@ namespace items {
 				  double sell_price,
 				  double buy_price,
 				  double base_yield,
-				  double base_craft_tax,
-				  const Recipes& recipes);
+				  double base_craft_tax);
 			explicit Block(const Json::Value& json_value);
 
 			// Returns a json representing this object
@@ -23,6 +24,6 @@ namespace items {
 			double craftTax() const override;
 
 			// Returns the yield when using the given recipe
-			double yield(const Recipe& recipe) const override;
+			double yield(const recipe_book::Recipe& recipe) const override;
 	};
 };

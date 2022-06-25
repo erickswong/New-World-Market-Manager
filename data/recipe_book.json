@@ -107,6 +107,12 @@
          "Obsidian Flux" : 1,
          "Orichalcum Ore" : 8,
          "Starmetal Ingot" : 2
+      },
+      {
+         "Charcoal" : 2,
+         "Obsidian Flux" : 1,
+         "Orichalcum Ore" : 8,
+         "Platinum Ingot" : 3
       }
    ],
    "Phoenixweave" : [

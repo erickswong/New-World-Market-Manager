@@ -1,7 +1,7 @@
 export module items:item;
 
 import "json/json.h";
-import :recipes;
+import <list>;
 
 namespace items {
 	export class Item {

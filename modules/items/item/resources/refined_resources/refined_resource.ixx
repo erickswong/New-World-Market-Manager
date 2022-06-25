@@ -1,5 +1,7 @@
 export module items:refined_resource;
 
+import recipe_book;
+
 import :resource;
 
 namespace items {
@@ -7,11 +9,10 @@ namespace items {
 	export class RefinedResource : public Resource {
 		double base_yield;
 		double base_craft_tax;
-		Recipes recipes;
 		double best_instant_craft_cost = HUGE_VAL;
 		double best_craft_cost         = HUGE_VAL;
-		Recipe best_instant_recipe;
-		Recipe best_recipe;
+		recipe_book::Recipe best_instant_recipe;
+		recipe_book::Recipe best_recipe;
 			
 		protected:
 			RefinedResource(const std::string& item_name,
@@ -21,8 +22,7 @@ namespace items {
 							double sell_price,
 							double buy_price,
 							double base_yield,
-							double base_craft_tax,
-							const Recipes& recipes);
+							double base_craft_tax);
 			explicit RefinedResource(const Json::Value& json_value);
 
 		public:
@@ -50,16 +50,13 @@ namespace items {
 			[[nodiscard]] virtual double craftTax() const = 0;
 
 			// Returns the yield when using the given recipe
-			[[nodiscard]] virtual double yield(const Recipe& recipe) const = 0;
+			[[nodiscard]] virtual double yield(const recipe_book::Recipe& recipe) const = 0;
 
 			// Returns base_yield
 			[[nodiscard]] double getBaseYield() const;
 
 			// Returns base_craft_tax
 			[[nodiscard]] double getBaseCraftTax() const;
-
-			// Returns recipes
-			const Recipes& getRecipes() const;
 
 			// Returns best_instant_craft_cost
 			[[nodiscard]] double getBestInstantCraftCost() const;
@@ -72,14 +69,14 @@ namespace items {
 			void setBestCraftCost(double best_craft_cost);
 
 			// Returns best_instant_recipe
-			[[nodiscard]] const Recipe& getBestInstantRecipe() const;
+			[[nodiscard]] const recipe_book::Recipe& getBestInstantRecipe() const;
 			// Sets best_instant_recipe
-			void setBestInstantRecipe(Recipe best_instant_recipe);
+			void setBestInstantRecipe(recipe_book::Recipe best_instant_recipe);
 
 			// Returns best_recipe
-			[[nodiscard]] const Recipe& getBestRecipe() const;
+			[[nodiscard]] const recipe_book::Recipe& getBestRecipe() const;
 			// Sets best_recipe
-			void setBestRecipe(Recipe best_recipe);
+			void setBestRecipe(recipe_book::Recipe best_recipe);
 
 		protected:
 			// TODO: Remove as refining component has simplified in game

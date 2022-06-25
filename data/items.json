@@ -5,6 +5,13 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/aged_tannin.png",
       "item_name" : "Aged Tannin",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [
+         "Aged Tannin",
+         "Rugged Leather",
+         "Layered Leather",
+         "Infused Leather",
+         "Runic Leather"
+      ],
       "sell_price" : 0.25,
       "tier" : 5
    },
@@ -14,6 +21,18 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/woods/aged_wood.png",
       "item_name" : "Aged Wood",
       "item_type" : "RawResource",
+      "item_update_order" : [
+         "Aged Wood",
+         "Lumber",
+         "Wyrdwood Planks",
+         "Ironwood Planks",
+         "Glittering Ebony",
+         "Charcoal",
+         "Steel Ingot",
+         "Starmetal Ingot",
+         "Orichalcum Ingot",
+         "Asmodeum"
+      ],
       "sell_price" : 0.25,
       "tier" : 2
    },
@@ -25,15 +44,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/asmodeum.png",
       "item_name" : "Asmodeum",
       "item_type" : "Ingot",
-      "recipes" : [
-         {
-            "Charcoal" : 2,
-            "Cinnabar" : 1,
-            "Obsidian Flux" : 1,
-            "Orichalcum Ingot" : 5,
-            "Tolvium" : 1
-         }
-      ],
+      "item_update_order" : [ "Asmodeum" ],
       "sell_price" : 300.0,
       "tier" : 5
    },
@@ -43,6 +54,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/woods/barbvine.png",
       "item_name" : "Barbvine",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Barbvine", "Glittering Ebony" ],
       "sell_price" : 10.0,
       "tier" : 5
    },
@@ -52,6 +64,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/fibers/blisterweave.png",
       "item_name" : "Blisterweave",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Blisterweave", "Phoenixweave" ],
       "sell_price" : 7.5,
       "tier" : 5
    },
@@ -63,34 +76,12 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/charcoal.png",
       "item_name" : "Charcoal",
       "item_type" : "Ingot",
-      "recipes" : [
-         {
-            "Green Wood" : 2
-         },
-         {
-            "Aged Wood" : 2
-         },
-         {
-            "Wyrdwood" : 2
-         },
-         {
-            "Ironwood" : 2
-         },
-         {
-            "Timber" : 2
-         },
-         {
-            "Lumber" : 2
-         },
-         {
-            "Wyrdwood Planks" : 2
-         },
-         {
-            "Ironwood Planks" : 2
-         },
-         {
-            "Glittering Ebony" : 2
-         }
+      "item_update_order" : [
+         "Charcoal",
+         "Steel Ingot",
+         "Starmetal Ingot",
+         "Orichalcum Ingot",
+         "Asmodeum"
       ],
       "sell_price" : 0.40000000000000002,
       "tier" : 2
@@ -101,6 +92,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/ores/cinnabar.png",
       "item_name" : "Cinnabar",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Cinnabar", "Asmodeum" ],
       "sell_price" : 15.0,
       "tier" : 5
    },
@@ -112,10 +104,12 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/leathers/coarse_leather.png",
       "item_name" : "Coarse Leather",
       "item_type" : "Leather",
-      "recipes" : [
-         {
-            "Rawhide" : 4
-         }
+      "item_update_order" : [
+         "Coarse Leather",
+         "Rugged Leather",
+         "Layered Leather",
+         "Infused Leather",
+         "Runic Leather"
       ],
       "sell_price" : 1.25,
       "tier" : 2
@@ -126,6 +120,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/coarse_sandpaper.png",
       "item_name" : "Coarse Sandpaper",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [ "Coarse Sandpaper" ],
       "sell_price" : 0.29999999999999999,
       "tier" : 3
    },
@@ -135,6 +130,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/crossweave.png",
       "item_name" : "Crossweave",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [ "Crossweave" ],
       "sell_price" : 0.34999999999999998,
       "tier" : 3
    },
@@ -144,6 +140,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/stones/elemental_lodestone.png",
       "item_name" : "Elemental Lodestone",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Elemental Lodestone", "Runestone" ],
       "sell_price" : 0.5,
       "tier" : 3
    },
@@ -153,6 +150,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/fibers/fibers.png",
       "item_name" : "Fibers",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Fibers", "Linen", "Sateen", "Silk", "Infused Silk", "Phoenixweave" ],
       "sell_price" : 0.20000000000000001,
       "tier" : 1
    },
@@ -162,6 +160,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/fine_sandpaper.png",
       "item_name" : "Fine Sandpaper",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [ "Fine Sandpaper" ],
       "sell_price" : 0.20000000000000001,
       "tier" : 4
    },
@@ -173,14 +172,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/planks/glittering_ebony.png",
       "item_name" : "Glittering Ebony",
       "item_type" : "Plank",
-      "recipes" : [
-         {
-            "Barbvine" : 1,
-            "Ironwood Planks" : 5,
-            "Obsidian Sandpaper" : 1,
-            "Wildwood" : 1
-         }
-      ],
+      "item_update_order" : [ "Glittering Ebony" ],
       "sell_price" : 70.0,
       "tier" : 5
    },
@@ -192,23 +184,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/gold_ingot.png",
       "item_name" : "Gold Ingot",
       "item_type" : "Ingot",
-      "recipes" : [
-         {
-            "Gold Ore" : 5,
-            "Obsidian Flux" : 1,
-            "Silver Ingot" : 2
-         },
-         {
-            "Gold Ore" : 5,
-            "Shelldust Flux" : 1,
-            "Silver Ingot" : 2
-         },
-         {
-            "Gold Ore" : 5,
-            "Sand Flux" : 1,
-            "Silver Ingot" : 2
-         }
-      ],
+      "item_update_order" : [ "Gold Ingot", "Platinum Ingot", "Orichalcum Ingot", "Asmodeum" ],
       "sell_price" : 3.75,
       "tier" : 3
    },
@@ -218,6 +194,13 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/ores/gold_ore.png",
       "item_name" : "Gold Ore",
       "item_type" : "RawResource",
+      "item_update_order" : [
+         "Gold Ore",
+         "Gold Ingot",
+         "Platinum Ingot",
+         "Orichalcum Ingot",
+         "Asmodeum"
+      ],
       "sell_price" : 0.40000000000000002,
       "tier" : 3
    },
@@ -227,6 +210,19 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/woods/green_wood.png",
       "item_name" : "Green Wood",
       "item_type" : "RawResource",
+      "item_update_order" : [
+         "Green Wood",
+         "Charcoal",
+         "Steel Ingot",
+         "Starmetal Ingot",
+         "Orichalcum Ingot",
+         "Asmodeum",
+         "Timber",
+         "Lumber",
+         "Wyrdwood Planks",
+         "Ironwood Planks",
+         "Glittering Ebony"
+      ],
       "sell_price" : 0.25,
       "tier" : 1
    },
@@ -238,23 +234,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/leathers/infused_leather.png",
       "item_name" : "Infused Leather",
       "item_type" : "Leather",
-      "recipes" : [
-         {
-            "Aged Tannin" : 1,
-            "Iron Hide" : 8,
-            "Layered Leather" : 2
-         },
-         {
-            "Iron Hide" : 8,
-            "Layered Leather" : 2,
-            "Rested Tannin" : 1
-         },
-         {
-            "Iron Hide" : 8,
-            "Layered Leather" : 2,
-            "Tannin" : 1
-         }
-      ],
+      "item_update_order" : [ "Infused Leather", "Runic Leather" ],
       "sell_price" : 8.1999999999999993,
       "tier" : 5
    },
@@ -266,23 +246,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/cloths/infused_silk.png",
       "item_name" : "Infused Silk",
       "item_type" : "Cloth",
-      "recipes" : [
-         {
-            "Silk" : 2,
-            "Wirefiber" : 8,
-            "Wireweave" : 1
-         },
-         {
-            "Silk" : 2,
-            "Silkweave" : 1,
-            "Wirefiber" : 8
-         },
-         {
-            "Crossweave" : 1,
-            "Silk" : 2,
-            "Wirefiber" : 8
-         }
-      ],
+      "item_update_order" : [ "Infused Silk", "Phoenixweave" ],
       "sell_price" : 13.0,
       "tier" : 5
    },
@@ -292,6 +256,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/rawhide/iron_hide.png",
       "item_name" : "Iron Hide",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Iron Hide", "Infused Leather", "Runic Leather" ],
       "sell_price" : 0.10000000000000001,
       "tier" : 5
    },
@@ -303,10 +268,12 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/iron_ingot.png",
       "item_name" : "Iron Ingot",
       "item_type" : "Ingot",
-      "recipes" : [
-         {
-            "Iron Ore" : 4
-         }
+      "item_update_order" : [
+         "Iron Ingot",
+         "Steel Ingot",
+         "Starmetal Ingot",
+         "Orichalcum Ingot",
+         "Asmodeum"
       ],
       "sell_price" : 1.2,
       "tier" : 2
@@ -317,6 +284,14 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/ores/iron_ore.png",
       "item_name" : "Iron Ore",
       "item_type" : "RawResource",
+      "item_update_order" : [
+         "Iron Ore",
+         "Iron Ingot",
+         "Steel Ingot",
+         "Starmetal Ingot",
+         "Orichalcum Ingot",
+         "Asmodeum"
+      ],
       "sell_price" : 0.34999999999999998,
       "tier" : 1
    },
@@ -326,6 +301,16 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/woods/ironwood.png",
       "item_name" : "Ironwood",
       "item_type" : "RawResource",
+      "item_update_order" : [
+         "Ironwood",
+         "Ironwood Planks",
+         "Glittering Ebony",
+         "Charcoal",
+         "Steel Ingot",
+         "Starmetal Ingot",
+         "Orichalcum Ingot",
+         "Asmodeum"
+      ],
       "sell_price" : 0.75,
       "tier" : 5
    },
@@ -337,23 +322,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/planks/ironwood_planks.png",
       "item_name" : "Ironwood Planks",
       "item_type" : "Plank",
-      "recipes" : [
-         {
-            "Ironwood" : 8,
-            "Obsidian Sandpaper" : 1,
-            "Wyrdwood Planks" : 2
-         },
-         {
-            "Fine Sandpaper" : 1,
-            "Ironwood" : 8,
-            "Wyrdwood Planks" : 2
-         },
-         {
-            "Coarse Sandpaper" : 1,
-            "Ironwood" : 8,
-            "Wyrdwood Planks" : 2
-         }
-      ],
+      "item_update_order" : [ "Ironwood Planks", "Glittering Ebony" ],
       "sell_price" : 16.0,
       "tier" : 5
    },
@@ -365,23 +334,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/leathers/layered_leather.png",
       "item_name" : "Layered Leather",
       "item_type" : "Leather",
-      "recipes" : [
-         {
-            "Aged Tannin" : 1,
-            "Rugged Leather" : 2,
-            "Thick Hide" : 6
-         },
-         {
-            "Rested Tannin" : 1,
-            "Rugged Leather" : 2,
-            "Thick Hide" : 6
-         },
-         {
-            "Rugged Leather" : 2,
-            "Tannin" : 1,
-            "Thick Hide" : 6
-         }
-      ],
+      "item_update_order" : [ "Layered Leather", "Infused Leather", "Runic Leather" ],
       "sell_price" : 5.5,
       "tier" : 4
    },
@@ -393,11 +346,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/cloths/linen.png",
       "item_name" : "Linen",
       "item_type" : "Cloth",
-      "recipes" : [
-         {
-            "Fibers" : 4
-         }
-      ],
+      "item_update_order" : [ "Linen", "Sateen", "Silk", "Infused Silk", "Phoenixweave" ],
       "sell_price" : 1.0,
       "tier" : 2
    },
@@ -407,6 +356,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/stones/lodestone.png",
       "item_name" : "Lodestone",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Lodestone", "Lodestone Brick", "Obsidian Voidstone", "Runestone" ],
       "sell_price" : 0.59999999999999998,
       "tier" : 4
    },
@@ -418,23 +368,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/blocks/lodestone_brick.png",
       "item_name" : "Lodestone Brick",
       "item_type" : "Block",
-      "recipes" : [
-         {
-            "Lodestone" : 6,
-            "Obsidian Sandpaper" : 1,
-            "Stone Brick" : 2
-         },
-         {
-            "Fine Sandpaper" : 1,
-            "Lodestone" : 6,
-            "Stone Brick" : 2
-         },
-         {
-            "Coarse Sandpaper" : 1,
-            "Lodestone" : 6,
-            "Stone Brick" : 2
-         }
-      ],
+      "item_update_order" : [ "Lodestone Brick", "Obsidian Voidstone", "Runestone" ],
       "sell_price" : 4.2000000000000002,
       "tier" : 4
    },
@@ -446,23 +380,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/planks/lumber.png",
       "item_name" : "Lumber",
       "item_type" : "Plank",
-      "recipes" : [
-         {
-            "Aged Wood" : 4,
-            "Obsidian Sandpaper" : 1,
-            "Timber" : 2
-         },
-         {
-            "Aged Wood" : 4,
-            "Fine Sandpaper" : 1,
-            "Timber" : 2
-         },
-         {
-            "Aged Wood" : 4,
-            "Coarse Sandpaper" : 1,
-            "Timber" : 2
-         }
-      ],
+      "item_update_order" : [ "Lumber", "Wyrdwood Planks", "Ironwood Planks", "Glittering Ebony" ],
       "sell_price" : 2.2000000000000002,
       "tier" : 3
    },
@@ -472,6 +390,15 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/obsidian_flux.png",
       "item_name" : "Obsidian Flux",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [
+         "Obsidian Flux",
+         "Steel Ingot",
+         "Gold Ingot",
+         "Platinum Ingot",
+         "Starmetal Ingot",
+         "Orichalcum Ingot",
+         "Asmodeum"
+      ],
       "sell_price" : 2.2000000000000002,
       "tier" : 5
    },
@@ -481,6 +408,17 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/obsidian_sandpaper.png",
       "item_name" : "Obsidian Sandpaper",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [
+         "Obsidian Sandpaper",
+         "Stone Brick",
+         "Lumber",
+         "Lodestone Brick",
+         "Wyrdwood Planks",
+         "Ironwood Planks",
+         "Glittering Ebony",
+         "Obsidian Voidstone",
+         "Runestone"
+      ],
       "sell_price" : 0.5,
       "tier" : 5
    },
@@ -492,23 +430,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/blocks/obsidian_voidstone.png",
       "item_name" : "Obsidian Voidstone",
       "item_type" : "Block",
-      "recipes" : [
-         {
-            "Lodestone" : 2,
-            "Lodestone Brick" : 8,
-            "Obsidian Sandpaper" : 1
-         },
-         {
-            "Fine Sandpaper" : 1,
-            "Lodestone" : 2,
-            "Lodestone Brick" : 8
-         },
-         {
-            "Coarse Sandpaper" : 1,
-            "Lodestone" : 2,
-            "Lodestone Brick" : 8
-         }
-      ],
+      "item_update_order" : [ "Obsidian Voidstone", "Runestone" ],
       "sell_price" : 25.0,
       "tier" : 5
    },
@@ -520,44 +442,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/orichalcum_ingot.png",
       "item_name" : "Orichalcum Ingot",
       "item_type" : "Ingot",
-      "recipes" : [
-         {
-            "Charcoal" : 2,
-            "Obsidian Flux" : 1,
-            "Orichalcum Ore" : 8,
-            "Starmetal Ingot" : 2
-         },
-         {
-            "Charcoal" : 2,
-            "Orichalcum Ore" : 8,
-            "Shelldust Flux" : 1,
-            "Starmetal Ingot" : 2
-         },
-         {
-            "Charcoal" : 2,
-            "Orichalcum Ore" : 8,
-            "Sand Flux" : 1,
-            "Starmetal Ingot" : 2
-         },
-         {
-            "Charcoal" : 2,
-            "Obsidian Flux" : 1,
-            "Orichalcum Ore" : 8,
-            "Platinum Ingot" : 3
-         },
-         {
-            "Charcoal" : 2,
-            "Orichalcum Ore" : 8,
-            "Platinum Ingot" : 3,
-            "Shelldust Flux" : 1
-         },
-         {
-            "Charcoal" : 2,
-            "Orichalcum Ore" : 8,
-            "Platinum Ingot" : 3,
-            "Sand Flux" : 1
-         }
-      ],
+      "item_update_order" : [ "Orichalcum Ingot", "Asmodeum" ],
       "sell_price" : 40.0,
       "tier" : 5
    },
@@ -567,6 +452,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/ores/orichalcum_ore.png",
       "item_name" : "Orichalcum Ore",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Orichalcum Ore", "Orichalcum Ingot", "Asmodeum" ],
       "sell_price" : 2.5,
       "tier" : 5
    },
@@ -578,14 +464,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/cloths/phoenixweave.png",
       "item_name" : "Phoenixweave",
       "item_type" : "Cloth",
-      "recipes" : [
-         {
-            "Blisterweave" : 1,
-            "Infused Silk" : 5,
-            "Scalecloth" : 1,
-            "Wireweave" : 1
-         }
-      ],
+      "item_update_order" : [ "Phoenixweave" ],
       "sell_price" : 145.0,
       "tier" : 5
    },
@@ -597,23 +476,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/platinum_ingot.png",
       "item_name" : "Platinum Ingot",
       "item_type" : "Ingot",
-      "recipes" : [
-         {
-            "Gold Ingot" : 2,
-            "Obsidian Flux" : 1,
-            "Platinum Ore" : 6
-         },
-         {
-            "Gold Ingot" : 2,
-            "Platinum Ore" : 6,
-            "Shelldust Flux" : 1
-         },
-         {
-            "Gold Ingot" : 2,
-            "Platinum Ore" : 6,
-            "Sand Flux" : 1
-         }
-      ],
+      "item_update_order" : [ "Platinum Ingot", "Orichalcum Ingot", "Asmodeum" ],
       "sell_price" : 11.0,
       "tier" : 4
    },
@@ -623,6 +486,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/ores/platinum_ore.png",
       "item_name" : "Platinum Ore",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Platinum Ore", "Platinum Ingot", "Orichalcum Ingot", "Asmodeum" ],
       "sell_price" : 1.0,
       "tier" : 4
    },
@@ -632,6 +496,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/potent_solvent.png",
       "item_name" : "Potent Solvent",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [ "Potent Solvent" ],
       "sell_price" : 0.69999999999999996,
       "tier" : 4
    },
@@ -641,6 +506,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/pure_solvent.png",
       "item_name" : "Pure Solvent",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [ "Pure Solvent" ],
       "sell_price" : 1.0,
       "tier" : 5
    },
@@ -650,6 +516,14 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/rawhide/rawhide.png",
       "item_name" : "Rawhide",
       "item_type" : "RawResource",
+      "item_update_order" : [
+         "Rawhide",
+         "Coarse Leather",
+         "Rugged Leather",
+         "Layered Leather",
+         "Infused Leather",
+         "Runic Leather"
+      ],
       "sell_price" : 0.34999999999999998,
       "tier" : 1
    },
@@ -659,6 +533,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/rested_tannin.png",
       "item_name" : "Rested Tannin",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [ "Rested Tannin" ],
       "sell_price" : 0.20000000000000001,
       "tier" : 4
    },
@@ -670,19 +545,11 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/leathers/rugged_leather.png",
       "item_name" : "Rugged Leather",
       "item_type" : "Leather",
-      "recipes" : [
-         {
-            "Aged Tannin" : 1,
-            "Coarse Leather" : 4
-         },
-         {
-            "Coarse Leather" : 4,
-            "Rested Tannin" : 1
-         },
-         {
-            "Coarse Leather" : 4,
-            "Tannin" : 1
-         }
+      "item_update_order" : [
+         "Rugged Leather",
+         "Layered Leather",
+         "Infused Leather",
+         "Runic Leather"
       ],
       "sell_price" : 2.1000000000000001,
       "tier" : 3
@@ -695,13 +562,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/blocks/runestone.png",
       "item_name" : "Runestone",
       "item_type" : "Block",
-      "recipes" : [
-         {
-            "Elemental Lodestone" : 1,
-            "Obsidian Sandpaper" : 1,
-            "Obsidian Voidstone" : 5
-         }
-      ],
+      "item_update_order" : [ "Runestone" ],
       "sell_price" : 64.0,
       "tier" : 5
    },
@@ -713,14 +574,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/leathers/runic_leather.png",
       "item_name" : "Runic Leather",
       "item_type" : "Leather",
-      "recipes" : [
-         {
-            "Aged Tannin" : 1,
-            "Infused Leather" : 5,
-            "Scarhide" : 1,
-            "Smolderhide" : 1
-         }
-      ],
+      "item_update_order" : [ "Runic Leather" ],
       "sell_price" : 130.0,
       "tier" : 5
    },
@@ -730,6 +584,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/sand_flux.png",
       "item_name" : "Sand Flux",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [ "Sand Flux" ],
       "sell_price" : 0.69999999999999996,
       "tier" : 3
    },
@@ -741,20 +596,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/cloths/sateen.png",
       "item_name" : "Sateen",
       "item_type" : "Cloth",
-      "recipes" : [
-         {
-            "Linen" : 4,
-            "Wireweave" : 1
-         },
-         {
-            "Linen" : 4,
-            "Silkweave" : 1
-         },
-         {
-            "Crossweave" : 1,
-            "Linen" : 4
-         }
-      ],
+      "item_update_order" : [ "Sateen", "Silk", "Infused Silk", "Phoenixweave" ],
       "sell_price" : 2.0,
       "tier" : 3
    },
@@ -764,6 +606,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/fibers/scalecloth.png",
       "item_name" : "Scalecloth",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Scalecloth", "Phoenixweave" ],
       "sell_price" : 7.5,
       "tier" : 5
    },
@@ -773,6 +616,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/rawhide/scarhide.png",
       "item_name" : "Scarhide",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Scarhide", "Runic Leather" ],
       "sell_price" : 15.0,
       "tier" : 5
    },
@@ -782,6 +626,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/shelldust_flux.png",
       "item_name" : "Shelldust Flux",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [ "Shelldust Flux" ],
       "sell_price" : 0.84999999999999998,
       "tier" : 4
    },
@@ -793,23 +638,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/cloths/silk.png",
       "item_name" : "Silk",
       "item_type" : "Cloth",
-      "recipes" : [
-         {
-            "Sateen" : 2,
-            "Silk Threads" : 6,
-            "Wireweave" : 1
-         },
-         {
-            "Sateen" : 2,
-            "Silk Threads" : 6,
-            "Silkweave" : 1
-         },
-         {
-            "Crossweave" : 1,
-            "Sateen" : 2,
-            "Silk Threads" : 6
-         }
-      ],
+      "item_update_order" : [ "Silk", "Infused Silk", "Phoenixweave" ],
       "sell_price" : 5.5,
       "tier" : 4
    },
@@ -819,6 +648,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/fibers/silk_threads.png",
       "item_name" : "Silk Threads",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Silk Threads", "Silk", "Infused Silk", "Phoenixweave" ],
       "sell_price" : 0.69999999999999996,
       "tier" : 4
    },
@@ -828,6 +658,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/silkweave.png",
       "item_name" : "Silkweave",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [ "Silkweave" ],
       "sell_price" : 0.20000000000000001,
       "tier" : 4
    },
@@ -839,10 +670,12 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/silver_ingot.png",
       "item_name" : "Silver Ingot",
       "item_type" : "Ingot",
-      "recipes" : [
-         {
-            "Silver Ore" : 4
-         }
+      "item_update_order" : [
+         "Silver Ingot",
+         "Gold Ingot",
+         "Platinum Ingot",
+         "Orichalcum Ingot",
+         "Asmodeum"
       ],
       "sell_price" : 0.59999999999999998,
       "tier" : 2
@@ -853,33 +686,46 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/ores/silver_ore.png",
       "item_name" : "Silver Ore",
       "item_type" : "RawResource",
+      "item_update_order" : [
+         "Silver Ore",
+         "Silver Ingot",
+         "Gold Ingot",
+         "Platinum Ingot",
+         "Orichalcum Ingot",
+         "Asmodeum"
+      ],
       "sell_price" : 0.20000000000000001,
       "tier" : 2
    },
    "Smelter's Headgear" : {
       "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_headgear.png",
       "item_name" : "Smelter's Headgear",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Smelter's Headgear" ]
    },
    "Smelter's Mitts" : {
       "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_mitts.png",
       "item_name" : "Smelter's Mitts",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Smelter's Mitts" ]
    },
    "Smelter's Pants" : {
       "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_pants.png",
       "item_name" : "Smelter's Pants",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Smelter's Pants" ]
    },
    "Smelter's Shoes" : {
       "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_shoes.png",
       "item_name" : "Smelter's Shoes",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Smelter's Shoes" ]
    },
    "Smelter's Smock" : {
       "image_path" : ":/MarketManager/images/armour_sets/smelter_set/smelters_smock.png",
       "item_name" : "Smelter's Smock",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Smelter's Smock" ]
    },
    "Smolderhide" : {
       "buy_equals_sell" : true,
@@ -887,6 +733,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/rawhide/smolderhide.png",
       "item_name" : "Smolderhide",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Smolderhide", "Runic Leather" ],
       "sell_price" : 15.0,
       "tier" : 5
    },
@@ -898,26 +745,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/starmetal_ingot.png",
       "item_name" : "Starmetal Ingot",
       "item_type" : "Ingot",
-      "recipes" : [
-         {
-            "Charcoal" : 2,
-            "Obsidian Flux" : 1,
-            "Starmetal Ore" : 6,
-            "Steel Ingot" : 2
-         },
-         {
-            "Charcoal" : 2,
-            "Shelldust Flux" : 1,
-            "Starmetal Ore" : 6,
-            "Steel Ingot" : 2
-         },
-         {
-            "Charcoal" : 2,
-            "Sand Flux" : 1,
-            "Starmetal Ore" : 6,
-            "Steel Ingot" : 2
-         }
-      ],
+      "item_update_order" : [ "Starmetal Ingot", "Orichalcum Ingot", "Asmodeum" ],
       "sell_price" : 13.0,
       "tier" : 4
    },
@@ -927,6 +755,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/ores/starmetal_ore.png",
       "item_name" : "Starmetal Ore",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Starmetal Ore", "Starmetal Ingot", "Orichalcum Ingot", "Asmodeum" ],
       "sell_price" : 1.3,
       "tier" : 4
    },
@@ -938,23 +767,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/ingots/steel_ingot.png",
       "item_name" : "Steel Ingot",
       "item_type" : "Ingot",
-      "recipes" : [
-         {
-            "Charcoal" : 2,
-            "Iron Ingot" : 3,
-            "Obsidian Flux" : 1
-         },
-         {
-            "Charcoal" : 2,
-            "Iron Ingot" : 3,
-            "Shelldust Flux" : 1
-         },
-         {
-            "Charcoal" : 2,
-            "Iron Ingot" : 3,
-            "Sand Flux" : 1
-         }
-      ],
+      "item_update_order" : [ "Steel Ingot", "Starmetal Ingot", "Orichalcum Ingot", "Asmodeum" ],
       "sell_price" : 4.5,
       "tier" : 3
    },
@@ -964,6 +777,14 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/stones/stone.png",
       "item_name" : "Stone",
       "item_type" : "RawResource",
+      "item_update_order" : [
+         "Stone",
+         "Stone Block",
+         "Stone Brick",
+         "Lodestone Brick",
+         "Obsidian Voidstone",
+         "Runestone"
+      ],
       "sell_price" : 0.20000000000000001,
       "tier" : 1
    },
@@ -975,10 +796,12 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/blocks/stone_block.png",
       "item_name" : "Stone Block",
       "item_type" : "Leather",
-      "recipes" : [
-         {
-            "Stone" : 4
-         }
+      "item_update_order" : [
+         "Stone Block",
+         "Stone Brick",
+         "Lodestone Brick",
+         "Obsidian Voidstone",
+         "Runestone"
       ],
       "sell_price" : 1.0,
       "tier" : 2
@@ -991,72 +814,69 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/blocks/stone_brick.png",
       "item_name" : "Stone Brick",
       "item_type" : "Block",
-      "recipes" : [
-         {
-            "Obsidian Sandpaper" : 1,
-            "Stone Block" : 4
-         },
-         {
-            "Fine Sandpaper" : 1,
-            "Stone Block" : 4
-         },
-         {
-            "Coarse Sandpaper" : 1,
-            "Stone Block" : 4
-         }
-      ],
+      "item_update_order" : [ "Stone Brick", "Lodestone Brick", "Obsidian Voidstone", "Runestone" ],
       "sell_price" : 2.2999999999999998,
       "tier" : 3
    },
    "Stonecutter's Gloves" : {
       "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_gloves.png",
       "item_name" : "Stonecutter's Gloves",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Stonecutter's Gloves" ]
    },
    "Stonecutter's Hat" : {
       "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_hat.png",
       "item_name" : "Stonecutter's Hat",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Stonecutter's Hat" ]
    },
    "Stonecutter's Pants" : {
       "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_pants.png",
       "item_name" : "Stonecutter's Pants",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Stonecutter's Pants" ]
    },
    "Stonecutter's Shirt" : {
       "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_shirt.png",
       "item_name" : "Stonecutter's Shirt",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Stonecutter's Shirt" ]
    },
    "Stonecutter's Shoes" : {
       "image_path" : ":/MarketManager/images/armour_sets/stonecutter_set/stonecutters_shoes.png",
       "item_name" : "Stonecutter's Shoes",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Stonecutter's Shoes" ]
    },
    "Tanner Gloves" : {
       "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_gloves.png",
       "item_name" : "Tanner Gloves",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Tanner Gloves" ]
    },
    "Tanner Hat" : {
       "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_hat.png",
       "item_name" : "Tanner Hat",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Tanner Hat" ]
    },
    "Tanner Pants" : {
       "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_pants.png",
       "item_name" : "Tanner Pants",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Tanner Pants" ]
    },
    "Tanner Shirt" : {
       "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_shirt.png",
       "item_name" : "Tanner Shirt",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Tanner Shirt" ]
    },
    "Tanner Shoes" : {
       "image_path" : ":/MarketManager/images/armour_sets/tanner_set/tanner_shoes.png",
       "item_name" : "Tanner Shoes",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Tanner Shoes" ]
    },
    "Tannin" : {
       "buy_equals_sell" : true,
@@ -1064,6 +884,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/tannin.png",
       "item_name" : "Tannin",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [ "Tannin" ],
       "sell_price" : 0.20000000000000001,
       "tier" : 3
    },
@@ -1073,6 +894,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/rawhide/thick_hide.png",
       "item_name" : "Thick Hide",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Thick Hide", "Layered Leather", "Infused Leather", "Runic Leather" ],
       "sell_price" : 0.59999999999999998,
       "tier" : 4
    },
@@ -1084,10 +906,12 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/planks/timber.png",
       "item_name" : "Timber",
       "item_type" : "Plank",
-      "recipes" : [
-         {
-            "Green Wood" : 4
-         }
+      "item_update_order" : [
+         "Timber",
+         "Lumber",
+         "Wyrdwood Planks",
+         "Ironwood Planks",
+         "Glittering Ebony"
       ],
       "sell_price" : 1.0,
       "tier" : 2
@@ -1098,6 +922,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/ores/tolvium.png",
       "item_name" : "Tolvium",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Tolvium", "Asmodeum" ],
       "sell_price" : 15.0,
       "tier" : 5
    },
@@ -1107,33 +932,39 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/weak_solvent.png",
       "item_name" : "Weak Solvent",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [ "Weak Solvent" ],
       "sell_price" : 0.25,
       "tier" : 3
    },
    "Weaver's Gloves" : {
       "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_gloves.png",
       "item_name" : "Weaver's Gloves",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Weaver's Gloves" ]
    },
    "Weaver's Hat" : {
       "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_hat.png",
       "item_name" : "Weaver's Hat",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Weaver's Hat" ]
    },
    "Weaver's Pants" : {
       "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_pants.png",
       "item_name" : "Weaver's Pants",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Weaver's Pants" ]
    },
    "Weaver's Shirt" : {
       "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_shirt.png",
       "item_name" : "Weaver's Shirt",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Weaver's Shirt" ]
    },
    "Weaver's Shoes" : {
       "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_shoes.png",
       "item_name" : "Weaver's Shoes",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Weaver's Shoes" ]
    },
    "Wildwood" : {
       "buy_equals_sell" : true,
@@ -1141,6 +972,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/woods/wildwood.png",
       "item_name" : "Wildwood",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Wildwood", "Glittering Ebony" ],
       "sell_price" : 10.0,
       "tier" : 5
    },
@@ -1150,6 +982,7 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/fibers/wirefiber.png",
       "item_name" : "Wirefiber",
       "item_type" : "RawResource",
+      "item_update_order" : [ "Wirefiber", "Infused Silk", "Phoenixweave" ],
       "sell_price" : 0.59999999999999998,
       "tier" : 5
    },
@@ -1159,33 +992,39 @@
       "image_path" : ":/MarketManager/images/items/resources/refining_components/wireweave.png",
       "item_name" : "Wireweave",
       "item_type" : "RefiningComponent",
+      "item_update_order" : [ "Wireweave", "Sateen", "Silk", "Infused Silk", "Phoenixweave" ],
       "sell_price" : 0.25,
       "tier" : 5
    },
    "Woodworker's Cap" : {
       "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_cap.png",
       "item_name" : "Woodworker's Cap",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Woodworker's Cap" ]
    },
    "Woodworker's Gloves" : {
       "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_gloves.png",
       "item_name" : "Woodworker's Gloves",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Woodworker's Gloves" ]
    },
    "Woodworker's Pants" : {
       "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_pants.png",
       "item_name" : "Woodworker's Pants",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Woodworker's Pants" ]
    },
    "Woodworker's Shirt" : {
       "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_shirt.png",
       "item_name" : "Woodworker's Shirt",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Woodworker's Shirt" ]
    },
    "Woodworker's Shoes" : {
       "image_path" : ":/MarketManager/images/armour_sets/woodworker_set/woodworkers_shoes.png",
       "item_name" : "Woodworker's Shoes",
-      "item_type" : "Gear"
+      "item_type" : "Gear",
+      "item_update_order" : [ "Woodworker's Shoes" ]
    },
    "Wyrdwood" : {
       "buy_equals_sell" : false,
@@ -1193,6 +1032,17 @@
       "image_path" : ":/MarketManager/images/items/resources/raw_resources/woods/wyrdwood.png",
       "item_name" : "Wyrdwood",
       "item_type" : "RawResource",
+      "item_update_order" : [
+         "Wyrdwood",
+         "Charcoal",
+         "Steel Ingot",
+         "Starmetal Ingot",
+         "Orichalcum Ingot",
+         "Asmodeum",
+         "Wyrdwood Planks",
+         "Ironwood Planks",
+         "Glittering Ebony"
+      ],
       "sell_price" : 1.1000000000000001,
       "tier" : 4
    },
@@ -1204,23 +1054,7 @@
       "image_path" : ":/MarketManager/images/items/resources/refined_resources/planks/wyrdwood_planks.png",
       "item_name" : "Wyrdwood Planks",
       "item_type" : "Plank",
-      "recipes" : [
-         {
-            "Lumber" : 2,
-            "Obsidian Sandpaper" : 1,
-            "Wyrdwood" : 6
-         },
-         {
-            "Fine Sandpaper" : 1,
-            "Lumber" : 2,
-            "Wyrdwood" : 6
-         },
-         {
-            "Coarse Sandpaper" : 1,
-            "Lumber" : 2,
-            "Wyrdwood" : 6
-         }
-      ],
+      "item_update_order" : [ "Wyrdwood Planks", "Ironwood Planks", "Glittering Ebony" ],
       "sell_price" : 8.5,
       "tier" : 4
    }
