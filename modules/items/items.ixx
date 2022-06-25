@@ -36,7 +36,7 @@ namespace items {
 	export [[nodiscard]] Item* at(const std::string& item_name);
 
 	// Adds an item to items
-	export void insert(const std::string& item_name, Item* item);
+	export void insert(const std::string& item_name, Item* item); // TODO: change to addItem(Item*) and get item_name from item
 
 	// Updates the refined resource
 	export void update(RefinedResource* refined_resource);
@@ -54,7 +54,7 @@ namespace items {
 	export std::list<Item*> itemUpdateOrder();
 
 	// Returns a const reference to items
-	export [[nodiscard]] const std::unordered_map<std::string, Item*>& get();
+	export [[nodiscard]] const std::unordered_map<std::string, Item*>& get(); // TODO: rename to asUnorderedMap, or remove
 
 	// Finds and saves the best instant craft cost and recipe for refined_resource
 	void bestInstantCraft(RefinedResource* refined_resource);

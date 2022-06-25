@@ -82,6 +82,7 @@ namespace items {
 			void setBestRecipe(Recipe best_recipe);
 
 		protected:
+			// TODO: Remove as refining component has simplified in game
 			// Returns the yield bonus contributed by the refining component
 			static double refiningComponentYieldBonus(int refined_resource_tier, int refining_component_tier);
 

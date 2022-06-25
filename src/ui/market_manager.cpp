@@ -3,12 +3,14 @@
 #include "stdafx.h"
 
 import items;
+import recipe_book;
 import settings;
 
 MarketManager::MarketManager(QWidget *parent)
     : QMainWindow(parent) {
-    // Initialize settings and items
+    // Perform set up
     settings::setUp();
+    recipe_book::setUp();
     items::setUp();
 
     // Set up ui
@@ -153,6 +155,7 @@ void MarketManager::on_maximize_restore_button_clicked() {
 void MarketManager::on_close_button_clicked() {
     // Write to disk          TODO: Ask on close, have setting to not ask again
     items::writeToDisk();
+    recipe_book::writeToDisk();
     settings::writeToDisk();
 
     close();

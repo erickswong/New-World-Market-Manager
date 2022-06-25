@@ -1,0 +1,204 @@
+{
+   "Asmodeum" : [
+      {
+         "Charcoal" : 2,
+         "Cinnabar" : 1,
+         "Obsidian Flux" : 1,
+         "Orichalcum Ingot" : 5,
+         "Tolvium" : 1
+      }
+   ],
+   "Charcoal" : [
+      {
+         "Green Wood" : 2
+      },
+      {
+         "Aged Wood" : 2
+      },
+      {
+         "Wyrdwood" : 2
+      },
+      {
+         "Ironwood" : 2
+      }
+   ],
+   "Coarse Leather" : [
+      {
+         "Rawhide" : 4
+      }
+   ],
+   "Glittering Ebony" : [
+      {
+         "Barbvine" : 1,
+         "Ironwood Planks" : 5,
+         "Obsidian Sandpaper" : 1,
+         "Wildwood" : 1
+      }
+   ],
+   "Gold Ingot" : [
+      {
+         "Gold Ore" : 5,
+         "Obsidian Flux" : 1,
+         "Silver Ingot" : 2
+      }
+   ],
+   "Infused Leather" : [
+      {
+         "Aged Tannin" : 1,
+         "Iron Hide" : 8,
+         "Layered Leather" : 2
+      }
+   ],
+   "Infused Silk" : [
+      {
+         "Silk" : 2,
+         "Wirefiber" : 8,
+         "Wireweave" : 1
+      }
+   ],
+   "Iron Ingot" : [
+      {
+         "Iron Ore" : 4
+      }
+   ],
+   "Ironwood Planks" : [
+      {
+         "Ironwood" : 8,
+         "Obsidian Sandpaper" : 1,
+         "Wyrdwood Planks" : 2
+      }
+   ],
+   "Layered Leather" : [
+      {
+         "Aged Tannin" : 1,
+         "Rugged Leather" : 2,
+         "Thick Hide" : 6
+      }
+   ],
+   "Linen" : [
+      {
+         "Fibers" : 4
+      }
+   ],
+   "Lodestone Brick" : [
+      {
+         "Lodestone" : 6,
+         "Obsidian Sandpaper" : 1,
+         "Stone Brick" : 2
+      }
+   ],
+   "Lumber" : [
+      {
+         "Aged Wood" : 4,
+         "Obsidian Sandpaper" : 1,
+         "Timber" : 2
+      }
+   ],
+   "Obsidian Voidstone" : [
+      {
+         "Lodestone" : 2,
+         "Lodestone Brick" : 8,
+         "Obsidian Sandpaper" : 1
+      }
+   ],
+   "Orichalcum Ingot" : [
+      {
+         "Charcoal" : 2,
+         "Obsidian Flux" : 1,
+         "Orichalcum Ore" : 8,
+         "Starmetal Ingot" : 2
+      }
+   ],
+   "Phoenixweave" : [
+      {
+         "Blisterweave" : 1,
+         "Infused Silk" : 5,
+         "Scalecloth" : 1,
+         "Wireweave" : 1
+      }
+   ],
+   "Platinum Ingot" : [
+      {
+         "Gold Ingot" : 2,
+         "Obsidian Flux" : 1,
+         "Platinum Ore" : 6
+      }
+   ],
+   "Rugged Leather" : [
+      {
+         "Aged Tannin" : 1,
+         "Coarse Leather" : 4
+      }
+   ],
+   "Runestone" : [
+      {
+         "Elemental Lodestone" : 1,
+         "Obsidian Sandpaper" : 1,
+         "Obsidian Voidstone" : 5
+      }
+   ],
+   "Runic Leather" : [
+      {
+         "Aged Tannin" : 1,
+         "Infused Leather" : 5,
+         "Scarhide" : 1,
+         "Smolderhide" : 1
+      }
+   ],
+   "Sateen" : [
+      {
+         "Linen" : 4,
+         "Wireweave" : 1
+      }
+   ],
+   "Silk" : [
+      {
+         "Sateen" : 2,
+         "Silk Threads" : 6,
+         "Wireweave" : 1
+      }
+   ],
+   "Silver Ingot" : [
+      {
+         "Silver Ore" : 4
+      }
+   ],
+   "Starmetal Ingot" : [
+      {
+         "Charcoal" : 2,
+         "Obsidian Flux" : 1,
+         "Starmetal Ore" : 6,
+         "Steel Ingot" : 2
+      }
+   ],
+   "Steel Ingot" : [
+      {
+         "Charcoal" : 2,
+         "Iron Ingot" : 3,
+         "Obsidian Flux" : 1
+      }
+   ],
+   "Stone Block" : [
+      {
+         "Stone" : 4
+      }
+   ],
+   "Stone Brick" : [
+      {
+         "Obsidian Sandpaper" : 1,
+         "Stone Block" : 4
+      }
+   ],
+   "Timber" : [
+      {
+         "Green Wood" : 4
+      }
+   ],
+   "Wyrdwood Planks" : [
+      {
+         "Lumber" : 2,
+         "Obsidian Sandpaper" : 1,
+         "Wyrdwood" : 6
+      }
+   ]
+}

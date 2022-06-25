@@ -128,6 +128,12 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="modules\recipe_book\default_recipe_book.ixx" />
+    <ClCompile Include="modules\recipe_book\recipe.ixx" />
+    <ClCompile Include="modules\recipe_book\recipe_book.ixx" />
+    <ClCompile Include="src\recipe_book\default_recipe_book.cpp" />
+    <ClCompile Include="src\recipe_book\recipe.cpp" />
+    <ClCompile Include="src\recipe_book\recipe_book.cpp" />
     <ClCompile Include="src\ui\content_pages\input_pages\input_items\input_item.cpp" />
     <ClCompile Include="modules\exceptions.ixx" />
     <ClCompile Include="modules\items\default_items.ixx" />
@@ -143,7 +149,7 @@
     <ClCompile Include="modules\items\item\resources\refined_resources\refined_resource.ixx" />
     <ClCompile Include="modules\items\item\resources\refining_components\refining_component.ixx" />
     <ClCompile Include="modules\items\item\resources\resource.ixx" />
-    <ClCompile Include="modules\items\recipes\recipe.ixx" />
+    <ClCompile Include="modules\items\recipes\recipe_deprecate.ixx" />
     <ClCompile Include="modules\items\recipes\recipes.ixx" />
     <ClCompile Include="modules\settings\armour_set.ixx" />
     <ClCompile Include="modules\settings\armour_sets.ixx" />
@@ -195,7 +201,7 @@
     <ClCompile Include="src\items\items.cpp" />
     <ClCompile Include="src\items\recipes\recipes.cpp" />
     <ClCompile Include="src\items\item\resources\refining_components\refining_component.cpp" />
-    <ClCompile Include="src\items\recipes\recipe.cpp" />
+    <ClCompile Include="src\items\recipes\recipe_deprecate.cpp" />
     <ClCompile Include="src\items\item\resources\refined_resources\refined_resource.cpp" />
     <ClCompile Include="src\items\item\resources\raw_resources\raw_resource.cpp" />
     <ClCompile Include="src\items\item\resources\resource.cpp" />

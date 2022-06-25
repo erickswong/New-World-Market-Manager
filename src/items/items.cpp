@@ -95,7 +95,7 @@ namespace items {
 		// Create data directory if missing
 		std::filesystem::create_directory("data");
 
-		// Create settings.json file
+		// Create items.json file
 		std::ofstream file("data/items.json");
 
 		// Write json into file

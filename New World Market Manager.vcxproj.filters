@@ -19,7 +19,7 @@
     <ClCompile Include="src\items\item\resources\refined_resources\refined_resource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\items\recipes\recipe.cpp">
+    <ClCompile Include="src\items\recipes\recipe_deprecate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\items\item\resources\refining_components\refining_component.cpp">
@@ -85,7 +85,7 @@
     <ClCompile Include="src\items\default_items.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="modules\items\recipes\recipe.ixx" />
+    <ClCompile Include="modules\items\recipes\recipe_deprecate.ixx" />
     <ClCompile Include="modules\items\recipes\recipes.ixx" />
     <ClCompile Include="modules\settings\armour_set.ixx" />
     <ClCompile Include="modules\settings\armour_sets.ixx" />
@@ -115,6 +115,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ui\content_pages\input_pages\input_items\input_item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\recipe_book\default_recipe_book.ixx" />
+    <ClCompile Include="modules\recipe_book\recipe.ixx" />
+    <ClCompile Include="modules\recipe_book\recipe_book.ixx" />
+    <ClCompile Include="src\recipe_book\default_recipe_book.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\recipe_book\recipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\recipe_book\recipe_book.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
