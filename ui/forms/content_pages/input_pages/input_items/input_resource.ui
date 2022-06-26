@@ -132,7 +132,7 @@
       </size>
      </property>
      <property name="icon">
-      <iconset resource="../../../market_manager.qrc">
+      <iconset resource="../../../../market_manager.qrc">
        <normaloff>:/MarketManager/images/ui/input_page/unlock.png</normaloff>
        <normalon>:/MarketManager/images/ui/input_page/lock.png</normalon>:/MarketManager/images/ui/input_page/unlock.png</iconset>
      </property>
@@ -176,7 +176,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="../../../market_manager.qrc"/>
+  <include location="../../../../market_manager.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -55,21 +55,21 @@ namespace items {
 				std::string item_type = item_json_value["item_type"].asString();
 
 				if (item_type == "Block") {
-					insert(item_name, new Block(item_json_value));
+					addItem(new Block(item_json_value));
 				} else if (item_type == "Cloth") {
-					insert(item_name, new Cloth(item_json_value));
+					addItem(new Cloth(item_json_value));
 				} else if (item_type == "Gear") {
-					insert(item_name, new Gear(item_json_value));
+					addItem(new Gear(item_json_value));
 				} else if (item_type == "Ingot") {
-					insert(item_name, new Ingot(item_json_value));
+					addItem(new Ingot(item_json_value));
 				} else if (item_type == "Leather") {
-					insert(item_name, new Leather(item_json_value));
+					addItem(new Leather(item_json_value));
 				} else if (item_type == "Plank") {
-					insert(item_name, new Plank(item_json_value));
+					addItem(new Plank(item_json_value));
 				} else if (item_type == "RawResource") {
-					insert(item_name, new RawResource(item_json_value));
+					addItem(new RawResource(item_json_value));
 				} else if (item_type == "RefiningComponent") {
-					insert(item_name, new RefiningComponent(item_json_value));
+					addItem(new RefiningComponent(item_json_value));
 				} else {
 					throw BadValueException("Unrecognized item_type \"" + item_type + "\" in items");
 				}
@@ -107,8 +107,8 @@ namespace items {
 		return items.at(item_name);
 	}
 
-	void insert(const std::string& item_name, Item* item) {
-		items.insert({ item_name, item });
+	void addItem(Item* item) {
+		items.insert({ item->getItemName(), item});
 	}
 
 	void update(RefinedResource* refined_resource) {
@@ -282,10 +282,6 @@ namespace items {
 
 		// Return master item update order
 		return master_item_update_order;
-	}
-
-	const std::unordered_map<std::string, Item*>& get() {
-		return items;
 	}
 
 	void bestInstantCraft(RefinedResource* refined_resource) {

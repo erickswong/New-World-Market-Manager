@@ -77,24 +77,6 @@
       "sell_price" : 1.25,
       "tier" : 2
    },
-   "Coarse Sandpaper" : {
-      "buy_equals_sell" : true,
-      "buy_price" : 0.29999999999999999,
-      "image_path" : ":/MarketManager/images/items/resources/refining_components/coarse_sandpaper.png",
-      "item_name" : "Coarse Sandpaper",
-      "item_type" : "RefiningComponent",
-      "sell_price" : 0.29999999999999999,
-      "tier" : 3
-   },
-   "Crossweave" : {
-      "buy_equals_sell" : true,
-      "buy_price" : 0.34999999999999998,
-      "image_path" : ":/MarketManager/images/items/resources/refining_components/crossweave.png",
-      "item_name" : "Crossweave",
-      "item_type" : "RefiningComponent",
-      "sell_price" : 0.34999999999999998,
-      "tier" : 3
-   },
    "Elemental Lodestone" : {
       "buy_equals_sell" : false,
       "buy_price" : 0.10000000000000001,
@@ -112,15 +94,6 @@
       "item_type" : "RawResource",
       "sell_price" : 0.20000000000000001,
       "tier" : 1
-   },
-   "Fine Sandpaper" : {
-      "buy_equals_sell" : true,
-      "buy_price" : 0.20000000000000001,
-      "image_path" : ":/MarketManager/images/items/resources/refining_components/fine_sandpaper.png",
-      "item_name" : "Fine Sandpaper",
-      "item_type" : "RefiningComponent",
-      "sell_price" : 0.20000000000000001,
-      "tier" : 4
    },
    "Glittering Ebony" : {
       "base_craft_tax" : 0.19,
@@ -366,15 +339,6 @@
       "sell_price" : 1.0,
       "tier" : 4
    },
-   "Potent Solvent" : {
-      "buy_equals_sell" : true,
-      "buy_price" : 0.69999999999999996,
-      "image_path" : ":/MarketManager/images/items/resources/refining_components/potent_solvent.png",
-      "item_name" : "Potent Solvent",
-      "item_type" : "RefiningComponent",
-      "sell_price" : 0.69999999999999996,
-      "tier" : 4
-   },
    "Pure Solvent" : {
       "buy_equals_sell" : false,
       "buy_price" : 1.0,
@@ -392,15 +356,6 @@
       "item_type" : "RawResource",
       "sell_price" : 0.34999999999999998,
       "tier" : 1
-   },
-   "Rested Tannin" : {
-      "buy_equals_sell" : true,
-      "buy_price" : 0.20000000000000001,
-      "image_path" : ":/MarketManager/images/items/resources/refining_components/rested_tannin.png",
-      "item_name" : "Rested Tannin",
-      "item_type" : "RefiningComponent",
-      "sell_price" : 0.20000000000000001,
-      "tier" : 4
    },
    "Rugged Leather" : {
       "base_craft_tax" : 0.040000000000000001,
@@ -435,15 +390,6 @@
       "sell_price" : 130.0,
       "tier" : 5
    },
-   "Sand Flux" : {
-      "buy_equals_sell" : true,
-      "buy_price" : 0.69999999999999996,
-      "image_path" : ":/MarketManager/images/items/resources/refining_components/sand_flux.png",
-      "item_name" : "Sand Flux",
-      "item_type" : "RefiningComponent",
-      "sell_price" : 0.69999999999999996,
-      "tier" : 3
-   },
    "Sateen" : {
       "base_craft_tax" : 0.040000000000000001,
       "base_yield" : 0.97999999999999998,
@@ -473,15 +419,6 @@
       "sell_price" : 15.0,
       "tier" : 5
    },
-   "Shelldust Flux" : {
-      "buy_equals_sell" : true,
-      "buy_price" : 0.84999999999999998,
-      "image_path" : ":/MarketManager/images/items/resources/refining_components/shelldust_flux.png",
-      "item_name" : "Shelldust Flux",
-      "item_type" : "RefiningComponent",
-      "sell_price" : 0.84999999999999998,
-      "tier" : 4
-   },
    "Silk" : {
       "base_craft_tax" : 0.070000000000000007,
       "base_yield" : 0.94999999999999996,
@@ -500,15 +437,6 @@
       "item_name" : "Silk Threads",
       "item_type" : "RawResource",
       "sell_price" : 0.69999999999999996,
-      "tier" : 4
-   },
-   "Silkweave" : {
-      "buy_equals_sell" : true,
-      "buy_price" : 0.20000000000000001,
-      "image_path" : ":/MarketManager/images/items/resources/refining_components/silkweave.png",
-      "item_name" : "Silkweave",
-      "item_type" : "RefiningComponent",
-      "sell_price" : 0.20000000000000001,
       "tier" : 4
    },
    "Silver Ingot" : {
@@ -677,15 +605,6 @@
       "item_name" : "Tanner Shoes",
       "item_type" : "Gear"
    },
-   "Tannin" : {
-      "buy_equals_sell" : true,
-      "buy_price" : 0.20000000000000001,
-      "image_path" : ":/MarketManager/images/items/resources/refining_components/tannin.png",
-      "item_name" : "Tannin",
-      "item_type" : "RefiningComponent",
-      "sell_price" : 0.20000000000000001,
-      "tier" : 3
-   },
    "Thick Hide" : {
       "buy_equals_sell" : false,
       "buy_price" : 0.55000000000000004,
@@ -714,15 +633,6 @@
       "item_type" : "RawResource",
       "sell_price" : 15.0,
       "tier" : 5
-   },
-   "Weak Solvent" : {
-      "buy_equals_sell" : true,
-      "buy_price" : 0.25,
-      "image_path" : ":/MarketManager/images/items/resources/refining_components/weak_solvent.png",
-      "item_name" : "Weak Solvent",
-      "item_type" : "RefiningComponent",
-      "sell_price" : 0.25,
-      "tier" : 3
    },
    "Weaver's Gloves" : {
       "image_path" : ":/MarketManager/images/armour_sets/weaver_set/weavers_gloves.png",
