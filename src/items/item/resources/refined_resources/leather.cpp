@@ -38,28 +38,11 @@ namespace items {
 		return getBaseCraftTax();
 	}
 
-	double Leather::yield(const recipe_book::Recipe& recipe) const {
-		// Determine the tier of the refining component in the given recipe
-		int refining_component_tier = 0;
-		for (const auto& [ingredient_name, amount] : recipe.getIngredients()) {
-			if (ingredient_name == "Aged Tannin") {
-				refining_component_tier = 5;
-				break;
-			}
-			if (ingredient_name == "Rested Tannin") {
-				refining_component_tier = 4;
-				break;
-			}
-			if (ingredient_name == "Tannin") {
-				refining_component_tier = 3;
-				break;
-			}
-		}
-
+	double Leather::yield() const {
 		// Calculate the yield
-		const double yield = getBaseYield() + settings::leatherworkingYieldBonus() + refiningComponentYieldBonus(getTier(), refining_component_tier);
+		const double yield = getBaseYield() + refiningComponentYieldBonus(getTier()) + settings::leatherworkingYieldBonus();
 
 		// Return the yield
-		return std::max(1., yield) * settings::fortYieldBonusMultiplier();
+		return std::max(1., yield);
 	}
 }

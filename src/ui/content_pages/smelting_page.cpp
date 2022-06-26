@@ -57,8 +57,6 @@ void SmeltingPage::setUpInputPages() const {
 }
 
 void SmeltingPage::setUpFluxInputPage() const {
-    ui.flux_input_page->addInputResource("Sand Flux");
-    ui.flux_input_page->addInputResource("Shelldust Flux");
     ui.flux_input_page->addInputResource("Obsidian Flux");
 }
 

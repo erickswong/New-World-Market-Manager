@@ -21,12 +21,16 @@ namespace settings {
 	// Writes a json representing this namespace to disk
 	export void writeToDisk();
 
-	export [[nodiscard]] double smeltingYieldBonus();
-	export [[nodiscard]] double woodworkingYieldBonus();
-	export [[nodiscard]] double leatherworkingYieldBonus();
-	export [[nodiscard]] double weavingYieldBonus();
-	export [[nodiscard]] double stonecuttingYieldBonus();
-	export [[nodiscard]] double fortYieldBonusMultiplier();
-
 	// TODO: add tax calculator, may need parameter with base tax value
+
+	// Returns the yield bonus for smelting
+	export [[nodiscard]] double smeltingYieldBonus();
+	// Returns the yield bonus for woodworking
+	export [[nodiscard]] double woodworkingYieldBonus();
+	// Returns the yield bonus for leatherworking
+	export [[nodiscard]] double leatherworkingYieldBonus();
+	// Returns the yield bonus for weaving
+	export [[nodiscard]] double weavingYieldBonus();
+	// Returns the yield bonus for stonecutting
+	export [[nodiscard]] double stonecuttingYieldBonus();
 };

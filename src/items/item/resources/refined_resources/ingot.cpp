@@ -38,38 +38,11 @@ namespace items {
 		return getBaseCraftTax();
 	}
 
-	double Ingot::yield(const recipe_book::Recipe& recipe) const {
-		double yield = getBaseYield() + settings::smeltingYieldBonus();
-
-		// Determine the tier of the refining component in the given recipe
-		int refining_component_tier = 0;
-		for (const auto& [ingredient_name, amount] : recipe.getIngredients()) {
-			if (ingredient_name == "Obsidian Flux") {
-				refining_component_tier = 5;
-				break;
-			}
-			if (ingredient_name == "Shelldust Flux") {
-				refining_component_tier = 4;
-				break;
-			}
-			if (ingredient_name == "Sand Flux") {
-				refining_component_tier = 3;
-				break;
-			}
-		}
-
-		// Gold Ingot Anomaly
-		if (getItemName() == "Gold Ingot") {
-			if (refining_component_tier == 5) {
-				yield += 0.5;
-			} else if (refining_component_tier == 4) {
-				yield += 0.25;
-			}
-		} else {
-			yield += refiningComponentYieldBonus(getTier(), refining_component_tier);
-		}
+	double Ingot::yield() const {
+		// Calculate the yield
+		const double yield = getBaseYield() + refiningComponentYieldBonus(getTier()) + settings::smeltingYieldBonus();
 
 		// Return the yield
-		return std::max(1., yield) * settings::fortYieldBonusMultiplier();
+		return std::max(1., yield);
 	}
 }

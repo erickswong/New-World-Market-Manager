@@ -52,11 +52,46 @@ namespace items::default_items {
 	}
 
 	void addRefiningComponents() {
-		addFluxes();
-		addSandpapers();
-		addTannins();
-		addSolvents();
-		addWeaves();
+		const auto obsidian_flux = new RefiningComponent("Obsidian Flux",
+														 ":/MarketManager/images/items/resources/refining_components/obsidian_flux.png",
+														 5,
+														 false,
+														 2.2,
+														 1.8);
+
+		const auto obsidian_sandpaper = new RefiningComponent("Obsidian Sandpaper",
+															  ":/MarketManager/images/items/resources/refining_components/obsidian_sandpaper.png",
+															  5,
+															  false,
+															  0.5,
+															  0.3);
+
+		const auto wireweave = new RefiningComponent("Wireweave",
+													 ":/MarketManager/images/items/resources/refining_components/wireweave.png",
+													 5,
+													 false,
+													 0.25,
+													 0.15);
+
+		const auto aged_tannin = new RefiningComponent("Aged Tannin",
+													   ":/MarketManager/images/items/resources/refining_components/aged_tannin.png",
+													   5,
+													   false,
+													   0.25,
+													   0.2);
+
+		const auto pure_solvent = new RefiningComponent("Pure Solvent",
+														":/MarketManager/images/items/resources/refining_components/pure_solvent.png",
+														5,
+														false,
+														1.,
+														1.);
+
+		insert("Obsidian Flux", obsidian_flux);
+		insert("Obsidian Sandpaper", obsidian_sandpaper);
+		insert("Wireweave", wireweave);
+		insert("Aged Tannin", aged_tannin);
+		insert("Pure Solvent", pure_solvent);
 	}
 
 	void addOres() {
@@ -782,130 +817,5 @@ namespace items::default_items {
 		insert("Stonecutter's Gloves", stonecutters_gloves);
 		insert("Stonecutter's Pants", stonecutters_pants);
 		insert("Stonecutter's Shoes", stonecutters_shoes);
-	}
-
-	void addFluxes() {
-		const auto sand_flux = new RefiningComponent("Sand Flux",
-													 ":/MarketManager/images/items/resources/refining_components/sand_flux.png",
-													 3,
-													 true,
-													 0.7,
-													 0.7);
-		const auto shelldust_flux = new RefiningComponent("Shelldust Flux",
-														  ":/MarketManager/images/items/resources/refining_components/shelldust_flux.png",
-														  4,
-														  true,
-														  0.85,
-														  0.85);
-		const auto obsidian_flux = new RefiningComponent("Obsidian Flux",
-														 ":/MarketManager/images/items/resources/refining_components/obsidian_flux.png",
-														 5,
-														 false,
-														 2.2,
-														 1.8);
-
-		insert("Sand Flux", sand_flux);
-		insert("Shelldust Flux", shelldust_flux);
-		insert("Obsidian Flux", obsidian_flux);
-	}
-
-	void addSandpapers() {
-		const auto coarse_sandpaper = new RefiningComponent("Coarse Sandpaper",
-															":/MarketManager/images/items/resources/refining_components/coarse_sandpaper.png",
-															3,
-															true,
-															0.3,
-															0.3);
-		const auto fine_sandpaper = new RefiningComponent("Fine Sandpaper",
-														  ":/MarketManager/images/items/resources/refining_components/fine_sandpaper.png",
-														  4,
-														  true,
-														  0.2,
-														  0.2);
-		const auto obsidian_sandpaper = new RefiningComponent("Obsidian Sandpaper",
-															  ":/MarketManager/images/items/resources/refining_components/obsidian_sandpaper.png",
-															  5,
-															  false,
-															  0.5,
-															  0.3);
-
-		insert("Coarse Sandpaper", coarse_sandpaper);
-		insert("Fine Sandpaper", fine_sandpaper);
-		insert("Obsidian Sandpaper", obsidian_sandpaper);
-	}
-
-	void addWeaves() {
-		const auto crossweave = new RefiningComponent("Crossweave",
-													  ":/MarketManager/images/items/resources/refining_components/crossweave.png",
-													  3,
-													  true,
-													  0.35,
-													  0.35);
-		const auto silkweave = new RefiningComponent("Silkweave",
-													 ":/MarketManager/images/items/resources/refining_components/silkweave.png",
-													 4,
-													 true,
-													 0.2,
-													 0.2);
-		const auto wireweave = new RefiningComponent("Wireweave",
-													 ":/MarketManager/images/items/resources/refining_components/wireweave.png",
-													 5,
-													 false,
-													 0.25,
-													 0.15);
-
-		insert("Crossweave", crossweave);
-		insert("Silkweave", silkweave);
-		insert("Wireweave", wireweave);
-	}
-
-	void addTannins() {
-		const auto tannin = new RefiningComponent("Tannin",
-												  ":/MarketManager/images/items/resources/refining_components/tannin.png",
-												  3,
-												  true,
-												  0.2,
-												  0.2);
-		const auto rested_tannin = new RefiningComponent("Rested Tannin",
-														 ":/MarketManager/images/items/resources/refining_components/rested_tannin.png",
-														 4,
-														 true,
-														 0.2,
-														 0.2);
-		const auto aged_tannin = new RefiningComponent("Aged Tannin",
-													   ":/MarketManager/images/items/resources/refining_components/aged_tannin.png",
-													   5,
-													   false,
-													   0.25,
-													   0.2);
-
-		insert("Tannin", tannin);
-		insert("Rested Tannin", rested_tannin);
-		insert("Aged Tannin", aged_tannin);
-	}
-
-	void addSolvents() {
-		const auto weak_solvent = new RefiningComponent("Weak Solvent",
-														":/MarketManager/images/items/resources/refining_components/weak_solvent.png",
-														3,
-														true,
-														0.25,
-														0.25);
-		const auto potent_solvent = new RefiningComponent("Potent Solvent",
-														  ":/MarketManager/images/items/resources/refining_components/potent_solvent.png",
-														  4,
-														  true,
-														  0.7,
-														  0.7);
-		const auto pure_solvent = new RefiningComponent("Pure Solvent",
-														":/MarketManager/images/items/resources/refining_components/pure_solvent.png",
-														5,
-														false,
-														1.,
-														1.);
-
-		insert("Weak Solvent", weak_solvent);
-		insert("Potent Solvent", potent_solvent);
-		insert("Pure Solvent", pure_solvent);
 	}
 }

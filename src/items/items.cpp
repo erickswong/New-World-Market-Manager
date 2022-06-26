@@ -303,7 +303,7 @@ namespace items {
 			}
 
 			// Calculate the instant craft cost of the recipe
-			const double instant_craft_cost = (recipe_cost + refined_resource->craftTax()) / refined_resource->yield(recipe);
+			const double instant_craft_cost = (recipe_cost + refined_resource->craftTax()) / refined_resource->yield();
 
 			// Update best instant craft if current instant craft is better
 			if (instant_craft_cost < best_instant_craft_cost) {
@@ -332,7 +332,7 @@ namespace items {
 			}
 
 			// Calculate the craft cost of the recipe
-			const double craft_cost = (recipe_cost + refined_resource->craftTax()) / refined_resource->yield(recipe);
+			const double craft_cost = (recipe_cost + refined_resource->craftTax()) / refined_resource->yield();
 
 			// Update the best craft is current craft is better
 			if (craft_cost < best_craft_cost) {

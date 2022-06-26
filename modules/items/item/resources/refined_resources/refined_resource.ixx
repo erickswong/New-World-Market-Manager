@@ -49,8 +49,8 @@ namespace items {
 			// Returns the craft tax
 			[[nodiscard]] virtual double craftTax() const = 0;
 
-			// Returns the yield when using the given recipe
-			[[nodiscard]] virtual double yield(const recipe_book::Recipe& recipe) const = 0;
+			// Returns the yield
+			[[nodiscard]] virtual double yield() const = 0;
 
 			// Returns base_yield
 			[[nodiscard]] double getBaseYield() const;
@@ -79,9 +79,8 @@ namespace items {
 			void setBestRecipe(recipe_book::Recipe best_recipe);
 
 		protected:
-			// TODO: Remove as refining component has simplified in game
 			// Returns the yield bonus contributed by the refining component
-			static double refiningComponentYieldBonus(int refined_resource_tier, int refining_component_tier);
+			double refiningComponentYieldBonus(int refined_resource_tier) const;
 
 		private:
 			// Returns the profit margin given by sell_price and acquire_cost

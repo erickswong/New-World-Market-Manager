@@ -38,28 +38,11 @@ namespace items {
 		return getBaseCraftTax();
 	}
 
-	double Cloth::yield(const recipe_book::Recipe& recipe) const {
-		// Determine the tier of the refining component in the given recipe
-		int refining_component_tier = 0;
-		for (const auto& [ingredient_name, amount] : recipe.getIngredients()) {
-			if (ingredient_name == "Wireweave") {
-				refining_component_tier = 5;
-				break;
-			}
-			if (ingredient_name == "Silkweave") {
-				refining_component_tier = 4;
-				break;
-			}
-			if (ingredient_name == "Crossweave") {
-				refining_component_tier = 3;
-				break;
-			}
-		}
-
+	double Cloth::yield() const {
 		// Calculate the yield
-		const double yield = getBaseYield() + settings::weavingYieldBonus() + refiningComponentYieldBonus(getTier(), refining_component_tier);
+		const double yield = getBaseYield() + refiningComponentYieldBonus(getTier()) + settings::weavingYieldBonus();
 
 		// Return the yield
-		return std::max(1., yield) * settings::fortYieldBonusMultiplier();
+		return std::max(1., yield);
 	}
 }

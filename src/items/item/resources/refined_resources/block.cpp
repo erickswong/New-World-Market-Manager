@@ -38,28 +38,11 @@ namespace items {
 		return getBaseCraftTax();
 	}
 
-	double Block::yield(const recipe_book::Recipe& recipe) const {
-		// Determine the tier of the refining component in the given recipe
-		int refining_component_tier = 0;
-		for (const auto& [ingredient_name, amount] : recipe.getIngredients()) {
-			if (ingredient_name == "Obsidian Sandpaper") {
-				refining_component_tier = 5;
-				break;
-			}
-			if (ingredient_name == "Fine Sandpaper") {
-				refining_component_tier = 4;
-				break;
-			}
-			if (ingredient_name == "Coarse Sandpaper") {
-				refining_component_tier = 3;
-				break;
-			}
-		}
-
+	double Block::yield() const {
 		// Calculate the yield
-		const double yield = getBaseYield() + settings::stonecuttingYieldBonus() + refiningComponentYieldBonus(getTier(), refining_component_tier);
+		const double yield = getBaseYield() + refiningComponentYieldBonus(getTier()) + settings::stonecuttingYieldBonus();
 
 		// Return the yield
-		return std::max(1., yield) * settings::fortYieldBonusMultiplier();
+		return std::max(1., yield);
 	}
 }

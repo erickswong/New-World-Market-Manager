@@ -62,10 +62,4 @@ namespace items::default_items {
 	void addWeaverSet();
 	void addTannerSet();
 	void addStonecutterSet();
-
-	void addFluxes();
-	void addSandpapers();
-	void addWeaves();
-	void addTannins();
-	void addSolvents();
 };

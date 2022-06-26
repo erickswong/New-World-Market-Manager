@@ -72,26 +72,22 @@ namespace settings {
     }
 
     double smeltingYieldBonus() {
-        return trade_skills::smeltingYieldBonus() + armour_sets::smeltingYieldBonus();
+        return trade_skills::smeltingYieldBonus() + armour_sets::smeltingYieldBonus() + fort_bonuses::yieldBonus();
     }
 
     double woodworkingYieldBonus() {
-        return trade_skills::woodworkingYieldBonus() + armour_sets::woodworkingYieldBonus();
+        return trade_skills::woodworkingYieldBonus() + armour_sets::woodworkingYieldBonus() + fort_bonuses::yieldBonus();
     }
 
     double leatherworkingYieldBonus() {
-        return trade_skills::leatherworkingYieldBonus() + armour_sets::leatherworkingYieldBonus();
+        return trade_skills::leatherworkingYieldBonus() + armour_sets::leatherworkingYieldBonus() + fort_bonuses::yieldBonus();
     }
 
     double weavingYieldBonus() {
-        return trade_skills::weavingYieldBonus() + armour_sets::weavingYieldBonus();
+        return trade_skills::weavingYieldBonus() + armour_sets::weavingYieldBonus() + fort_bonuses::yieldBonus();
     }
 
     double stonecuttingYieldBonus() {
-        return trade_skills::stonecuttingYieldBonus() + armour_sets::stonecuttingYieldBonus();
-    }
-
-    double fortYieldBonusMultiplier() {
-        return 1. + fort_bonuses::yieldBonus();
+        return trade_skills::stonecuttingYieldBonus() + armour_sets::stonecuttingYieldBonus() + fort_bonuses::yieldBonus();
     }
 }

@@ -23,7 +23,7 @@ namespace items {
 			// Returns the craft tax
 			double craftTax() const override;
 
-			// Returns the yield when using the given recipe
-			double yield(const recipe_book::Recipe& recipe) const override;
+			// Returns the yield
+			double yield() const override;
 	};
 };

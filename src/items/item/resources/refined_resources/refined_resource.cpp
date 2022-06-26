@@ -103,35 +103,18 @@ namespace items {
 		this->best_recipe = best_recipe;
 	}
 
-	double RefinedResource::refiningComponentYieldBonus(const int refined_resource_tier, const int refining_component_tier) {
+	double RefinedResource::refiningComponentYieldBonus(const int refined_resource_tier) const {
+		// Gold Ingot Anomaly
+		if (getItemName() == "Gold Ingot") {
+			return 0.5;
+		}
+
+		// Determine yield bonus from refined_resource_tier
 		switch (refined_resource_tier) {
 			case 3:
-				switch (refining_component_tier) {
-					case 4:
-						return 0.5;
-					case 5:
-						return 0.75;
-					default:
-						return 0.;
-				}
+				return 0.75;
 			case 4:
-				switch (refining_component_tier) {
-					case 3:
-						return -0.05;
-					case 5:
-						return 0.25;
-					default:
-						return 0.;
-				}
-			case 5:
-				switch (refining_component_tier) {
-					case 3:
-						return -0.1;
-					case 4:
-						return -0.05;
-					default:
-						return 0.;
-				}
+				return 0.25;
 			default:
 				return 0.;
 		}
