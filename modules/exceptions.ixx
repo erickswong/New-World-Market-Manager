@@ -8,7 +8,7 @@ import std.filesystem;
 
 namespace exceptions {
 	// Writes a crash dump to disk
-	export void writeToDisk(const char* message) {
+	export void logCrash(const std::exception& e) {
 		// Get time of crash
 		auto seconds_since_epoch = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 
@@ -21,7 +21,7 @@ namespace exceptions {
 		std::ofstream file(dirName.str() + "/info.txt");
 
 		// Write message into file
-		file << message;
+		file << e.what();
 	}
 };
 
