@@ -2,7 +2,7 @@
 
 InputResource::InputResource(const std::string& resource_name, QWidget *parent)
 	: InputItem(resource_name, parent),
-      resource(dynamic_cast<Resource*>(items::at(resource_name))) {
+      resource(items::getItem<Resource>(resource_name)) {
 	// Set up ui
 	ui.setupUi(this);
 

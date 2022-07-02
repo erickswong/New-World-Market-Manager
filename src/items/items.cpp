@@ -103,10 +103,6 @@ namespace items {
 		file << styled_writer.write(toJson());
 	}
 
-	Item* at(const std::string& item_name) {
-		return items.at(item_name);
-	}
-
 	void addItem(Item* item) {
 		items.insert({ item->getItemName(), item});
 	}
@@ -192,7 +188,7 @@ namespace items {
 				// Ingredients found in recipes are parents
 				for (auto [cit, cend] = recipe_book::recipeRange(refined_resource->getItemName()); cit != cend; ++cit) {
 					for (const auto& [ingredient_name, amount] : cit->second.getIngredients()) {
-						parent_items.insert(at(ingredient_name));
+						parent_items.insert(getItem<Item>(ingredient_name));
 					}
 				}
 			}
@@ -295,7 +291,7 @@ namespace items {
 			// Calculate the total cost of the ingredients in the recipe
 			double recipe_cost = 0.;
 			for (const auto& [ingredient_name, amount] : recipe.getIngredients()) {
-				recipe_cost += amount * dynamic_cast<Resource*>(at(ingredient_name))->bestInstantAcquireCost();
+				recipe_cost += amount * getItem<Resource>(ingredient_name)->bestInstantAcquireCost();
 			}
 
 			// Calculate the instant craft cost of the recipe
@@ -324,7 +320,7 @@ namespace items {
 			// Calculate the total cost of the ingredients in the recipe
 			double recipe_cost = 0.;
 			for (const auto& [ingredient_name, amount] : recipe.getIngredients()) {
-				recipe_cost += amount * dynamic_cast<Resource*>(at(ingredient_name))->bestAcquireCost();
+				recipe_cost += amount * getItem<Resource>(ingredient_name)->bestAcquireCost();
 			}
 
 			// Calculate the craft cost of the recipe

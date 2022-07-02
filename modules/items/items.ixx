@@ -32,7 +32,8 @@ namespace items {
 	export void writeToDisk();
 
 	// Returns a pointer to the item with name item_name
-	export [[nodiscard]] Item* at(const std::string& item_name);
+	export template<typename T>
+	[[nodiscard]] T* getItem(const std::string& item_name);
 
 	// Adds an item to items
 	export void addItem(Item* item);
@@ -57,3 +58,8 @@ namespace items {
 	// Finds and saves the best craft cost and recipe for refined_resource
 	void bestCraft(RefinedResource* refined_resource);
 };
+
+template<typename T>
+T* items::getItem(const std::string& item_name) {
+	return dynamic_cast<T*>(items.at(item_name));
+}

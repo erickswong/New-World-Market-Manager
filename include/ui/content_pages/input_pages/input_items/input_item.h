@@ -20,11 +20,11 @@ class InputItem : public QWidget {
 
 		// Returns the previous InputItem in the cyclic list
 		template<typename T>
-		T* getPrev() const;
+		[[nodiscard]] T* getPrev() const;
 
 		// Returns the next InputItem in the cyclic list
 		template<typename T>
-		T* getNext() const;
+		[[nodiscard]] T* getNext() const;
 
 	private:
 		// Inserts this into the cyclic list
