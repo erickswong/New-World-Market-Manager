@@ -22,6 +22,7 @@ namespace settings {
 	export void writeToDisk();
 
 	// TODO: add tax calculator, may need parameter with base tax value
+	// TODO: 30% tax discount for governing company members
 
 	// Returns the yield bonus for smelting
 	export [[nodiscard]] double smeltingYieldBonus();
