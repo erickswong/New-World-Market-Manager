@@ -6,7 +6,7 @@ class InputItem : public QWidget {
 	Q_OBJECT
 
 	// A cyclic list is used here so that changing one InputItem will change all that have the same name.
-	static std::unordered_map<std::string, InputItem*> input_item_map; // Stores a map from input_item_name to an InputItem to be considered the first in the cyclic list
+	inline static std::unordered_map<std::string, InputItem*> input_item_map; // Stores a map from input_item_name to an InputItem to be considered the first in the cyclic list
 
 	std::string name; // The name of this InputItem
 	InputItem* prev;  // The previous InputItem in the cyclic list

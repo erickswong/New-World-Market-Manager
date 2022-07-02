@@ -44,6 +44,9 @@ namespace items {
 		for (const auto& [item_name, item] : items) {
 			delete item;
 		}
+
+		// Erase all elements in items
+		items.clear();
 	}
 
 	void fromJson(const Json::Value& json_value) {
@@ -104,7 +107,9 @@ namespace items {
 	}
 
 	void addItem(Item* item) {
-		items.insert({ item->getItemName(), item});
+		if (!items.insert({ item->getItemName(), item }).second) {
+			throw BadValueException("Unable to add duplicate item \"" + item->getItemName());
+		}
 	}
 
 	void update(RefinedResource* refined_resource) {

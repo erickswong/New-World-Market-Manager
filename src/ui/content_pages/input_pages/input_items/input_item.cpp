@@ -1,7 +1,5 @@
 #include "ui/content_pages/input_pages/input_items/input_item.h"
 
-std::unordered_map<std::string, InputItem*> InputItem::input_item_map;
-
 InputItem::InputItem(const std::string& name, QWidget *parent)
 	: QWidget(parent),
       name(name) {
