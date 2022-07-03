@@ -121,6 +121,14 @@
     <ClCompile Include="src\recipe_book\recipe_book.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="modules\ui\image_map\image_map.ixx" />
+    <ClCompile Include="modules\ui\image_map\default_image_map.ixx" />
+    <ClCompile Include="src\ui\image_map\image_map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\image_map\default_image_map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

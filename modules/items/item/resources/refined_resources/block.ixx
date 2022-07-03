@@ -8,7 +8,6 @@ namespace items {
 	export class Block final : public RefinedResource {
 		public:
 			Block(const std::string& item_name,
-				  const std::string& image_path,
 				  int tier,
 				  bool buy_equals_sell,
 				  double sell_price,

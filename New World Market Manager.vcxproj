@@ -131,6 +131,8 @@
     <ClCompile Include="modules\recipe_book\default_recipe_book.ixx" />
     <ClCompile Include="modules\recipe_book\recipe.ixx" />
     <ClCompile Include="modules\recipe_book\recipe_book.ixx" />
+    <ClCompile Include="modules\ui\image_map\default_image_map.ixx" />
+    <ClCompile Include="modules\ui\image_map\image_map.ixx" />
     <ClCompile Include="src\recipe_book\default_recipe_book.cpp" />
     <ClCompile Include="src\recipe_book\recipe.cpp" />
     <ClCompile Include="src\recipe_book\recipe_book.cpp" />
@@ -202,6 +204,8 @@
     <ClCompile Include="src\items\item\resources\raw_resources\raw_resource.cpp" />
     <ClCompile Include="src\items\item\resources\resource.cpp" />
     <ClCompile Include="src\items\item\item.cpp" />
+    <ClCompile Include="src\ui\image_map\default_image_map.cpp" />
+    <ClCompile Include="src\ui\image_map\image_map.cpp" />
     <ClCompile Include="src\ui\market_manager.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClInclude Include="include\stdafx.h" />

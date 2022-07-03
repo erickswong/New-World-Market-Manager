@@ -4,7 +4,6 @@ import settings;
 
 namespace items {
 	Cloth::Cloth(const std::string& item_name,
-				 const std::string& image_path,
 				 const int tier,
 				 const bool buy_equals_sell,
 				 const double sell_price,
@@ -12,7 +11,6 @@ namespace items {
 				 const double base_yield,
 				 const double base_craft_tax) :
 		RefinedResource(item_name,
-						image_path,
 						tier,
 						buy_equals_sell,
 						sell_price,

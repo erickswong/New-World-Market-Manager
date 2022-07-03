@@ -2,6 +2,7 @@
 
 #include "stdafx.h"
 
+import image_map;
 import items;
 import recipe_book;
 import settings;
@@ -9,6 +10,7 @@ import settings;
 MarketManager::MarketManager(QWidget *parent)
     : QMainWindow(parent) {
     // Perform set up
+    image_map::setUp();
     settings::setUp();
     recipe_book::setUp();
     items::setUp();
@@ -154,6 +156,7 @@ void MarketManager::on_maximize_restore_button_clicked() {
 
 void MarketManager::on_close_button_clicked() {
     // Write to disk          TODO: Ask on close, have setting to not ask again
+    image_map::writeToDisk();
     items::writeToDisk();
     recipe_book::writeToDisk();
     settings::writeToDisk();

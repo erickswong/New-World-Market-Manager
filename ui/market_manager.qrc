@@ -115,5 +115,6 @@
         <file>images/armour_sets/stonecutter_set/stonecutters_shoes.png</file>
         <file>images/ui/input_page/lock.png</file>
         <file>images/ui/input_page/unlock.png</file>
+        <file>images/placeholder.png</file>
     </qresource>
 </RCC>

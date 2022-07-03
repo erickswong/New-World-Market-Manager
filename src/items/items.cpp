@@ -203,7 +203,7 @@ namespace items {
 		std::unordered_map<Item*, ItemNode*> item_graph;
 
 		// Master node
-		auto master_item = new Gear("Master Item", ""); // Using Gear but can use any Item
+		auto master_item = new Gear(std::string("Master Item")); // Using Gear but can use any Item
 		auto master_node = new ItemNode;
 
 		// Populate item graph and add every item as child of master node

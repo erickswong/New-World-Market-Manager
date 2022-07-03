@@ -8,7 +8,6 @@ namespace items {
 	export class Cloth final : public RefinedResource {
 		public:
 			Cloth(const std::string& item_name,
-				  const std::string& image_path,
 				  int tier,
 				  bool buy_equals_sell,
 				  double sell_price,

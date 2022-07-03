@@ -8,7 +8,6 @@ namespace items {
 	export class Plank final : public RefinedResource {
 		public:
 			Plank(const std::string& item_name,
-				  const std::string& image_path,
 				  int tier,
 				  bool buy_equals_sell,
 				  double sell_price,

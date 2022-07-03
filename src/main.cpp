@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
         w.show();
         return a.exec();
     } catch (const std::exception& e) {
-        // exceptions::logCrash(new std::exception()); // TODO: find out why exceptions don't work only in main
-        throw e;                                       //       rethrow e until above fixed
+        // exceptions::logCrash(e); // TODO: find out why exceptions don't work only in main
+        throw e;                    //       rethrow e until above fixed
     }
 }

@@ -29,7 +29,7 @@ namespace items {
 	// Returns a json representing items
 	export [[nodiscard]] Json::Value toJson();
 	// Writes a json representing this namespace to disk
-	export void writeToDisk();
+	export void writeToDisk(); // TODO: enum for write modes (normal, extra, debug etc)
 
 	// Returns a pointer to the item with name item_name
 	export template<typename T>

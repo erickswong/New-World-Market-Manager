@@ -5,8 +5,7 @@ import :item;
 namespace items {
 	export class Gear final : public Item {
 		public:
-			Gear(const std::string& item_name,
-				 const std::string& image_path);
+			explicit Gear(const std::string& item_name);
 			explicit Gear(const Json::Value& json_value);
 
 			// Returns a json representing this object

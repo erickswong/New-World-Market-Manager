@@ -7,7 +7,7 @@ InputResource::InputResource(const std::string& resource_name, QWidget *parent)
 	ui.setupUi(this);
 
 	// Set image
-	ui.image->setPixmap(QPixmap(QString(resource->getImagePath().c_str())));
+	ui.image->setPixmap(QPixmap(QString(resource->imagePath().c_str())));
 
 	// Set label
 	ui.label->setText(QCoreApplication::translate("InputResource", resource->getItemName().c_str(), nullptr));

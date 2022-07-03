@@ -1,10 +1,8 @@
 module items:gear;
 
 namespace items {
-	Gear::Gear(const std::string& item_name,
-			   const std::string& image_path) :
-		Item(item_name,
-			 image_path) {
+	Gear::Gear(const std::string& item_name) :
+		Item(item_name) {
 	}
 
 	Gear::Gear(const Json::Value& json_value) :

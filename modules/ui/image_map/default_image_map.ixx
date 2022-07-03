@@ -1,8 +1,7 @@
-export module items:default_items;
+export module image_map:default_image_map;
 
-namespace items::default_items {
-	// Perform default set up for items
-	export void setUp();
+namespace image_map::default_image_map {
+    export void setUp();
 
 	void addResources();
 	void addGears();

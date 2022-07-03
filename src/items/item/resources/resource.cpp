@@ -4,13 +4,11 @@ import std.core;
 
 namespace items {
 	Resource::Resource(const std::string& item_name,
-					   const std::string& image_path,
 					   const int tier,
 					   const bool buy_equals_sell,
 					   const double sell_price,
 					   const double buy_price) :
-		Item(item_name,
-			 image_path),
+		Item(item_name),
 		tier(tier),
 		buy_equals_sell(buy_equals_sell),
 		sell_price(sell_price),

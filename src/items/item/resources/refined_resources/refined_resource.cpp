@@ -3,7 +3,6 @@ module items:refined_resource;
 import std.core;
 namespace items {
 	RefinedResource::RefinedResource(const std::string& item_name,
-									 const std::string& image_path,
 									 const int tier,
 									 const bool buy_equals_sell,
 									 const double sell_price,
@@ -11,7 +10,6 @@ namespace items {
 									 const double base_yield,
 									 const double base_craft_tax) :
 		Resource(item_name,
-				 image_path,
 				 tier,
 				 buy_equals_sell,
 				 sell_price,
