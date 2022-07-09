@@ -190,32 +190,35 @@ namespace items {
 		};
 
 		// Item graph
-		std::unordered_map<Item*, ItemNode*> item_graph;
+		std::unordered_map<Item*, ItemNode> item_graph;
 
-		// Master node
-		auto master_item = new RefiningGear("Master Item", false, 0.); // Using RefiningGear but can use any Item // TODO: make uncategorized item
-		auto master_node = new ItemNode;
+		// Create master item and node
+		class MasterItem final : public Item {
+			public:
+				MasterItem() : Item(std::string("Master Item")) {};
+		} master_item;
+		ItemNode master_node;
 
 		// Populate item graph and add every item as child of master node
 		for (const auto& [item_name, item] : items) {
-			item_graph.insert({ item, new ItemNode(item) });
-			master_node->child_items.insert(item);
+			item_graph.insert({ item, ItemNode(item) });
+			master_node.child_items.insert(item);
 		}
 
 		// Insert master node into item graph
-		item_graph.insert({ master_item, master_node });
+		item_graph.insert({ &master_item, std::move(master_node) });
 
 		// Store unordered set of all children for each item
 		for (const auto& [item, item_node] : item_graph) {
-			for (const auto& parent : item_node->parent_items) {
-				item_graph.at(parent)->child_items.insert(item);
+			for (const auto& parent : item_node.parent_items) {
+				item_graph.at(parent).child_items.insert(item);
 			}
 		}
 
 		// Recursive lambda function for finding item update order
 		std::function<std::list<Item*>(Item*)> find_item_update_order = [&](Item* item) {
 			// Get item node for this item
-			auto& [parent_items, child_items, item_update_order_items, item_update_order, completed] = *item_graph.at(item);
+			auto& [parent_items, child_items, item_update_order_items, item_update_order, completed] = item_graph.at(item);
 
 			// Return early if item already completed
 			if (completed) {
@@ -227,7 +230,7 @@ namespace items {
 				// Take item update order from first child as a starting point
 				auto it = child_items.begin();
 				item_update_order = find_item_update_order(*it);
-				item_update_order_items = item_graph.at(*it)->item_update_order_items;
+				item_update_order_items = item_graph.at(*it).item_update_order_items;
 				++it;
 
 				// Build item update order from the rest of the children
@@ -262,14 +265,8 @@ namespace items {
 		}
 
 		// Save return value
-		master_node->item_update_order.pop_front();
-		std::list<Item*> master_item_update_order = master_node->item_update_order;
-
-		// Delete created objects
-		delete master_item;
-		for (const auto& [item, item_node] : item_graph) {
-			delete item_node;
-		}
+		item_graph.at(&master_item).item_update_order.pop_front();
+		std::list<Item*> master_item_update_order = item_graph.at(&master_item).item_update_order;
 
 		// Return master item update order
 		return master_item_update_order;
