@@ -28,9 +28,6 @@
     <ClCompile Include="src\settings\settings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\settings\armour_set.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\settings\armour_sets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -79,7 +76,6 @@
     <ClCompile Include="src\items\default_items.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="modules\settings\armour_set.ixx" />
     <ClCompile Include="modules\settings\armour_sets.ixx" />
     <ClCompile Include="modules\settings\fort_bonuses.ixx" />
     <ClCompile Include="modules\settings\standing_bonuses.ixx" />
@@ -102,8 +98,8 @@
     <ClCompile Include="src\stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="modules\items\item\gear\gear.ixx" />
-    <ClCompile Include="src\items\item\gear\gear.cpp">
+    <ClCompile Include="modules\items\item\gears\gear.ixx" />
+    <ClCompile Include="src\items\item\gears\gear.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ui\content_pages\input_pages\input_items\input_item.cpp">
@@ -127,6 +123,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ui\image_map\default_image_map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\items\item\gears\refining_gear.ixx" />
+    <ClCompile Include="src\items\item\gears\refining_gear.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

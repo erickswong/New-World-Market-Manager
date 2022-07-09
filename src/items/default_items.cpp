@@ -4,12 +4,12 @@ import items;
 
 import :block;
 import :cloth;
-import :gear;
 import :ingot;
 import :leather;
 import :plank;
 import :raw_resource;
 import :refining_component;
+import :refining_gear;
 
 namespace items::default_items {
 	void setUp() {
@@ -448,42 +448,92 @@ namespace items::default_items {
 	}
 
 	void addSmelterSet() {
-		addItem(new Gear(std::string("Smelter's Headgear")));
-		addItem(new Gear(std::string("Smelter's Smock")));
-		addItem(new Gear(std::string("Smelter's Mitts")));
-		addItem(new Gear(std::string("Smelter's Pants")));
-		addItem(new Gear(std::string("Smelter's Shoes")));
+		addItem(new RefiningGear("Smelter's Headgear",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Smelter's Smock",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Smelter's Mitts",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Smelter's Pants",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Smelter's Shoes",
+								 false,
+								 0.02));
 	}
 
 	void addWoodworkerSet() {
-		addItem(new Gear(std::string("Woodworker's Cap")));
-		addItem(new Gear(std::string("Woodworker's Shirt")));
-		addItem(new Gear(std::string("Woodworker's Gloves")));
-		addItem(new Gear(std::string("Woodworker's Pants")));
-		addItem(new Gear(std::string("Woodworker's Shoes")));
+		addItem(new RefiningGear("Woodworker's Cap",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Woodworker's Shirt",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Woodworker's Gloves",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Woodworker's Pants",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Woodworker's Shoes",
+								 false,
+								 0.02));
 	}
 
 	void addWeaverSet() {
-		addItem(new Gear(std::string("Weaver's Hat")));
-		addItem(new Gear(std::string("Weaver's Shirt")));
-		addItem(new Gear(std::string("Weaver's Gloves")));
-		addItem(new Gear(std::string("Weaver's Pants")));
-		addItem(new Gear(std::string("Weaver's Shoes")));
+		addItem(new RefiningGear("Weaver's Hat",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Weaver's Shirt",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Weaver's Gloves",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Weaver's Pants",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Weaver's Shoes",
+								 false,
+								 0.02));
 	}
 
 	void addTannerSet() {
-		addItem(new Gear(std::string("Tanner Hat")));
-		addItem(new Gear(std::string("Tanner Shirt")));
-		addItem(new Gear(std::string("Tanner Gloves")));
-		addItem(new Gear(std::string("Tanner Pants")));
-		addItem(new Gear(std::string("Tanner Shoes")));
+		addItem(new RefiningGear("Tanner Hat",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Tanner Shirt",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Tanner Gloves",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Tanner Pants",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Tanner Shoes",
+								 false,
+								 0.02));
 	}
 
 	void addStonecutterSet() {
-		addItem(new Gear(std::string("Stonecutter's Hat")));
-		addItem(new Gear(std::string("Stonecutter's Shirt")));
-		addItem(new Gear(std::string("Stonecutter's Gloves")));
-		addItem(new Gear(std::string("Stonecutter's Pants")));
-		addItem(new Gear(std::string("Stonecutter's Shoes")));
+		addItem(new RefiningGear("Stonecutter's Hat",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Stonecutter's Shirt",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Stonecutter's Gloves",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Stonecutter's Pants",
+								 false,
+								 0.02));
+		addItem(new RefiningGear("Stonecutter's Shoes",
+								 false,
+								 0.02));
 	}
 }

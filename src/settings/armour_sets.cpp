@@ -1,77 +1,52 @@
 module settings:armour_sets;
 
-import exceptions;
+import items;
+
+using items::RefiningGear;
 
 namespace settings::armour_sets {
-    void reset() noexcept {
-        smelter_set.reset();
-        woodworker_set.reset();
-        weaver_set.reset();
-        tanner_set.reset();
-        stonecutter_set.reset();
-    }
-
-    void fromJson(const Json::Value& json_value) {
-        try {
-            smelter_set.fromJson(json_value["smelter_set"], "smelter_set");
-            woodworker_set.fromJson(json_value["woodworker_set"], "woodworker_set");
-            weaver_set.fromJson(json_value["weaver_set"], "weaver_set");
-            tanner_set.fromJson(json_value["tanner_set"], "tanner_set");
-            stonecutter_set.fromJson(json_value["stonecutter_set"], "stonecutter_set");
-        } catch (const std::exception& e) {
-            throw BadJsonException("armour_sets is malformed", e);
-        }
-    }
-
-    Json::Value toJson() {
-        Json::Value json_value;
-
-        json_value["smelter_set"]     = smelter_set.toJson();
-        json_value["woodworker_set"]  = woodworker_set.toJson();
-        json_value["weaver_set"]      = weaver_set.toJson();
-        json_value["tanner_set"]      = tanner_set.toJson();
-        json_value["stonecutter_set"] = stonecutter_set.toJson();
-
-        return json_value;
-    }
-
     double smeltingYieldBonus() {
-        return ARMOUR_YIELD_BONUS * smelter_set.numberAcquired();
+        return
+            items::getItem<RefiningGear>("Smelter's Headgear")->yieldBonus() +
+            items::getItem<RefiningGear>("Smelter's Smock")->yieldBonus() +
+            items::getItem<RefiningGear>("Smelter's Mitts")->yieldBonus() +
+            items::getItem<RefiningGear>("Smelter's Pants")->yieldBonus() +
+            items::getItem<RefiningGear>("Smelter's Shoes")->yieldBonus();
     }
 
     double woodworkingYieldBonus() {
-        return ARMOUR_YIELD_BONUS * woodworker_set.numberAcquired();
-    }
-
-    double leatherworkingYieldBonus() {
-        return ARMOUR_YIELD_BONUS * weaver_set.numberAcquired();
+        return
+            items::getItem<RefiningGear>("Woodworker's Cap")->yieldBonus() +
+            items::getItem<RefiningGear>("Woodworker's Shirt")->yieldBonus() +
+            items::getItem<RefiningGear>("Woodworker's Gloves")->yieldBonus() +
+            items::getItem<RefiningGear>("Woodworker's Pants")->yieldBonus() +
+            items::getItem<RefiningGear>("Woodworker's Shoes")->yieldBonus();
     }
 
     double weavingYieldBonus() {
-        return ARMOUR_YIELD_BONUS * tanner_set.numberAcquired();
+        return
+            items::getItem<RefiningGear>("Weaver's Hat")->yieldBonus() +
+            items::getItem<RefiningGear>("Weaver's Shirt")->yieldBonus() +
+            items::getItem<RefiningGear>("Weaver's Gloves")->yieldBonus() +
+            items::getItem<RefiningGear>("Weaver's Pants")->yieldBonus() +
+            items::getItem<RefiningGear>("Weaver's Shoes")->yieldBonus();
+    }
+
+    double leatherworkingYieldBonus() {
+        return
+            items::getItem<RefiningGear>("Tanner Hat")->yieldBonus() +
+            items::getItem<RefiningGear>("Tanner Shirt")->yieldBonus() +
+            items::getItem<RefiningGear>("Tanner Gloves")->yieldBonus() +
+            items::getItem<RefiningGear>("Tanner Pants")->yieldBonus() +
+            items::getItem<RefiningGear>("Tanner Shoes")->yieldBonus();
     }
 
     double stonecuttingYieldBonus() {
-        return ARMOUR_YIELD_BONUS * stonecutter_set.numberAcquired();
-    }
-
-    ArmourSet& getSmelterSet() {
-        return smelter_set;
-    }
-
-    ArmourSet& getWoodworkerSet() {
-        return woodworker_set;
-    }
-
-    ArmourSet& getWeaverSet() {
-        return weaver_set;
-    }
-
-    ArmourSet& getTannerSet() {
-        return tanner_set;
-    }
-
-    ArmourSet& getStonecutterSet() {
-        return stonecutter_set;
+        return
+            items::getItem<RefiningGear>("Stonecutter's Hat")->yieldBonus() +
+            items::getItem<RefiningGear>("Stonecutter's Shirt")->yieldBonus() +
+            items::getItem<RefiningGear>("Stonecutter's Gloves")->yieldBonus() +
+            items::getItem<RefiningGear>("Stonecutter's Pants")->yieldBonus() +
+            items::getItem<RefiningGear>("Stonecutter's Shoes")->yieldBonus();
     }
 }

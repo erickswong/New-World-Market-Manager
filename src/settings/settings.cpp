@@ -28,7 +28,6 @@ namespace settings {
     }
 
     void reset() noexcept {
-        armour_sets::reset();
         fort_bonuses::reset();
         standing_bonuses::reset();
         taxes::reset();
@@ -37,7 +36,6 @@ namespace settings {
 
     void fromJson(const Json::Value& json_value) {
         try {
-            armour_sets::fromJson(json_value["armour_sets"]);
             fort_bonuses::fromJson(json_value["fort_bonuses"]);
             standing_bonuses::fromJson(json_value["standing_bonuses"]);
             taxes::fromJson(json_value["taxes"]);
@@ -50,7 +48,6 @@ namespace settings {
     Json::Value toJson() {
         Json::Value json_value;
 
-        json_value["armour_sets"]      = armour_sets::toJson();
         json_value["fort_bonuses"]     = fort_bonuses::toJson();
         json_value["standing_bonuses"] = standing_bonuses::toJson();
         json_value["taxes"]            = taxes::toJson();

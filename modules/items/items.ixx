@@ -10,6 +10,7 @@ export import :plank;
 export import :raw_resource;
 export import :refined_resource;
 export import :refining_component;
+export import :refining_gear;
 export import :resource;
 
 import "json/json.h";

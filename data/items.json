@@ -414,24 +414,34 @@
       "tier" : 2
    },
    "Smelter's Headgear" : {
+      "acquired" : false,
       "item_name" : "Smelter's Headgear",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Smelter's Mitts" : {
+      "acquired" : false,
       "item_name" : "Smelter's Mitts",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Smelter's Pants" : {
+      "acquired" : false,
       "item_name" : "Smelter's Pants",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Smelter's Shoes" : {
+      "acquired" : false,
       "item_name" : "Smelter's Shoes",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Smelter's Smock" : {
+      "acquired" : false,
       "item_name" : "Smelter's Smock",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Smolderhide" : {
       "buy_equals_sell" : true,
@@ -498,44 +508,64 @@
       "tier" : 3
    },
    "Stonecutter's Gloves" : {
+      "acquired" : false,
       "item_name" : "Stonecutter's Gloves",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Stonecutter's Hat" : {
+      "acquired" : false,
       "item_name" : "Stonecutter's Hat",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Stonecutter's Pants" : {
+      "acquired" : false,
       "item_name" : "Stonecutter's Pants",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Stonecutter's Shirt" : {
+      "acquired" : false,
       "item_name" : "Stonecutter's Shirt",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Stonecutter's Shoes" : {
+      "acquired" : false,
       "item_name" : "Stonecutter's Shoes",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Tanner Gloves" : {
+      "acquired" : false,
       "item_name" : "Tanner Gloves",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Tanner Hat" : {
+      "acquired" : false,
       "item_name" : "Tanner Hat",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Tanner Pants" : {
+      "acquired" : false,
       "item_name" : "Tanner Pants",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Tanner Shirt" : {
+      "acquired" : false,
       "item_name" : "Tanner Shirt",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Tanner Shoes" : {
+      "acquired" : false,
       "item_name" : "Tanner Shoes",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Thick Hide" : {
       "buy_equals_sell" : false,
@@ -564,24 +594,34 @@
       "tier" : 5
    },
    "Weaver's Gloves" : {
+      "acquired" : false,
       "item_name" : "Weaver's Gloves",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Weaver's Hat" : {
+      "acquired" : false,
       "item_name" : "Weaver's Hat",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Weaver's Pants" : {
+      "acquired" : false,
       "item_name" : "Weaver's Pants",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Weaver's Shirt" : {
+      "acquired" : false,
       "item_name" : "Weaver's Shirt",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Weaver's Shoes" : {
+      "acquired" : false,
       "item_name" : "Weaver's Shoes",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Wildwood" : {
       "buy_equals_sell" : true,
@@ -608,24 +648,34 @@
       "tier" : 5
    },
    "Woodworker's Cap" : {
+      "acquired" : false,
       "item_name" : "Woodworker's Cap",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Woodworker's Gloves" : {
+      "acquired" : false,
       "item_name" : "Woodworker's Gloves",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Woodworker's Pants" : {
+      "acquired" : false,
       "item_name" : "Woodworker's Pants",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Woodworker's Shirt" : {
+      "acquired" : false,
       "item_name" : "Woodworker's Shirt",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Woodworker's Shoes" : {
+      "acquired" : false,
       "item_name" : "Woodworker's Shoes",
-      "item_type" : "Gear"
+      "item_type" : "RefiningGear",
+      "yield_bonus" : 0.02
    },
    "Wyrdwood" : {
       "buy_equals_sell" : false,

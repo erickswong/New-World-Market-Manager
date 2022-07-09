@@ -5,16 +5,6 @@ import std.core;
 import std.filesystem;
 
 import :default_items;
-import :block;
-import :cloth;
-import :gear;
-import :ingot;
-import :leather;
-import :plank;
-import :raw_resource;
-import :refined_resource;
-import :refining_component;
-import :resource;
 
 namespace items {
 	void setUp() {
@@ -61,8 +51,6 @@ namespace items {
 					addItem(new Block(item_json_value));
 				} else if (item_type == "Cloth") {
 					addItem(new Cloth(item_json_value));
-				} else if (item_type == "Gear") {
-					addItem(new Gear(item_json_value));
 				} else if (item_type == "Ingot") {
 					addItem(new Ingot(item_json_value));
 				} else if (item_type == "Leather") {
@@ -73,6 +61,8 @@ namespace items {
 					addItem(new RawResource(item_json_value));
 				} else if (item_type == "RefiningComponent") {
 					addItem(new RefiningComponent(item_json_value));
+				} else if (item_type == "RefiningGear") {
+					addItem(new RefiningGear(item_json_value));
 				} else {
 					throw BadValueException("Unrecognized item_type \"" + item_type + "\" in items");
 				}
@@ -203,7 +193,7 @@ namespace items {
 		std::unordered_map<Item*, ItemNode*> item_graph;
 
 		// Master node
-		auto master_item = new Gear(std::string("Master Item")); // Using Gear but can use any Item
+		auto master_item = new RefiningGear("Master Item", false, 0.); // Using RefiningGear but can use any Item // TODO: make uncategorized item
 		auto master_node = new ItemNode;
 
 		// Populate item graph and add every item as child of master node
