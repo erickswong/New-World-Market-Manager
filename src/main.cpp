@@ -6,13 +6,22 @@ import exceptions;
 
 int main(int argc, char *argv[]) {
     try {
-        // TODO: add SplashScreen on loading
+        // Create application
         QApplication a(argc, argv);
+
+        // TODO: add SplashScreen on loading
+
+        // Show Market Manager
         MarketManager w;
         w.show();
-        return a.exec();
+
+        // Throw return code if non-zero
+        if (int returnCode = a.exec(); returnCode) {
+            throw returnCode;
+        }
     } catch (const std::exception& e) {
-        // exceptions::logCrash(e); // TODO: find out why exceptions don't work only in main
-        throw e;                    //       rethrow e until above fixed
+        exceptions::logCrash(e);
+    } catch (int returnCode) {
+        exceptions::logCrash(returnCode);
     }
 }
