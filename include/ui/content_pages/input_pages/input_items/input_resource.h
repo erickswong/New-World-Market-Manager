@@ -17,7 +17,7 @@ class InputResource final : public InputItem {
 	Resource* resource;
 
 	public:
-		explicit InputResource(const std::string& resource_name, QWidget* parent = Q_NULLPTR);
+		InputResource(const std::string& resource_name, QWidget* parent = Q_NULLPTR);
 
 	private slots:
 		void on_lock_toggled(bool buy_equals_sell) const;

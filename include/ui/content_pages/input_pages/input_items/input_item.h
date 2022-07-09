@@ -13,7 +13,7 @@ class InputItem : public QWidget {
 	InputItem* next;  // The next InputItem in the cyclic list
 
 	protected:
-		InputItem(const std::string& name, QWidget *parent);
+		InputItem(const std::string& name, QWidget *parent = Q_NULLPTR);
 
 	public:
 		virtual ~InputItem();

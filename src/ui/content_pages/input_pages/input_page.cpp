@@ -13,10 +13,13 @@ InputPage::~InputPage() {
 	}
 }
 
-void InputPage::addInputResource(const std::string resource_name) {
-	const auto input_item = new InputResource(resource_name, this);
+void InputPage::addInputItem(InputItem* input_item) {
+	// Push input_item into input_items
+	input_items.push_front(input_item);
 
-	input_items.push_back(input_item);
+	// Set this as parent of input_item
+	input_item->setParent(this);
 
+	// Insert input_item into ui
 	ui.verticalLayout->insertWidget(ui.verticalLayout->count() - 1, input_item);
 }

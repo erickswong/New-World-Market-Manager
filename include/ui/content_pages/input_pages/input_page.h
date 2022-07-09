@@ -9,11 +9,12 @@ class InputPage final : public QWidget {
 	Q_OBJECT
 
 	Ui::InputPage ui;
-	std::vector<InputItem*> input_items;
+	std::forward_list<InputItem*> input_items;
 
 	public:
 		explicit InputPage(QWidget* parent = Q_NULLPTR);
 		~InputPage();
 
-		void addInputResource(std::string resource_name);
+		// Adds an InputItem to this InputPage
+		void addInputItem(InputItem* input_item);
 };
