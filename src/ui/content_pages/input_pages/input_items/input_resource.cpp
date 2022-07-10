@@ -1,8 +1,8 @@
 #include "ui/content_pages/input_pages/input_items/input_resource.h"
 
-InputResource::InputResource(const std::string& resource_name, QWidget *parent)
-	: InputItem(resource_name, parent),
-      resource(items::getItem<Resource>(resource_name)) {
+InputResource::InputResource(const std::string& resource_name, QWidget *parent) :
+	InputItem(resource_name, parent),
+    resource(items::getItem<Resource>(resource_name)) {
 	// Set up ui
 	ui.setupUi(this);
 

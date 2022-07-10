@@ -18,6 +18,9 @@ class InputItem : public QWidget {
 	public:
 		virtual ~InputItem();
 
+		// Returns name
+		[[nodiscard]] std::string getName() const;
+
 		// Returns the previous InputItem in the cyclic list
 		template<typename T>
 		[[nodiscard]] T* getPrev() const;

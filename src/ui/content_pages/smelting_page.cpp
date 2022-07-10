@@ -2,8 +2,8 @@
 
 #include "ui/content_pages/input_pages/input_items/input_resource.h"
 
-SmeltingPage::SmeltingPage(QWidget *parent)
-	: QWidget(parent) {
+SmeltingPage::SmeltingPage(QWidget *parent) :
+    QWidget(parent) {
 	ui.setupUi(this);
 
     // Set stacked widget to default page

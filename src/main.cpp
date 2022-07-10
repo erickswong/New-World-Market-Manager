@@ -23,5 +23,7 @@ int main(int argc, char *argv[]) {
         exceptions::logCrash(e);
     } catch (int returnCode) {
         exceptions::logCrash(returnCode);
+    } catch (const std::string& message) {
+        exceptions::logCrash(message.c_str());
     }
 }

@@ -1,13 +1,17 @@
 #include "ui/content_pages/input_pages/input_items/input_item.h"
 
-InputItem::InputItem(const std::string& name, QWidget *parent)
-	: QWidget(parent),
-      name(name) {
+InputItem::InputItem(const std::string& name, QWidget *parent) :
+	QWidget(parent),
+    name(name) {
 	insertIntoCyclicList();
 }
 
 InputItem::~InputItem() {
 	removeFromCyclicList();
+}
+
+std::string InputItem::getName() const {
+	return name;
 }
 
 void InputItem::insertIntoCyclicList() {

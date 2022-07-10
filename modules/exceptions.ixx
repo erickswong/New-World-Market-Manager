@@ -40,6 +40,23 @@ namespace exceptions {
 		// Write message into file
 		file << "[Application Error] Application returned with return code: " << returnCode;
 	}
+	
+	// Writes a crash dump to disk given a message
+	export void logCrash(const char* message) {
+		// Get time of crash
+		auto seconds_since_epoch = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+
+		// Create crash dump directory
+		std::stringstream dirName;
+		dirName << "log/crashdump_" << seconds_since_epoch;
+		std::filesystem::create_directories(dirName.str());
+
+		// Create info.txt file
+		std::ofstream file(dirName.str() + "/info.txt");
+
+		// Write message into file
+		file << message;
+	}
 };
 
 class MarketManagerException : public std::exception {
@@ -81,6 +98,15 @@ export class BadValueException final : public MarketManagerException {
 
 	public:
 		explicit BadValueException(const std::string& message) {
+			setMessage(TAG + message);
+		}
+};
+
+export class BadOperationException final : public MarketManagerException {
+	inline static const std::string TAG = "[Bad Operation] ";
+
+	public:
+		explicit BadOperationException(const std::string& message) {
 			setMessage(TAG + message);
 		}
 };

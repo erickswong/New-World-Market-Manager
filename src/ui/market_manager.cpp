@@ -7,8 +7,8 @@ import items;
 import recipe_book;
 import settings;
 
-MarketManager::MarketManager(QWidget *parent)
-    : QMainWindow(parent) {
+MarketManager::MarketManager(QWidget *parent) :
+    QMainWindow(parent) {
     // Perform set up
     image_map::setUp();
     settings::setUp();
