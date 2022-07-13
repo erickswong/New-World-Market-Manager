@@ -4,11 +4,11 @@ import "json/json.h";
 
 namespace settings::taxes {
 	static constexpr double MIN_CRAFTING_FEE = 0.5;
-	static constexpr double MAX_CRAFTING_FEE = 100.; // TODO: determine max
+	static constexpr double MAX_CRAFTING_FEE = 3.;
 	static constexpr double MIN_REFINING_FEE = 0.5;
-	static constexpr double MAX_REFINING_FEE = 100.; // TODO: determine max
+	static constexpr double MAX_REFINING_FEE = 3.;
 	static constexpr double MIN_TRADING_TAX  = 0.025;
-	static constexpr double MAX_TRADING_TAX  = 100.; // TODO: determine max
+	static constexpr double MAX_TRADING_TAX  = 0.25;
 
 	double crafting_fee = MIN_CRAFTING_FEE;
 	double refining_fee = MIN_REFINING_FEE;
